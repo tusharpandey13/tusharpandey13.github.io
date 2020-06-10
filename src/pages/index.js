@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark
-
+  // console.log({ data })
   return (
     <Layout>
       <div>

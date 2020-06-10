@@ -4,7 +4,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -620,3 +619,25 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/* 
+ * Purpose:
+ * Assign height: "100%" to
+ * html, body, #___gatsby &  
+ * div with role="group"
+*/
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+/* 
+div[role="group"][tabindex] {
+  height: 100%;
+} */

@@ -1,0 +1,12 @@
+.flex-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between;  */
+  padding: 1.45rem 1.0875rem;
+}
+
+main {
+  background-color: pink;
+  flex-grow: 1;
+}
