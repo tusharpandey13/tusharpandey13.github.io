@@ -641,3 +641,8 @@ body {
 div[role="group"][tabindex] {
   height: 100%;
 } */
+
+a {
+  color: rgb(30, 143, 255);
+  text-decoration: none;
+}

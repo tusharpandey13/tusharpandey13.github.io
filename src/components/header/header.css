@@ -1,0 +1,19 @@
+.site-header {
+  margin: 0;
+  /* top | right | bottom | left */
+  padding: calc(1%) 5% 1% 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* filter: blur(4px); */
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(4px);
+  background: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  transition: box-shadow 0.1s ease 0s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset;
+}
+.site-header-h1 {
+  margin: auto;
+}

@@ -6,7 +6,17 @@ module.exports = {
     author: `@tusharpandey13`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     "gatsby-transformer-remark",
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    // {
+    //   resolve: "gatsby-plugin-sass",
+    //   options: {
+    //     // data: `@import "${__dirname}/src/styles/global-vars";`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,7 +24,6 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -22,8 +31,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -39,6 +46,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    `gatsby-plugin-sass`,
   ],
 }

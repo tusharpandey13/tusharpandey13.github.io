@@ -6,4 +6,4 @@
 
 // You can delete this file if you're not using it
 
-import "./global.scss"
+import "./src/styles/global.css"

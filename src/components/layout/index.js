@@ -9,10 +9,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import Footer from "./footer"
+import Header from "../header"
+import Footer from "../footer"
 
-import "./layout.scss"
+import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,10 +26,23 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className={`flex-container`}>
+    <div className={`body-container`}>
+      <div className={`layout-flex-container`}>
+        <main className={`layout-main`}>
+          <p
+            style={{
+              display: `block`,
+              padding: `2.5%`,
+              textDecoration: `none`,
+              content: `empty`,
+            }}
+          ></p>
+          {children}
+        </main>
+        <Footer />
+      </div>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-      <Footer />
+      <div className={`site-border`}></div>
     </div>
   )
 }
