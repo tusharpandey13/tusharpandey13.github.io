@@ -1,11 +1,25 @@
+/* top | right | bottom | left */
+
 #gatsby-focus-wrapper {
   background-color: white;
 }
+.site-border {
+  display: block;
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: transparent;
+  border-top: 1vh solid #3d3d3d;
+  border-right: 1vh solid #3d3d3d;
+  border-left: 1vh solid #3d3d3d;
+  pointer-events: none;
+}
+
 .body-container {
-  /* top | right | bottom | left */
-  /* padding: 1% 1%; */
   height: 100%;
-  /* overflow-y: auto; */
 }
 
 .layout-flex-container {
@@ -20,20 +34,32 @@
 .layout-main {
   background-color: white;
   flex-grow: 1;
-  padding: 2% 15% 2% 20%;
+  padding: 12vh 0% 2vh 0%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.site-border {
-  display: block;
-  /* position: absolute; */
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  background-color: transparent;
-  border-top: 1vh solid #3d3d3d;
-  border-right: 1vh solid #3d3d3d;
-  border-left: 1vh solid #3d3d3d;
-  pointer-events: none;
+.layout-main-center {
+  /* background-color: fuchsia; */
+  min-width: 59.7vw;
+  font-size: 1rem;
+  line-height: 1.45rem;
+}
+
+.layout-main-left,
+.layout-main-right {
+  /* background-color: yellow; */
+  min-width: 19vw;
+}
+/* For devices with width of 480px and less, like phones */
+@media only screen and (max-width: 480px) {
+  .layout-main-left,
+  .layout-main-right {
+    /* background-color: yellow; */
+    min-width: 6vw;
+  }
+  .layout-main-center {
+    font-size: 0.85rem;
+    line-height: 1.2325rem;
+  }
 }

@@ -6,9 +6,11 @@ import "./footer.css"
 
 const Footer = () => (
   <footer>
-    © {new Date().getFullYear()}, Built with
-    {` `}
-    <a href="https://www.gatsbyjs.org">Gatsby</a>
+    <span>
+      © {new Date().getFullYear()}, Built with
+      {` `}
+      <a href="https://www.gatsbyjs.org">Gatsby</a>
+    </span>
   </footer>
 )
 

@@ -3,10 +3,11 @@ import PropTypes from "prop-types"
 import React from "react"
 
 import "./header.css"
+import { ReactComponent as IconSvg } from "./book-24px.svg"
 
 const Header = ({ siteTitle }) => (
-  <header className={`site-header`}>
-    <h1 className={`site-header-h1`}>
+  <header className={`site-header-flex`}>
+    <div className={`site-header-item`}>
       <Link
         to="/"
         style={{
@@ -14,9 +15,18 @@ const Header = ({ siteTitle }) => (
           textDecoration: `none`,
         }}
       >
-        {siteTitle}
+        <div className={`site-header-title`}>
+          <img src={require("./book-24px.svg")} />
+          {siteTitle}
+        </div>
       </Link>
-    </h1>
+    </div>
+    <div className={`site-header-item`}>
+      <div className={`site-header-name`}>
+        <span>Tushar Pandey</span>
+        <img src={require("./head.png")} />
+      </div>
+    </div>
   </header>
 )
 

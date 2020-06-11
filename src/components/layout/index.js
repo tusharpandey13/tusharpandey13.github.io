@@ -29,15 +29,9 @@ const Layout = ({ children }) => {
     <div className={`body-container`}>
       <div className={`layout-flex-container`}>
         <main className={`layout-main`}>
-          <p
-            style={{
-              display: `block`,
-              padding: `2.5%`,
-              textDecoration: `none`,
-              content: `empty`,
-            }}
-          ></p>
-          {children}
+          <div className={`layout-main-left`}></div>
+          <div className={`layout-main-center`}>{children}</div>
+          <div className={`layout-main-right`}></div>
         </main>
         <Footer />
       </div>
