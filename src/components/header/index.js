@@ -4,7 +4,7 @@ import React from "react"
 
 import "./header.css"
 import { ReactComponent as IconSvg } from "./book-24px.svg"
-// fnenfekfne
+
 const Header = props => (
   <header className={`L-H-flex`}>
     <div className={`L-H-item`}>
