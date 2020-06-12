@@ -7,7 +7,7 @@ const IndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark
   // console.log({ data })
   return (
-    <Layout>
+    <Layout title={`Home`}>
       <div>
         {edges.map(edge => {
           const { frontmatter } = edge.node

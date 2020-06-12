@@ -14,35 +14,35 @@ import Footer from "../footer"
 
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = props => {
+  // const gqlData = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
   return (
     <div className={`body-container`}>
-      <div className={`layout-flex-container`}>
-        <main className={`layout-main`}>
-          <div className={`layout-main-left`}></div>
-          <div className={`layout-main-center`}>{children}</div>
-          <div className={`layout-main-right`}></div>
+      <Header title={props.title} />
+      <div className={`L-flex-container`}>
+        <main className={`L-main`}>
+          <div className={`L-M-left`}></div>
+          <div className={`L-M-center`}>{props.children}</div>
+          <div className={`L-M-right`}></div>
         </main>
         <Footer />
       </div>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div className={`site-border`}></div>
+      <div className={`S-border`}></div>
     </div>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  title: PropTypes.string,
 }
 
 export default Layout

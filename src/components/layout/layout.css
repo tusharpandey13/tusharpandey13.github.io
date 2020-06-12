@@ -3,7 +3,7 @@
 #gatsby-focus-wrapper {
   background-color: white;
 }
-.site-border {
+.S-border {
   display: block;
   /* position: absolute; */
   position: fixed;
@@ -22,7 +22,7 @@
   height: 100%;
 }
 
-.layout-flex-container {
+.L-flex-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
   /* margin: 1%; */
 }
 
-.layout-main {
+.L-main {
   background-color: white;
   flex-grow: 1;
   padding: 12vh 0% 2vh 0%;
@@ -39,26 +39,26 @@
   justify-content: space-between;
 }
 
-.layout-main-center {
+.L-M-center {
   /* background-color: fuchsia; */
   min-width: 59.7vw;
   font-size: 1rem;
   line-height: 1.45rem;
 }
 
-.layout-main-left,
-.layout-main-right {
+.L-M-left,
+.L-M-right {
   /* background-color: yellow; */
   min-width: 19vw;
 }
 /* For devices with width of 480px and less, like phones */
 @media only screen and (max-width: 480px) {
-  .layout-main-left,
-  .layout-main-right {
+  .L-M-left,
+  .L-M-right {
     /* background-color: yellow; */
     min-width: 6vw;
   }
-  .layout-main-center {
+  .L-M-center {
     font-size: 0.9rem;
     line-height: 1.305rem;
   }

@@ -5,9 +5,9 @@ import React from "react"
 import "./header.css"
 import { ReactComponent as IconSvg } from "./book-24px.svg"
 
-const Header = ({ siteTitle }) => (
-  <header className={`site-header-flex`}>
-    <div className={`site-header-item`}>
+const Header = props => (
+  <header className={`L-H-flex`}>
+    <div className={`L-H-item`}>
       <Link
         to="/"
         style={{
@@ -15,14 +15,14 @@ const Header = ({ siteTitle }) => (
           textDecoration: `none`,
         }}
       >
-        <div className={`site-header-title`}>
-          <img src={require("./book-24px.svg")} />
-          {siteTitle}
+        <div className={`L-H-T`}>
+          <img src={require(props.titleIconUrl)} />
+          {props.title}
         </div>
       </Link>
     </div>
-    <div className={`site-header-item`}>
-      <div className={`site-header-name`}>
+    <div className={`L-H-item`}>
+      <div className={`L-H-name`}>
         <span>Tushar Pandey</span>
         <img src={require("./head.png")} />
       </div>
@@ -31,11 +31,12 @@ const Header = ({ siteTitle }) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  title: PropTypes.string,
+  titleIconUrl: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  title: `Blog`,
 }
 
 export default Header

@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         posts.forEach(({ node }, index) => {
           const path = node.frontmatter.path
-          console.log(path)
+          // console.log(path)
           createPage({
             path,
             component: blogPostTemplate,

@@ -8,11 +8,11 @@ const Template = ({ data, pathContext }) => {
   const date = data.markdownRemark.frontmatter.date
   const html = data.markdownRemark.html
   // console.log(pathSlug)
-  const siteTitle = data.site.siteMetadata.title
+  // const siteTitle = data.site.siteMetadata.title
   const { next, prev } = pathContext
 
   return (
-    <Layout>
+    <Layout title={`Blog`}>
       <div>
         <h1>{title}</h1>
         <div>
@@ -59,13 +59,15 @@ export const postQuery = graphql`
         excerpt
       }
     }
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
   }
 `
+
+// site {
+//   siteMetadata {
+//     titleActive
+//     titleInctive
+//     description
+//   }
+// }
 
 export default Template
