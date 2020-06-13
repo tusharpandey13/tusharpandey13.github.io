@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark
   // console.log({ data })
   return (
-    <Layout title={`Home`} headerIcon={mdiFolderHome}>
+    <Layout title={`Blog`} headerIcon={mdiFolderHome}>
       <div>
         {edges.map(edge => {
           const { frontmatter } = edge.node

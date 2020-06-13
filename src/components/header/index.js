@@ -5,15 +5,23 @@ import React from "react"
 import Icon from "@mdi/react"
 import { mdiChevronRight } from "@mdi/js"
 import { mdiFolderHome } from "@mdi/js"
+import { mdiTextBox } from "@mdi/js"
+import { mdiBook } from "@mdi/js"
 
 import "./header.css"
 // nkrgnrkgnrg
 const Header = props => {
-  let TitleIcon = <div style={{ display: `none` }}></div>
-  let BreadcrumbIcon = <div style={{ display: `none` }}></div>
-  if (props.title !== "Home") {
-    TitleIcon = <Icon path={props.headerIcon} size={1} className={`icon`} />
-    BreadcrumbIcon = (
+  let BreadcrumbIcon = (
+    <Icon path={mdiChevronRight} size={1.2} className={`icon`} />
+  )
+  let HomeIcon = <Icon path={mdiFolderHome} size={1.2} className={`icon`} />
+  let BlogIcon = <Icon path={mdiBook} size={1} className={`icon`} />
+  let ConditionalBreadcrumbIcon = <div style={{ display: `none` }}></div>
+  let BlogPostIcon = <div style={{ display: `none` }}></div>
+
+  if (props.title !== "Blog") {
+    BlogPostIcon = <Icon path={mdiTextBox} size={1.1} className={`icon`} />
+    ConditionalBreadcrumbIcon = (
       <Icon path={mdiChevronRight} size={1.2} className={`icon`} />
     )
   }
@@ -29,9 +37,11 @@ const Header = props => {
           }}
         >
           <div className={`L-H-T`}>
-            <Icon path={mdiFolderHome} size={1.2} className={`icon`} />
+            {HomeIcon}
             {BreadcrumbIcon}
-            {TitleIcon}
+            {BlogIcon}
+            {ConditionalBreadcrumbIcon}
+            {BlogPostIcon}
             <span>{props.title}</span>
           </div>
         </Link>
