@@ -11,7 +11,7 @@ const Template = ({ data, pathContext }) => {
   const { next, prev } = pathContext
 
   return (
-    <Layout title={title} headerIcon={mdiBookVariant}>
+    <Layout title={title} pathIndex={`2`}>
       <div>
         <h1>{title}</h1>
         <div>

@@ -26,7 +26,7 @@ const Layout = props => {
   // `)
   return (
     <div className={`body-container`}>
-      <Header title={props.title} headerIcon={props.headerIcon} />
+      <Header title={props.title} pathIndex={props.pathIndex} />
       <div className={`L-flex-container`}>
         <main className={`L-main`}>
           <div className={`L-M-left`}></div>
