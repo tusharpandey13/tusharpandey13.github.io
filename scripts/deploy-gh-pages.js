@@ -6,7 +6,7 @@ ghpages.publish(
   {
     branch: "gh-pages",
     //   repo: "https://github.com/tusharpandey13/portfolio.git",
-    repo: "git@github.com:tusharpandey13/portfolio.git",
+    repo: "git@github.com:tusharpandey13/blog.git",
   },
   () => {
     console.log("Deploy Complete!")
