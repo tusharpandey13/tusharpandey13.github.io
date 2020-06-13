@@ -1,13 +1,15 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
+import { mdiFolderHome } from "@mdi/js"
+
 import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark
   // console.log({ data })
   return (
-    <Layout title={`Home`}>
+    <Layout title={`Home`} headerIcon={mdiFolderHome}>
       <div>
         {edges.map(edge => {
           const { frontmatter } = edge.node

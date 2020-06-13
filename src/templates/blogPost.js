@@ -1,18 +1,17 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Header from "../components/header"
 import Layout from "../components/layout"
+
+import { mdiBookVariant } from "@mdi/js"
 
 const Template = ({ data, pathContext }) => {
   const title = data.markdownRemark.frontmatter.title
   const date = data.markdownRemark.frontmatter.date
   const html = data.markdownRemark.html
-  // console.log(pathSlug)
-  // const siteTitle = data.site.siteMetadata.title
   const { next, prev } = pathContext
 
   return (
-    <Layout title={`Blog`}>
+    <Layout title={title} headerIcon={mdiBookVariant}>
       <div>
         <h1>{title}</h1>
         <div>
