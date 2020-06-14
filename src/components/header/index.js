@@ -93,6 +93,7 @@ const Header = props => {
       </div>
     </div>
   )
+  // febfej
   let second = (
     <div
       className={[`L-H-1-flex`, `L-H-menu`, isMenuActive && `blurbehind`].join(
@@ -103,7 +104,7 @@ const Header = props => {
   return (
     <header className={`L-H`}>
       {first}
-      {isMenuActive && second}
+      {isMenuActive}
     </header>
   )
 }
