@@ -1,0 +1,19 @@
+$border-color: #3d3d3d;
+$bg-color: white;
+$border-height: 1vh;
+$border-width: 1vh;
+
+@mixin flex($ht, $dir, $wrap, $justify, $align) {
+  display: flex;
+  flex-flow: $dir $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  height: $ht;
+}
+
+@mixin blur-back($r) {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-backdrop-filter: saturate(180%) blur($r);
+  backdrop-filter: saturate(180%) blur($r);
+}

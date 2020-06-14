@@ -6,17 +6,17 @@ module.exports = {
     author: `@tusharpandey13`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    // `gatsby-plugin-sass`,
     "gatsby-transformer-remark",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    // {
-    //   resolve: "gatsby-plugin-sass",
-    //   options: {
-    //     // data: `@import "${__dirname}/src/styles/global-vars";`,
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        data: `@import "${__dirname}/src/styles/vars";`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
