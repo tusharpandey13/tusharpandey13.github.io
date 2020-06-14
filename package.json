@@ -34,11 +34,11 @@
     "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy:github": "npm run build && node ./scripts/deploy-gh-pages"
+    "deploy:github": "yarn run build && node ./scripts/deploy-gh-pages"
   },
   "repository": {
     "type": "git",
