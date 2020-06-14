@@ -7,53 +7,73 @@ import { mdiChevronRight, mdiClockDigital } from "@mdi/js"
 import { mdiFolderHome } from "@mdi/js"
 import { mdiTextBox } from "@mdi/js"
 import { mdiBook } from "@mdi/js"
+import { mdiMenu } from "@mdi/js"
 
 import "./header.css"
 
 const Header = props => {
   let BreadcrumbIcon = (
-    <Icon path={mdiChevronRight} size={1.2} className={`icon`} />
+    <Icon
+      path={mdiChevronRight}
+      size={1.2}
+      className={[`icon`, `L-H-I-C`].join(" ")}
+    />
   )
-  let HomeIcon = <Icon path={mdiFolderHome} size={1.2} className={`icon h`} />
-  let BlogIcon = <Icon path={mdiBook} size={1} className={`icon h`} />
-  let BlogPostIcon = <Icon path={mdiTextBox} size={1.1} className={`icon h`} />
-  return (
-    <header className={`L-H-flex`}>
-      <div className={`L-H-item`}>
-        <Link
-          to="/"
-          style={{
-            color: `#3d3d3d`,
-            height: `100%`,
-            textDecoration: `none`,
-          }}
-        >
-          <div className={`L-H-T`}>{HomeIcon}</div>
-        </Link>
-        <Link
-          to="/blog"
-          style={{
-            color: `#3d3d3d`,
-            height: `100%`,
-            textDecoration: `none`,
-          }}
-        >
-          <div className={`L-H-T`}>
-            {props.pathIndex >= 1 && BreadcrumbIcon}
-            {props.pathIndex >= 1 && BlogIcon}
-          </div>
-        </Link>
+  let HomeIcon = <Icon path={mdiFolderHome} size={1.2} className={`icon`} />
+  let BlogIcon = <Icon path={mdiBook} size={1} className={`icon`} />
+  let BlogPostIcon = <Icon path={mdiTextBox} size={1.1} className={`icon`} />
+  let MenuIcon = <Icon path={mdiMenu} size={1.2} className={`icon`} />
 
-        <div className={`L-H-T`}>
+  let HeadImg = <img src={require("../../images/head.png")} />
+  return (
+    <header className={`L-H`}>
+      <div className={`L-H-flex`}>
+        <div className={`L-H-I`}>
+          <Link
+            to="/"
+            style={{
+              color: `#3d3d3d`,
+              height: `100%`,
+              textDecoration: `none`,
+            }}
+          >
+            <div className={[`L-H-I-C`, `navContainer`, `h`].join(" ")}>
+              {HomeIcon}
+            </div>
+          </Link>
+
+          {props.pathIndex >= 1 && BreadcrumbIcon}
+          {props.pathIndex >= 1 && (
+            <Link
+              to="/blog"
+              style={{
+                color: `#3d3d3d`,
+                height: `100%`,
+                textDecoration: `none`,
+              }}
+            >
+              <div className={[`L-H-I-C`, `navContainer`, `h`].join(" ")}>
+                {BlogIcon}
+              </div>
+            </Link>
+          )}
+
           {props.pathIndex > 1 && BreadcrumbIcon}
-          {props.pathIndex > 1 && BlogPostIcon}
-          <span>{props.title}</span>
+          {props.pathIndex > 1 && (
+            <div className={[`L-H-I-C`, `navContainer`].join(" ")}>
+              {BlogPostIcon}
+            </div>
+          )}
+          {props.pathIndex > 1 && (
+            <div className={[`L-H-I-C`].join(" ")}>
+              <span className={`textContainer`}>{props.title}</span>
+            </div>
+          )}
         </div>
-      </div>
-      <div className={`L-H-item`}>
-        <div className={`L-H-T`}>
-          <span></span>
-          <img src={require("../../images/head.png")} />
+        <div className={`L-H-I`}>
+          <div className={[`L-H-I-C`, `navContainer`, `h`].join(" ")}>
+            {MenuIcon}
+          </div>
         </div>
       </div>
     </header>
