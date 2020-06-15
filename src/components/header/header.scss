@@ -6,45 +6,50 @@
   left: $border-width;
   width: 100%;
   padding-right: calc(2 *#{$border-width});
-  @include flex(100%, row, nowrap, space-between, flex-start);
+  @include flex(100%, row, nowrap, flex-end, flex-start);
   pointer-events: none;
 }
-.L-H-1-flex {
-  @include flex(100%, row, nowrap, space-between, center);
 
-  height: 3em;
-  margin: 1px;
-  padding: 0;
-  z-index: 2;
-
-  @include blur-back(5px);
-  background: rgba(255, 255, 255, 0.7);
-  // box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 0px 0px inset;
-
-  pointer-events: all;
-}
 .L-H-I {
-  @include flex(100%, row, nowrap, flex-start, center);
-  height: 3em;
+  @include flex(3em, row, nowrap, flex-start, center);
+  // background-color: yellow;
+  z-index: 2;
+  margin: calc(#{$border-height} + 1px) calc(#{$border-width} + 1px) 0
+    calc(#{$border-width} + 1px);
+  // margin: 1px;
 }
 .L-H-I-C {
   @include flex(100%, row, nowrap, space-evenly, center);
 }
+.L-H-M {
+  pointer-events: all;
+  height: 3em;
+  width: 3em;
+  padding: 0;
+  margin: 1px;
+  z-index: 2;
 
+  @include blur-back(5px);
+
+  background-color: rgba(255, 255, 255, 0.2);
+  color: $border-color;
+}
+.menuactive {
+  // background-color: $border-color;
+  // background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  // cursor: pointer;
+}
 .navContainer {
   width: 3em;
   color: $border-color;
 }
 .h:hover {
-  background-color: $border-color;
+  // background-color: $border-color;
   color: white;
   cursor: pointer;
 }
-.menuactive {
-  background-color: $border-color;
-  color: white;
-  cursor: pointer;
-}
+
 .L-H-menu {
   margin: 0;
   position: fixed;
@@ -73,8 +78,5 @@
     top: 0;
     left: 0;
     padding-right: 0px;
-  }
-  .L-H-1-flex {
-    margin: 0;
   }
 }

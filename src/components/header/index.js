@@ -32,63 +32,57 @@ const Header = props => {
   let MenuIcon = <Icon path={mdiMenu} size={1.2} className={`icon`} />
 
   let nav = (
-    <div className={`L-H-1-flex`}>
-      <div className={`L-H-I`}>
+    // <div className={`L-H-1-flex`}>
+    <div className={`L-H-I`}>
+      <Link
+        to="/"
+        style={{
+          color: `$border-color)`,
+          height: `100%`,
+          textDecoration: `none`,
+        }}
+        tabIndex={0}
+      >
+        <div className={[`L-H-I-C`, `navContainer`, `h`].join(" ")}>
+          {HomeIcon}
+        </div>
+      </Link>
+
+      {props.pathIndex >= 1 && BreadcrumbIcon}
+      {props.pathIndex >= 1 && (
         <Link
-          to="/"
+          to="/blog"
           style={{
             color: `$border-color)`,
             height: `100%`,
             textDecoration: `none`,
           }}
-          tabIndex={0}
+          tabIndex={1}
         >
           <div className={[`L-H-I-C`, `navContainer`, `h`].join(" ")}>
-            {HomeIcon}
+            {BlogIcon}
           </div>
         </Link>
+      )}
 
-        {props.pathIndex >= 1 && BreadcrumbIcon}
-        {props.pathIndex >= 1 && (
-          <Link
-            to="/blog"
-            style={{
-              color: `$border-color)`,
-              height: `100%`,
-              textDecoration: `none`,
-            }}
-            tabIndex={1}
-          >
-            <div className={[`L-H-I-C`, `navContainer`, `h`].join(" ")}>
-              {BlogIcon}
-            </div>
-          </Link>
-        )}
-
-        {props.pathIndex > 1 && BreadcrumbIcon}
-        {props.pathIndex > 1 && (
-          <div className={[`L-H-I-C`, `navContainer`].join(" ")}>
-            {BlogPostIcon}
-          </div>
-        )}
-        {/* {props.pathIndex > 1 && ( */}
-        {/* <div className={[`L-H-I-C`].join(" ")}>
+      {props.pathIndex > 1 && BreadcrumbIcon}
+      {props.pathIndex > 1 && (
+        <div className={[`L-H-I-C`, `navContainer`].join(" ")}>
+          {BlogPostIcon}
+        </div>
+      )}
+      {/* {props.pathIndex > 1 && ( */}
+      {/* <div className={[`L-H-I-C`].join(" ")}>
           <span className={`textContainer`}>{props.title}</span>
         </div> */}
-        {/* )} */}
-      </div>
+      {/* )} */}
     </div>
+    // </div>
   )
   let menu = (
-    <div className={`L-H-1-flex`}>
+    <div className={`L-H-M`}>
       <a
-        className={[
-          `L-H-I-C`,
-          `navContainer`,
-          `h`,
-          isMenuActive && `menuactive`,
-          isMenuActive && `shadow-below`,
-        ].join(" ")}
+        className={[`L-H-I-C`, isMenuActive && `menuactive`].join(" ")}
         tabIndex={2}
         onClick={toggleMenu}
       >
@@ -102,10 +96,12 @@ const Header = props => {
     ></div>
   )
   return (
-    <header className={`L-H`}>
+    <header>
       {nav}
-      {menu}
-      {menuback}
+      <div className={`L-H`}>
+        {menu}
+        {menuback}
+      </div>
     </header>
   )
 }
