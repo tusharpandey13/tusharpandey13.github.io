@@ -11,8 +11,6 @@ import {
   mdiChevronRight,
 } from "@mdi/js"
 
-import useDocumentScrollThrottled from "./useDocumentScrollThrottled"
-
 import "./header.scss"
 
 const Header = props => {
