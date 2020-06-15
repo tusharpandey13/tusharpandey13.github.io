@@ -7,17 +7,18 @@
 .H-nav-C {
   @include flex(3em, row, nowrap, flex-start, center);
   z-index: 2;
-  margin: calc(#{$border-height}) calc(#{$border-width}) calc(#{$border-width});
+  margin: calc(#{$border-height}) calc(#{$border-width}) 0
+    calc(#{$border-width});
 }
 
 .H-menu-C {
-  margin: 0;
   position: fixed;
   top: 0;
   left: 0;
-  // margin: $border-height $border-width 0 0;
   width: 100%;
+
   padding: $border-height $border-width;
+
   @include flex(100%, row, nowrap, flex-end, flex-start);
   pointer-events: none;
 }
@@ -69,10 +70,15 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .H-menu-C {
-    padding: 0;
+  .H-menu-button {
+    //   padding: 0;
+    // background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid $border-color;
   }
-  .H-nav-C {
+  // .H-nav-C {
+  // margin: 0;
+  // }
+  .navButtonContainer {
     margin: 0;
   }
 }
