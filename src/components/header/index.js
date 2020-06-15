@@ -14,16 +14,16 @@ import {
 import "./header.scss"
 
 const Header = props => {
-  const [isMenuActive, setisMenuActive] = useState(false)
+  const [ismenuButtonActive, setismenuButtonActive] = useState(false)
   const toggleMenu = () => {
-    setisMenuActive(!isMenuActive)
+    setismenuButtonActive(!ismenuButtonActive)
   }
 
   let BreadcrumbIcon = (
     <Icon
       path={mdiChevronRight}
       size={1.2}
-      className={[`icon`, `L-H-I-C`].join(" ")}
+      className={[`icon`, `H-nav-flex`].join(" ")}
     />
   )
   let HomeIcon = <Icon path={mdiFolderHome} size={1.2} className={`icon`} />
@@ -32,8 +32,7 @@ const Header = props => {
   let MenuIcon = <Icon path={mdiMenu} size={1.2} className={`icon`} />
 
   let nav = (
-    // <div className={`L-H-1-flex`}>
-    <div className={`L-H-I`}>
+    <div className={`H-nav-C`}>
       <Link
         to="/"
         style={{
@@ -43,7 +42,7 @@ const Header = props => {
         }}
         tabIndex={0}
       >
-        <div className={[`L-H-I-C`, `navContainer`, `h`].join(" ")}>
+        <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
           {HomeIcon}
         </div>
       </Link>
@@ -59,7 +58,7 @@ const Header = props => {
           }}
           tabIndex={1}
         >
-          <div className={[`L-H-I-C`, `navContainer`, `h`].join(" ")}>
+          <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
             {BlogIcon}
           </div>
         </Link>
@@ -67,38 +66,39 @@ const Header = props => {
 
       {props.pathIndex > 1 && BreadcrumbIcon}
       {props.pathIndex > 1 && (
-        <div className={[`L-H-I-C`, `navContainer`].join(" ")}>
+        <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
           {BlogPostIcon}
         </div>
       )}
-      {/* {props.pathIndex > 1 && ( */}
-      {/* <div className={[`L-H-I-C`].join(" ")}>
-          <span className={`textContainer`}>{props.title}</span>
-        </div> */}
-      {/* )} */}
     </div>
-    // </div>
   )
   let menu = (
-    <div className={`L-H-M`}>
-      <a
-        className={[`L-H-I-C`, isMenuActive && `menuactive`].join(" ")}
-        tabIndex={2}
-        onClick={toggleMenu}
-      >
-        {MenuIcon}
-      </a>
-    </div>
+    <a
+      className={[
+        `H-menu-button`,
+        `navButtonContainer`,
+        `H-nav-flex`,
+        ismenuButtonActive && `menuButtonActive`,
+      ].join(" ")}
+      tabIndex={2}
+      onClick={toggleMenu}
+    >
+      {MenuIcon}
+    </a>
   )
   let menuback = (
     <div
-      className={[`L-H`, `L-H-menu`, isMenuActive && `blurbehind`].join(" ")}
+      className={[
+        `H-menu-C`,
+        `H-menu-bg`,
+        ismenuButtonActive && `visible`,
+      ].join(" ")}
     ></div>
   )
   return (
     <header>
       {nav}
-      <div className={`L-H`}>
+      <div className={`H-menu-C`}>
         {menu}
         {menuback}
       </div>

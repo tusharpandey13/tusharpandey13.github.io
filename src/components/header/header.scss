@@ -1,82 +1,78 @@
 /* top | right | bottom | left */
-.L-H {
+
+.H-nav-flex {
+  @include flex(3em, row, nowrap, space-evenly, center);
+}
+
+.H-nav-C {
+  @include flex(3em, row, nowrap, flex-start, center);
+  z-index: 2;
+  margin: calc(#{$border-height}) calc(#{$border-width}) calc(#{$border-width});
+}
+
+.H-menu-C {
   margin: 0;
   position: fixed;
-  top: $border-height;
-  left: $border-width;
+  top: 0;
+  left: 0;
+  // margin: $border-height $border-width 0 0;
   width: 100%;
-  padding-right: calc(2 *#{$border-width});
+  padding: $border-height $border-width;
   @include flex(100%, row, nowrap, flex-end, flex-start);
   pointer-events: none;
 }
 
-.L-H-I {
-  @include flex(3em, row, nowrap, flex-start, center);
-  // background-color: yellow;
-  z-index: 2;
-  margin: calc(#{$border-height} + 1px) calc(#{$border-width} + 1px) 0
-    calc(#{$border-width} + 1px);
-  // margin: 1px;
-}
-.L-H-I-C {
-  @include flex(100%, row, nowrap, space-evenly, center);
-}
-.L-H-M {
+.H-menu-button {
   pointer-events: all;
   height: 3em;
-  width: 3em;
   padding: 0;
-  margin: 1px;
   z-index: 2;
 
   @include blur-back(5px);
-
   background-color: rgba(255, 255, 255, 0.2);
-  color: $border-color;
 }
-.menuactive {
-  // background-color: $border-color;
-  // background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  // cursor: pointer;
-}
-.navContainer {
+
+.navButtonContainer {
+  height: calc(3em - 2px);
+  margin: 1px;
   width: 3em;
   color: $border-color;
-}
-.h:hover {
-  // background-color: $border-color;
-  color: white;
   cursor: pointer;
 }
-
-.L-H-menu {
+.navButtonContainer:hover {
+  background-color: $border-color;
+  color: white;
+}
+.navButtonContainer a {
+  padding: 0;
   margin: 0;
-  position: fixed;
-  top: $border-height;
-  left: $border-width;
-  width: 100%;
-  height: 100%;
-
+  height: 3em;
+  width: 3em;
+}
+.menuButtonActive {
+  color: white;
+}
+.H-menu-bg {
+  pointer-events: none;
   z-index: 1;
 
+  @include blur-back(8px);
   background-color: rgba(0, 0, 0, 0.8);
 
-  pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-.blurbehind {
-  opacity: 1;
+.visible {
   pointer-events: all;
-  @include blur-back(8px);
+  opacity: 1;
 }
 
 @media only screen and (max-width: 480px) {
-  .L-H {
-    top: 0;
-    left: 0;
-    padding-right: 0px;
+  .H {
+    padding: 0;
+  }
+  .H-nav-C {
+    margin: 0;
   }
 }

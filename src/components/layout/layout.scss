@@ -34,7 +34,7 @@ a {
 .L-main {
   background-color: white;
   flex-grow: 1;
-  padding: 12vh 0% 2vh 0%;
+  padding: 1.45rem 0% 2em 0%;
   @include flex(initial, row, nowrap, space-between, stretch);
 }
 
