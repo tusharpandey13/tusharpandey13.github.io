@@ -104,7 +104,7 @@ const Header = props => {
   return (
     <header className={`L-H`}>
       {first}
-      {isMenuActive}
+      {isMenuActive && second}
     </header>
   )
 }
