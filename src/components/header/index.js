@@ -77,7 +77,7 @@ const Header = props => {
         {/* )} */}
       </div>
       <div className={`L-H-I`}>
-        <div
+        <a
           className={[
             `L-H-I-C`,
             `navContainer`,
@@ -89,7 +89,7 @@ const Header = props => {
           onClick={toggleMenu}
         >
           {MenuIcon}
-        </div>
+        </a>
       </div>
     </div>
   )
@@ -104,7 +104,7 @@ const Header = props => {
   return (
     <header className={`L-H`}>
       {first}
-      {isMenuActive && second}
+      {second}
     </header>
   )
 }
