@@ -11,6 +11,8 @@ import {
   mdiChevronRight,
 } from "@mdi/js"
 
+import useDocumentScrollThrottled from "./useDocumentScrollThrottled"
+
 import "./header.scss"
 
 const Header = props => {
@@ -18,6 +20,7 @@ const Header = props => {
   const toggleMenu = () => {
     setisMenuActive(!isMenuActive)
   }
+
   let BreadcrumbIcon = (
     <Icon
       path={mdiChevronRight}
@@ -30,8 +33,8 @@ const Header = props => {
   let BlogPostIcon = <Icon path={mdiTextBox} size={1.1} className={`icon`} />
   let MenuIcon = <Icon path={mdiMenu} size={1.2} className={`icon`} />
 
-  let first = (
-    <div className={[`L-H-1-flex`]}>
+  let nav = (
+    <div className={`L-H-1-flex`}>
       <div className={`L-H-I`}>
         <Link
           to="/"
@@ -71,40 +74,40 @@ const Header = props => {
           </div>
         )}
         {/* {props.pathIndex > 1 && ( */}
-        <div className={[`L-H-I-C`].join(" ")}>
+        {/* <div className={[`L-H-I-C`].join(" ")}>
           <span className={`textContainer`}>{props.title}</span>
-        </div>
+        </div> */}
         {/* )} */}
-      </div>
-      <div className={`L-H-I`}>
-        <a
-          className={[
-            `L-H-I-C`,
-            `navContainer`,
-            `h`,
-            isMenuActive && `menuactive`,
-            isMenuActive && `shadow-below`,
-          ].join(" ")}
-          tabIndex={2}
-          onClick={toggleMenu}
-        >
-          {MenuIcon}
-        </a>
       </div>
     </div>
   )
-  // febfej
-  let second = (
+  let menu = (
+    <div className={`L-H-1-flex`}>
+      <a
+        className={[
+          `L-H-I-C`,
+          `navContainer`,
+          `h`,
+          isMenuActive && `menuactive`,
+          isMenuActive && `shadow-below`,
+        ].join(" ")}
+        tabIndex={2}
+        onClick={toggleMenu}
+      >
+        {MenuIcon}
+      </a>
+    </div>
+  )
+  let menuback = (
     <div
-      className={[`L-H-1-flex`, `L-H-menu`, isMenuActive && `blurbehind`].join(
-        " "
-      )}
+      className={[`L-H`, `L-H-menu`, isMenuActive && `blurbehind`].join(" ")}
     ></div>
   )
   return (
     <header className={`L-H`}>
-      {first}
-      {second}
+      {nav}
+      {menu}
+      {menuback}
     </header>
   )
 }

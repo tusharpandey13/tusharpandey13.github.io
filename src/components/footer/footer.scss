@@ -1,14 +1,16 @@
 footer {
   /* top | right | bottom | left */
+  @include flex(3em, column, nowrap, center, center);
+
   margin-bottom: 0;
-  padding: 0.75% 15% calc(0.75%) 20%;
+  border-bottom: $border-height solid $border-color;
+  padding: 0.75% 0% calc(0.75%) 0%;
+
   color: gray;
   background: #1c1c1c;
-  border-bottom: 1vh solid $border-color;
+
   font-family: sans-serif;
-  font-size: 2vh;
-  max-height: 6%;
-  @include flex(100%, column, nowrap, center, center);
+  font-size: 0.8em;
 }
 @media only screen and (max-width: 480px) {
   footer {
