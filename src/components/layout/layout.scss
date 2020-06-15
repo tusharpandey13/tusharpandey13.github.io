@@ -19,23 +19,18 @@
 
 .body-container {
   height: 100%;
+  width: 100%;
 }
 
 .L-flex-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: stretch;
-  /* margin: 1%; */
+  @include flex(100%, column, nowrap, space-between, stretch);
 }
 
 .L-main {
   background-color: white;
   flex-grow: 1;
   padding: 12vh 0% 2vh 0%;
-  display: flex;
-  justify-content: space-between;
+  @include flex(initial, row, nowrap, space-between, stretch);
 }
 
 .L-M-center {
@@ -52,6 +47,12 @@
 }
 /* For devices with width of 480px and less, like phones */
 @media only screen and (max-width: 480px) {
+  .S-border {
+    border-top: 0 solid $border-color;
+    border-right: 0 solid $border-color;
+    border-left: 0 solid $border-color;
+  }
+
   .L-M-left,
   .L-M-right {
     /* background-color: yellow; */

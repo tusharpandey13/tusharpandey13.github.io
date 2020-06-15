@@ -2,9 +2,9 @@
 .L-H {
   margin: 0;
   position: fixed;
-  top: 1vh;
-  left: 1vh;
-  width: calc(100% - 2vh);
+  top: $border-height;
+  left: $border-width;
+  width: 100%;
   /* max-height: 60px; */
   @include flex(100%, column, nowrap, flex-start, flex-start);
   pointer-events: none;
@@ -69,6 +69,10 @@
   box-shadow: rgba(0, 0, 0, 1) 0px 2px 0px 0px;
 }
 @media only screen and (max-width: 480px) {
+  .L-H {
+    top: 0;
+    left: 0;
+  }
   .L-H-I-C span {
     display: none;
   }

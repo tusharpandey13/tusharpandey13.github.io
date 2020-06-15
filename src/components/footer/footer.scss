@@ -1,5 +1,6 @@
 footer {
   /* top | right | bottom | left */
+  margin-bottom: 0;
   padding: 0.75% 15% calc(0.75%) 20%;
   color: gray;
   background: #1c1c1c;
@@ -8,4 +9,9 @@ footer {
   font-size: 2vh;
   max-height: 6%;
   @include flex(100%, column, nowrap, center, center);
+}
+@media only screen and (max-width: 480px) {
+  footer {
+    border-bottom: 0 solid $border-color;
+  }
 }
