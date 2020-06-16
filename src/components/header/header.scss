@@ -51,7 +51,8 @@
   width: 3em;
 }
 .menuButtonActive {
-  color: white;
+  color: $border-color;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .H-menu-bg {
   pointer-events: none;
@@ -71,13 +72,21 @@
 
 @media only screen and (max-width: 480px) {
   .H-menu-button {
-    //   padding: 0;
-    // background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid $border-color;
+    color: $border-color;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
   }
-  // .H-nav-C {
-  // margin: 0;
-  // }
+  .navButtonContainer:hover {
+    color: $border-color;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .menuButtonActive {
+    color: $border-color;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
   .navButtonContainer {
     margin: 0;
   }
