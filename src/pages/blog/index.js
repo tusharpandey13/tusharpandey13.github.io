@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 
-import { mdiFolderHome } from "@mdi/js"
-
 import BlogLayout from "../../components/BlogLayout"
 
 const BlogIndexPage = ({ data }) => {

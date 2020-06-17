@@ -8,17 +8,20 @@ import Footer from "../footer"
 import "./mainlayout.scss"
 
 const MainLayout = props => {
-  //
-  let bgUrl =
-    "https://source.unsplash.com/random/1024x576/?mountain,building,water"
+  // https://source.unsplash.com/random/1024x576/?mountain,building,water
+  let bgUrl = "https://source.unsplash.com/collection/10741347/1024x576"
 
-  const [image, setImages] = useState()
+  const [image, setImage] = useState(undefined)
 
   useEffect(() => {
     async function getImage(url) {
       let imageBlob
       try {
-        imageBlob = (await axios.get(url, { responseType: "blob" })).data
+        imageBlob = (
+          await axios.get(url, {
+            responseType: "blob",
+          })
+        ).data
       } catch (err) {
         return null
       }
@@ -26,15 +29,13 @@ const MainLayout = props => {
     }
     async function getImages() {
       let tmp = await getImage(bgUrl)
-      console.log(tmp)
-      setImages(tmp)
+      // console.log(tmp)
+      setImage(tmp)
+      // getImages()
     }
-
     getImages()
-  }, bgUrl)
+  }, [bgUrl])
 
-  // backgroundImage: `url("https://source.unsplash.com/random/1024x576/?nature,building,mountain,contrast")`,
-  //
   let textcard = (
     <div
       className={`clip-text-0`}
@@ -53,12 +54,11 @@ const MainLayout = props => {
             }
           }
         >
-          TUSHAR
+          TUSHAR.
         </div>
       </div>
     </div>
   )
-  //
 
   return (
     <div className={[`L-flex-C`].join(" ")}>

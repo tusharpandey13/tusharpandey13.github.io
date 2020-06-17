@@ -2,11 +2,11 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import BlogLayout from "../components/BlogLayout"
 
-const Template = ({ data, pathContext }) => {
+const Template = ({ data, pageContext }) => {
   const title = data.markdownRemark.frontmatter.title
   const date = data.markdownRemark.frontmatter.date
   const html = data.markdownRemark.html
-  const { next, prev } = pathContext
+  const { next, prev } = pageContext
 
   return (
     <BlogLayout title={title} pathIndex={`2`}>

@@ -38,7 +38,6 @@ const Header = props => {
           height: `100%`,
           textDecoration: `none`,
         }}
-        tabIndex={0}
       >
         <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
           {HomeIcon}
@@ -54,7 +53,6 @@ const Header = props => {
             height: `100%`,
             textDecoration: `none`,
           }}
-          tabIndex={1}
         >
           <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
             {BlogIcon}
@@ -71,18 +69,17 @@ const Header = props => {
     </div>
   )
   let menu = (
-    <a
+    <button
       className={[
         `H-menu-button`,
         `navButtonContainer`,
         `H-nav-flex`,
         ismenuButtonActive && `menuButtonActive`,
       ].join(" ")}
-      tabIndex={2}
       onClick={toggleMenu}
     >
       {MenuIcon}
-    </a>
+    </button>
   )
   let menuback = (
     <div
