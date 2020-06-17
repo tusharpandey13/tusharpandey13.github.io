@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-
-import { mdiBookVariant } from "@mdi/js"
+import BlogLayout from "../components/BlogLayout"
 
 const Template = ({ data, pathContext }) => {
   const title = data.markdownRemark.frontmatter.title
@@ -11,7 +9,7 @@ const Template = ({ data, pathContext }) => {
   const { next, prev } = pathContext
 
   return (
-    <Layout title={title} pathIndex={`2`}>
+    <BlogLayout title={title} pathIndex={`2`}>
       <div>
         <h1>{title}</h1>
         <div>
@@ -42,7 +40,7 @@ const Template = ({ data, pathContext }) => {
           )}
         </p>
       </div>
-    </Layout>
+    </BlogLayout>
   )
 }
 

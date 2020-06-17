@@ -515,30 +515,3 @@ pre tt:after {
  * html, body, #___gatsby &  
  * div with role="group"
 */
-
-html,
-body,
-#___gatsby,
-#gatsby-focus-wrapper {
-  height: 100%;
-}
-
-body {
-  margin: 0px;
-}
-/* 
-div[role="group"][tabindex] {
-  height: 100%;
-} */
-
-/* Remove outline for non-keyboard :focus */
-*:focus:not(.focus-visible) {
-  outline: none;
-  outline: 1px dashed $border-color;
-  // box-shadow: rgb(0, 120, 204) 1px 1px 1px 1px;
-}
-
-/* Optional: Customize .focus-visible */
-.focus-visible {
-  outline: lightgreen solid 2px;
-}

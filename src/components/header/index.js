@@ -15,9 +15,7 @@ import "./header.scss"
 
 const Header = props => {
   const [ismenuButtonActive, setismenuButtonActive] = useState(false)
-  const toggleMenu = () => {
-    setismenuButtonActive(!ismenuButtonActive)
-  }
+  const toggleMenu = () => setismenuButtonActive(!ismenuButtonActive)
 
   let BreadcrumbIcon = (
     <Icon

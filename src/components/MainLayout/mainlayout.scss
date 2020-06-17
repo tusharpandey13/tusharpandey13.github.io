@@ -1,0 +1,43 @@
+.wrapper {
+  height: 100%;
+}
+
+/* Clip text element */
+.clip-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 10rem;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.1);
+  /* Color fallback */
+  color: #fff;
+  // background-image: url("https://source.unsplash.com/random/1024x576/?nature,building,mountain,contrast");
+  background-size: cover;
+  font: 700 15vw "Lato";
+}
+
+/* Background */
+.clip-text-0 {
+  height: 100%;
+  // background-image: url("https://source.unsplash.com/random/1024x576/?nature,building,mountain,contrast");
+  background: black;
+  background-size: cover;
+}
+
+/* Text Background */
+.clip-text-2 {
+  height: 100%;
+  -webkit-clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+  clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+  background-color: #1c1c1c;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(1, 0.13, 0.07, 0.99);
+}
+.visible {
+  opacity: 1;
+}

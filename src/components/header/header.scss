@@ -1,5 +1,9 @@
 /* top | right | bottom | left */
-
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .H-nav-flex {
   @include flex(3em, row, nowrap, space-evenly, center);
 }
@@ -57,6 +61,8 @@
 .H-menu-bg {
   pointer-events: none;
   z-index: 1;
+
+  // height: calc(100% - #{$border-height});
 
   @include blur-back(8px);
   background-color: rgba(0, 0, 0, 0.8);

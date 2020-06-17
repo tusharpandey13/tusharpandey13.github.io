@@ -11,9 +11,9 @@ import PropTypes from "prop-types"
 import Header from "../header"
 import Footer from "../footer"
 
-import "./layout.scss"
+import "./bloglayout.scss"
 
-const Layout = props => {
+const BlogLayout = props => {
   // const gqlData = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -24,24 +24,22 @@ const Layout = props => {
   //   }
   // `)
   return (
-    <div className={`body-container`}>
+    <div className={[`L-flex-C`].join(" ")}>
       <Header title={props.title} pathIndex={props.pathIndex} />
-      <div className={`L-flex-container`}>
-        <main className={`L-main`}>
-          <div className={`L-M-left`}></div>
-          <div className={`L-M-center`}>{props.children}</div>
-          <div className={`L-M-right`}></div>
-        </main>
-        <Footer />
-      </div>
+      <main className={`L-main`}>
+        <div className={`L-M-left`}></div>
+        <div className={`L-M-center`}>{props.children}</div>
+        <div className={`L-M-right`}></div>
+      </main>
+      <Footer />
       <div className={`S-border`}></div>
     </div>
   )
 }
 
-Layout.propTypes = {
+BlogLayout.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
 }
 
-export default Layout
+export default BlogLayout

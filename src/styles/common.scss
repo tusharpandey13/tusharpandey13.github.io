@@ -1,0 +1,52 @@
+/* top | right | bottom | left */
+*,
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+  background-color: white;
+  margin: 0px;
+}
+
+/* Remove outline for non-keyboard :focus */
+*:focus:not(.focus-visible) {
+  outline: none;
+  outline: 1px dashed $border-color;
+  // box-shadow: rgb(0, 120, 204) 1px 1px 1px 1px;
+}
+/* Optional: Customize .focus-visible */
+.focus-visible {
+  outline: lightgreen solid 2px;
+}
+
+a {
+  color: rgb(30, 143, 255);
+  text-decoration: none;
+}
+
+.S-border {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: transparent;
+  border-top: $border-height solid $border-color;
+  border-right: $border-width solid $border-color;
+  border-left: $border-width solid $border-color;
+  pointer-events: none;
+}
+
+.L-flex-C {
+  @include flex(100%, column, nowrap, space-between, stretch);
+}
+//
