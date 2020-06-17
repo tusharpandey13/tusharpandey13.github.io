@@ -9,6 +9,7 @@ import {
   mdiTextBox,
   mdiFolderHome,
   mdiChevronRight,
+  mdiCircleSmall,
 } from "@mdi/js"
 
 import "./header.scss"
@@ -24,13 +25,16 @@ const Header = props => {
       className={[`icon`, `H-nav-flex`].join(" ")}
     />
   )
+  let circleicon = (
+    <Icon path={mdiCircleSmall} size={1} className={[`icon`].join(" ")} />
+  )
   let HomeIcon = <Icon path={mdiFolderHome} size={1.2} className={`icon`} />
   let BlogIcon = <Icon path={mdiBook} size={1} className={`icon`} />
   let BlogPostIcon = <Icon path={mdiTextBox} size={1.1} className={`icon`} />
   let MenuIcon = <Icon path={mdiMenu} size={1.2} className={`icon`} />
 
   let nav = (
-    <div className={`H-nav-C`}>
+    <div className={[`H-nav-C`, props.pathIndex == 0 && `blur`].join(" ")}>
       <Link
         to="/"
         style={{
@@ -41,29 +45,34 @@ const Header = props => {
       >
         <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
           {HomeIcon}
+          <span>Home</span>
         </div>
       </Link>
 
+      {props.pathIndex == 0 && circleicon}
       {props.pathIndex >= 1 && BreadcrumbIcon}
-      {props.pathIndex >= 1 && (
-        <Link
-          to="/blog"
-          style={{
-            color: `$border-color)`,
-            height: `100%`,
-            textDecoration: `none`,
-          }}
-        >
-          <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
-            {BlogIcon}
-          </div>
-        </Link>
-      )}
+      {/* {BreadcrumbIcon} */}
+      {/* {props.pathIndex >= 1 && ( */}
+      <Link
+        to="/blog"
+        style={{
+          color: `$border-color)`,
+          height: `100%`,
+          textDecoration: `none`,
+        }}
+      >
+        <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
+          {BlogIcon}
+          <span>Blog</span>
+        </div>
+      </Link>
+      {/* )} */}
 
       {props.pathIndex > 1 && BreadcrumbIcon}
       {props.pathIndex > 1 && (
         <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
           {BlogPostIcon}
+          <span className={`blogposttitle`}>Post</span>
         </div>
       )}
     </div>

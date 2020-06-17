@@ -15,5 +15,6 @@ $border-width: 1vh;
   // -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   // -webkit-backdrop-filter: saturate(180%) blur($r);
-  backdrop-filter: saturate(180%) blur($r);
+  backdrop-filter: saturate(50%) brightness(2) contrast(200%) blur($r);
+  // backdrop-filter: saturate(180%) blur($r);
 }

@@ -5,7 +5,7 @@ header {
   left: 0;
 }
 .H-nav-flex {
-  @include flex(3em, row, nowrap, space-evenly, center);
+  @include flex(3em, row, nowrap, space-around, center);
 }
 
 .H-nav-C {
@@ -40,9 +40,21 @@ header {
 .navButtonContainer {
   height: calc(3em - 2px);
   margin: 1px;
-  width: 3em;
+  min-width: 3em;
+  padding: 0 1rem 0 1rem;
   color: $border-color;
   cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.nav-home {
+  // background-color: rgba(0, 0, 0, 0.9);
+  // color: white;
+}
+.navButtonContainer * {
+  margin: 0 0.15rem 0 0.15rem;
+}
+.navButtonContainer span {
+  margin-top: 0.3rem;
 }
 .navButtonContainer:hover {
   background-color: $border-color;
@@ -76,6 +88,10 @@ header {
   opacity: 1;
 }
 
+.blur {
+  @include blur-back(8px);
+}
+
 @media only screen and (max-width: 480px) {
   .H-menu-button {
     color: $border-color;
@@ -95,5 +111,9 @@ header {
   }
   .navButtonContainer {
     margin: 0;
+    padding: 0 0.5rem 0 0.5rem;
+  }
+  .blogposttitle {
+    display: none;
   }
 }
