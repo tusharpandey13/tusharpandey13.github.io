@@ -3,12 +3,17 @@ import React from "react"
 
 import "./footer.scss"
 
-const Footer = () => (
+const Footer = props => (
   <footer>
-    <span>
+    <span className={[`reveal`, props.visible && `visible`].join(" ")}>
       © {new Date().getFullYear()}, Built with
       {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <a
+        href="https://www.gatsbyjs.org"
+        className={[`reveal`, props.visible && `visible`].join(" ")}
+      >
+        Gatsby
+      </a>
     </span>
   </footer>
 )

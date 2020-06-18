@@ -1,7 +1,9 @@
-$border-color: #3d3d3d;
+$border-color: #1c1c1c;
 $bg-color: white;
 $border-height: 1vh;
 $border-width: 1vh;
+$reveal-bezier: cubic-bezier(0.22, 0.82, 0.04, 1.28);
+// cubic-bezier(0.77, 0.2, 0.05, 1)
 
 @mixin flex($ht, $dir, $wrap, $justify, $align) {
   display: flex;
@@ -15,7 +17,7 @@ $border-width: 1vh;
   // -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   // -webkit-backdrop-filter: saturate(180%) blur($r);
-  backdrop-filter: saturate(50%) brightness(1.65) contrast(200%) blur($r);
+  backdrop-filter: blur($r) brightness(1.65) contrast(0.7) saturate(0.7);
   // backdrop-filter: blur($r) invert(0) contrast(20);
 
   // backdrop-filter: saturate(180%) blur($r);

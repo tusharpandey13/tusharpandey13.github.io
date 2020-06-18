@@ -32,7 +32,7 @@ const Header = props => {
   let BlogIcon = <Icon path={mdiBook} size={1} className={`icon`} />
   let BlogPostIcon = <Icon path={mdiTextBox} size={1.1} className={`icon`} />
   let MenuIcon = <Icon path={mdiMenu} size={1.2} className={`icon`} />
-
+  console.log(!!props.no_border_top)
   let nav = (
     <div className={[`H-nav-C`, props.pathIndex == 0 && `blur`].join(" ")}>
       <Link
@@ -43,7 +43,13 @@ const Header = props => {
           textDecoration: `none`,
         }}
       >
-        <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
+        <div
+          className={[
+            `H-nav-flex`,
+            `navButtonContainer`,
+            props.pathIndex == 0 && `blur`,
+          ].join(" ")}
+        >
           {HomeIcon}
           <span>Home</span>
         </div>
@@ -61,7 +67,14 @@ const Header = props => {
           textDecoration: `none`,
         }}
       >
-        <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
+        <div
+          className={[
+            `H-nav-flex`,
+            `navButtonContainer`,
+            ,
+            props.pathIndex == 0 && `blur`,
+          ].join(" ")}
+        >
           {BlogIcon}
           <span>Blog</span>
         </div>
@@ -70,7 +83,13 @@ const Header = props => {
 
       {props.pathIndex > 1 && BreadcrumbIcon}
       {props.pathIndex > 1 && (
-        <div className={[`H-nav-flex`, `navButtonContainer`].join(" ")}>
+        <div
+          className={[
+            `H-nav-flex`,
+            `navButtonContainer`,
+            props.pathIndex == 0 && `blur`,
+          ].join(" ")}
+        >
           {BlogPostIcon}
           <span className={`blogposttitle`}>Post</span>
         </div>
@@ -84,6 +103,7 @@ const Header = props => {
         `navButtonContainer`,
         `H-nav-flex`,
         ismenuButtonActive && `menuButtonActive`,
+        props.pathIndex == 0 && `blur`,
       ].join(" ")}
       onClick={toggleMenu}
     >
@@ -100,10 +120,10 @@ const Header = props => {
     ></div>
   )
   return (
-    <header>
+    <header style={props.no_border_top && { borderTop: `none` }}>
       {nav}
       <div className={`H-menu-C`}>
-        {menu}
+        {!(props.pathIndex == 0) && menu}
         {menuback}
       </div>
     </header>
@@ -112,6 +132,7 @@ const Header = props => {
 
 Header.propTypes = {
   title: PropTypes.string,
+  border_top: PropTypes.bool,
 }
 
 Header.defaultProps = {

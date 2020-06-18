@@ -1,18 +1,26 @@
 /* top | right | bottom | left */
+
+$header-height: calc(0.9 * 3em);
+
 header {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  border-top: $border-height solid $border-color;
+}
+border-top-none {
+  border-top: none;
 }
 .H-nav-flex {
-  @include flex(3em, row, nowrap, space-around, center);
+  @include flex($header-height, row, nowrap, space-around, center);
 }
 
 .H-nav-C {
-  @include flex(3em, row, nowrap, flex-start, center);
+  @include flex($header-height, row, nowrap, space-around, center);
   z-index: 2;
-  margin: calc(#{$border-height}) calc(#{$border-width}) 0
-    calc(#{$border-width});
+  // width: 100%;
+  margin: 0 calc(#{$border-width}) 0 calc(#{$border-width});
 }
 
 .H-menu-C {
@@ -29,22 +37,24 @@ header {
 
 .H-menu-button {
   pointer-events: all;
-  height: 3em;
+  height: $header-height;
   padding: 0;
   z-index: 2;
 
-  @include blur-back(5px);
-  background-color: rgba(255, 255, 255, 0.2);
+  // @include blur-back(5px);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .navButtonContainer {
-  height: calc(3em - 2px);
-  margin: 1px;
-  min-width: 3em;
+  // height: calc($header-height - 2px);
+  // margin: 1px;
+  margin-bottom: 0;
+  min-width: $header-height;
   padding: 0 1rem 0 1rem;
   color: $border-color;
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
+  // font-size: 1em;
 }
 .nav-home {
   // background-color: rgba(0, 0, 0, 0.9);
@@ -52,6 +62,11 @@ header {
 }
 .navButtonContainer * {
   margin: 0 0.15rem 0 0.15rem;
+}
+.navButtonContainer span,
+.navButtonContainer .icon {
+  // filter: brightness(2) contrast(5);
+  // filter: invert(0);
 }
 .navButtonContainer span {
   margin-top: 0.3rem;
@@ -63,8 +78,8 @@ header {
 .navButtonContainer a {
   padding: 0;
   margin: 0;
-  height: 3em;
-  width: 3em;
+  height: $header-height;
+  width: $header-height;
 }
 .menuButtonActive {
   color: $border-color;
@@ -73,8 +88,6 @@ header {
 .H-menu-bg {
   pointer-events: none;
   z-index: 1;
-
-  // height: calc(100% - #{$border-height});
 
   @include blur-back(8px);
   background-color: rgba(0, 0, 0, 0.8);
@@ -89,9 +102,14 @@ header {
 }
 
 .blur {
-  @include blur-back(8px);
+  // @include blur-back(8px);
+  // background-color: rgba(255, 255, 255, 0.5);
+  background-color: #1c1c1c;
+  color: gray;
 }
-
+.fullwidth {
+  width: 100%;
+}
 @media only screen and (max-width: 480px) {
   .H-menu-button {
     color: $border-color;

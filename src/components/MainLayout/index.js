@@ -8,10 +8,14 @@ import Footer from "../footer"
 import "./mainlayout.scss"
 
 const MainLayout = props => {
-  // https://source.unsplash.com/random/1024x576/?mountain,building,water
   let bgUrl = "https://source.unsplash.com/collection/10741347/1024x576"
 
   const [image, setImage] = useState(undefined)
+
+  const [ismouseovertext, setismouseovertext] = useState(false)
+  const toggleismouseovertext = val => {
+    setismouseovertext(val)
+  }
 
   useEffect(() => {
     async function getImage(url) {
@@ -37,14 +41,7 @@ const MainLayout = props => {
   }, [bgUrl])
 
   let textcard = (
-    <div
-      className={`clip-text-0`}
-      style={
-        image && {
-          backgroundImage: `url(${image})`,
-        }
-      }
-    >
+    <div className={`clip-text-0`}>
       <div className={[`clip-text-2`, image && `visible`].join(" ")}>
         <div
           className={`clip-text`}
@@ -53,6 +50,14 @@ const MainLayout = props => {
               backgroundImage: `url(${image})`,
             }
           }
+          onMouseEnter={() => {
+            toggleismouseovertext(false)
+            console.log("enter")
+          }}
+          onMouseLeave={() => {
+            toggleismouseovertext(true)
+            console.log("leave")
+          }}
         >
           TUSHAR.
         </div>
@@ -61,11 +66,36 @@ const MainLayout = props => {
   )
 
   return (
-    <div className={[`L-flex-C`].join(" ")}>
-      <Header title={props.title} pathIndex={props.pathIndex} />
+    <div
+      className={[`L-flex-C`].join(" ")}
+      style={
+        image && {
+          backgroundImage: `url(${image})`,
+          overflowY: `hidden`,
+        }
+      }
+    >
+      <div
+        className={[`reveal-header`, ismouseovertext && `visible-header`].join(
+          " "
+        )}
+      >
+        <Header
+          title={props.title}
+          pathIndex={props.pathIndex}
+          no_border_top={true}
+        />
+      </div>
       <div className={`wrapper`}>{textcard}</div>
-      <Footer />
-      <div className={`S-border`}></div>
+      <div
+        className={[`reveal-footer`, ismouseovertext && `visible-footer`].join(
+          " "
+        )}
+      >
+        <Footer visible={false} />
+      </div>
+
+      <div className={[`S-border`, `border-bottom`].join(" ")}></div>
     </div>
   )
 }

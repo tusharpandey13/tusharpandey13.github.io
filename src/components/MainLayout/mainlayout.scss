@@ -4,21 +4,20 @@
 
 /* Clip text element */
 .clip-text {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  @include flex(100%, column, nowrap, center, center);
   width: 100%;
+  top: 1.45em;
   font-size: 10rem;
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0.1);
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
   /* Color fallback */
   color: #fff;
   // background-image: url("https://source.unsplash.com/random/1024x576/?nature,building,mountain,contrast");
   background-size: cover;
-  font: 700 15vw "Open Sans";
+  line-height: 1;
+  font: 16vw "HVGX";
+  font-variation-settings: "wght" 680, "wdth" 2.5, "slnt" 12;
 }
 
 /* Background */
@@ -27,12 +26,17 @@
   // background-image: url("https://source.unsplash.com/random/1024x576/?nature,building,mountain,contrast");
   background-color: $border-color;
   background-size: cover;
+  background: transparent;
 }
 
 /* Text Background */
 .clip-text-2 {
   height: 100%;
-  clip-path: inset(4.45rem 3rem 3rem 3rem);
+  // clip-path: inset(calc(#{$border-height} + 3em + 3em) 4rem 3em 4rem);
+  clip-path: inset(
+    calc(#{$border-height} + 15vh) 5rem calc(#{$border-height} + 10vh) 5rem
+  );
+
   background-color: #1c1c1c;
   opacity: 0;
   transition: opacity 1.5s cubic-bezier(1, -1.03, 0.29, 1.78);
