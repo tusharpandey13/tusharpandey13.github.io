@@ -4,11 +4,10 @@
 
 /* Clip text element */
 .clip-text {
-  @include flex(100%, column, nowrap, center, center);
+  @include flex(100%, row, nowrap, center, center);
   width: 100%;
-  top: 1.45em;
-  font-size: 10rem;
-  -webkit-background-clip: text;
+  // top: 1.45em;
+  // font-size: 10rem;
   background-clip: text;
   -webkit-text-fill-color: rgba(0, 0, 0, 0);
   /* Color fallback */
@@ -20,6 +19,9 @@
   font-variation-settings: "wght" 680, "wdth" 2.5, "slnt" 12;
 }
 
+.smalltext {
+  font-size: 4vw;
+}
 /* Background */
 .clip-text-0 {
   height: 100%;
@@ -38,6 +40,7 @@
   );
 
   background-color: #1c1c1c;
+
   opacity: 0;
   transition: opacity 1.5s cubic-bezier(1, -1.03, 0.29, 1.78);
 }

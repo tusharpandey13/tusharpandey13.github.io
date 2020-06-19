@@ -59,7 +59,8 @@ const MainLayout = props => {
             console.log("leave")
           }}
         >
-          TUSHAR.
+          TUSHAR
+          {/* <span className={`smalltext`}>PANDEY</span> */}
         </div>
       </div>
     </div>

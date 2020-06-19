@@ -11,12 +11,11 @@ abcd
     let TitleIcon = <div style={{   display: `none` }}></div>
     let BreadcrumbIcon = <div style={{ display: `none` }}></ div>
     if (props.title !== "Home") {
-    TitleIcon = <Icon path= {props.headerIcon} size={1} className={`icon`} />
+    TitleIcon = <Icon path= {props.headerIcon} size={1}  />
     BreadcrumbIcon = (
-    <Icon path= {mdiChevronRight} size={1. 2} className={`icon`} />
+    <Icon path= {mdiChevronRight} size={1. 2}  />
     )
     }
-
 
 ![](https://unsplash.com/photos/vtYpRBPVIJ8/download?force=true&w=1920)
 
