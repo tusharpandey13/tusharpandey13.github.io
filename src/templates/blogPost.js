@@ -9,7 +9,7 @@ const Template = ({ data, pageContext }) => {
   const { next, prev } = pageContext
 
   return (
-    <BlogLayout title={title} pathIndex={`2`}>
+    <BlogLayout title={title} path={`blogpost`}>
       <div>
         <h1>{title}</h1>
         <div>

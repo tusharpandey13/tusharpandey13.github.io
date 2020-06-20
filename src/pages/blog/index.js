@@ -7,7 +7,7 @@ const BlogIndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark
   // console.log({ data })
   return (
-    <BlogLayout title={`Blog`} pathIndex={`1`}>
+    <BlogLayout title={`Blog`} path={`blog`}>
       <div>
         {edges.map(edge => {
           const { frontmatter } = edge.node

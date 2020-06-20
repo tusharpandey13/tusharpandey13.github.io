@@ -52,11 +52,9 @@ const MainLayout = props => {
           }
           onMouseEnter={() => {
             toggleismouseovertext(false)
-            console.log("enter")
           }}
           onMouseLeave={() => {
             toggleismouseovertext(true)
-            console.log("leave")
           }}
         >
           TUSHAR
@@ -73,6 +71,7 @@ const MainLayout = props => {
         image && {
           backgroundImage: `url(${image})`,
           overflowY: `hidden`,
+          height: `100vh`,
         }
       }
     >
@@ -81,11 +80,7 @@ const MainLayout = props => {
           " "
         )}
       >
-        <Header
-          title={props.title}
-          pathIndex={props.pathIndex}
-          no_border_top={true}
-        />
+        <Header title={props.title} path={props.path} no_border_top={true} />
       </div>
       <div className={`wrapper`}>{textcard}</div>
       <div

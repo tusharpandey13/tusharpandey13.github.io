@@ -29,6 +29,7 @@
   background-color: $border-color;
   background-size: cover;
   background: transparent;
+  pointer-events: none;
 }
 
 /* Text Background */
@@ -43,6 +44,7 @@
 
   opacity: 0;
   transition: opacity 1.5s cubic-bezier(1, -1.03, 0.29, 1.78);
+  // pointer-events: none;
 }
 .visible {
   opacity: 1;

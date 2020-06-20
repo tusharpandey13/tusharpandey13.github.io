@@ -1,0 +1,32 @@
+[
+  {
+    "id": "python",
+    "label": "python",
+    "value": 3
+  },
+  {
+    "id": "linux",
+    "label": "linux",
+    "value": 3
+  },
+  {
+    "id": "javascript",
+    "label": "javascript",
+    "value": 3
+  },
+  {
+    "id": "sass",
+    "label": "sass",
+    "value": 3
+  },
+  {
+    "id": "c++",
+    "label": "c++",
+    "value": 2
+  },
+  {
+    "id": "express",
+    "label": "express",
+    "value": 2
+  }
+]

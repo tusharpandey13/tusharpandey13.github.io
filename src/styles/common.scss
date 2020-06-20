@@ -1,8 +1,8 @@
 /* top | right | bottom | left */
-@font-face {
-  font-family: "Nevis";
-  src: url("./../fonts/nevis.ttf") format("truetype");
-}
+// @font-face {
+//   font-family: "Nevis";
+//   src: url("./../fonts/nevis.ttf") format("truetype");
+// }
 @font-face {
   font-family: "HVGX";
   src: url("./../fonts/HyperspaceRace-VariableGX.woff2") format("woff2");
@@ -14,10 +14,19 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  // z-index: 2;
 }
 
-html,
-body,
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
 #___gatsby,
 #gatsby-focus-wrapper {
   height: 100%;
@@ -56,7 +65,7 @@ button {
   border-top: $border-height solid $border-color;
   border-right: $border-width solid $border-color;
   border-left: $border-width solid $border-color;
-
+  z-index: 99;
   pointer-events: none;
 }
 .border-bottom {
@@ -79,9 +88,11 @@ button {
 .reveal-footer {
   transform: translateY(+2.7em);
   transition: transform 0.5s $reveal-bezier;
-  // transition: 2s backdrop-filter cubic-bezier(0.77, 0.2, 0.05, 1);
 }
-
 .visible-footer {
   transform: translate(0, 0);
+}
+
+.content-z {
+  z-index: 2;
 }

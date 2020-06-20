@@ -12,6 +12,7 @@ import {
   mdiChevronRight,
   mdiCircleSmall,
   mdiCardAccountDetailsStarOutline,
+  mdiOrderBoolAscendingVariant,
 } from "@mdi/js"
 
 import "./header.scss"
@@ -27,45 +28,77 @@ const Header = props => {
   let BlogPostIcon = <Icon path={mdiTextBox} size={1.1} />
   let MenuIcon = <Icon path={mdiMenu} size={1.2} />
   let cvicon = <Icon path={mdiCardAccountDetailsStarOutline} size={1.1} />
+  let portfolioicon = <Icon path={mdiOrderBoolAscendingVariant} size={1.1} />
 
+  let nav_home = (
+    <NavItem
+      href={`/`}
+      path={props.path}
+      icon={HomeIcon}
+      text={`Home`}
+    ></NavItem>
+  )
+  let nav_blog = (
+    <NavItem
+      href={`/blog`}
+      path={props.path}
+      icon={BlogIcon}
+      text={`Blog`}
+    ></NavItem>
+  )
+  let nav_portfolio = (
+    <NavItem
+      href={`/portfolio`}
+      path={props.path}
+      icon={portfolioicon}
+      text={`Portfolio`}
+    ></NavItem>
+  )
+  let nav_cv = (
+    <NavItem
+      href={`https://github.com/tusharpandey13/portfolio/raw/master/src/resources/profile.pdf`}
+      path={props.path}
+      icon={cvicon}
+      text={`Resume`}
+    ></NavItem>
+  )
+  let nav_blogpost = (
+    <NavItem
+      href={``}
+      path={props.path}
+      icon={BlogPostIcon}
+      text={props.title}
+    ></NavItem>
+  )
+  let pathmap = {
+    blog: nav_blog,
+    blogpost: (
+      <>
+        {nav_blog}
+        {BreadcrumbIcon}
+        {nav_blogpost}
+      </>
+    ),
+    portfolio: nav_portfolio,
+  }
   let nav = (
-    <div className={[`H-nav-C`, props.pathIndex == 0 && `blur`].join(" ")}>
-      <NavItem
-        href={`/`}
-        pathIndex={props.pathIndex}
-        icon={HomeIcon}
-        text={`Home`}
-      ></NavItem>
-
-      {props.pathIndex == 0 && circleicon}
-      {props.pathIndex >= 1 && BreadcrumbIcon}
-
-      <NavItem
-        href={`/blog`}
-        pathIndex={props.pathIndex}
-        icon={BlogIcon}
-        text={`Blog`}
-      ></NavItem>
-
-      {props.pathIndex == 0 && circleicon}
-
-      {props.pathIndex == 0 && (
-        <NavItem
-          href={`./profile.pdf`}
-          pathIndex={props.pathIndex}
-          icon={cvicon}
-          text={`Resume`}
-        ></NavItem>
+    <div className={[`H-nav-C`, props.path === `home` && `blur`].join(" ")}>
+      {nav_home}
+      {props.path === `home` && (
+        <>
+          {circleicon}
+          {nav_blog}
+          {circleicon}
+          {nav_portfolio}
+          {circleicon}
+          {nav_cv}
+        </>
       )}
-
-      {props.pathIndex > 1 && BreadcrumbIcon}
-      {props.pathIndex > 1 && (
-        <NavItem
-          href={``}
-          pathIndex={props.pathIndex}
-          icon={BlogPostIcon}
-          text={props.title}
-        ></NavItem>
+      {props.path !== `home` && (
+        <>
+          {BreadcrumbIcon}
+          {pathmap[props.path]}
+        </>
       )}
     </div>
   )
@@ -76,7 +109,7 @@ const Header = props => {
         `navButtonContainer`,
         `H-nav-flex`,
         ismenuButtonActive && `menuButtonActive`,
-        props.pathIndex == 0 && `blur`,
+        props.path === `home` && `blur`,
       ].join(" ")}
       onClick={toggleMenu}
     >
@@ -85,18 +118,14 @@ const Header = props => {
   )
   let menuback = (
     <div
-      className={[
-        `H-menu-C`,
-        `H-menu-bg`,
-        ismenuButtonActive && `visible`,
-      ].join(" ")}
+      className={[`H-menu-bg`, ismenuButtonActive && `visible`].join(" ")}
     ></div>
   )
   return (
     <header style={props.no_border_top && { borderTop: `none`, width: `100%` }}>
       {nav}
       <div className={`H-menu-C`}>
-        {!(props.pathIndex == 0) && menu}
+        {!(props.path === `home`) && menu}
         {menuback}
       </div>
     </header>
@@ -105,7 +134,6 @@ const Header = props => {
 
 Header.propTypes = {
   title: PropTypes.string,
-  border_top: PropTypes.bool,
 }
 
 Header.defaultProps = {

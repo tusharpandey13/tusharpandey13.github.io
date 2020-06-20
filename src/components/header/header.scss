@@ -6,7 +6,9 @@ header {
   position: absolute;
   top: 0;
   left: 0;
+  // width:100%;
   border-top: $border-height solid $border-color;
+  z-index: 4;
 }
 border-top-none {
   border-top: none;
@@ -17,10 +19,19 @@ border-top-none {
 
 .H-nav-C {
   @include flex($header-height, row, nowrap, space-around, center);
-  z-index: 2;
+  // z-index: 2;
   margin: 0 calc(#{$border-width}) 0 calc(#{$border-width});
 }
 
+.H-menu-button {
+  pointer-events: all;
+  height: $header-height;
+  padding: 0;
+  z-index: 101;
+
+  // @include blur-back(5px);
+  background-color: rgba(255, 255, 255, 0.5);
+}
 .H-menu-C {
   position: fixed;
   top: 0;
@@ -33,59 +44,17 @@ border-top-none {
   pointer-events: none;
 }
 
-.H-menu-button {
-  pointer-events: all;
-  height: $header-height;
-  padding: 0;
-  z-index: 2;
-
-  // @include blur-back(5px);
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.navButtonContainer {
-  // height: calc($header-height - 2px);
-  margin: 1px;
-  margin-bottom: 0;
-  min-width: $header-height;
-  padding: 0 1rem 0 1rem;
-  color: $border-color;
-  cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
-  // font-size: 1em;
-}
-// .nav-home {
-//   // background-color: rgba(0, 0, 0, 0.9);
-//   // color: white;
-// }
-.navButtonContainer * {
-  margin: 0 0.15rem 0 0.15rem;
-}
-// .navButtonContainer span,
-// .navButtonContainer .icon {
-//   // filter: brightness(2) contrast(5);
-//   // filter: invert(0);
-// }
-.navButtonContainer span {
-  margin-top: 0.3rem;
-}
-.navButtonContainer:hover {
-  background-color: $border-color;
-  color: white;
-}
-.navButtonContainer a {
-  padding: 0;
-  margin: 0;
-  height: $header-height;
-  width: $header-height;
-}
-.menuButtonActive {
-  color: $border-color;
-  background-color: rgba(255, 255, 255, 0.8);
-}
 .H-menu-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  padding: $border-height $border-width;
+
+  @include flex(100%, row, nowrap, flex-end, flex-start);
   pointer-events: none;
-  z-index: 1;
+  z-index: 100;
 
   @include blur-back(8px);
   background-color: rgba(0, 0, 0, 0.8);

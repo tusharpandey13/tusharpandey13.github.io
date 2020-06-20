@@ -1,0 +1,34 @@
+$header-height: calc(0.9 * 3em);
+
+.navButtonContainer {
+  // height: calc($header-height - 2px);
+  margin: 1px;
+  margin-bottom: 0;
+  min-width: calc(1.5 *#{$header-height});
+  padding: 0 1rem 0 1rem;
+  color: $border-color;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navButtonContainer * {
+  margin: 0 0.15rem 0 0.15rem;
+}
+
+.navButtonContainer span {
+  margin-top: 0.3rem;
+}
+.navButtonContainer:hover {
+  background-color: $border-color;
+  color: white;
+}
+.navButtonContainer a {
+  padding: 0;
+  margin: 0;
+  height: $header-height;
+  // width: calc(1.5 *#{$header-height});
+}
+.menuButtonActive {
+  color: $border-color;
+  background-color: rgba(255, 255, 255, 0.8);
+}

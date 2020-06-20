@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
 
+import "./navitem.scss"
+
 const NavItem = props => {
   return (
     <Link
@@ -15,7 +17,7 @@ const NavItem = props => {
         className={[
           `H-nav-flex`,
           `navButtonContainer`,
-          props.pathIndex == 0 && `blur`,
+          props.path === "home" && `blur`,
         ].join(" ")}
       >
         {props.icon}

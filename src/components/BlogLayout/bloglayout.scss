@@ -1,8 +1,9 @@
 .L-main {
   background-color: white;
-  flex-grow: 1;
+  // flex-grow: 1;
   padding: 4.45rem 0% 2em 0%;
-  @include flex(initial, row, nowrap, space-between, stretch);
+  @include flex(100%, row, nowrap, space-between, stretch);
+  z-index: 2;
 }
 
 .L-M-center {
