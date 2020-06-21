@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/portfolio`,
+  // pathPrefix: `/portfolio`,
   siteMetadata: {
     title: `Gatsby`,
     siteUrl: `https://www.gatsbyjs.org`,
