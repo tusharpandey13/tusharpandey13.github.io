@@ -1,0 +1,26 @@
+[
+  {
+    "domain": "Frontend",
+    "Skills": 6
+  },
+  {
+    "domain": "Backend",
+    "Skills": 7
+  },
+  {
+    "domain": "Source Control",
+    "Skills": 6
+  },
+  {
+    "domain": "Cross Platform",
+    "Skills": 3
+  },
+  {
+    "domain": "ML/DL",
+    "Skills": 3
+  },
+  {
+    "domain": "Data Science",
+    "Skills": 4
+  }
+]
