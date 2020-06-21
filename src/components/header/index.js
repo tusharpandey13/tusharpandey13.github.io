@@ -48,7 +48,7 @@ const Header = props => {
   )
   let nav_portfolio = (
     <NavItem
-      href={`/portfolio`}
+      href={`/skills`}
       path={props.path}
       icon={portfolioicon}
       text={`Portfolio`}
