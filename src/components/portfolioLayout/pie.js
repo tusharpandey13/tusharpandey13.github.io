@@ -106,7 +106,7 @@ const MyResponsivePie = props => {
         {
           anchor: "right",
           direction: "column",
-          translateX: 100,
+          translateX: 120,
           // translateY: 56,
           itemWidth: 100,
           itemHeight: 30,

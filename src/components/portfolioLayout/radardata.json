@@ -22,5 +22,13 @@
   {
     "domain": "Data Science",
     "Skills": 4
+  },
+  {
+    "domain": "Cloud",
+    "Skills": 4
+  },
+  {
+    "domain": "DS & Algorithms",
+    "Skills": 5
   }
 ]

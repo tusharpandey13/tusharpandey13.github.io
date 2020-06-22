@@ -22,6 +22,7 @@ const MyResponsiveRadar = ({ data /* see data tab */ }) => {
       borderColor={{ from: "color", modifiers: [["brighter", 0.2]] }}
       gridLevels={5}
       gridShape="linear"
+      // gridShape="circular"
       gridLabelOffset={36}
       enableDots={true}
       dotSize={8}

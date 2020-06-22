@@ -11,7 +11,7 @@
     {
       "id": "Linux",
       "label": "Linux",
-      "value": 9,
+      "value": 8,
       "desc": "Arch Linux is my daily driver",
       "rating": 3,
       "fill_type": "dots"
@@ -27,7 +27,7 @@
     {
       "id": "Sass",
       "label": "Sass",
-      "value": 4,
+      "value": 3,
       "desc": "I prefer sass to css anyday",
       "rating": 2,
       "fill_type": "none"
@@ -35,7 +35,7 @@
     {
       "id": "C++",
       "label": "C++",
-      "value": 4,
+      "value": 3,
       "desc": "I made a 3d game engine with OpenGL",
       "rating": 3,
       "fill_type": "none"
@@ -79,6 +79,14 @@
       "desc": "Intermediate",
       "rating": 3,
       "fill_type": "dots"
+    },
+    {
+      "id": "Firebase",
+      "label": "Firebase",
+      "value": 7,
+      "desc": "Intermediate",
+      "rating": 2,
+      "fill_type": "none"
     }
   ],
   "fill": [
