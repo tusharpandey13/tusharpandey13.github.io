@@ -15,9 +15,8 @@ const MyResponsivePie = props => {
     <ResponsivePie
       data={piedata.data}
       fill={piedata.fill}
-      margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+      margin={{ top: 25, right: 150, bottom: 25, left: 0 }}
       innerRadius={0.5}
-      // pixelRatio={2}
       padAngle={0.7}
       sortByValue={true}
       fit={false}
@@ -62,6 +61,8 @@ const MyResponsivePie = props => {
         )
       }}
       theme={{
+        axis: { ticks: { text: { color: "#1c1c1c", fontSize: `0.8em` } } },
+
         tooltip: {
           container: {
             background: "rgba(0,0,0,0.6)",
@@ -105,7 +106,7 @@ const MyResponsivePie = props => {
         {
           anchor: "right",
           direction: "column",
-          translateX: 40,
+          translateX: 100,
           // translateY: 56,
           itemWidth: 100,
           itemHeight: 30,

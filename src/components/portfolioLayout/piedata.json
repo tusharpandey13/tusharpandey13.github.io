@@ -71,6 +71,14 @@
       "desc": "Intermediate",
       "rating": 3,
       "fill_type": "squares"
+    },
+    {
+      "id": "Pandas",
+      "label": "Pandas",
+      "value": 9,
+      "desc": "Intermediate",
+      "rating": 3,
+      "fill_type": "dots"
     }
   ],
   "fill": [

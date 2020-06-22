@@ -15,7 +15,10 @@ import "./bloglayout.scss"
 
 const BlogLayout = props => {
   return (
-    <div className={[`L-flex-C`].join(" ")}>
+    <div
+      className={[`L-flex-C`].join(" ")}
+      style={props.fullheight && { height: `100vh` }}
+    >
       <Header title={props.title} path={props.path} />
       <main className={`L-main`}>
         <div className={`L-M-left`}></div>

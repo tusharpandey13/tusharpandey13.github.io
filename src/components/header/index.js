@@ -94,7 +94,7 @@ const Header = props => {
           {nav_cv}
         </>
       )}
-      {props.path !== `home` && (
+      {props.path !== `404` && props.path !== `home` && (
         <>
           {BreadcrumbIcon}
           {pathmap[props.path]}

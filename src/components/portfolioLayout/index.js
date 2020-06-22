@@ -16,10 +16,12 @@ const PortfolioLayout = props => {
     <div className={`L-flex-C`}>
       <Header title={`portfolio`} path={`portfolio`}></Header>
       <div className={`P-B-C`}>
-        <div className={`chart-C`}>{pie}</div>
-      </div>
-      <div className={`P-B-C`}>
-        <div className={`chart-C`}>{radar}</div>
+        <div className={`chart-C`} style={{ maxWidth: `680px` }}>
+          {radar}
+        </div>
+        <div className={`chart-C`} style={{ maxWidth: `830px` }}>
+          {pie}
+        </div>
       </div>
       <Footer></Footer>
       <div className={`S-border`}></div>

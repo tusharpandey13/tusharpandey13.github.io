@@ -7,57 +7,63 @@ import { ResponsiveRadar } from "@nivo/radar"
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const MyResponsiveRadar = ({ data /* see data tab */ }) => (
-  <ResponsiveRadar
-    data={radardata}
-    keys={["Skills"]}
-    indexBy="domain"
-    maxValue="auto"
-    margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
-    curve="linearClosed"
-    // curve="catmullRomClosed"
-    borderWidth={1}
-    // borderColor={{ from: "color" }}
-    borderColor={{ from: "color", modifiers: [["brighter", 0.2]] }}
-    gridLevels={5}
-    gridShape="linear"
-    gridLabelOffset={36}
-    enableDots={true}
-    dotSize={8}
-    dotColor={{ from: "color", modifiers: [["brighter", 1]] }}
-    dotBorderWidth={0}
-    dotBorderColor="#ffffff"
-    enableDotLabel={true}
-    dotLabel="value"
-    dotLabelYOffset={-12}
-    colors={{ scheme: "purple_orange" }}
-    fillOpacity={0.25}
-    blendMode="multiply"
-    animate={true}
-    motionStiffness={90}
-    motionDamping={15}
-    isInteractive={true}
-    legends={[
-      {
-        anchor: "top-left",
-        direction: "column",
-        translateX: -50,
-        translateY: -40,
-        itemWidth: 80,
-        itemHeight: 20,
-        itemTextColor: "#999",
-        symbolSize: 12,
-        symbolShape: "circle",
-        effects: [
-          {
-            on: "hover",
-            style: {
-              itemTextColor: "#000",
+const MyResponsiveRadar = ({ data /* see data tab */ }) => {
+  return (
+    <ResponsiveRadar
+      data={radardata}
+      keys={["Skills"]}
+      indexBy="domain"
+      maxValue="auto"
+      margin={{ top: 70, right: 0, bottom: 70, left: 0 }}
+      curve="linearClosed"
+      // curve="catmullRomClosed"
+      borderWidth={1}
+      // borderColor={{ from: "color" }}
+      borderColor={{ from: "color", modifiers: [["brighter", 0.2]] }}
+      gridLevels={5}
+      gridShape="linear"
+      gridLabelOffset={36}
+      enableDots={true}
+      dotSize={8}
+      dotColor={{ from: "color", modifiers: [["brighter", 1]] }}
+      dotBorderWidth={0}
+      dotBorderColor="#ffffff"
+      enableDotLabel={true}
+      dotLabel="value"
+      dotLabelYOffset={-12}
+      colors={{ scheme: "purple_orange" }}
+      fillOpacity={0.25}
+      blendMode="multiply"
+      animate={true}
+      motionStiffness={90}
+      motionDamping={15}
+      isInteractive={true}
+      theme={{
+        axis: { ticks: { text: { color: "#1c1c1c", fontSize: `0.8em` } } },
+      }}
+      legends={[
+        {
+          anchor: "top",
+          direction: "column",
+          translateX: -50,
+          translateY: -40,
+          itemWidth: 0,
+          itemHeight: 0,
+          itemTextColor: "transparent",
+          symbolSize: 0,
+          symbolShape: "circle",
+          effects: [
+            {
+              // on: "hover",
+              style: {
+                itemTextColor: "transparent",
+                display: `none`,
+              },
             },
-          },
-        ],
-      },
-    ]}
-  />
-)
+          ],
+        },
+      ]}
+    />
+  )
+}
 export default MyResponsiveRadar
