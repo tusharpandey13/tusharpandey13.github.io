@@ -958,6 +958,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.3.1":
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
+  integrity sha512-UpTN5yUJr9b4EX2CnGNWIvER7Ab83ibv0pcvvHc4UOdrBI5jb8bj+32cCwPX6xu0mt2daFNjYhoi+X7beH0RSw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.10.2":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.10.2.tgz#49dbbadcbc4b199df064d7d8b3e21c915b84abdb"
@@ -1731,11 +1738,6 @@
   dependencies:
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
-
-"@n8tb1t/use-scroll-position@^1.0.43":
-  version "1.0.43"
-  resolved "https://registry.yarnpkg.com/@n8tb1t/use-scroll-position/-/use-scroll-position-1.0.43.tgz#55ae24ed4d2b062c71bb51b15aaf67b6cc65caac"
-  integrity sha512-9CFB+3/ZRP0BGHCS+01ulq3syHamhcQiu3iVBSPJZV+578ySSOt9tWIVDiSaIQfz3a1QdKUbhYR+4Uplda3cwA==
 
 "@nivo/colors@0.62.0":
   version "0.62.0"
@@ -3471,6 +3473,11 @@ better-queue@^3.8.10:
     node-eta "^0.9.0"
     uuid "^3.0.0"
 
+bezier-easing@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
+  integrity sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY=
+
 big.js@^5.2.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
@@ -3533,6 +3540,11 @@ binary-extensions@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.0.0.tgz#23c0df14f6a88077f5f986c0d167ec03c3d5537c"
   integrity sha512-Phlt0plgpIIBOGTT/ehfFnbNlfsDEiqmzE2KRXoX1bLIlir4X/MR+zSyBEkL05ffWgnRSf/DXv+WrUAVr93/ow==
+
+bindall-standalone@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/bindall-standalone/-/bindall-standalone-1.0.5.tgz#f7430388f1c7f9a9ade0fc75a400e710f6692a1d"
+  integrity sha1-90MDiPHH+amt4Px1pADnEPZpKh0=
 
 bindings@^1.5.0:
   version "1.5.0"
@@ -5005,6 +5017,11 @@ cwebp-bin@^5.0.0:
     bin-build "^3.0.0"
     bin-wrapper "^4.0.1"
     logalot "^2.1.0"
+
+cxs@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/cxs/-/cxs-6.2.0.tgz#f11ca3bdaef154b93bdadca5df70f2cb3e37ca24"
+  integrity sha512-RGatb1BUwVMBzV8DRo9Kapc55bdGfAxMcukVk+ZzE3Ts8xaTve0GVz730kBDxjhEBU2LK+RPuAcjZb00Q3O24w==
 
 cyclist@^1.0.1:
   version "1.0.1"
@@ -9765,6 +9782,11 @@ latest-version@5.1.0, latest-version@^5.0.0:
   dependencies:
     package-json "^6.3.0"
 
+lethargy@^1.0.2:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/lethargy/-/lethargy-1.0.9.tgz#138b0ae384d015c5233e0cc1eeba4d089af3c58b"
+  integrity sha512-nFM8blpCF9rqIL5mRAaTGc78W8oQixVtsD86jbEPvcI13+lDUYJf3R7DZQQL7tCiBpbGpGKMX2gwJFO9hiaOkg==
+
 leven@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"
@@ -9876,6 +9898,15 @@ lockfile@^1.0.4:
   integrity sha512-cvbTwETRfsFh4nHsL1eGWapU1XFi5Ot9E85sWAwia7Y7EgB7vfqcZhTKZ+l7hCGxSPoushMv5GKhT5PdLv03WA==
   dependencies:
     signal-exit "^3.0.2"
+
+locomotive-scroll@^3.5.4:
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/locomotive-scroll/-/locomotive-scroll-3.5.4.tgz#0c5cc8d885f77efb5ca4355339b6fc33b4bc922c"
+  integrity sha512-uYE6aOGY9Pc4jPhQQQtn2Brw8MJN00J1Iy5DNfrw3S9hiVD5LzwwKEphHWs6Y0mOIEvcec99J+xCURUjIudgQA==
+  dependencies:
+    bezier-easing "^2.1.0"
+    smoothscroll-polyfill "^0.4.4"
+    virtual-scroll "^1.5.2"
 
 lodash-es@^4.17.11, lodash-es@^4.17.14:
   version "4.17.15"
@@ -12590,7 +12621,7 @@ react-error-overlay@^3.0.0:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
   integrity sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw==
 
-react-fast-compare@^2.0.1:
+react-fast-compare@2.0.4, react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
@@ -12730,6 +12761,14 @@ react-side-effect@^2.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
   integrity sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
 
+react-spring@^8.0.27:
+  version "8.0.27"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.27.tgz#97d4dee677f41e0b2adcb696f3839680a3aa356a"
+  integrity sha512-nDpWBe3ZVezukNRandTeLSPcwwTMjNVu1IDq9qA/AMiUqHuRN4BeSWvKr3eIxxg1vtiYiOLy4FqdfCP5IoP77g==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    prop-types "^15.5.8"
+
 react-star-ratings@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-star-ratings/-/react-star-ratings-2.3.0.tgz#311a68f8f44492439a5b306ed743e63a63fe0fa7"
@@ -12747,6 +12786,15 @@ react-style-singleton@^2.1.0:
     get-nonce "^1.0.0"
     invariant "^2.2.4"
     tslib "^1.0.0"
+
+react-text-loop@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-text-loop/-/react-text-loop-2.3.0.tgz#c4035b1f3fb8216b34ed93f3160025fc7b1af3b7"
+  integrity sha512-tRLxdkhc1ojAICxERJNOWj3Ry7NIGmFQF4tR6cRVyL+5zVD+gj+8uGPvOgEBLuj2vmjTXLPvBMVVCnoAIy1+DA==
+  dependencies:
+    cxs "^6.2.0"
+    react-fast-compare "2.0.4"
+    react-motion "^0.5.2"
 
 react@^16.1.0, react@^16.12.0, react@^16.8.0:
   version "16.13.1"
@@ -13868,6 +13916,11 @@ slugify@^1.4.0:
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.0.tgz#c9557c653c54b0c7f7a8e786ef3431add676d2cb"
   integrity sha512-FtLNsMGBSRB/0JOE2A0fxlqjI6fJsgHGS13iTuVT28kViI4JjUiNqp/vyis0ZXYcMnpR3fzGNkv+6vRlI2GwdQ==
 
+smoothscroll-polyfill@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz#3a259131dc6930e6ca80003e1cb03b603b69abf8"
+  integrity sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -14880,6 +14933,11 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
+tiny-emitter@^1.0.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.2.0.tgz#6dc845052cb08ebefc1874723b58f24a648c3b6f"
+  integrity sha1-bchFBSywjr78GHRyO1jySmSMO28=
+
 tiny-warning@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
@@ -15728,6 +15786,16 @@ vfile@^4.0.0:
     replace-ext "1.0.0"
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
+
+virtual-scroll@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/virtual-scroll/-/virtual-scroll-1.5.2.tgz#cdc051135ea6a1ebaaecdd4a4f39b8ed807f0f53"
+  integrity sha512-7jDHwlKbHUho7CYU/HojE/VKFH8GV9P5fVWP2HCa7dRUOpVvwl93OBOKIIcb2mKd+vqsbVR/0zl0X70+3sUZqA==
+  dependencies:
+    bindall-standalone "^1.0.5"
+    lethargy "^1.0.2"
+    object-assign "^4.0.1"
+    tiny-emitter "^1.0.0"
 
 vm-browserify@^1.0.1:
   version "1.1.2"

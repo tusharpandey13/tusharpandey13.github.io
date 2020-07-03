@@ -21,7 +21,7 @@ const NavItem = props => {
         ].join(" ")}
       >
         {props.icon}
-        <span>{props.text}</span>
+        <h4>{props.text}</h4>
       </div>
     </Link>
   )

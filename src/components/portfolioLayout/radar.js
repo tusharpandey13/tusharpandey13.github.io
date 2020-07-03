@@ -40,19 +40,26 @@ const MyResponsiveRadar = ({ data /* see data tab */ }) => {
       motionDamping={15}
       isInteractive={true}
       theme={{
-        axis: { ticks: { text: { color: "#1c1c1c", fontSize: `0.8em` } } },
+        axis: {
+          ticks: {
+            text: {
+              color: "#1c1c1c",
+              fontSize: `0.8em`,
+            },
+          },
+        },
       }}
       legends={[
         {
-          anchor: "top",
-          direction: "column",
-          translateX: -50,
-          translateY: -40,
+          // anchor: "top",
+          // direction: "column",
+          // translateX: -50,
+          // translateY: -40,
           itemWidth: 0,
           itemHeight: 0,
           itemTextColor: "transparent",
           symbolSize: 0,
-          symbolShape: "circle",
+          // symbolShape: "circle",
           effects: [
             {
               // on: "hover",

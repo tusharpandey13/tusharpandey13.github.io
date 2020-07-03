@@ -8,15 +8,17 @@ $header-height: calc(0.9 * 3em);
   padding: 0 1rem 0 1rem;
   color: $border-color;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navButtonContainer * {
   margin: 0 0.15rem 0 0.15rem;
 }
 
-.navButtonContainer span {
-  margin-top: 0.3rem;
+.navButtonContainer h4 {
+  // margin-top: 0.3rem;
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  // font-size: 16px;
 }
 .navButtonContainer:hover {
   background-color: $border-color;

@@ -70,6 +70,14 @@ const Header = props => {
       text={props.title}
     ></NavItem>
   )
+  let nav_newhome = (
+    <NavItem
+      href={`/newhome`}
+      path={props.path}
+      icon={BlogPostIcon}
+      text={`NewHome`}
+    ></NavItem>
+  )
   let pathmap = {
     blog: nav_blog,
     blogpost: (
@@ -86,6 +94,8 @@ const Header = props => {
       {nav_home}
       {props.path === `home` && (
         <>
+          {circleicon}
+          {nav_newhome}
           {circleicon}
           {nav_blog}
           {circleicon}

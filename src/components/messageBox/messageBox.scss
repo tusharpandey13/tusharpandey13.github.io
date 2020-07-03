@@ -1,0 +1,11 @@
+.mbox-C {
+  background-color: green;
+  @include flex(8em, row, nowrap, space-around, center);
+  min-width: 600px;
+  width: 100%;
+}
+
+.mbox-pic {
+  width: 64px;
+  background-color: red;
+}

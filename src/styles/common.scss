@@ -7,7 +7,10 @@
   font-family: "HVGX";
   src: url("./../fonts/HyperspaceRace-VariableGX.woff2") format("woff2");
 }
-
+@font-face {
+  font-family: "NeueMontreal-Medium";
+  src: url("./../fonts/NeueMontreal-Medium.woff2") format("woff2");
+}
 *,
 :before,
 :after {
@@ -25,12 +28,13 @@ html {
 body {
   min-height: 100%;
   margin: 0;
+  background-color: $border-color;
 }
 
 #___gatsby,
 #gatsby-focus-wrapper {
   height: 100%;
-  background-color: white;
+  background-color: $border-color;
   margin: 0px;
 }
 

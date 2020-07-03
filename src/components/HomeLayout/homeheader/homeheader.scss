@@ -1,0 +1,25 @@
+.hh-C {
+  @include flex(2.5rem, row, nowrap, space-between, stretch);
+  @include pseudo();
+  // background-color: green;
+  position: fixed;
+  z-index: 20;
+
+  .h-C {
+    @include flex(100%, row, nowrap, flex-start, stretch);
+    // background-color: red;
+    // min-width: 20vw;
+
+    .h-b {
+      @include flex(100%, row, nowrap, center, center);
+      margin: 0.5rem 2rem 0.5rem 2rem;
+
+      color: transparentize($color: white, $amount: 0.3);
+      font-family: "Open Sans";
+      font-style: italic;
+      font-size: 0.95rem;
+
+      @include user-select(none);
+    }
+  }
+}

@@ -8,7 +8,7 @@ import Footer from "../footer"
 import "./mainlayout.scss"
 
 const MainLayout = props => {
-  let bgUrl = "https://source.unsplash.com/collection/10741347/1024x576"
+  let bgUrl = "https://source.unsplash.com/collection/10741347"
 
   const [image, setImage] = useState(undefined)
 
@@ -41,8 +41,8 @@ const MainLayout = props => {
   }, [bgUrl])
 
   let textcard = (
-    <div className={`clip-text-0`}>
-      <div className={[`clip-text-2`, image && `visible`].join(" ")}>
+    <div className={`textcard-C`}>
+      <div className={[`textcardbg`, image && `visible`].join(" ")}>
         <div
           className={`clip-text`}
           style={
@@ -57,8 +57,7 @@ const MainLayout = props => {
             toggleismouseovertext(true)
           }}
         >
-          TUSHAR
-          {/* <span className={`smalltext`}>PANDEY</span> */}
+          <span>TUSHAR</span>
         </div>
       </div>
     </div>
@@ -90,7 +89,6 @@ const MainLayout = props => {
       >
         <Footer visible={false} />
       </div>
-
       <div className={[`S-border`, `border-bottom`].join(" ")}></div>
     </div>
   )

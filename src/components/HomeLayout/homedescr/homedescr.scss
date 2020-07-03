@@ -1,0 +1,66 @@
+$text-color: transparentize(
+  $color: white,
+  $amount: 0.4,
+);
+$text-deco-color: darken($text-color, 0%);
+
+.descr {
+  @include flex(initial, column, nowrap, space-between, stretch);
+
+  width: 25.5rem;
+  padding: 1rem;
+
+  .d-section {
+    @include flex(initial, row, nowrap, space-between, stretch);
+    .d-col {
+      @include flex(100%, column, nowrap, flex-start, stretch);
+      width: 50%;
+
+      color: $text-color;
+      line-height: 1rem;
+      font-family: "EB Garamond", Georgia, "Times New Roman", Times, serif;
+
+      .subheading {
+        position: relative;
+        margin: 0.8rem 0 0.25rem 0;
+        padding: 0.5rem 0 0.5rem 0;
+        font-size: 1rem;
+        text-align: center;
+        font-style: italic;
+
+        &::before {
+          @include pseudo(0, 20%, 0, 20%);
+          border-top: 1px solid $text-deco-color;
+          border-bottom: 1px solid $text-deco-color;
+        }
+      }
+
+      p {
+        margin: 0.25rem;
+
+        font-size: 0.8rem;
+        text-align: justify;
+        text-justify: distribute;
+        word-spacing: -1px;
+        text-align-last: left;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+
+        // text-shadow: 1px 1px 2px transparentize($color: black, $amount: 0.8);
+      }
+
+      .dropcap:first-child:first-letter {
+        color: white;
+        float: left;
+        font-family: Georgia;
+        font-size: 4rem;
+        line-height: 3.5rem;
+        // padding-top: 4px;
+        padding-right: 8px;
+        padding-left: 3px;
+        text-shadow: 1px 1px 3px transparentize($color: black, $amount: 0.7);
+      }
+    }
+  }
+}

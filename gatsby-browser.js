@@ -8,3 +8,4 @@
 
 import "./src/styles/global.scss"
 import "./src/styles/common.scss"
+import "./src/styles/locomotive-scroll.scss"

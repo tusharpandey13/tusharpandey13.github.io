@@ -1,5 +1,20 @@
 const path = require("path")
 
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /locomotive-scroll/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
