@@ -24,11 +24,12 @@ $bigtext-border-radius: 1px;
   .cleartop {
     width: 25.5rem;
     height: calc(50vh - 1.5rem);
+    min-height: 2.5rem;
   }
 
   .bigtext {
     position: relative;
-    @include flex(100vh, column, wrap, center, center);
+    @include flex(100vh, column, nowrap, center, center);
     height: 3rem;
     padding: 0 1rem 0 1.5rem;
 
@@ -54,7 +55,11 @@ $bigtext-border-radius: 1px;
 
     // box-shadow: inset 0px 0px 0px 0.6px #ffc64d;
     // outline: 1px solid $bigtext-border-color;
-    outline-offset: -1px;
+    // outline-offset: -1px;
+
+    span {
+      @include flex(100vh, column, nowrap, center, center);
+    }
 
     &:hover {
       @include BoxShadow(6.5);

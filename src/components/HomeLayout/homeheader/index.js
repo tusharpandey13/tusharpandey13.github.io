@@ -5,13 +5,15 @@ const HomeHeader = props => {
   return (
     <div className={`hh-C`}>
       <div className={`h-C`}>
-        <div className={`h-b`}>Home</div>
+        <div className={`h-b`}>
+          <i>Home</i>
+        </div>
       </div>
       <div className={`h-C`}>
-        <div className={`h-b`}>TW</div>
-        <div className={`h-b`}>IG</div>
-        <div className={`h-b`}>IN</div>
-        <div className={`h-b`}>GH</div>
+        <a className={`h-b`}>TW</a>
+        <a className={`h-b`}>IG</a>
+        <a className={`h-b`}>IN</a>
+        <a className={`h-b`}>GH</a>
       </div>
     </div>
   )
