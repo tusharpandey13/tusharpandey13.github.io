@@ -6,12 +6,15 @@ import "./rolltext.scss"
 
 const Rolltext = props => {
   var rollelements = []
-  props.items.forEach(e => {
-    rollelements.push(<div className={`rollelement`}>{e}</div>)
-  })
-  for (var i = 0; i < props.items.length; i++) {}
+  for (const [key, value] of Object.entries(props.items)) {
+    rollelements.push(
+      <a href={value} className={`rollelement`} target={"_blank"}>
+        {key}
+      </a>
+    )
+  }
   return (
-    <TextLoop interval={2000} delay={1000}>
+    <TextLoop interval={3000} delay={3000}>
       {rollelements}
     </TextLoop>
   )

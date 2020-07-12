@@ -10,10 +10,11 @@ import "./newhome.scss"
 const HomeLayout = props => {
   let bigtext = (
     <div className={`bigtext-C`}>
-      <div className={`cleartop`}></div>
+      {/* <div className={`cleartop`} /> */}
       <div className={`bigtext`}>
         <span>TUSHAR PANDEY</span>
       </div>
+      {/* <div className={`cleartop`} /> */}
       <HomeDescr></HomeDescr>
     </div>
   )

@@ -15,6 +15,7 @@ module.exports = {
       resolve: "gatsby-plugin-sass",
       options: {
         data: `@import "${__dirname}/src/styles/vars";`,
+        implementation: require("dart-sass"), // should be "dart-sass" instead, otherwise error
       },
     },
     {

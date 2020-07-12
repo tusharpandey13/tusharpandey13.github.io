@@ -1,20 +1,26 @@
-$bg-d: #232323;
+// $bg-d: #232323;
+$bg-d: #ffb510;
 // $bg-d: transparent;
 
-$abc: #012a36, #832232, #faebed, #f1faee, #e63946, #ffcdb2;
+$abc: #012a36, #832232, #faebed, #f1faee, #e63946, #ffcdb2, #ffb510;
 
-$bg-theme: #832232;
+$bg-theme: #012a36;
 $bg-l: $bg-theme;
-$bigtext-text-color: lighten($bg-theme, 40%);
-// $bigtext-text-color: #f1faee;
+$bigtext-text-color: lighten($bg-theme, 0%);
+// $bigtext-text-color: #ffb510;
 
-$bigtext-border-color: rgba(255, 255, 255, 0.2);
+// $bigtext-border-color: rgba(255, 255, 255, 0.2);
+$bigtext-border-color: rgba(0, 0, 0, 0.5);
 $bigtext-border-radius: 1px;
 
 .bigtext-C {
-  @include flex(initial, column, wrap, flex-start, center);
+  @include flex(initial, column, wrap, center, center);
 
   background-color: $bg-l;
+
+  background-color: #012a36;
+  @include patternbg;
+
   min-height: 100vh;
 
   // animation: bgchange $reveal-bezier 2.5s reverse;
@@ -36,8 +42,9 @@ $bigtext-border-radius: 1px;
     @include user-select(none);
 
     // font-family: "NeueMontreal-Medium";
-    font-family: Georgia, "Times New Roman", Times, serif;
-    // font-family: "Open Sans";
+    // font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: monospace;
+    font-weight: 500;
     letter-spacing: 0.7rem;
     font-size: 1.5rem;
     // font-weight: bold;
@@ -72,7 +79,7 @@ $bigtext-border-radius: 1px;
 
       opacity: 0;
       @include BoxShadow(6);
-      outline: 1px solid $bigtext-border-color;
+      // outline: 1px solid $bigtext-border-color;
 
       animation: reveal_opacity $reveal-bezier 1.5s;
       animation-delay: 2s;

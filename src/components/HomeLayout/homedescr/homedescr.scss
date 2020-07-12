@@ -1,5 +1,14 @@
-$text-color: lighten(#832232, 40%);
-$text-deco-color: darken($text-color, 0%);
+// $text-color: lighten(#012a36, 40%);
+$text-color: #ffb510;
+$text-deco-color: $text-color;
+$side-text-color: transparentize(
+  $color: $text-color,
+  $amount: 0.2,
+);
+$side-text-deco-color: transparentize(
+  $color: $text-color,
+  $amount: 0.3,
+);
 
 $vert-gap: 1rem;
 
@@ -8,10 +17,8 @@ $vert-gap: 1rem;
 
   // width: 25.5rem;12.75
   width: 100%;
-  padding: 0rem 0rem 2rem 0rem;
+  padding: 0rem 0rem 0rem 0rem;
   // padding: 0rem calc(50vw - 12.75rem + 1rem) 2rem calc(50vw - 12.75rem + 1rem);
-
-  @include reveal_anim(3.5s);
 
   .d-section {
     @include flex(initial, row, nowrap, flex-start, center);
@@ -26,17 +33,32 @@ $vert-gap: 1rem;
       // @include flex(initial, row, nowrap, flex-end, center);
       margin: $vert-gap 0 $vert-gap 0;
       width: 23.5rem;
+
+      @include reveal-opacity-anim(2.5s);
     }
 
     .sidetext {
       @include flex(100%, column, nowrap, center, center);
       width: calc(50vw - 11.75rem);
-      padding: 0 6rem 0 6rem;
+      padding: 0 6rem 0 0rem;
 
-      @include reveal_anim(5.5s);
-
-      i {
+      .text-C {
+        @include flex(initial, column, nowrap, center, flex-end);
+        width: 100%;
+        margin-left: 1rem;
         font-size: 0.7rem;
+        color: $side-text-color;
+
+        i {
+          @include reveal-opacity-anim(4s);
+        }
+
+        position: relative;
+        &::after {
+          @include pseudo();
+          border-top: 1px solid $side-text-deco-color;
+          @include reveal-slide-anim(3.5s);
+        }
       }
     }
 
@@ -93,10 +115,15 @@ $vert-gap: 1rem;
       @include flex(100%, column, nowrap, center, center);
       // margin: $vert-gap 0 $vert-gap 0;
       padding: 0.5rem 0 0.5rem 0;
+      pointer-events: none;
+
       font-size: 1rem;
       text-align: center;
       font-style: italic;
+      @include user-select(none);
+    }
 
+    .subheading-bars {
       &::before {
         @include pseudo(0, 30%, 0, 30%);
         border-top: 1px solid $text-deco-color;
@@ -105,12 +132,3 @@ $vert-gap: 1rem;
     }
   }
 }
-
-// @keyframes reveal_opacity {
-//   from {
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//   }
-// }
