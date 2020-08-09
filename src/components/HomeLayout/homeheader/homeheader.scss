@@ -8,7 +8,8 @@ $text-color: darken(#ffb510, 0);
   position: fixed;
   z-index: 20;
 
-  @include reveal-opacity-anim(0s);
+  // @include reveal-opacity-anim(0s);
+  opacity: 1;
 
   .h-C {
     @include flex(100%, row, nowrap, space-between, stretch);
@@ -57,5 +58,6 @@ $text-color: darken(#ffb510, 0);
   }
   .hh-C .h-C {
     flex-grow: 1;
+    padding: 0;
   }
 }

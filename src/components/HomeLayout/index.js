@@ -1,19 +1,21 @@
 import React from "react"
 
-import Scroll from "../locomotiveScroll"
-
 import HomeHeader from "./homeheader"
 import HomeDescr from "./homedescr"
+import HomeContent from "./homecontent"
 
 import "./newhome.scss"
 
 const HomeLayout = props => {
   let bigtext = (
     <div className={`bigtext-C`}>
-      {/* <div className={`cleartop`} /> */}
-      <div className={`bigtext`}>
-        <span>TUSHAR PANDEY</span>
-      </div>
+      <div className={`cleartop`} />
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target={"_blank"}>
+        <div className={`bigtext`}>
+          <span>TUSHAR PANDEY</span>
+        </div>
+      </a>
+
       {/* <div className={`cleartop`} /> */}
       <HomeDescr></HomeDescr>
     </div>
@@ -23,8 +25,8 @@ const HomeLayout = props => {
     <div>
       <HomeHeader></HomeHeader>
       <div className={`L-flex-C`}>
-        <Scroll callbacks={props.location} />
         {bigtext}
+        <HomeContent></HomeContent>
       </div>
     </div>
   )

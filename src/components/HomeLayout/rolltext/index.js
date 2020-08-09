@@ -14,7 +14,7 @@ const Rolltext = props => {
     )
   }
   return (
-    <TextLoop interval={3000} delay={3000}>
+    <TextLoop interval={2000} delay={1000}>
       {rollelements}
     </TextLoop>
   )

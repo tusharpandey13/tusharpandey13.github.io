@@ -11,15 +11,15 @@ $bigtext-text-color: lighten($bg-theme, 0%);
 
 // $bigtext-border-color: rgba(255, 255, 255, 0.2);
 $bigtext-border-color: rgba(0, 0, 0, 0.5);
-$bigtext-border-radius: 1px;
+$bigtext-border-radius: 5px;
 
 .bigtext-C {
-  @include flex(initial, column, wrap, center, center);
+  @include flex(initial, column, wrap, flex-start, center);
 
-  background-color: $bg-l;
+  // background-color: $bg-l;
 
-  background-color: #012a36;
-  @include patternbg;
+  // background-color: #012a36;
+  // @include patternbg;
 
   min-height: 100vh;
 
@@ -28,7 +28,7 @@ $bigtext-border-radius: 1px;
   // animation-fill-mode: forwards;
 
   .cleartop {
-    width: 25.5rem;
+    // width: 25.5rem;
     height: calc(50vh - 1.5rem);
     min-height: 2.5rem;
   }
@@ -43,10 +43,13 @@ $bigtext-border-radius: 1px;
 
     // font-family: "NeueMontreal-Medium";
     // font-family: Georgia, "Times New Roman", Times, serif;
-    font-family: monospace;
+    // font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif, monospace;
     font-weight: 500;
-    letter-spacing: 0.7rem;
-    font-size: 1.5rem;
+    letter-spacing: 0.8rem;
+    word-spacing: 0.7rem;
+    font-size: 1.05rem;
+
     // font-weight: bold;
 
     // background-color: transparent;

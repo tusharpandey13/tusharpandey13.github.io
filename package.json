@@ -6,10 +6,10 @@
   "dependencies": {
     "@mdi/js": "^5.3.45",
     "@mdi/react": "^1.4.0",
+    "@n8tb1t/use-scroll-position": "^1.0.43",
     "@nivo/pie": "^0.62.0",
     "@nivo/radar": "^0.62.0",
     "axios": "^0.19.2",
-    "bezier-easing": "^2.1.0",
     "dart-sass": "^1.25.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.22.15",
@@ -28,12 +28,11 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-headroom": "^3.0.0",
     "react-helmet": "^6.0.0",
     "react-spring": "^8.0.27",
     "react-star-ratings": "^2.3.0",
     "react-text-loop": "^2.3.0",
-    "unsplash-js": "^6.0.0"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "gh-pages": "^3.0.0",

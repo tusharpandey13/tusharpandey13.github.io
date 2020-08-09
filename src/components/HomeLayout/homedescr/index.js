@@ -11,8 +11,7 @@ const HomeDescr = props => {
     "Arch enthusiast":
       "https://www.reddit.com/r/unixporn/comments/fr7q97/kde_clean_and_simple_the_way_i_like_it/",
     "Homo Sapien": "https://en.wikipedia.org/wiki/Human",
-    "Someone looks interested...":
-      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "Hey there...": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "Arctic Monkeys": "https://g.co/kgs/73nMmA",
     Lorde: "https://g.co/kgs/so9nJa",
     "Creedence Clearwater": "https://www.youtube.com/watch?v=g4flAZEgtjs",
