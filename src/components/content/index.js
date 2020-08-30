@@ -20,7 +20,7 @@ const card = (
     <div className='c-sep'></div>
     <div className='ct'>
       <div className='ctheader'>
-        <span className='h2'>Tushar Pandey,</span>
+        <span className='h2'>Tushar Pandey</span>
         <code>Web Developer</code>
       </div>
       <p>

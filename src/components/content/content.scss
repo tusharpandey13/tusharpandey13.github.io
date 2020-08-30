@@ -3,10 +3,11 @@
 @use '../../styles/common';
 
 $primary-bg: #031d44;
-$light-bg: transparentize(
-  $color: $primary-bg,
-  $amount: 0.9,
-);
+$light-bg: #dae5f2;
+:root {
+  --ctgap: 1rem;
+  --ctsepdim: 3rem;
+}
 
 code {
   font-size: 1.1rem !important;
@@ -39,27 +40,27 @@ code {
     }
     .c-sep {
       display: block;
-      min-width: 3rem;
-      min-height: 3rem;
+      min-width: var(--ctsepdim);
+      min-height: var(--ctsepdim);
     }
     .ct {
       flex-grow: 1;
       max-width: 750px;
       @include m.flex(initial, column, nowrap, space-between, stretch);
 
-      p {
-        font-size: 0.9rem;
-      }
-
       .ctheader {
         @include m.flex(initial, row, wrap, baseline, baseline);
-        margin: 0 0 1rem 0;
+        margin: 0 0 var(--ctgap) 0;
         .h2 {
           margin: 0 0.5rem 0 0;
           text-transform: uppercase;
           font-family: 'Source Code Pro', monospace;
           font-size: 3rem;
         }
+      }
+
+      p {
+        font-size: 0.9rem;
       }
     }
   }
@@ -115,6 +116,10 @@ code {
 }
 
 @media only screen and (max-width: 700px) {
+  :root {
+    --ctgap: 3rem;
+    --ctsepdim: 4rem;
+  }
   .C {
     margin: 8rem 2rem 6rem 2rem;
     padding: 2rem 0rem 2rem 0rem;

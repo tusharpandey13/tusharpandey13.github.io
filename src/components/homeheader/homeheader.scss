@@ -9,12 +9,13 @@ $text-color-active: darken(#ffffff, 0);
 $bg: #ffffff;
 
 .hometext {
-  background-color: transparentize($color: $text-hover-bg, $amount: 0.9);
+  background-color: #dae5f2;
   text-decoration: underline;
   padding: 0 1rem 0 1rem;
   font-size: 0.9rem;
   border-left: 1px solid $text-hover-bg;
   border-right: 1px solid $text-hover-bg;
+  border-bottom: 1px solid $text-hover-bg;
 }
 
 .hh-C {
@@ -77,7 +78,7 @@ $bg: #ffffff;
     }
     .h-C:last-of-type {
       border-bottom: 1px solid $text-hover-bg;
-      border-top: 1px solid $text-hover-bg;
+      // border-top: 1px solid $text-hover-bg;
     }
     .h-C:first-of-type {
       .h-b {
