@@ -1,6 +1,6 @@
 import React from 'react';
 
-import pic from './../../media/1.png';
+import pic from './../../media/1.jpeg';
 import './content.scss';
 
 const Content = props => {

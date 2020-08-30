@@ -3,6 +3,8 @@
 
 /* top | right | bottom | left */
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Code+Pro&display=swap');
+
 // @font-face {
 //   font-family: "Nevis";
 //   src: url("./../fonts/nevis.ttf") format("truetype");
@@ -63,6 +65,7 @@ html {
   // background-color: #012a36;
   // @include mixins.patternbg;
   // overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
