@@ -1,0 +1,88 @@
+@use '../../styles/mixins' as m;
+@use '../../styles/vars';
+
+$text-hover-bg: #031d44;
+// $text-color: darken(#ffb510, 0);
+$text-color: lighten(#000, 20);
+$text-color-active: darken(#ffffff, 0);
+
+$bg: #ffffff;
+
+.hometext {
+  background-color: transparentize($color: $text-hover-bg, $amount: 0.9);
+  text-decoration: underline;
+  padding: 0 1rem 0 1rem;
+  font-size: 0.9rem;
+  border-left: 1px solid $text-hover-bg;
+  border-right: 1px solid $text-hover-bg;
+}
+
+.hh-C {
+  @include m.flex(3rem, row, nowrap, space-between, stretch);
+  @include m.pseudo();
+  // background-color: green;
+  position: fixed;
+  z-index: 20;
+
+  background-color: $bg;
+
+  border-top: 5px solid $text-hover-bg;
+  border-bottom: 1px solid $text-hover-bg;
+
+  .h-C {
+    @include m.flex(calc(100% + 1px), row, nowrap, space-around, stretch);
+    padding: 0 4rem 0 4rem;
+
+    .h-b {
+      @include m.flex(100%, column, nowrap, center, center);
+      min-width: 5rem;
+
+      @include m.user-select(none);
+    }
+    a {
+      padding: 0 0.5rem 0 0.5rem;
+
+      font-family: monospace;
+      font-size: 1.2rem;
+
+      span {
+        @include m.flex(100%, row, nowrap, center, center);
+        width: 100%;
+
+        color: $text-color;
+        text-align: center;
+
+        &:hover {
+          background-color: $text-hover-bg;
+          color: $text-color-active;
+          text-decoration: underline $text-color-active;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  // $bg: #ffffff;
+  .hh-C {
+    @include m.flex(3rem, column, nowrap, flex-start, stretch);
+    border-bottom: none;
+    .h-C {
+      flex-grow: 1;
+      padding: 0;
+      width: 100%;
+      height: 3rem;
+      background-color: $bg;
+    }
+    .h-C:last-of-type {
+      border-bottom: 1px solid $text-hover-bg;
+      border-top: 1px solid $text-hover-bg;
+    }
+    .h-C:first-of-type {
+      .h-b {
+        width: 100%;
+      }
+    }
+  }
+}

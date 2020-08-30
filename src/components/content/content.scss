@@ -1,0 +1,121 @@
+@use '../../styles/mixins' as m;
+@use '../../styles/vars';
+@use '../../styles/common';
+
+$primary-bg: #031d44;
+$light-bg: transparentize(
+  $color: $primary-bg,
+  $amount: 0.9,
+);
+
+code {
+  font-size: 1.1rem !important;
+  background-color: #fff0f0;
+  padding: 0 0.5rem 0 0.5rem;
+  border-radius: 5px;
+}
+
+.C {
+  @include m.flex(initial, column, nowrap, flex-start, stretch);
+  margin: 6rem 6rem 6rem 6rem;
+  padding: 2rem 1rem 2rem 1rem;
+
+  .Card {
+    @include m.flex(initial, row, wrap, flex-start, stretch);
+
+    margin: 0 0 6rem 0;
+
+    & > * {
+      flex-basis: calc((701px - 100vw) * 9999);
+    }
+
+    .cimg {
+      @include m.flex(initial, row, nowrap, center, center);
+      @include m.user-select(none);
+      margin: 0rem 0rem 0rem 0rem;
+      border: 1px solid transparentize($color: $primary-bg, $amount: 0.5);
+      background-color: $light-bg;
+    }
+    .c-sep {
+      display: block;
+      min-width: 3rem;
+      min-height: 3rem;
+    }
+    .ct {
+      flex-grow: 1;
+      max-width: 750px;
+      @include m.flex(initial, column, nowrap, space-between, stretch);
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .ctheader {
+        @include m.flex(initial, row, wrap, baseline, baseline);
+        margin: 0 0 1rem 0;
+        .h2 {
+          margin: 0 0.5rem 0 0;
+          text-transform: uppercase;
+          font-family: monospace;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  .exp-C {
+    @include m.flex(initial, row, wrap, center, stretch);
+    & > * {
+      flex-basis: calc((701px - 100vw) * 9999);
+      flex-grow: 1;
+    }
+    article {
+      @include m.flex(initial, column, nowrap, flex-start, stretch);
+      header .exptitle {
+        padding: 0 0 0.5rem 0;
+        margin: 0 0 1rem 0;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-family: monospace;
+        font-weight: bold;
+        border-bottom: 1px solid #000;
+      }
+      section ul li {
+        header {
+          @include m.flex(initial, row, wrap, space-between, stretch);
+          margin: 0 0 0.5rem 0;
+          font-size: 0.8rem;
+          place {
+            width: 100%;
+            font-size: 1rem;
+            text-transform: uppercase;
+          }
+          role {
+            font-weight: bold;
+          }
+          time {
+            background-color: $light-bg;
+            padding: 0 0.5rem 0 0.5rem;
+          }
+        }
+        section {
+          margin: 0 0 1rem 0;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .exp-sep {
+      display: block;
+      min-width: 3rem;
+      min-height: 3rem;
+      flex-grow: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .C {
+    margin: 8rem 2rem 6rem 2rem;
+    padding: 2rem 0rem 2rem 0rem;
+  }
+}
