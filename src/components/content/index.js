@@ -209,7 +209,7 @@ const exp = lists([
           content: 'DPS, DHANBAD',
         },
         role: 'High School',
-        time: '2022',
+        time: '2018',
       },
     ],
   },
