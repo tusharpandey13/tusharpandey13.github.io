@@ -5,6 +5,10 @@
 $primary-bg: #031d44;
 $light-bg: #dae5f2;
 :root {
+  --C-padding-horizontal: 1rem;
+  --C-margin-horizontal: 6rem;
+  --C-padding-vertical: 1rem;
+  --C-margin-vertical: 6rem;
   --ctgap: 1rem;
   --ctsepdim: 3rem;
 }
@@ -16,11 +20,30 @@ code {
   border-radius: 5px;
   font-family: 'Source Code Pro', monospace;
 }
+header .articletitle {
+  padding: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+}
+
+.link {
+  color: rgb(30, 143, 255);
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+    background-color: rgb(30, 143, 255);
+    color: white;
+  }
+}
 
 .C {
   @include m.flex(initial, column, nowrap, flex-start, stretch);
-  margin: 6rem 6rem 6rem 6rem;
-  padding: 2rem 1rem 2rem 1rem;
+  margin: var(--C-margin-vertical) var(--C-margin-horizontal);
+  padding: var(--C-padding-vertical) var(--C-padding-horizontal);
 
   .Card {
     @include m.flex(initial, row, wrap, flex-start, stretch);
@@ -45,7 +68,7 @@ code {
     }
     .ct {
       flex-grow: 1;
-      max-width: 750px;
+      max-width: 800px;
       @include m.flex(initial, column, nowrap, space-between, stretch);
 
       .ctheader {
@@ -61,33 +84,28 @@ code {
 
       p {
         font-size: 0.9rem;
+        // @include m.flex(initial, column, nowrap, flex-end, stretch);
       }
     }
   }
 
-  .exp-C {
-    @include m.flex(initial, row, wrap, center, stretch);
+  .article-C {
+    @include m.flex(initial, row, wrap, space-between, stretch);
+    margin: 0 0 calc(2 * var(--ctsepdim)) 0;
     & > * {
       flex-basis: calc((701px - 100vw) * 9999);
       flex-grow: 1;
     }
     article {
       @include m.flex(initial, column, nowrap, flex-start, stretch);
-      header .exptitle {
-        padding: 0 0 0.5rem 0;
-        margin: 0 0 1rem 0;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        font-family: 'Source Code Pro', monospace;
-        font-weight: bold;
-        border-bottom: 1px solid #000;
-      }
+      max-width: calc(700px - (var(--C-margin-horizontal)));
+
       section ul li {
         header {
           @include m.flex(initial, row, wrap, space-between, stretch);
           margin: 0 0 0.5rem 0;
           font-size: 0.8rem;
-          place {
+          h5 {
             width: 100%;
             font-size: 1rem;
             text-transform: uppercase;
@@ -99,17 +117,32 @@ code {
             background-color: $light-bg;
             padding: 0 0.5rem 0 0.5rem;
           }
+          tags {
+            width: 100%;
+            @include m.flex(initial, row, wrap, flex-start, stretch);
+            tag {
+              margin: 0 0.5rem 0.5rem 0;
+              padding: 0 0.5rem;
+              font-size: 0.8rem;
+              border-radius: 20px;
+              font-family: 'Source Code Pro', monospace;
+              background-color: lighten($color: lightcoral, $amount: 20);
+              border: 1px dashed lightcoral;
+            }
+          }
         }
         section {
-          margin: 0 0 1rem 0;
+          margin: 0 0 1.5rem 0;
           font-size: 0.8rem;
         }
       }
     }
     .exp-sep {
       display: block;
-      min-width: 3rem;
-      min-height: 3rem;
+      min-width: var(--ctgap);
+
+      min-height: var(--ctgap);
+
       flex-grow: 0;
     }
   }
@@ -119,9 +152,10 @@ code {
   :root {
     --ctgap: 3rem;
     --ctsepdim: 4rem;
-  }
-  .C {
-    margin: 8rem 2rem 6rem 2rem;
-    padding: 2rem 0rem 2rem 0rem;
+
+    --C-padding-horizontal: 0rem;
+    --C-padding-vertical: 2rem;
+    --C-margin-horizontal: 2rem;
+    --C-margin-vertical: 8rem;
   }
 }
