@@ -33,7 +33,7 @@ const Footer = props => {
           </span>
           {/* <span> and SCSS</span> */}
         </middle>
-        <end>Tushar Pandey, 2020</end>
+        <end>2020</end>
       </div>
     </div>
   );
