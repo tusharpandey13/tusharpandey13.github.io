@@ -24,8 +24,8 @@ const HomeHeader = props => {
     [headerStyle]
   );
 
-  const navlink = (src, label) => (
-    <a className={`h-b`} href={`${src}`} target={'_blank'} rel={'noopener noreferrer'}>
+  const navlink = (src, label, title) => (
+    <a className={`h-b`} href={`${src}`} target={'_blank'} rel={'noopener noreferrer'} title={title}>
       <span>{`${label}`}</span>
     </a>
   );
@@ -38,10 +38,10 @@ const HomeHeader = props => {
         </div>
       </div>
       <div className={`h-C`}>
-        {navlink(`https://twitter.com/_tusharpandey13/`, `TW`)}
-        {navlink(`https://www.instagram.com/tusharpandey13/`, `IG`)}
-        {navlink(`https://www.linkedin.com/in/tushar-pandey-376a51134/`, `IN`)}
-        {navlink(`https://github.com/tusharpandey13/`, `GH`)}
+        {navlink(`https://twitter.com/_tusharpandey13/`, `TW`, 'Twitter')}
+        {navlink(`https://www.instagram.com/tusharpandey13/`, `IG`, 'Instagram')}
+        {navlink(`https://www.linkedin.com/in/tushar-pandey-376a51134/`, `IN`, 'LinkedIn')}
+        {navlink(`https://github.com/tusharpandey13/`, `GH`, 'Github')}
       </div>
     </div>
   );

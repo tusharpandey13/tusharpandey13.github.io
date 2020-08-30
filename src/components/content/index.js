@@ -201,14 +201,14 @@ const exp = lists([
         title: {
           content: 'BMSIT&M, BANGALORE',
         },
-        role: 'Stuent',
+        role: 'CSE Undergrad',
         time: '2022',
       },
       {
         title: {
           content: 'DPS, DHANBAD',
         },
-        role: 'Stuent',
+        role: 'High School',
         time: '2022',
       },
     ],
