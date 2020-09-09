@@ -3,6 +3,11 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 
 import './homeheader.scss';
 
+import { ReactComponent as Tw } from './../../media/twitter.svg';
+import { ReactComponent as Ig } from './../../media/instagram.svg';
+import { ReactComponent as Lin } from './../../media/linkedin.svg';
+import { ReactComponent as Gh } from './../../media/github.svg';
+
 const HomeHeader = props => {
   const [headerStyle, setHeaderStyle] = useState({
     transition: 'all 500ms cubic-bezier(0.44, 0.85, 0.42, 1)',
@@ -24,9 +29,11 @@ const HomeHeader = props => {
     [headerStyle]
   );
 
-  const navlink = (src, label, title) => (
-    <a className={`h-b`} href={`${src}`} target={'_blank'} rel={'noopener noreferrer'} title={title}>
-      <span>{`${label}`}</span>
+  const navlink = (src, pic) => (
+    <a className={`h-b`} href={`${src}`} target={'_blank'} rel={'noopener noreferrer'}>
+      {/* <span>{`${label}`}</span> */}
+      {/* <svg src={pic} alt='' width='24' height='24' className={`header-img`} /> */}
+      {pic}
     </a>
   );
 
@@ -38,10 +45,10 @@ const HomeHeader = props => {
         </div>
       </div>
       <div className={`h-C`}>
-        {navlink(`https://twitter.com/_tusharpandey13/`, `TW`, 'Twitter')}
-        {navlink(`https://www.instagram.com/tusharpandey13/`, `IG`, 'Instagram')}
-        {navlink(`https://www.linkedin.com/in/tushar-pandey-376a51134/`, `IN`, 'LinkedIn')}
-        {navlink(`https://github.com/tusharpandey13/`, `GH`, 'Github')}
+        {navlink(`https://twitter.com/_tusharpandey13/`, <Tw title='Twitter' />)}
+        {navlink(`https://www.instagram.com/tusharpandey13/`, <Ig title='Instagram' />)}
+        {navlink(`https://www.linkedin.com/in/tushar-pandey-376a51134/`, <Lin title='LinkedIn' />)}
+        {navlink(`https://github.com/tusharpandey13/`, <Gh title='Github' />)}
       </div>
     </div>
   );

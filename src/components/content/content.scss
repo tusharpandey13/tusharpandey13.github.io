@@ -96,7 +96,13 @@ ul {
 
   .article-C {
     @include m.flex(initial, row, wrap, space-between, stretch);
+
     margin: 0 0 calc(2 * var(--ctsepdim)) 0;
+    padding: 1rem 1rem;
+
+    background-color: lighten($color: $light-bg, $amount: 9);
+    border: solid 1px lighten($color: $light-bg, $amount: 1);
+
     & > * {
       flex-basis: calc((701px - 100vw) * 9999);
       flex-grow: 1;
@@ -131,7 +137,7 @@ ul {
               font-size: 0.8rem;
               border-radius: 20px;
               font-family: 'Source Code Pro', monospace;
-              background-color: lighten($color: lightcoral, $amount: 20);
+              background-color: lighten($color: lightcoral, $amount: 25);
               border: 1px dashed lightcoral;
             }
           }
@@ -158,9 +164,9 @@ ul {
     --ctgap: 3rem;
     --ctsepdim: 4rem;
 
+    --C-margin-horizontal: 1rem;
     --C-padding-horizontal: 0rem;
-    --C-padding-vertical: 2rem;
-    --C-margin-horizontal: 2rem;
     --C-margin-vertical: 8rem;
+    --C-padding-vertical: 2rem;
   }
 }

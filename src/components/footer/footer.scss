@@ -14,10 +14,14 @@ $light-bg: #dae5f2;
   margin: 0;
   padding: 2rem calc(var(--gap-horizontal));
 
-  background-color: $primary-bg;
-  color: $light-bg;
+  color: $primary-bg;
+  background-color: $light-bg;
 
   border-top: 1px solid $primary-bg;
+
+  a {
+    color: $primary-bg;
+  }
 
   .c-sep {
     display: block;
@@ -29,14 +33,14 @@ $light-bg: #dae5f2;
 .footer {
   margin: 0;
   padding: 0.5rem 2rem;
-  background-color: $light-bg;
+  color: $light-bg;
 
-  color: $primary-bg;
+  background-color: $primary-bg;
   font-family: 'Garamond', Georgia, 'Times New Roman', Times, serif;
   font-size: 0.9rem;
 
   border-top: 1px solid $primary-bg;
-  border-bottom: 5px solid $primary-bg;
+  // border-bottom: 5px solid $primary-bg;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,7 +51,7 @@ $light-bg: #dae5f2;
   start {
     grid-area: 1 / 1 / 2 / 2;
     a {
-      color: $primary-bg;
+      color: $light-bg;
     }
   }
   middle {

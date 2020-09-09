@@ -5,11 +5,12 @@ $text-hover-bg: #031d44;
 // $text-color: darken(#ffb510, 0);
 $text-color: lighten(#000, 20);
 $text-color-active: darken(#ffffff, 0);
+$text-color-light: #dae5f2;
 
 $bg: #ffffff;
 
 .hometext {
-  background-color: #dae5f2;
+  background-color: $text-color-light;
   text-decoration: underline;
   padding: 0 1rem 0 1rem;
   font-size: 0.9rem;
@@ -41,24 +42,31 @@ $bg: #ffffff;
       @include m.user-select(none);
     }
     a {
-      padding: 0 0.5rem 0 0.5rem;
+      @include m.flex(100%, row, nowrap, center, center);
+      width: 100%;
+
+      padding: 0;
+
+      // margin: 0 1rem;
 
       font-family: monospace;
       font-size: 1.2rem;
+      fill: $text-color;
 
-      span {
-        @include m.flex(100%, row, nowrap, center, center);
-        width: 100%;
-
-        color: $text-color;
-        text-align: center;
+      svg {
+        @include m.flex(50%, row, nowrap, center, center);
+        width: 5rem;
 
         &:hover {
-          background-color: $text-hover-bg;
-          color: $text-color-active;
-          text-decoration: underline $text-color-active;
-          cursor: pointer;
+          // fill: $text-color-active;
+          // cursor: pointer;
         }
+      }
+      &:hover {
+        background-color: $text-hover-bg;
+        fill: $text-color-light;
+        // text-decoration: underline $text-color-active;
+        cursor: pointer;
       }
     }
   }
