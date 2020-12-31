@@ -14,15 +14,16 @@
     "extends": "react-app"
   },
   "dependencies": {
-    "@n8tb1t/use-scroll-position": "^1.0.43",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "bootstrap": "^4.5.2",
+    "@n8tb1t/use-scroll-position": "^2.0.3",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "bootstrap": "^4.5.3",
     "node-sass": "npm:sass",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "npm-check-updates": "^10.2.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1"
   },
   "browserslist": {
     "production": [

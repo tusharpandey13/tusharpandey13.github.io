@@ -1,0 +1,95 @@
+@use '../../../styles/mixins' as m;
+@use '../../../styles/vars';
+@use '../../../styles/common';
+
+$primary-bg: #031d44;
+$light-bg: #dae5f2;
+:root {
+  --C-padding-horizontal: 1rem;
+  --C-margin-horizontal: 6rem;
+  --C-padding-vertical: 1rem;
+  --C-margin-vertical: 6rem;
+  --ctgap: 1rem;
+  --ctsepdim: 3rem;
+}
+
+.article-C {
+  @include m.flex(initial, row, wrap, center, stretch);
+
+  margin: 0 0 calc(2 * var(--ctsepdim)) 0;
+  padding: 1rem 1rem;
+
+  background-color: lighten($color: $light-bg, $amount: 8);
+  border: solid 1px lighten($color: $light-bg, $amount: 1);
+
+  & > * {
+    flex-basis: calc((701px - 100vw) * 9999);
+    flex-grow: 1;
+  }
+  article {
+    @include m.flex(initial, column, nowrap, flex-start, stretch);
+    max-width: calc(700px - (var(--C-margin-horizontal)));
+
+    section ul li {
+      header {
+        @include m.flex(initial, row, wrap, space-between, stretch);
+        margin: 0 0 0.5rem 0;
+        font-size: 0.8rem;
+        h5 {
+          width: 100%;
+          font-size: 1rem;
+          text-transform: uppercase;
+        }
+        role {
+          font-weight: bold;
+        }
+        time {
+          background-color: $light-bg;
+          padding: 0 0.5rem 0 0.5rem;
+        }
+      }
+      .itemC {
+        @include m.flex(initial, row, nowrap, space-between, center);
+        img {
+        }
+        content {
+          margin: 0 0 1.5rem 0;
+          font-size: 0.8rem;
+          .tagC {
+            @include m.flex(initial, row, wrap, flex-start, stretch);
+            .abcd {
+              margin: 0 0.5rem 0.5rem 0;
+              padding: 0 0.5rem;
+              font-size: 0.8rem;
+              border-radius: 20px;
+              font-family: 'Source Code Pro', monospace;
+              border: 1px dashed lightcoral;
+              background-color: lighten($color: lightcoral, $amount: 25);
+              // color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+  .exp-sep {
+    display: block;
+    min-width: var(--ctgap);
+
+    min-height: var(--ctgap);
+
+    flex-grow: 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  :root {
+    --ctgap: 3rem;
+    --ctsepdim: 4rem;
+
+    --C-margin-horizontal: 1rem;
+    --C-padding-horizontal: 0rem;
+    --C-margin-vertical: 8rem;
+    --C-padding-vertical: 2rem;
+  }
+}
