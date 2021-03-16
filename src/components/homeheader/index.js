@@ -59,7 +59,7 @@ const HomeHeader = props => {
       <div className='rowC'>
         <div className={`h-C`}>
           {navlink(
-            `https://drive.google.com/file/d/1DJw_O0wdr2FP6uu3-ITRkBk3SmaZM6vu/view`,
+            `https://drive.google.com/file/d/1OilITVizdB_oJxvURjzJIeB8HVM1nKp0/view?usp=sharing`,
             <Resume title='Resume' />,
             'Resume'
           )}
