@@ -5,12 +5,12 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/NgtFfepcwFEy4tLm-QV2U/_buildManifest.js",
-    "static/NgtFfepcwFEy4tLm-QV2U/_ssgManifest.js"
+    "static/s8jSfi4Me3qLchK2iMa68/_buildManifest.js",
+    "static/s8jSfi4Me3qLchK2iMa68/_ssgManifest.js"
   ],
   "pages": {
     "/": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -21,7 +21,7 @@
       "static/chunks/pages/index-3f507470fd32028763d3.js"
     ],
     "/_app": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -30,7 +30,7 @@
       "static/chunks/pages/_app-99cfd15171172609cbd8.js"
     ],
     "/_error": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -38,7 +38,7 @@
       "static/chunks/pages/_error-6963befe4c4bd6f9600e.js"
     ],
     "/components": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -48,7 +48,7 @@
       "static/chunks/pages/components-3cef1d37bae42903968c.js"
     ],
     "/components/Column": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -56,7 +56,7 @@
       "static/chunks/pages/components/Column-b0d13063bc24740d7d58.js"
     ],
     "/components/Column1": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -64,7 +64,7 @@
       "static/chunks/pages/components/Column1-923441bd5f557d22cdca.js"
     ],
     "/components/Column2": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -73,7 +73,7 @@
       "static/chunks/pages/components/Column2-f1745410f96eda6c77c4.js"
     ],
     "/components/Column3": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -81,7 +81,7 @@
       "static/chunks/pages/components/Column3-3b508f2630048da163de.js"
     ],
     "/components/Column4": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -90,7 +90,7 @@
       "static/chunks/pages/components/Column4-2cd5a2b6957205b821dc.js"
     ],
     "/components/Job": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -98,7 +98,7 @@
       "static/chunks/pages/components/Job-a257050538b05d3ab413.js"
     ],
     "/components/Logo": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -106,7 +106,7 @@
       "static/chunks/pages/components/Logo-b8d0468de976aa0c2a0b.js"
     ],
     "/components/ResumeLink": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -114,7 +114,7 @@
       "static/chunks/pages/components/ResumeLink-3b8a0ffca1b477c65388.js"
     ],
     "/components/SocialLinks": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -123,7 +123,7 @@
       "static/chunks/pages/components/SocialLinks-2b47a31055ca6e58b055.js"
     ],
     "/components/Title": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
@@ -131,7 +131,7 @@
       "static/chunks/pages/components/Title-c93bd25067688a53ee17.js"
     ],
     "/components/project": [
-      "static/chunks/webpack-014c93933085220b2c3c.js",
+      "static/chunks/webpack-e896884e3b2e9d50ca41.js",
       "static/chunks/framework-20f2a9cac296b3c84a16.js",
       "static/chunks/597-748b983be2831e979fc2.js",
       "static/chunks/778-01ae023c6d03e82f2e40.js",
