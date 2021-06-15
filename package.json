@@ -1,43 +1,26 @@
 {
-  "name": "newhome",
+  "name": "next-home",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tusharpandey13.github.io",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "react-scripts start",
-    "deploy:github": "yarn run build && node ./scripts/deploy-gh-pages"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "deploy:github": "yarn run build && yarn run export && node ./scripts/deploy-gh-pages"
   },
   "dependencies": {
-    "@n8tb1t/use-scroll-position": "^2.0.3",
-    "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.6.0",
-    "bootstrap": "^4.5.3",
-    "node-sass": "npm:sass",
-    "npm-check-updates": "^10.2.5",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@mdi/js": "^5.9.55",
+    "@mdi/react": "^1.5.0",
+    "next": "10.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "autoprefixer": "^10.2.5",
+    "gh-pages": "^3.2.1",
+    "postcss": "^8.2.13",
+    "tailwindcss": "^2.1.2"
   }
 }

@@ -1,0 +1,19 @@
+{
+  "/_app": "pages/_app.js",
+  "/components/Column": "pages/components/Column.html",
+  "/components/Column1": "pages/components/Column1.html",
+  "/components/Column2": "pages/components/Column2.html",
+  "/components/Column3": "pages/components/Column3.html",
+  "/components/Column4": "pages/components/Column4.html",
+  "/components/Job": "pages/components/Job.html",
+  "/components/Logo": "pages/components/Logo.html",
+  "/components/ResumeLink": "pages/components/ResumeLink.html",
+  "/components/SocialLinks": "pages/components/SocialLinks.html",
+  "/components/Title": "pages/components/Title.html",
+  "/components": "pages/components.html",
+  "/components/project": "pages/components/project.html",
+  "/": "pages/index.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
