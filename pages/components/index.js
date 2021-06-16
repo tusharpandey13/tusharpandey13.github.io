@@ -11,7 +11,7 @@ const Main = props => {
   return (
     <main
       className={`flex flex-row flex-nowrap w-full min-h-full select-none widephone:px-gridgap 
-                      med:px-0`}
+                      med:px-0 justify-start tablet:justify-center med:justify-start`}
     >
       <div className={`w-sidebarWidth h-screen fixed hidden widephone:block tablet:hidden med:block`}>
         {Sticky_sidebar}
