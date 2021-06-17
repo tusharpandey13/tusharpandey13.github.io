@@ -11,22 +11,22 @@ const Column4 = props => {
       title='contact'
       elements={[
         <div
-          className={`flex flex-col p-contentgap min-h-[200px] gap-contentgap tracking-[1px]
+          className={`flex flex-col p-contentgap min-h-[200px] tracking-[1px]
                       text-[14px] bg-[#533573] border-[rgba(255,255,255,0.5)] border-2
                       text-fff justify-evenly`}
         >
           <span>These are the places which I regularly check for messages:</span>
-          <div className='flex flex-col gap-contentgap font-medium'>
+          <div className='flex flex-col font-medium'>
             <a href={links.email}>
-              <span className='flex gap-contentgap hover:text-yellow-400 items-center'>
+              <span className='flex hover:text-yellow-400 items-center mb-contentgapby2'>
                 <Icon path={mdiEmail} title='Mail' size={1} />
-                Write to me at tusharpandey13@gmail.com
+                <span className='pl-contentgap'>Write to me at tusharpandey13@gmail.com</span>
               </span>
             </a>
             <a href={links.linkedin}>
-              <span className='flex gap-contentgap hover:text-yellow-400 items-center'>
+              <span className='flex hover:text-yellow-400 items-center mt-contentgapby2'>
                 <Icon path={mdiLinkedin} title='Linkedin' size={1} />
-                Send me a message on LinkedIn
+                <span className='pl-contentgap'>Send me a message on LinkedIn</span>
               </span>
             </a>
           </div>

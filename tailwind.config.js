@@ -11,12 +11,15 @@ module.exports = {
       spacing: {
         headerht: '140px',
         gridgap: '3.75rem', // 60px
-        gridgapv: '7.5rem', // 60px
+        gridgapby2: '1.875rem', // 60px
+        gridgapv: '7.5rem',
+        gridgapvby2: '3.75rem',
         sidebarWidth: '20vw',
         leftspace: `calc(20vw + 80px)`,
         crossgap: '80px',
         logosize: '80px',
         contentgap: '15px',
+        contentgapby2: '7.5px',
       },
       borderWidth: { 5: `5px`, 1: `1px` },
       colors: {

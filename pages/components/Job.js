@@ -2,14 +2,14 @@ const Job = props => {
   return (
     <div
       className={`flex tracking-[1px] text-[14px] text-000  border-cardborder
-                  py-contentgap px-0 gap-contentgap`}
+                  py-contentgap px-0`}
     >
-      <div className='flex flex-col'>
+      <div className='flex flex-col pr-contentgapby2'>
         <span className='text-4xl text-blue-900'>{props.index}</span>
       </div>
-      <div className='flex flex-col gap-contentgap justify-between'>
-        <div className='flex flex-col gap-contentgap'>
-          <div className='flex justify-between items-center border-t-1 border-b-1 border-[#aaa]'>
+      <div className='flex flex-col justify-between pl-contentgapby2'>
+        <div className='flex flex-col'>
+          <div className='flex justify-between items-center border-t-1 border-b-1 border-[#aaa] mb-contentgapby2'>
             <div className='flex flex-col'>
               <span className={`uppercase font-medium`}>{props.employer}</span>
               <span className={`capitalize text-[12px] font-semibold text-blue-900 font-contentfont`}>
@@ -24,7 +24,8 @@ const Job = props => {
             </span>
           </div>
           <p
-            className={`text-[12px] pr-contentgap text-[rgba(0,0,0,0.75)] list-disc leading-[140%] font-contentfont`}
+            className={`text-[12px] pr-contentgap text-[rgba(0,0,0,0.75)] list-disc leading-[140%]
+                        font-contentfont mt-contentgapby2`}
           >
             {(props.items ?? []).map((e, i) => (
               <li key={i} style={{ listStylePosition: `outside`, textIndent: `-17px` }}>
