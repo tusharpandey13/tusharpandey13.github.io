@@ -60,7 +60,7 @@
           "url": "https://github.com/tusharpandey13/express-mongoose-boilerplate"
         },
         "tags": ["NodeJS", "ExpressJS", "MongoDB", "Redis", "Boilerplate", "ES6"],
-        "content": "A clean, opinionated NodeJS server boilerplate that uses ExpressJS as server backend, MongoDB as document store and Redis as session store. Features ​Three-layer architecture​, extensive logging capabilities, ​multi-agent authentication support​, simplified configuration, ​Socket.IO support​ and ​modular design."
+        "content": "A clean, opinionated NodeJS server boilerplate that uses ExpressJS as server backend, MongoDB as document store and Redis as session store. Features ​Three-layer architecture​, extensive logging capabilities, ​multi-agent authentication support​, simplified , ​Socket.IO support​ and ​modular design."
       },
       {
         "title": {
@@ -145,7 +145,7 @@
     "github": "https://github.com/tusharpandey13",
     "linkedin": "https://www.linkedin.com/in/tusharpandey13",
     "email": "mailto:tusharpandey13@gmail.com",
-    "resume": "https://drive.google.com/file/d/1ONg_BqQdhxrio_w6m5kY6WQbgDaWiPIR/view?usp=sharing",
+    "resume": "https://drive.google.com/file/d/1mw6oT6nB9cFtYtzWvkxoBX56nNfUAYUu/view?usp=sharing",
     "twitter": "https://twitter.com/_tusharpandey13/",
     "ig": "https://www.instagram.com/tusharpandey13/"
   }
