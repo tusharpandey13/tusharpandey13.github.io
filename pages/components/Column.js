@@ -7,7 +7,7 @@ const Column = props => {
       style={{ width: `${props.width ?? 355}px` }}
     >
       {props.imgId && (
-        <div className='overflow-hidden mb-contentgapby2'>
+        <div className='overflow-hidden mb-contentgapby2' key="image">
           <picture>
             {props.avif && <source srcSet={`/img/${props.imgId}.avif`} type='image/avif' />}
             {props.webp && <source srcSet={`/img/${props.imgId}.webp`} type='image/webp' />}
@@ -25,7 +25,7 @@ const Column = props => {
         </div>
       )}
       {props.title && (
-        <div className='flex content-center items-center justify-between py-contentgapby2'>
+        <div className='flex content-center items-center justify-between py-contentgapby2' key="title">
           <span className='uppercase text-[14px] font-medium text-[#333] mt-[5px]'>{props.title}</span>
           <span className='text-gray'>
             {[' ', ' ', ...Array(42 - props.title.length)].map((e, i) => (
@@ -36,12 +36,12 @@ const Column = props => {
       )}
       {props.description && (
         <p
-          className={`text-[12px] font-normal leading-[180%] select-text text-[rgba(0,0,0,0.85)] font-contentfont py-contentgapby2`}
+          className={`text-[12px] font-normal leading-[180%] select-text text-[rgba(0,0,0,0.85)] font-contentfont py-contentgapby2`} key="desc"
         >
           {props.description}
         </p>
       )}
-      <div className='flex flex-col select-text pt-contentgapby2 mb-[-7.5px]'>{props.elements}</div>
+      <div className='flex flex-col select-text pt-contentgapby2 mb-[-7.5px]' key="elements">{props.elements}</div>
     </div>
   );
 };

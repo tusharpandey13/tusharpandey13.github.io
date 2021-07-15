@@ -89,10 +89,10 @@ const Cols_med = (
     <div className={`flex flex-col pr-gridgapby2`}>
       <div className='pb-gridgapvby2'>{<Column1 />}</div>
       <div className='pt-gridgapvby2'> {<Column3 />}</div>
+      <div className='pt-gridgapvby2'> {<Column4 />}</div>
     </div>
     <div className={`flex flex-col pl-gridgapby2`}>
       <div className='pb-gridgapvby2'>{<Column2 />}</div>
-      <div className='pt-gridgapvby2'> {<Column4 />}</div>
     </div>
   </div>
 );

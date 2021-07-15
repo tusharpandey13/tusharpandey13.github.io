@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
 import Main from './components';
 import Head from 'next/head';
+import { data } from './../utils/getdata';
 
 export default function Home() {
+  useEffect(() => {}, [data]);
   return (
     <div>
       <Head>
