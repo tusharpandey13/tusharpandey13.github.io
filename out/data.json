@@ -48,6 +48,14 @@
     "items": [
       {
         "title": {
+          "content": "URL shortener microservice",
+          "url": "http://eb1-env.eba-np965qgi.us-east-2.elasticbeanstalk.com/"
+        },
+        "tags": ["NodeJS", "AWS", "CI/CD", "MongoDB", "Redis", "Microservices"],
+        "content": "A link shortening microservice deployed on AWS elastic beanstalk using Github actions CI. It uses MongoDB as document store and Redis as caching layer."
+      },
+      {
+        "title": {
           "content": "Workout Assistance using Pose Estimation & CNNs",
           "url": "https://github.com/tusharpandey13/pose_cnn_workout_assistance"
         },
@@ -56,19 +64,19 @@
       },
       {
         "title": {
-          "content": "express-mongosoe-boilerplate",
-          "url": "https://github.com/tusharpandey13/express-mongoose-boilerplate"
-        },
-        "tags": ["NodeJS", "ExpressJS", "MongoDB", "Redis", "Boilerplate", "ES6"],
-        "content": "A clean, opinionated NodeJS server boilerplate that uses ExpressJS as server backend, MongoDB as document store and Redis as session store. Features ​Three-layer architecture​, extensive logging capabilities, ​multi-agent authentication support​, simplified , ​Socket.IO support​ and ​modular design."
-      },
-      {
-        "title": {
           "content": "Graph pathfinding on the London Metro",
           "url": "https://github.com/tusharpandey13/dijkstra_london_tube"
         },
         "tags": ["Pandas", "Flask", "P5.JS", "Dijkstra", "Graph"],
         "content": "An interactive visualisation for using ​Dijkstra's algorithm​ to find the shortest path between stations in the London underground. Made using HTML5, CSS for frontend and a Flask server written in Python for backend."
+      },
+      {
+        "title": {
+          "content": "express-mongosoe-boilerplate",
+          "url": "https://github.com/tusharpandey13/express-mongoose-boilerplate"
+        },
+        "tags": ["NodeJS", "ExpressJS", "MongoDB", "Redis", "Boilerplate", "ES6"],
+        "content": "A clean, opinionated NodeJS server boilerplate that uses ExpressJS as server backend, MongoDB as document store and Redis as session store. Features ​Three-layer architecture​, extensive logging capabilities, ​multi-agent authentication support​, simplified , ​Socket.IO support​ and ​modular design."
       },
       {
         "title": {
