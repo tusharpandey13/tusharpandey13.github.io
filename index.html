@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <picture id="bg">
+    <!-- Mobile -->
+    <source media="(max-width: 768px)" srcset="images/_DSC0881_01.webp" type="image/webp">
+    <!-- Desktop: avif > webp > jpg -->
+    <source media="(min-width: 769px)" srcset="images/_DSC0881.avif" type="image/avif">
+    <source media="(min-width: 769px)" srcset="images/_DSC0881.webp" type="image/webp">
+    <img src="images/_DSC0881.jpg" alt="">
+  </picture>
   <main>
     <section class="hero">
       <h1>Tushar Pandey</h1>

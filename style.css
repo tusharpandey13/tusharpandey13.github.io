@@ -26,6 +26,20 @@ body {
   min-height: 100vh;
 }
 
+#bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 main {
   text-align: center;
   padding: 2rem;
