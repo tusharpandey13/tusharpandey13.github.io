@@ -1,16 +1,66 @@
 # Tushar Pandey
 
-> Software engineer. This is a personal portfolio site.
+> Software Engineer with 4+ years building identity and authentication infrastructure. Primary maintainer of open-source SDKs with 21M+ monthly installs. Previously scaled token services to 4,000 TPS for 40M+ users at ZEE5.
 
-## About
+## Contact
 
-- Name: Tushar Pandey
-- Role: Software Engineer
-- Location: India
 - Email: tusharpandey13@gmail.com
-
-## Links
-
 - GitHub: https://github.com/tusharpandey13
 - LinkedIn: https://linkedin.com/in/tusharpandey13
 - Site: https://tusharpandey.com
+- Phone: +919380611436
+- Location: Bangalore, India
+
+## Experience
+
+### Software Development Engineer 2, Authn-SDKs — Auth0 (Okta)
+July 2024 – Present | Bangalore, India
+
+Primary maintainer of nextjs-auth0 (21M+ monthly downloads, 141% growth in tenure).
+
+- Shipped full MFA step-up support for Next.js SDK — first server-side Auth0 SDK with this capability. Design to production in 5 weeks.
+- Rewired SDK from single-domain to dynamic per-request domain resolution. Zero breaking changes, sessions auto-migrate.
+- Built and shipped auth0-hono: new authentication SDK for the Hono framework. 8,100+ lines of code, 291 tests, runs on Node, Cloudflare Workers, Deno, and Bun. Gap analysis to shipping in 4 weeks.
+- Delivered DPoP (proof-of-possession tokens), token exchange, and organization-scoped auth across Next.js, SPA, and Node SDKs. Cut 31 releases across 3 packages in 16 months.
+- Patched critical Next.js cache poisoning vulnerability affecting all Next.js users globally across Auth0 SDK ecosystem.
+- Authored 15+ design docs adopted across teams. Proposed and got approval for 10+ architecture decisions in cross-team reviews.
+
+### Software Development Engineer 1, B2B-Subscriptions — ZEE5
+August 2022 – July 2024 | Bangalore, India
+
+Scaling video streaming platform for 65M+ monthly active users.
+
+- Built Mirage: high-throughput token exchange service handling 4,000 req/sec for 40M+ B2B users (60% of ZEE5's revenue base).
+- Led zero-downtime AWS to GCP migration including PostgreSQL to Cloud Spanner for 5M+ daily auth events. Cut DB latency to under 10ms.
+- Built async subscription orchestrator with automatic failover. 99.9% uptime on revenue-critical B2B flows.
+- Moved Node.js services to Java WebFlux. 10x throughput, zero regressions, zero customer-facing downtime.
+
+## Projects
+
+### Forge: AI Development Workflow Engine
+Technologies: Claude, TypeScript, State Machines
+
+Multi-phase AI orchestrator that automates the full software lifecycle: requirements, design, implementation, review, and documentation. Used to ship two major SDK features (MFA and Multi-Domain). Adopted by team for AI-assisted development.
+
+### LightRAW: AI-Powered Photo Editing Pipeline
+Technologies: Claude, RawTherapee, Git, Batch Processing
+
+Prompt-driven RAW photo editing system. Describe edits in plain English, apply across hundreds of files automatically. Replaces complex multi-tool workflows (exposure, color grading, noise reduction) with a single conversational interface backed by professional-grade RAW processors.
+
+### OPAL: Real-time Log Analytics (Auth0 Hackathon Finalist)
+Technologies: ClickHouse, S3, Benthos, Cube.js
+
+Analytics engine ingesting 13k events/sec for customer usage insights. Estimated $70k/month savings over existing solution. Column-oriented storage with 130:1 write-read efficiency.
+
+## Skills
+
+- Languages: TypeScript, Java, Python, Go, Rust (learning)
+- Auth/Identity: OAuth 2.0/2.1, OIDC, DPoP, MFA, PKCE, Token Exchange, Session Management
+- Frameworks: Next.js, React, Hono, Node.js, Spring WebFlux, Vitest
+- Infrastructure: ClickHouse, PostgreSQL, Cloud Spanner, Redis, Kafka, Cloudflare Workers, Docker
+- AI/Tooling: Claude, LLM-driven automation, RAG pipelines, prompt engineering
+- Practices: Design-doc-driven delivery, security review, release management, open-source maintenance
+
+## Education
+
+BMSIT, Bangalore — Bachelor of Technology, Computer Science | 2018–2022
