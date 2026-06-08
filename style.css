@@ -65,7 +65,7 @@ body {
   }
 .hero name {
   display: block;
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 1;
 }
 
@@ -74,7 +74,7 @@ body {
   display: flex;
   gap: 1.5rem;
   justify-content: left;
-  transform: translate(-1.5rem, -1rem);
+  transform: translate(-2rem, -1rem);
 }
 
 .links a {
@@ -88,6 +88,7 @@ body {
   gap: 0.35rem;
   border-bottom: 1px solid transparent;
   transition: opacity 0.2s, transform 0.2s, border-color 0.2s;
+  cursor: pointer;
 }
 
 .links a:hover {
@@ -123,16 +124,15 @@ body {
     transform: translate(-50%, -100%);
     white-space: normal;
     width: 90vw;
-    padding: 2rem;
   }
   
   
   .hero name {
-    font-size: clamp(3rem, 8vw, 2.5rem);
+    font-size: clamp(3.5rem, 10vw, 2.5rem);
   }
 
   .links {
-    transform: translate(-1rem, -1rem);
+    transform: translate(0rem, 1rem);
   }
 
   #caption {
