@@ -42,15 +42,19 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-/* Hero: horizontally centered, vertically centered in top half (25vh) */
+/* Hero: desktop — left-anchored, vertically centered in top half */
 .hero {
   position: fixed;
   top: 25vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  left: 15vw;
+  transform: translateY(-50%);
+  text-align: left;
   padding: 1.5rem;
   white-space: nowrap;
 }
@@ -65,7 +69,7 @@ body {
   margin-top: 0.6rem;
   display: flex;
   gap: 1.5rem;
-  justify-content: center;
+  justify-content: left;
 }
 
 .links a {
@@ -103,12 +107,19 @@ body {
 
 @media (max-width: 768px) {
   .hero {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     white-space: normal;
     width: 90vw;
   }
 
   .hero name {
     font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .links {
+    justify-content: center;
   }
 
   #caption {
