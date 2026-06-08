@@ -8,7 +8,7 @@
   --bg: #0f0f0f;
   --fg: #e8e8e8;
   --accent: #e84674;
-  --muted: #999;
+  --muted: #666;
   --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -106,7 +106,7 @@ body {
 @media (max-width: 768px) {
   .hero {
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -100%);
     text-align: center;
     white-space: normal;
     width: 90vw;
@@ -126,8 +126,28 @@ body {
     transform: translateX(-50%);
     text-align: center;
     bottom: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     width: max-content;
     max-width: 90vw;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    position: fixed;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
+
+  #caption::before,
+  #caption::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.75rem;
+    height: 1px;
+    background: white;
+  }
+
+  #caption::before { left: 0; }
+  #caption::after  { right: 0; }
 }
