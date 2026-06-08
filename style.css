@@ -8,7 +8,7 @@
   --bg: #0f0f0f;
   --fg: #e8e8e8;
   --accent: #e84674;
-  --muted: #666;
+  --muted: #999;
   --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -18,19 +18,15 @@
   font-style: normal;
 }
 
-
 html, body {
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
 }
 
@@ -48,28 +44,28 @@ body {
   object-position: center;
 }
 
-main {
-  width: 100%;
-  text-align: center;
-}
-
+/* Hero: horizontally centered, vertically centered in top half (25vh) */
 .hero {
-  margin-top: 30vh;
-  margin-left: 15vw;
-  padding: 30px;
-  text-align: left;
+  position: fixed;
+  top: 25vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 1.5rem;
+  white-space: nowrap;
 }
 
 .hero name {
+  display: block;
   font-size: 32pt;
   line-height: 1;
 }
 
 .links {
-  margin-top: 0.0rem;
+  margin-top: 0.6rem;
   display: flex;
   gap: 1.5rem;
-  justify-content: left;
+  justify-content: center;
 }
 
 .links a {
@@ -81,29 +77,48 @@ main {
   transition: border-color 0.2s;
 }
 
+.links a:hover {
+  border-color: var(--accent);
+}
+
+/* Caption: frosted box, bottom-right */
+#caption {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(225, 215, 205, 0.88);
+  text-align: right;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0.85rem;
+}
+
 @media (max-width: 768px) {
   .hero {
-    margin-top: 0;
-    margin-left: 0;
-    padding: 2rem;
-    text-align: center;
+    white-space: normal;
+    width: 90vw;
   }
 
   .hero name {
     font-size: clamp(1.8rem, 8vw, 2.5rem);
   }
 
-  .links {
-    justify-content: center;
+  #caption {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    text-align: center;
+    bottom: 1rem;
+    font-size: 0.8rem;
+    width: max-content;
+    max-width: 90vw;
   }
-}
-
-#caption {
-  text-align: right;
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--muted);
-  pointer-events: none;
 }
