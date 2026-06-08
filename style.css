@@ -8,7 +8,7 @@
   --bg: #0f0f0f;
   --fg: #e8e8e8;
   --accent: #e84674;
-  --muted: #666;
+  --muted: #999;
   --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -53,22 +53,28 @@ body {
   position: fixed;
   top: 30vh;
   left: 15vw;
-  text-align: left;
-  padding: 1.5rem;
   white-space: nowrap;
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  
 }
-
+.hero .hero-items-hori-flex {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
 .hero name {
   display: block;
-  font-size: 32pt;
+  font-size: 3rem;
   line-height: 1;
 }
 
 .links {
-  margin-top: 0.6rem;
+  margin-top: 1rem;
   display: flex;
   gap: 1.5rem;
   justify-content: left;
+  transform: translate(-1.5rem, -1rem);
 }
 
 .links a {
@@ -105,19 +111,22 @@ body {
 
 @media (max-width: 768px) {
   .hero {
+    display: flex;
+    flex-flow: column;
     left: 50%;
     transform: translate(-50%, -100%);
-    text-align: center;
     white-space: normal;
     width: 90vw;
+    padding: 2rem;
   }
-
+  
+  
   .hero name {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    font-size: clamp(3rem, 8vw, 2.5rem);
   }
 
   .links {
-    justify-content: center;
+    transform: translate(-1rem, -1rem);
   }
 
   #caption {
@@ -145,7 +154,7 @@ body {
     transform: translateY(-50%);
     width: 0.75rem;
     height: 1px;
-    background: white;
+    background: var(--muted);
   }
 
   #caption::before { left: 0; }
