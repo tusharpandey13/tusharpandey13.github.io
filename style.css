@@ -21,6 +21,7 @@
 
 html, body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -48,7 +49,7 @@ body {
 }
 
 main {
-  width: 100%; height: 100%;
+  width: 100%;
   text-align: center;
 }
 
@@ -61,10 +62,7 @@ main {
 
 .hero name {
   font-size: 32pt;
-  /* font-weight: 700; */
-  /* letter-spacing: -0.03em; */
   line-height: 1;
-  
 }
 
 .links {
@@ -81,6 +79,23 @@ main {
   letter-spacing: 0.02em;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 0;
+    margin-left: 0;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero name {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .links {
+    justify-content: center;
+  }
 }
 
 #caption {
