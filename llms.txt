@@ -1,0 +1,16 @@
+# Tushar Pandey
+
+> Software engineer. This is a personal portfolio site.
+
+## About
+
+- Name: Tushar Pandey
+- Role: Software Engineer
+- Location: India
+- Email: tusharpandey13@gmail.com
+
+## Links
+
+- GitHub: https://github.com/tusharpandey13
+- LinkedIn: https://linkedin.com/in/tusharpandey13
+- Site: https://tusharpandey.com

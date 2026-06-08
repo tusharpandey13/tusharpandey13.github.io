@@ -91,6 +91,10 @@ body {
   cursor: pointer;
 }
 
+.links svg {
+  cursor: pointer;
+}
+
 .links a:hover {
   opacity: 1;
   transform: scale(1.1);

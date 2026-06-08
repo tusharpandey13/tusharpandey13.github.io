@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tusharpandey.com/sitemap.xml
+
+# LLM context
+# https://tusharpandey.com/llms.txt
