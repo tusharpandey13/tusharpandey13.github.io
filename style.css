@@ -30,6 +30,10 @@ body {
   min-height: 100vh;
 }
 
+a {
+  color: var(--accent);
+}
+
 #bg {
   position: fixed;
   inset: 0;
@@ -56,7 +60,9 @@ body {
   white-space: nowrap;
   backdrop-filter: blur(0.5px);
   -webkit-backdrop-filter: blur(0.5px);
-  
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
 }
 .hero .hero-items-hori-flex {
     display: flex;
@@ -74,13 +80,13 @@ body {
   display: flex;
   gap: 1.5rem;
   justify-content: left;
-  transform: translate(-2rem, -1rem);
+  transform: translate(0rem, -1rem);
 }
 
 .links a {
   color: var(--accent);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   opacity: 0.85;
   display: flex;
@@ -91,14 +97,21 @@ body {
   cursor: pointer;
 }
 
-.links svg {
-  cursor: pointer;
-}
-
 .links a:hover {
   opacity: 1;
   transform: scale(1.1);
   border-color: var(--accent);
+  cursor: pointer;
+}
+
+.links a, 
+.links a svg {
+  cursor: pointer !important;
+}
+.links.hero-items-hori-flex {
+  position: relative;
+  z-index: 10;          /* Pulls the links above hidden overlapping layers */
+  pointer-events: auto; /* Ensures mouse clicks are captured */
 }
 
 /* Caption: frosted box, bottom-right */
@@ -128,6 +141,7 @@ body {
     transform: translate(-50%, -100%);
     white-space: normal;
     width: 90vw;
+    align-items: center;
   }
   
   
@@ -136,7 +150,7 @@ body {
   }
 
   .links {
-    transform: translate(0rem, 1rem);
+    transform: translate(0rem, 0rem);
   }
 
   #caption {
