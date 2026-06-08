@@ -80,10 +80,15 @@ body {
 .links a {
   color: var(--accent);
   text-decoration: none;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.links a:hover {
+  opacity: 1;
+  transform: scale(1.15);
 }
 
 .links a:hover {
