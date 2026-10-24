@@ -138,7 +138,7 @@
       text-transform: uppercase;
     }
     main figure { margin: 2em 0; }
-    main figure img { width: 100%; }
+    main figure img { width: 100%; height: auto; }
     main figcaption {
       color: var(--muted);
       font-size: 0.8em;
@@ -417,6 +417,10 @@ P0    = 0x80080000 + (byte &lt;&lt; 15)</code></pre>
 </table></div>
 <p>The three boots, in order: the first derived-P0 root (P0 <code>0x80828000</code>, 56 seconds, one pselect attempt), the re-root after the debugfs panic (P0 <code>0x80720000</code>), and the re-root after the binder panic (P0 <code>0x801f0000</code>, the selective-fd fix). The current state is that last one, and it is under observation, not proven stable.</p>
 <p>What "root" means here is narrow and worth restating. It is a kernel credential patch in the exploit's child, plus an in-memory write of one SELinux byte. It is not a persistent <code>su</code>, not a mounted root filesystem, not a package install, and not a boot-image modification. A reboot restores Enforcing, changes P0, and drops every root server. Nothing survives the boot as root.</p>
+<figure>
+  <img src="termux-root.jpg" width="1426" height="1500" loading="lazy" decoding="async" alt="A phone running Termux. The command su -c prints uid=0(root), SELinux context u:r:kernel:s0, Permissive, and the 6.6.118 kernel. The shell also warns that it cannot find a tty." />
+  <figcaption>On-device check during the third root run, not an ADB-forwarded host shell. <code>su -c</code> returns <code>uid=0(root)</code>, the kernel SELinux context <code>u:r:kernel:s0</code>, and Permissive; the bootloader and AVB are untouched. The <code>can't find tty fd</code> line is the socket shell's missing TTY, which is why the interactive <code>su</code> prompt is awkward and <code>su -c</code> is the reliable path.</figcaption>
+</figure>
 <h2 id="incidents">Incidents</h2>
 <p>Two panics are recorded as first-class documents, because they are where the per-boot nature of this work bites.</p>
 <p>The first was a debugfs read. After the first root, a read-only recon pass mounted debugfs (an authorized state change) and read <code>clk_summary</code> and <code>regulator_summary</code>. The device panicked with a synchronous external abort, a fatal exception, and self-rebooted. Root, Permissive, and P0 were all lost, because all three are per-boot. The unit booted Android again on slot B, so the panic did not brick anything, but it established that those specific debugfs summaries are off-limits on this unit. They stay that way.</p>
