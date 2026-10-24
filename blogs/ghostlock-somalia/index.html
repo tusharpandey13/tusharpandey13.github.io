@@ -110,6 +110,78 @@
       color: var(--muted);
       font-size: 0.9em;
     }
+
+    .hovercard {
+      position: relative;
+      display: inline;
+      color: var(--bg);
+      background: var(--fg);
+      cursor: help;
+      padding: 0 0.12em;
+      border-bottom: 1px dotted var(--bg);
+    }
+    .hovercard .pop {
+      display: none;
+      position: absolute;
+      z-index: 30;
+      left: 0;
+      top: calc(100% + 0.7rem);
+      width: min(38rem, 88vw);
+      padding: 0.95rem 1rem 1rem;
+      background: #17130d;
+      border: 1px solid #3a3021;
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      color: var(--fg);
+      font-weight: normal;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      text-align: left;
+      white-space: normal;
+    }
+    .hovercard .pop::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 1.2rem;
+      border: 7px solid transparent;
+      border-bottom-color: #3a3021;
+    }
+    .hovercard:hover .pop,
+    .hovercard:focus .pop,
+    .hovercard:focus-within .pop { display: block; }
+    .hovercard .pop strong {
+      display: block;
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .hovercard .pop .pop-note {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
+    }
+    .hovercard .pop img {
+      display: block;
+      width: 100%;
+      margin: 0.6rem 0 0.45rem;
+      border-radius: 8px;
+    }
+    .hovercard .pop a { color: var(--accent); }
+    @media (max-width: 700px) {
+      .hovercard .pop {
+        position: fixed;
+        left: 5vw;
+        right: 5vw;
+        top: 12vh;
+        bottom: auto;
+        width: auto;
+      }
+      .hovercard .pop::after { display: none; }
+    }
     @media (max-width: 700px) {
       main pre { padding: 0.8rem; }
       main table { font-size: 0.82em; }
@@ -124,45 +196,46 @@
   <hero>
     <img src="hero.svg" alt="Dark cover illustration: a phone with a lock, the physical-load formula, and uid 2000 to uid 0.">
   </hero>
-<p>CVE-2026-43499, the futex priority-inheritance stack use-after-free, is a fifteen-year-old Linux bug with a public, hardware-verified 6.6 exploit. The interesting part of this project is not the bug. It is the one thing that does not port cleanly to a Unisoc T8300: the physical address where the bootloader dropped the kernel image. That address changes on every boot, and the exploit needs it to write the forged <code>file_operations</code> table. This writeup is about deriving that address from a KASLR leak, proving the chain in QEMU first, and the two panics that followed when we tried to turn a per-boot root into something more.</p>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-43499">CVE-2026-43499</a>, the futex priority-inheritance stack use-after-free, is a fifteen-year-old Linux bug with a public, hardware-verified 6.6 exploit. The interesting part of this project is not the bug. It is the one thing that does not port cleanly to a Unisoc T8300: the physical address where the bootloader dropped the kernel image. That address changes on every boot, and the exploit needs it to write the forged <a href="https://elixir.bootlin.com/linux/v6.6/source/include/linux/fs.h"><code>file_operations</code></a> table. This writeup is about deriving that address from a KASLR leak, proving the chain in QEMU first, and the two panics that followed when we tried to turn a per-boot root into something more.</p>
 <h2 id="tldr">TL;DR</h2>
-<p>On a locked, verified-boot Redmi A7 Pro 5G (<code>somalia</code>, Unisoc T8300, Android 16, kernel 6.6.118-android15), the public GhostLock chain took a uid-2000 <code>shell</code> to a uid-0 kernel credential patch on three separate boots. The boot image was never modified. The device-specific piece is the physical load address, P0: the vendor loader places the kernel at <code>0x80080000 + (TOS byte &lt;&lt; 15)</code>, where the TOS byte is a per-boot TrustZone reply that also seeds <code>/chosen/kaslr-seed</code>. Because the kernel encodes the low 21 bits of the physical placement into its virtual KASLR slide, the same tracefs leak the chain already needs for the virtual slide also yields P0. There is no brute force and no serial port. Root is per-boot. Two later builds panicked the kernel; both are written up.</p>
+<p>On a locked, verified-boot Redmi A7 Pro 5G (<code>somalia</code>, Unisoc T8300, Android 16, kernel 6.6.118-android15), the public GhostLock chain took a uid-2000 <code>shell</code> to a uid-0 kernel credential patch on three separate boots. The boot image was never modified. The device-specific piece is the physical load address, <span class="hovercard" tabindex="0">P0<span class="pop"><strong>Per-boot physical load</strong><span class="pop-note">The loader places the kernel at <code>0x80080000 + (byte &lt;&lt; 15)</code>. The byte changes each boot, so P0 has to be derived, not baked in.</span><img src="p0-range.svg" alt="Range of possible P0 values"><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/exploit/p0-derivation.md">Read the derivation notes</a></span></span>: the vendor loader places the kernel at <code>0x80080000 + (TOS byte &lt;&lt; 15)</code>, where the <span class="hovercard" tabindex="0">TOS byte<span class="pop"><strong>TrustZone command 0x50</strong><span class="pop-note">SprdBoot reads byte 0 of the reply, shifts it by 15, and sets PCD31. The same value seeds <code>/chosen/kaslr-seed</code>, which is why the KASLR slide can recover it.</span><img src="tos-flow.svg" alt="TOS reply to PCD31, physical load and KASLR seed"><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/device/boot-chain.md">Read the boot-chain notes</a></span></span> is a per-boot TrustZone reply that also seeds <code>/chosen/kaslr-seed</code>. Because the kernel encodes the low 21 bits of the physical placement into its virtual KASLR slide, the same <a href="https://docs.kernel.org/trace/ftrace.html">tracefs</a> leak the chain already needs for the virtual slide also yields P0. There is no brute force and no serial port. Root is per-boot. Two later builds panicked the kernel; both are written up.</p>
 <h2 id="the-device-and-the-threat-model">The device and the threat model</h2>
 <p>The target is a retail Redmi A7 Pro 5G, codename <code>somalia</code>, Unisoc T8300 (UMS9632), two Cortex-A78 and six Cortex-A55 cores, Mali-G57 MC2, 4 GB of RAM, 128 GB of UFS storage, Android 16 with the 2026-08-01 security patch. It is a user build: <code>ro.debuggable=0</code>, <code>ro.secure=1</code>, and <code>adb root</code> is refused.</p>
-<p>The security posture is the interesting part. The bootloader is locked, verified boot is green, and AVB is at version 1.3. Eight erofs volumes are mounted read-only through dm-verity. The device is A/B, but slot A is unbootable (<code>tries_remaining: 0</code>), so slot B is the only Android boot path, and the <code>misc</code> partition held a pending one-shot bootloader command. Every reboot carried the risk of landing in the bootloader instead of Android. That single constraint shaped the entire engagement: anything that panicked the kernel also risked the last good boot path.</p>
+<p>The security posture is the interesting part. The bootloader is locked, verified boot is green, and <a href="https://source.android.com/docs/security/features/verifiedboot/avb">AVB</a> is at version 1.3. Eight erofs volumes are mounted read-only through <a href="https://source.android.com/docs/security/features/verifiedboot/dm-verity">dm-verity</a>. The device is A/B, but slot A is unbootable (<code>tries_remaining: 0</code>), so slot B is the only Android boot path, and the <code>misc</code> partition held a pending one-shot bootloader command. Every reboot carried the risk of landing in the bootloader instead of Android. That single constraint shaped the entire engagement: anything that panicked the kernel also risked the last good boot path.</p>
 <p>The kernel is 6.6.118-android15, built from the source commit that appears in the banner. <code>CONFIG_FUTEX_PI=y</code>, KASLR on, KCFI on, <code>kptr_restrict=2</code>, <code>CONFIG_STRICT_KERNEL_RWX=y</code>, <code>CONFIG_HARDENED_USERCOPY=y</code>. <code>CONFIG_USER_NS</code> is off, which closes a class of container-based escalations. The shell process runs as uid 2000 with a <code>readtracefs</code> group membership that turns out to matter.</p>
 <p>The work was read-only by default and owner-authorized per session, in writing. No partition was written, no bootloader was unlocked, and no boot image was modified. The payload writes only in-memory kernel state. The one persistent userspace change outside <code>/data/local/tmp</code> was an ADB public-key append under <code>/data/misc/adb</code>, made with a backup, for the wireless bootstrap; the backup restores it.</p>
 <h2 id="the-public-cve-and-who-owns-the-technique">The public CVE, and who owns the technique</h2>
-<p>This repository does not claim discovery. GhostLock is CVE-2026-43499, described by NebuSec in "IonStack Part II: GhostLock" and public since 2026-05-21 at NVD and MITRE. The bug is in <code>remove_waiter()</code> in the futex priority-inheritance path. The vulnerable version locks <code>current-&gt;pi_lock</code> and clears <code>current-&gt;pi_blocked_on</code>, but in the <code>FUTEX_CMP_REQUEUE_PI</code> rollback path <code>current</code> is the requeuer, not the waiter. The waiter returns to userspace with a stale <code>pi_blocked_on</code> pointer into a kernel stack frame that has already been freed. The public framing is "present in all Linux distributions for 15 years," which is why the bug is more interesting than the phone.</p>
-<p>The chain I used is the public one, adapted for aarch64 by <code>JingMatrix/ pixel-ksu-root</code> at commit <code>65762e7</code>, with the OnePlus device matrix from <code>JoinChang/ghostlock-oneplus</code> and the heap-pointer side channel ideas from KernelSnitch (TU Graz). What this project adds on top is a Unisoc T8300 port, the per-boot P0 derivation, a QEMU parity lab, and the two incident records. The credits are in NOTICE and the full list is in the references section at the end.</p>
+<p>This repository does not claim discovery. GhostLock is CVE-2026-43499, described by <a href="https://nebusec.ai/research/ionstack-part-2/">NebuSec</a> in "IonStack Part II: GhostLock" and public since 2026-05-21 at <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-43499">NVD</a> and <a href="https://www.cve.org/CVERecord?id=CVE-2026-43499">MITRE</a>. The bug is in <a href="https://elixir.bootlin.com/linux/v6.6/source/kernel/locking/rtmutex.c"><code>remove_waiter()</code></a> in the futex priority-inheritance path. The vulnerable version locks <code>current-&gt;pi_lock</code> and clears <code>current-&gt;pi_blocked_on</code>, but in the <a href="https://man7.org/linux/man-pages/man2/futex.2.html"><code>FUTEX_CMP_REQUEUE_PI</code></a> rollback path <code>current</code> is the requeuer, not the waiter. The waiter returns to userspace with a stale <code>pi_blocked_on</code> pointer into a kernel stack frame that has already been freed. The public framing is "present in all Linux distributions for 15 years," which is why the bug is more interesting than the phone.</p>
+<p>The chain I used is the public one, adapted for aarch64 by <a href="https://github.com/JingMatrix/pixel-ksu-root"><code>JingMatrix/pixel-ksu-root</code></a> at commit <code>65762e7</code>, with the OnePlus device matrix from <a href="https://github.com/JoinChang/ghostlock-oneplus"><code>JoinChang/ghostlock-oneplus</code></a> and the heap-pointer side channel ideas from <a href="https://github.com/isec-tugraz/KernelSnitch">KernelSnitch</a> (TU Graz). What this project adds on top is a Unisoc T8300 port, the per-boot P0 derivation, a QEMU parity lab, and the two incident records. The credits are in NOTICE and the full list is in the references section at the end.</p>
 <h2 id="the-exploit-path">The exploit path</h2>
 <p>The chain on this device, in order:</p>
 <ol type="1">
-<li><p>Leak the virtual KASLR base. A plain <code>shell</code> writes a marker to <code>trace_marker</code>, then reads <code>per_cpu/cpu0/trace_pipe_raw</code>. The record's <code>ip</code> field holds the value of <code>_THIS_IP_</code> inside <code>tracing_mark_write()</code>. Subtracting the per-image offset <code>0x1f4ccc</code> gives <code>_text</code>. This works because <code>trace_marker</code> is world-writable, the shell is in the <code>readtracefs</code> group, and the raw pipe is not filtered by <code>kptr_restrict</code>.</p></li>
+<li><p>Leak the virtual KASLR base. A plain <code>shell</code> writes a marker to <code>trace_marker</code>, then reads <code>per_cpu/cpu0/trace_pipe_raw</code>. The record's <code>ip</code> field holds the value of <code>_THIS_IP_</code> inside <code>tracing_mark_write()</code>. Subtracting the per-image offset <code>0x1f4ccc</code> gives <code>_text</code>. This works because <code>trace_marker</code> is world-writable, the shell is in the <code>readtracefs</code> group, and the raw pipe is not filtered by <a href="https://docs.kernel.org/admin-guide/sysctl/kernel.html#kptr-restrict"><code>kptr_restrict</code></a>.</p></li>
 <li><p>Derive P0 from that slide. This is the device-specific step and the subject of the next section.</p></li>
 <li><p>Trigger the futex UAF. Three threads and three futex words reproduce the <code>FUTEX_CMP_REQUEUE_PI</code> deadlock cycle, so the kernel returns <code>-EDEADLK</code> and runs the rollback that frees a waiter while a dangling pointer survives.</p></li>
-<li><p>Reclaim the freed waiter stack with <code>pselect6</code>. A large <code>fd_set</code> is copied onto the stack slot left by the dead <code>rt_mutex_waiter</code>. The descriptor bytes are attacker-controlled, so the next PI chain walk reads them as waiter fields.</p></li>
+<li><p>Reclaim the freed waiter stack with <a href="https://man7.org/linux/man-pages/man2/select.2.html"><code>pselect6</code></a>. A large <code>fd_set</code> is copied onto the stack slot left by the dead <code>rt_mutex_waiter</code>. The descriptor bytes are attacker-controlled, so the next PI chain walk reads them as waiter fields.</p></li>
 <li><p>Turn the rb-tree erase into an arbitrary write. The unlink writes a chosen value to a chosen kernel address. The target is the <code>fops</code> pointer in the <code>ashmem</code> miscdevice, aimed through the physical alias that P0 provides.</p></li>
 <li><p>Forge the <code>ashmem</code> <code>file_operations</code>. The fake table's slots are not user code. They are addresses of genuine kernel functions: configfs read and write iterators, <code>copy_splice_read</code>, <code>noop_llseek</code>. That is what keeps the table alive under KCFI, which checks indirect call targets against type hashes.</p></li>
 <li><p>Open <code>/dev/ashmem</code> through the forged table, giving a kernel read/write primitive.</p></li>
-<li><p>Promote that to a pipe-based physical read/write, then patch the root child's <code>cred</code> and <code>real_cred</code>: uid and gid to 0, capability sets filled, seccomp cleared, SELinux SID set to the kernel SID.</p></li>
+<li><p>Promote that to a pipe-based physical read/write, then patch the root child's <code>cred</code> and <code>real_cred</code>: uid and gid to 0, capability sets filled, seccomp cleared, <a href="https://docs.kernel.org/admin-guide/LSM/SELinux.html">SELinux</a> SID set to the kernel SID.</p></li>
 <li><p>Write <code>selinux_state.enforcing = 0</code>. The device reports Permissive until the next reboot.</p></li>
 </ol>
 <p>The result is a kernel credential patch in the exploit's child, not an interactive root shell. A fresh <code>adb shell id</code> is still uid 2000. To keep a uid-0 process alive for recon, a second run starts an abstract-socket root server from that child before it exits; the server is reparented to init and lives for the rest of the boot.</p>
   <figure>
-    <img src="attack-path.svg" alt="Flow from uid 2000 shell through tracefs leak, P0, pselect UAF, forged fops, pipe read-write, and credential patch.">
+    <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/exploit/ghostlock.md"><img src="attack-path.svg" alt="Flow from uid 2000 shell through tracefs leak, P0, pselect UAF, forged fops, pipe read-write, and credential patch."></a>
     <figcaption>The chain in one line. The device-specific step is the second: derive P0 from the same leak.</figcaption>
   </figure>
 <h2 id="per-boot-p0-the-derivation">Per-boot P0: the derivation</h2>
 <p>This is the contribution worth reading closely, because it is what made the port work at all.</p>
-<p>The upstream Pixel exploit assumes the kernel image sits at a compile-time physical address. On this Unisoc boot chain there is no U-Boot environment and no <code>kernel_addr_r</code>. The kernel is loaded by <code>SprdBoot.efi</code> inside an EDK2 firmware volume, and the load address is chosen at runtime.</p>
-<p>On a normal boot, <code>SprdBoot.efi</code> calls the TrustZone protocol with command <code>0x50</code> and a 4-byte output buffer. It reads only the first byte of the reply, shifts it left by 15, and writes the result to PCD token 31. That value is then used in three places: the kernel read destination, the entry PC, and the DTB property <code>/chosen/kaslr-seed</code>. In other words:</p>
+<p>The upstream Pixel exploit assumes the kernel image sits at a compile-time physical address. On this Unisoc boot chain there is no U-Boot environment and no <code>kernel_addr_r</code>. The kernel is loaded by <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/device/boot-chain.md"><code>SprdBoot.efi</code></a> inside an <a href="https://github.com/tianocore/edk2">EDK2</a> firmware volume, and the load address is chosen at runtime.</p>
+  <figure><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/device/boot-chain.md"><img src="boot-chain.svg" alt="Boot chain from SPL and EDK2 through TrustZone and PCD31 to the kernel load and KASLR seed."></a><figcaption>The loader, the TrustZone reply, and the two places the same byte ends up: the physical load and the KASLR seed.</figcaption></figure>
+<p>On a normal boot, <code>SprdBoot.efi</code> calls the <a href="https://developer.arm.com/Architectures/TrustZone">TrustZone</a> protocol with command <code>0x50</code> and a 4-byte output buffer. It reads only the first byte of the reply, shifts it left by 15, and writes the result to PCD token 31. That value is then used in three places: the kernel read destination, the entry PC, and the DTB property <code>/chosen/kaslr-seed</code>. In other words:</p>
 <pre><code>PCD31        = byte0 &lt;&lt; 15
 phys(_text)  = 0x80080000 + PCD31
 kaslr-seed   = byte0 &lt;&lt; 15</code></pre>
 <p>The byte is a random value in 0..255, so the physical load ranges from <code>0x80080000</code> to <code>0x80878000</code> in 32 KiB steps. The base <code>0x80080000</code> is not 2 MiB aligned. Two fixed-P0 attempts earlier in the project used <code>0x80000000</code> and <code>0x80200000</code>; the first is always below the loader base, and the second is only correct for one byte out of 256. Both missed for that reason, not because of a lost race.</p>
   <figure>
-    <img src="p0-range.svg" alt="Number line from 0x80080000 to 0x80878000 showing the two fixed guesses and one observed load.">
+    <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/exploit/p0-derivation.md"><img src="p0-range.svg" alt="Number line from 0x80080000 to 0x80878000 showing the two fixed guesses and one observed load."></a>
     <figcaption>The loader base and the 256 possible 32 KiB steps. The old fixed values were not candidates.</figcaption>
   </figure>
 <p>The key insight is that the same byte seeds the virtual KASLR, and the arm64 kernel places the low 21 bits of the physical load into the virtual slide. The source states it directly: the KASLR offset modulo <code>MIN_KIMG_ALIGN</code> comes from physical placement, not from the seed. <code>head.S</code> ORs the identity-mapped physical low bits into the offset, and <code>MIN_KIMG_ALIGN</code> is 2 MiB. So the low 21 bits of the slide are the low 21 bits of the physical load, and the high 2 bits of the byte are visible in <code>(slide &gt;&gt; 21) &amp; 3</code>.</p>
@@ -173,7 +246,7 @@ slide = leaked_text - KIMAGE_VADDR
 byte  = (((slide &gt;&gt; 21) &amp; 3) &lt;&lt; 6) | \
         ((((slide &amp; 0x1fffff) - 0x80000) &amp; 0x1fffff) &gt;&gt; 15)
 P0    = 0x80080000 + (byte &lt;&lt; 15)</code></pre>
-<p>The sanity checks are <code>0x80080000 &lt;= P0 &lt;= 0x80878000</code> and <code>(P0 - 0x80080000) % 0x8000 == 0</code>. The script <code>scripts/ghostlock_p0_from_slide.py</code> does the arithmetic.</p>
+<p>The sanity checks are <code>0x80080000 &lt;= P0 &lt;= 0x80878000</code> and <code>(P0 - 0x80080000) % 0x8000 == 0</code>. The script <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/scripts/ghostlock_p0_from_slide.py"><code>scripts/ghostlock_p0_from_slide.py</code></a> does the arithmetic.</p>
 <p>The firmware side of this is verified by disassembly, not assumption. <code>SprdBoot.efi</code> calls a TOS-random helper on the normal boot path. That helper allocates a page, calls TrustZone with command <code>0x50</code> and a 4-byte reply, reads only byte 0, and writes <code>byte &lt;&lt; 15</code> to PCD token 31. The other three reply bytes are discarded. PCD 31 is then read in three places: the kernel read destination, the entry PC, and the DTB property writer that emits <code>/chosen/kaslr-seed</code> as the byte-swapped value. The kernel's <code>kaslr_early_init</code> consumes and zeroes that property, so it is not recoverable after early boot. This is why a static analysis of the OTA images cannot produce P0, and why the live slide is the only surviving copy.</p>
 <p>The worked examples line up with the recorded roots:</p>
 <div class="table-wrap"><table>
@@ -216,10 +289,10 @@ P0    = 0x80080000 + (byte &lt;&lt; 15)</code></pre>
 <h2 id="the-qemu-lab-and-kcfi">The QEMU lab and KCFI</h2>
 <p>Running a kernel exploit blind on a device with one bootable slot is a bad idea. Before any phone run, the chain was validated in a QEMU lab.</p>
 <p>The exact vendor <code>Image</code> boots under QEMU to <code>/init</code>, and it reproduces the tracefs leak in-VM. A source-parity GKI 6.6.118 build at the same banner commit also boots, with a different clang/config that changes the <code>_THIS_IP_</code> offset from the vendor's <code>0x1f4ccc</code> to <code>0x19ac64</code>. That difference is why the offset is part of the target header, not a universal constant. The stock chain reaches a full uid-0 credential patch in-VM on attempt 1.</p>
-<p>The lab settled two things that the phone runs depended on. First, KCFI: the forged fops table passes because every slot is a real kernel function with the right type hash, not because KCFI is absent. Second, the pselect retry logic: an in-process refresh after a CFI miss stalls in a slow second groom, and a process-wide SIGALRM watchdog is unusable across threads. The accepted fix is one pselect attempt per process, with the outer loop re-forking a fresh first groom. That is the <code>pselect-attempts1.patch</code> in the port material.</p>
+<p>The lab settled two things that the phone runs depended on. First, <span class="hovercard" tabindex="0">KCFI<span class="pop"><strong>Kernel Control-Flow Integrity</strong><span class="pop-note">KCFI checks an indirect call target against the call site type hash. The fake fops slots are genuine kernel functions of the right type, so the table is valid without disabling the mitigation.</span><a href="https://clang.llvm.org/docs/ControlFlowIntegrity.html">Clang CFI documentation</a></span></span>: the forged fops table passes because every slot is a real kernel function with the right type hash, not because KCFI is absent. Second, the pselect retry logic: an in-process refresh after a CFI miss stalls in a slow second groom, and a process-wide SIGALRM watchdog is unusable across threads. The accepted fix is one pselect attempt per process, with the outer loop re-forking a fresh first groom. That is the <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/tools/somalia/patch/pselect-attempts1.patch"><code>pselect-attempts1.patch</code></a> in the port material.</p>
 <p>The lab also caught a harness bug before it could waste a phone run: a <code>umask(0)</code> issue on <code>/dev/ashmem</code> inside the initramfs made an open fail look like an exploit failure. The root cause was the lab init, not the chain.</p>
 <h2 id="failures">Failures</h2>
-<p>The first track on this device was not GhostLock. It was a Mali GPU driver use-after-free in <code>kbase_do_syncset()</code>, a per-context shrinker race in the shipped <code>r54p1</code> module. The race was real: two controlled crash-oracle runs panicked the kernel in <code>kbase_sync_single</code> reading a poisoned <code>struct page</code>. That validated the bug but did not produce a write primitive, and it did not answer the question of which CVE it maps to. Rather than keep crashing the daily driver for a primitive that was not materializing, the project pivoted to GhostLock, a chain with a public, working write primitive and a shorter path to credential modification.</p>
+<p>The first track on this device was not GhostLock. It was a Mali GPU driver use-after-free in <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/device/mali.md"><code>kbase_do_syncset()</code></a>, a per-context shrinker race in the shipped <code>r54p1</code> module. The race was real: two controlled crash-oracle runs panicked the kernel in <code>kbase_sync_single</code> reading a poisoned <code>struct page</code>. That validated the bug but did not produce a write primitive, and it did not answer the question of which CVE it maps to. Rather than keep crashing the daily driver for a primitive that was not materializing, the project pivoted to GhostLock, a chain with a public, working write primitive and a shorter path to credential modification.</p>
 <p>The fixed-P0 misses were the next failure. Two phone runs used <code>0x80000000</code> and <code>0x80200000</code>. Both reached the CFI open step and then missed, because the forged write landed on the wrong physical page. The P0 firmware audit explained both: <code>0x80000000</code> is below the loader base, and <code>0x80200000</code> is correct for exactly one of 256 possible TOS bytes. A wrong P0 presents as a silent miss, which is easy to mistake for a lost race. The derivation removed that failure mode.</p>
 <p>Then came the two real incidents, in the next section.</p>
 <h2 id="results-root-per-boot">Results: root, per boot</h2>
@@ -233,7 +306,7 @@ P0    = 0x80080000 + (byte &lt;&lt; 15)</code></pre>
 <tbody>
 <tr>
 <td>uid-0 kernel cred patch (<code>uid 2000 -&gt; 0</code>)</td>
-<td>demonstrated on three boots</td>
+<td><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/evidence/root-runs.md">demonstrated on three boots</a></td>
 </tr>
 <tr>
 <td>Full capability set</td>
@@ -287,7 +360,7 @@ Comm: binder:1234_7</code></pre>
 </ul>
 <h2 id="ethics-and-disclosure">Ethics and disclosure</h2>
 <p>CVE-2026-43499 is public. The NVD entry was published 2026-05-21, the finder's writeup is dated 2026-07-07, and the bug is broadly discussed. This repository adds one device-specific result on top of a public bug, not a new disclosure.</p>
-<p>The work was done on a device the owner owns, under per-session written authorization, with a read-only default posture. The repository publishes no weaponized tool, no prebuilt <code>.so</code> for other devices, and no firmware. The boot IDs, P0 values, and incident records in this tree are audit evidence for one unit, not a how-to for another. If you use any of this, use it on hardware you own, and read SECURITY.md first.</p>
+<p>The work was done on a device the owner owns, under per-session written authorization, with a read-only default posture. The repository publishes no weaponized tool, no prebuilt <code>.so</code> for other devices, and no firmware. The boot IDs, P0 values, and incident records in this tree are audit evidence for one unit, not a how-to for another. If you use any of this, use it on hardware you own, and read <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/SECURITY.md">SECURITY.md</a> first.</p>
 <h2 id="timeline">Timeline</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -352,16 +425,16 @@ Comm: binder:1234_7</code></pre>
 <ul>
 <li>NebuSec, "IonStack Part II: GhostLock", <a href="https://nebusec.ai/research/ionstack-part-2/">https://nebusec.ai/research/ionstack-part-2/</a> (primary)</li>
 <li>NebuSec/CyberMeowfia, <a href="https://github.com/NebuSec/CyberMeowfia">https://github.com/NebuSec/CyberMeowfia</a></li>
-<li>JingMatrix/pixel-ksu-root, commit <code>65762e7</code></li>
-<li>JoinChang/ghostlock-oneplus</li>
-<li>Linuxoid-cn/CVE-2026-43499-Poc-Analysis</li>
-<li>KernelSnitch, Lukas Maar et al., TU Graz, NDSS 2025</li>
-<li>NVD CVE-2026-43499, MITRE CVE-2026-43499</li>
+<li><a href="https://github.com/JingMatrix/pixel-ksu-root">JingMatrix/pixel-ksu-root</a>, commit <code>65762e7</code></li>
+<li><a href="https://github.com/JoinChang/ghostlock-oneplus">JoinChang/ghostlock-oneplus</a></li>
+<li><a href="https://github.com/Linuxoid-cn/CVE-2026-43499-Poc-Analysis">Linuxoid-cn/CVE-2026-43499-Poc-Analysis</a></li>
+<li><a href="https://github.com/isec-tugraz/KernelSnitch">KernelSnitch</a>, Lukas Maar et al., TU Graz, NDSS 2025</li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-43499">NVD CVE-2026-43499</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2026-43499">MITRE CVE-2026-43499</a></li>
 <li>Hacker News thread, <a href="https://news.ycombinator.com/item?id=48834309">https://news.ycombinator.com/item?id=48834309</a></li>
 </ul>
 <p>Details, offsets, and the sanitized evidence trail are in <a href="https://github.com/tusharpandey13/ghostlock-somalia/tree/main/docs/">docs/</a>, <a href="https://github.com/tusharpandey13/ghostlock-somalia/tree/main/reference/">reference/</a>, and <a href="https://github.com/tusharpandey13/ghostlock-somalia/tree/main/evidence/">evidence/</a>.</p>
   <footer>
-    <p>Written by Tushar Pandey. Source and sanitized evidence: <a href="https://github.com/tusharpandey13/ghostlock-somalia">ghostlock-somalia</a> (<a href="https://github.com/tusharpandey13/ghostlock-somalia/releases/tag/v1.0">v1.0</a>).</p>
+    <p>Written by Tushar Pandey. Source and sanitized evidence: <a href="https://github.com/tusharpandey13/ghostlock-somalia">ghostlock-somalia</a> (<a href="https://github.com/tusharpandey13/ghostlock-somalia/releases/tag/v1.0">v1.0</a>). Also: <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/STATUS.md">status</a>, <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/TIMELINE.md">timeline</a>, <a href="https://github.com/tusharpandey13/ghostlock-somalia/tree/main/docs/">docs</a>.</p>
   </footer>
 </main>
 </body>

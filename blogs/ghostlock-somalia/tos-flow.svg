@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" role="img" aria-labelledby="title desc">
+  <title id="title">TOS byte to P0 and KASLR seed</title>
+  <desc id="desc">SprdBoot asks TrustZone for a four-byte reply, uses byte zero for PCD31, then uses PCD31 for the kernel load and the DTB KASLR seed.</desc>
+  <rect width="760" height="250" rx="14" fill="#17130d" stroke="#3a3021"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+    <g fill="#0c0a07" stroke="#3a3021">
+      <rect x="20" y="72" width="142" height="64" rx="8"/>
+      <rect x="198" y="72" width="142" height="64" rx="8"/>
+      <rect x="376" y="72" width="142" height="64" rx="8"/>
+      <rect x="554" y="34" width="180" height="60" rx="8" stroke="#7fc16a"/>
+      <rect x="554" y="126" width="180" height="60" rx="8" stroke="#d48993"/>
+    </g>
+    <g fill="#e0c9a5" text-anchor="middle">
+      <text x="91" y="100">SprdBoot</text><text x="91" y="120" fill="#98886f">normal boot</text>
+      <text x="269" y="100">TOS 0x50</text><text x="269" y="120" fill="#98886f">4-byte reply</text>
+      <text x="447" y="100">byte0</text><text x="447" y="120" fill="#98886f">&lt;&lt; 15</text>
+      <text x="644" y="58">phys(_text)</text><text x="644" y="78" fill="#7fc16a">0x80080000 + PCD31</text>
+      <text x="644" y="150">kaslr-seed</text><text x="644" y="170" fill="#d48993">byte0 &lt;&lt; 15</text>
+    </g>
+    <g stroke="#7fc16a" stroke-width="2" fill="none">
+      <path d="M162 104h30"/><path d="M340 104h30"/><path d="M518 104h18v-40h12"/><path d="M518 104h18v42h12"/>
+    </g>
+    <g fill="#7fc16a">
+      <path d="M190 104l-9-6v12z"/><path d="M368 104l-9-6v12z"/><path d="M548 64l-6-9v12z"/><path d="M548 146l-6 9v-12z"/>
+    </g>
+    <text x="380" y="218" text-anchor="middle" fill="#98886f" font-size="13">PCD31 controls both addresses; only PCD31 is consumed after early boot</text>
+  </g>
+</svg>
