@@ -91,6 +91,10 @@ h3 {
   line-height: 1.25;
 }
 
+h1, h2, h3 {
+  color: var(--accent2);
+}
+
 hero {
   display: block;
   max-width: 80vw;
