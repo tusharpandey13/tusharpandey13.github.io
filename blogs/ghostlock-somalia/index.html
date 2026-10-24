@@ -203,16 +203,11 @@
   <p class="meta">Field note · 24 Oct 2026 · ~9 min</p>
 <h1 class="post-title" id="rooting-series-ghostlock-on-a-unisoc-t8300">Rooting series: GhostLock on a Unisoc T8300</h1>
   <h3 class="post-subtitle">Per-boot P0 derivation, QEMU parity, and two incident records</h3>
-  <h2 id="tldr">TL;DR: A locked phone, a public bug, and a physical address that changes every boot</h2>
-  <p><strong>In plain English:</strong> I rooted a locked Redmi A7 Pro 5G (Unisoc T8300) without flashing it. The public kernel bug was GhostLock (CVE-2026-43499). The hard part was a physical KASLR address that moves on every boot.</p>
-  <p><strong>What I did.</strong> I ported GhostLock to this phone and got a uid-0 kernel credential patch on three boots; the first root took 56 seconds. No boot image was flashed and no bootloader was unlocked.</p>
-  <ul>
-    <li><strong>What was new:</strong> deriving the per-boot physical load, P0, from the tracefs KASLR slide; validating the chain in QEMU; and writing up two kernel panics.</li>
-    <li><strong>What is reusable:</strong> the P0 formula, target offsets, one-attempt pselect patch, QEMU notes, and the incident postmortems.</li>
-  </ul>
-  <p><strong>The catch:</strong> root is per-boot only. There is no persistent root or cross-reboot su, and the latest selective-fd fix is still under observation.</p>
-  <p><strong>Keywords:</strong> GhostLock, CVE-2026-43499, Android root, kernel exploit, KASLR, Unisoc T8300, Redmi A7 Pro 5G, KCFI, AVB, QEMU.</p>
+  <h2 id="tldr">TL;DR</h2>
 
+  <p>
+    A locked phone, a public bug, and a physical address that changes every boot. In plain English, I rooted a locked Redmi A7 Pro 5G (Unisoc T8300) without flashing it. The public kernel bug was GhostLock (CVE-2026-43499). The hard part was a physical KASLR address that moves on every boot. I ported GhostLock to this phone and got a uid-0 kernel credential patch on three boots; the first root took 56 seconds. No boot image was flashed and no bootloader was unlocked.
+    </p>
   <hero>
     <img src="hero.svg" alt="Dark cover illustration: a phone with a lock, the physical-load formula, and uid 2000 to uid 0.">
   </hero>
