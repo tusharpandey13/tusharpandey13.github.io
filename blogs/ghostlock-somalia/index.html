@@ -27,6 +27,55 @@
       margin: 0 0 1rem;
     }
 
+    .repo-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin: 0 0 2rem;
+      padding: 0.9rem 1rem;
+      background: #17130d;
+      border: 1px solid #3a3021;
+      border-radius: 12px;
+      color: var(--fg);
+      text-decoration: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .repo-banner:hover,
+    .repo-banner:focus-visible {
+      border-color: var(--accent);
+      background: #1b160f;
+    }
+    .repo-banner svg {
+      flex: 0 0 auto;
+      color: var(--accent);
+    }
+    .repo-banner-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      min-width: 0;
+    }
+    .repo-banner-copy strong {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .repo-banner-copy span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+    .repo-banner .arrow {
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+    @media (max-width: 600px) {
+      .repo-banner { align-items: flex-start; flex-wrap: wrap; }
+      .repo-banner .arrow { margin-left: 0; }
+    }
     .post-title {
       color: var(--title);
       margin-bottom: 0.35rem;
@@ -203,6 +252,18 @@
   <p class="meta">Field note · 24 Oct 2026 · ~9 min</p>
 <h1 class="post-title" id="rooting-series-ghostlock-on-a-unisoc-t8300">Rooting series: GhostLock on a Unisoc T8300</h1>
   <h3 class="post-subtitle">Per-boot P0 derivation, QEMU parity, and two incident records</h3>
+
+  <a class="repo-banner" href="https://github.com/tusharpandey13/ghostlock-somalia" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+    </svg>
+    <span class="repo-banner-copy">
+      <strong>Research repository</strong>
+      <span>Source, target offsets, QEMU notes, and sanitized evidence</span>
+    </span>
+    <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+
   <h2 id="tldr">TL;DR</h2>
 
   <p>
@@ -236,8 +297,8 @@
 </ol>
 <p>The result is a kernel credential patch in the exploit's child, not an interactive root shell. A fresh <code>adb shell id</code> is still uid 2000. To keep a uid-0 process alive for recon, a second run starts an abstract-socket root server from that child before it exits; the server is reparented to init and lives for the rest of the boot.</p>
   <figure>
-    <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/exploit/ghostlock.md"><img src="attack-path.svg" alt="Flow from uid 2000 shell through tracefs leak, P0, pselect UAF, forged fops, pipe read-write, and credential patch."></a>
-    <figcaption>The chain in one line. The device-specific step is the second: derive P0 from the same leak.</figcaption>
+    <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/exploit/ghostlock.md"><img src="attack-path.svg" alt="Memory map from the userland leak and P0 to a freed waiter, fd_set reclaim, rb-tree write, forged fops, pipe primitive, and credential patch."></a>
+    <figcaption>The exploit as a memory map: free, reclaim, write, forge, then turn the pipe primitive into uid 0.</figcaption>
   </figure>
 <h2 id="per-boot-p0-the-derivation">Per-boot P0: the derivation</h2>
 <p>This is the contribution worth reading closely, because it is what made the port work at all.</p>
