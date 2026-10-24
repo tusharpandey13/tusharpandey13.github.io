@@ -59,6 +59,15 @@ body {
   text-underline-offset: 0.15em;
 }
 
+.meta {
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
 
 a {
   color: var(--accent);
