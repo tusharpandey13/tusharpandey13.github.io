@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">The per-boot physical load range</title>
+  <desc id="desc">A number line from 0x80080000 to 0x80878000 in 32 KiB steps, with fixed guesses and one observed load marked.</desc>
+  <rect width="1200" height="300" rx="20" fill="#110e09"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="70" y="54" fill="#7fc16a" font-size="16" letter-spacing="3">P0 / 256 POSSIBLE LOADS</text>
+    <line x1="90" y1="142" x2="1110" y2="142" stroke="#3a3021" stroke-width="2"/>
+    <g stroke="#98886f">
+      <path d="M90 132v20M1110 132v20"/>
+      <path d="M598 132v20" stroke="#d48993"/>
+      <path d="M1024 132v20" stroke="#7fc16a"/>
+    </g>
+    <text x="90" y="182" fill="#e0c9a5" font-size="15">0x80080000</text>
+    <text x="1110" y="182" text-anchor="end" fill="#e0c9a5" font-size="15">0x80878000</text>
+    <text x="598" y="112" text-anchor="middle" fill="#d48993" font-size="14">0x80200000 · one byte in 256</text>
+    <text x="1024" y="112" text-anchor="middle" fill="#7fc16a" font-size="14">0x80828000 · this boot</text>
+    <text x="600" y="236" text-anchor="middle" fill="#98886f" font-size="15">0x80080000 + (TOS byte &lt;&lt; 15), 32 KiB steps</text>
+  </g>
+</svg>

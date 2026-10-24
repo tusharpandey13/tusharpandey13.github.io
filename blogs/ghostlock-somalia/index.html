@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GhostLock on a phone that only boots one slot — Tushar Pandey</title>
+  <meta name="description" content="A field note on porting GhostLock (CVE-2026-43499) to a Redmi A7 Pro 5G, deriving the per-boot physical kernel load, and the two panics that followed." />
+  <meta name="author" content="Tushar Pandey" />
+  <link rel="canonical" href="https://tusharpandey.com/blogs/ghostlock-somalia/" />
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="../../style.css" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="GhostLock on a phone that only boots one slot" />
+  <meta property="og:description" content="A Redmi A7 Pro 5G, a per-boot physical address, and two panics." />
+  <meta property="og:url" content="https://tusharpandey.com/blogs/ghostlock-somalia/" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    .post {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 7vh 6vw 12vh;
+      line-height: 1.75;
+    }
+    .post nav {
+      margin-bottom: 3.5rem;
+      font-size: 0.95rem;
+    }
+    .post .kicker {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .post h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+      color: var(--fg);
+    }
+    .post .dek {
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+      color: var(--muted);
+      max-width: 34ch;
+      line-height: 1.4;
+      margin: 0 0 2.5rem;
+    }
+    .post h2 {
+      font-size: 1.55rem;
+      margin: 3.2rem 0 0.9rem;
+      color: var(--fg);
+    }
+    .post h2::before {
+      content: "";
+      display: block;
+      width: 2.2rem;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+    .post p,
+    .post li {
+      font-size: 1.04rem;
+    }
+    .post p {
+      margin: 0 0 1.15rem;
+    }
+    .post a {
+      text-underline-offset: 0.18em;
+    }
+    .post figure {
+      margin: 2.2rem 0;
+    }
+    .post figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
+    .post .hero {
+      margin: 0 0 2.2rem;
+    }
+    .post figcaption {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+      margin-top: 0.65rem;
+    }
+    .post blockquote {
+      border-left: 2px solid var(--accent2);
+      padding-left: 1.1rem;
+      color: var(--muted);
+      margin: 1.8rem 0;
+      font-style: italic;
+    }
+    .post pre {
+      background: #17130d;
+      border: 1px solid #2b2418;
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      overflow-x: auto;
+      margin: 1.6rem 0 2rem;
+      line-height: 1.55;
+      font-size: 0.9rem;
+    }
+    .post code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+    }
+    .post p code,
+    .post li code {
+      background: #1b160f;
+      border: 1px solid #2b2418;
+      border-radius: 4px;
+      padding: 0.1em 0.32em;
+    }
+    .post table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.94rem;
+    }
+    .post th,
+    .post td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.65rem 0.7rem;
+      border-bottom: 1px solid #2b2418;
+    }
+    .post th {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .post .note {
+      background: #17130d;
+      border: 1px solid #2b2418;
+      border-radius: 12px;
+      padding: 1.1rem 1.2rem;
+      color: var(--muted);
+      margin: 2rem 0;
+      font-size: 0.94rem;
+    }
+    .post footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #2b2418;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .post {
+        padding: 5vh 6vw 10vh;
+      }
+      .post h2 {
+        margin-top: 2.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="post">
+  <nav><a href="../../index.html">← Back to blogs</a></nav>
+
+  <header>
+    <div class="kicker">Field note · 24 Oct 2026 · ~6 min</div>
+    <h1>GhostLock on a phone that only boots one slot</h1>
+    <p class="dek">A Redmi A7 Pro 5G, a per-boot physical address, and two panics.</p>
+  </header>
+
+  <figure class="hero">
+    <img src="hero.svg" alt="Dark illustration of a phone with a lock, the physical load formula, and uid 2000 to uid 0." />
+  </figure>
+
+  <p><em>This is an account of work on a phone I own, with per-session authorization. Nothing here is a remote exploit or a rooting service. The CVE is public. Root is per boot.</em></p>
+
+  <p>The phone was the problem.</p>
+
+  <p>A Redmi A7 Pro 5G, codename somalia. Unisoc T8300, two A78s and six A55s, 4 GB of RAM, Android 16, kernel 6.6.118. Bootloader locked, verified boot green, and slot A already marked unbootable. Slot B was the only way back to Android, and the <code>misc</code> partition had a pending one-shot bootloader command. Every kernel panic was a small argument with the idea of a working phone.</p>
+
+  <p>I had a public bug and a working chain. GhostLock, CVE-2026-43499, by NebuSec. A futex priority-inheritance stack use-after-free, public since May, with a hardware-verified 6.6 exploit. The pitch is simple: get the waiter freed, reclaim its stack with a large <code>pselect</code> fd_set, turn the PI rb-tree unlink into an arbitrary write, forge an ashmem <code>fops</code> table, and use the resulting kernel read/write to patch a credential. The public writeup does the hard part. I wanted to know if it would work on this phone.</p>
+
+  <p>It didn't, at first.</p>
+
+  <h2>The loader moved the kernel</h2>
+
+  <p>The public target has a fixed physical load address. This phone doesn't. I tried <code>0x80000000</code>. The run reached the CFI open, then missed. I tried <code>0x80200000</code>. Same thing, different boot. On a normal exploit you'd call that a lost race and run it again. Here it was an address problem wearing a race's clothes.</p>
+
+  <p>The loader turned out to be the interesting part. The phone doesn't use a U-Boot environment with a <code>kernel_addr_r</code>. It boots an EDK2 firmware volume, and the kernel loader is <code>SprdBoot.efi</code>. On a normal boot it calls the TrustZone protocol with command <code>0x50</code> and a four-byte reply. It reads one byte, shifts it left 15, and stores that in PCD token 31. The kernel read destination and the entry PC are both <code>0x80080000</code> plus that value.</p>
+
+  <p>So the physical load is <code>0x80080000 + (byte &lt;&lt; 15)</code>. Thirty-two kilobyte steps above a base that isn't 2 MiB aligned. The old fixed values weren't close. One was below the loader base. The other was right for exactly one byte out of 256. I'd been aiming the write at the wrong physical page and calling it bad luck.</p>
+
+  <figure>
+    <img src="p0-range.svg" alt="Number line showing the P0 range and the two wrong fixed guesses." />
+    <figcaption>The load is not a constant. The fixed values were below the base, or correct for one byte in 256.</figcaption>
+  </figure>
+
+  <h2>The leak was already there</h2>
+
+  <p>The way out was sitting in the leak I already had. The same byte seeds <code>/chosen/kaslr-seed</code>. The arm64 KASLR code takes the low 21 bits of the physical placement into the virtual slide, and the source says so plainly: the offset modulo <code>MIN_KIMG_ALIGN</code> comes from physical placement, not from the seed. If you have the virtual slide, you have the low bits of the physical load. The high two bits of the byte show up in bits 21 and 22 of the slide. That's the whole trick.</p>
+
+  <p>I wrote it down as arithmetic because the prose version is easy to nod along to and get wrong:</p>
+
+<pre><code>slide = leaked_text - 0xffffffc080000000
+byte  = (((slide &gt;&gt; 21) &amp; 3) &lt;&lt; 6) |
+        ((((slide &amp; 0x1fffff) - 0x80000) &amp; 0x1fffff) &gt;&gt; 15)
+P0    = 0x80080000 + (byte &lt;&lt; 15)</code></pre>
+
+  <p>The first derived value was <code>0x80828000</code>. I built the payload with it, ran it once, and watched the capture line land on the first pselect attempt. The root child reported uid 0, full caps, and SELinux <code>1 -&gt; 0</code>. The helper exited after 56 seconds. No panic. I had a uid-0 credential in a process that then exited, which is a strange thing to call root, but that's what the chain gives you.</p>
+
+  <p>The phone was still a phone. A fresh adb shell was uid 2000. To keep a root process around, I started a small abstract-socket server from the root child. It survived the payload and answered shell requests as uid 0 for the rest of the boot. That was enough to read <code>/proc/iomem</code>, the uboot_log partition, and the root-only parts of the device. The pending bootloader command in misc and the dead slot A made me treat every reboot as a recovery event, not a test.</p>
+
+  <figure>
+    <img src="attack-path.svg" alt="Flow diagram from a uid 2000 shell through the KASLR leak, P0, pselect, forged fops, pipe read/write, and a credential patch." />
+    <figcaption>The chain in one line. The device-specific step is the second one: derive P0 from the same leak.</figcaption>
+  </figure>
+
+  <h2>Two panics</h2>
+
+  <p>The first real casualty was debugfs. I mounted it, read <code>clk_summary</code> and <code>regulator_summary</code>, and got a synchronous external abort and a reboot. The mount was cleared by the reset. The phone booted Android on slot B, so it wasn't bricked, but root, Permissive, and P0 were gone. That one is on me. Those summaries are off-limits on this unit now.</p>
+
+  <p>The second was stranger. I added a private Termux socket for <code>su</code> and <code>sudo</code>, alongside the abstract ADB path. It passed smoke tests: <code>su -c id</code> returned uid 0, the Termux app UID was denied on the abstract socket, host forwarding still worked. Then, during cleanup, a binder thread panicked in <code>module_put</code> through <code>__fput</code>. The file's <code>f_op-&gt;owner</code> was a corrupted, non-kernel pointer. The root server was not the crashing task, so I can't pin it on one line with confidence. The best suspect is <code>close_inherited_fds()</code>: the server was closing every inherited exploit fd, including one that could still carry a forged fops table. I changed it to close only pipe and regular fds. Re-rooted on the new boot, tested the private <code>su</code> and the abstract ADB path. Nothing has panicked in the short window since. I'm still watching it.</p>
+
+  <h2>What is actually reusable</h2>
+
+  <p>That's where the project is. Three boots with a uid-0 credential patch, two fixed-P0 misses, two panics, and a fix that is under observation. No persistent root, no boot image change, no package install, no magic. The phone is locked and verified, and the whole thing dies at reboot.</p>
+
+  <p>The part I think is worth sharing is not "I rooted my phone." It's the loader behavior and the P0 derivation, plus the failure notes. If you're porting a 6.6 chain to a Unisoc device, the physical load is not a constant, and a silent CFI miss is a terrible way to find that out.</p>
+
+  <p>The code and the longer writeup are here:</p>
+
+  <ul>
+    <li><a href="https://github.com/tusharpandey13/ghostlock-somalia">github.com/tusharpandey13/ghostlock-somalia</a></li>
+    <li><a href="https://github.com/tusharpandey13/ghostlock-somalia/releases/tag/v1.0">release v1.0</a></li>
+    <li><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/WRITEUP.md">longer writeup</a></li>
+  </ul>
+
+  <p>The repo also has the boot chain notes, offsets, the accepted pselect patch, QEMU notes, both incident records, and a sanitized evidence trail. It is deliberately not a turnkey payload. If you find an error, especially in the loader disassembly or the P0 arithmetic, I'd like to hear it.</p>
+
+  <p>CVE-2026-43499 is NebuSec's bug. The <a href="https://nebusec.ai/research/ionstack-part-2/">public writeup</a> is the place to start. This is one device port on top of it.</p>
+
+  <div class="note">Current status: root and Permissive on the last boot, with a selective-fd fix still under observation. There is no cross-reboot persistence, and no stable <code>su</code> claim. The repo's <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/STATUS.md">STATUS.md</a> is the source of truth.</div>
+
+  <footer>
+    <p>Written by Tushar Pandey. Field note, 24 October 2026. <a href="../../index.html">More posts</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

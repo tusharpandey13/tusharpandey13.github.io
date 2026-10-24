@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">GhostLock attack path</title>
+  <desc id="desc">Seven steps from a uid 2000 shell to a kernel credential patch.</desc>
+  <rect width="1200" height="330" rx="20" fill="#110e09"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17">
+    <g fill="#17130d" stroke="#3a3021">
+      <rect x="24" y="92" width="148" height="88" rx="12"/>
+      <rect x="198" y="92" width="148" height="88" rx="12"/>
+      <rect x="372" y="92" width="148" height="88" rx="12"/>
+      <rect x="546" y="92" width="148" height="88" rx="12"/>
+      <rect x="720" y="92" width="148" height="88" rx="12"/>
+      <rect x="894" y="92" width="148" height="88" rx="12"/>
+    </g>
+    <g fill="#e0c9a5" text-anchor="middle">
+      <text x="98" y="128">uid 2000</text><text x="98" y="154" fill="#98886f">shell</text>
+      <text x="272" y="128">tracefs</text><text x="272" y="154" fill="#98886f">KASLR leak</text>
+      <text x="446" y="128">derive P0</text><text x="446" y="154" fill="#98886f">per boot</text>
+      <text x="620" y="128">pselect6</text><text x="620" y="154" fill="#98886f">stack UAF</text>
+      <text x="794" y="128">forge fops</text><text x="794" y="154" fill="#98886f">KCFI-safe</text>
+      <text x="968" y="128">pipe R/W</text><text x="968" y="154" fill="#98886f">phys prim</text>
+    </g>
+    <g stroke="#7fc16a" stroke-width="2" fill="none">
+      <path d="M172 136h20"/><path d="M346 136h20"/><path d="M520 136h20"/><path d="M694 136h20"/><path d="M868 136h20"/>
+    </g>
+    <g fill="#7fc16a">
+      <path d="M192 136l-9-6v12z"/><path d="M366 136l-9-6v12z"/><path d="M540 136l-9-6v12z"/><path d="M714 136l-9-6v12z"/><path d="M888 136l-9-6v12z"/>
+    </g>
+  </g>
+  <g transform="translate(330 232)">
+    <rect x="0" y="0" width="540" height="64" rx="12" fill="#17130d" stroke="#d48993"/>
+    <text x="270" y="27" text-anchor="middle" fill="#d48993" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2">CRED PATCH</text>
+    <text x="270" y="49" text-anchor="middle" fill="#e0c9a5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">uid 2000 → 0 · selinux_state.enforcing = 0</text>
+  </g>
+  <path d="M968 180v26H870v26" fill="none" stroke="#7fc16a" stroke-width="2"/>
+  <path d="M870 228l-6 9h12z" fill="#7fc16a"/>
+</svg>
