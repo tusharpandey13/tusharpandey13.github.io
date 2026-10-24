@@ -8,7 +8,8 @@
   <meta name="author" content="Tushar Pandey" />
   <link rel="canonical" href="https://tusharpandey.com/blogs/ghostlock-somalia/" />
   <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
-  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../../style.css?v=20261024" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="GhostLock on a Unisoc T8300" />
   <meta property="og:description" content="Per-boot P0 derivation, QEMU parity, and two incident records from a Redmi A7 Pro 5G." />
@@ -25,15 +26,8 @@
       text-transform: uppercase;
       margin: 0 0 1rem;
     }
-    main h2 {
-      margin: 2.4em 0 0.7em;
-      font-size: 1.45em;
-      line-height: 1.25;
-    }
-    main h3 {
-      margin: 1.8em 0 0.5em;
-      font-size: 1.15em;
-    }
+    main h2 { margin: 2.4em 0 0.7em; }
+    main h3 { margin: 1.8em 0 0.5em; }
     main p { margin: 0 0 1.15em; }
     main ul, main ol { margin: 0 0 1.2em; padding-left: 1.4em; }
     main li { margin: 0.35em 0; }
@@ -186,8 +180,14 @@
   </style>
 </head>
 <body>
+<header class="site-header">
+  <a class="brand" href="../../index.html">Tushar&rsquo;s Casebook</a>
+  <nav>
+    <a href="../../index.html">Blogs</a>
+    <a href="https://github.com/tusharpandey13">GitHub</a>
+  </nav>
+</header>
 <main>
-  <nav><a href="../../index.html">← Back to blogs</a></nav>
   <p class="meta">Field note · 24 Oct 2026 · ~9 min</p>
 <h1 id="ghostlock-on-a-unisoc-t8300-per-boot-p0-derivation-qemu-parity-and-two-incident-records">GhostLock on a Unisoc T8300: per-boot P0 derivation, QEMU parity, and two incident records</h1>
   <hero>
@@ -227,7 +227,7 @@
 <p>The upstream Pixel exploit assumes the kernel image sits at a compile-time physical address. On this Unisoc boot chain there is no U-Boot environment and no <code>kernel_addr_r</code>. The kernel is loaded by <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/device/boot-chain.md"><code>SprdBoot.efi</code></a> inside an <a href="https://github.com/tianocore/edk2">EDK2</a> firmware volume, and the load address is chosen at runtime.</p>
   <figure><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/device/boot-chain.md"><img src="boot-chain.svg" alt="Boot chain from SPL and EDK2 through TrustZone and PCD31 to the kernel load and KASLR seed."></a><figcaption>The loader, the TrustZone reply, and the two places the same byte ends up: the physical load and the KASLR seed.</figcaption></figure>
 <p>On a normal boot, <code>SprdBoot.efi</code> calls the <a href="https://developer.arm.com/Architectures/TrustZone">TrustZone</a> protocol with command <code>0x50</code> and a 4-byte output buffer. It reads only the first byte of the reply, shifts it left by 15, and writes the result to PCD token 31. That value is then used in three places: the kernel read destination, the entry PC, and the DTB property <code>/chosen/kaslr-seed</code>. In other words:</p>
-<pre><code>PCD31        = byte0 &lt;&lt; 15
+<pre><code class="nohighlight">PCD31        = byte0 &lt;&lt; 15
 phys(_text)  = 0x80080000 + PCD31
 kaslr-seed   = byte0 &lt;&lt; 15</code></pre>
 <p>The byte is a random value in 0..255, so the physical load ranges from <code>0x80080000</code> to <code>0x80878000</code> in 32 KiB steps. The base <code>0x80080000</code> is not 2 MiB aligned. Two fixed-P0 attempts earlier in the project used <code>0x80000000</code> and <code>0x80200000</code>; the first is always below the loader base, and the second is only correct for one byte out of 256. Both missed for that reason, not because of a lost race.</p>
@@ -237,7 +237,7 @@ kaslr-seed   = byte0 &lt;&lt; 15</code></pre>
   </figure>
 <p>The key insight is that the same byte seeds the virtual KASLR, and the arm64 kernel places the low 21 bits of the physical load into the virtual slide. The source states it directly: the KASLR offset modulo <code>MIN_KIMG_ALIGN</code> comes from physical placement, not from the seed. <code>head.S</code> ORs the identity-mapped physical low bits into the offset, and <code>MIN_KIMG_ALIGN</code> is 2 MiB. So the low 21 bits of the slide are the low 21 bits of the physical load, and the high 2 bits of the byte are visible in <code>(slide &gt;&gt; 21) &amp; 3</code>.</p>
 <p>Given the leaked <code>_text</code>, the derivation is exact, no brute force:</p>
-<pre class="python"><code>KIMAGE_VADDR = 0xffffffc080000000
+<pre class="python"><code class="language-python">KIMAGE_VADDR = 0xffffffc080000000
 
 slide = leaked_text - KIMAGE_VADDR
 byte  = (((slide &gt;&gt; 21) &amp; 3) &lt;&lt; 6) | \
@@ -341,7 +341,7 @@ P0    = 0x80080000 + (byte &lt;&lt; 15)</code></pre>
 <p>Two panics are recorded as first-class documents, because they are where the per-boot nature of this work bites.</p>
 <p>The first was a debugfs read. After the first root, a read-only recon pass mounted debugfs (an authorized state change) and read <code>clk_summary</code> and <code>regulator_summary</code>. The device panicked with a synchronous external abort, a fatal exception, and self-rebooted. Root, Permissive, and P0 were all lost, because all three are per-boot. The unit booted Android again on slot B, so the panic did not brick anything, but it established that those specific debugfs summaries are off-limits on this unit. They stay that way.</p>
 <p>The second was a binder thread teardown panic. After a re-root, a dual-socket build was installed that added a private Termux <code>su</code>/<code>sudo</code> path alongside the abstract-socket root server. It passed its smoke tests: <code>su -c id</code> returned uid 0 through the private socket, the Termux app UID was denied on the abstract socket, and host forwarding worked. Then the device panicked during cleanup:</p>
-<pre><code>pc : module_put+0x18/0x12c
+<pre><code class="nohighlight">pc : module_put+0x18/0x12c
 lr : __fput+0xc4/0x2b8
 Comm: binder:1234_7</code></pre>
 <p><code>module_put</code> was called from <code>__fput</code> on a file whose <code>f_op-&gt;owner</code> was a corrupted, non-kernel pointer. The task was a binder thread, not the root server. The suspected cause is the new <code>close_inherited_fds()</code> in the server: it closed inherited exploit fds, and one of those could carry a forged fops table into the teardown path. That is a plausible trigger, not a proven one. A latent GhostLock forged-fops collateral panic cannot be excluded, and the delayed, binder-thread timing makes a single attribution unsafe.</p>
@@ -430,9 +430,6 @@ Comm: binder:1234_7</code></pre>
 <li>Hacker News thread, <a href="https://news.ycombinator.com/item?id=48834309">https://news.ycombinator.com/item?id=48834309</a></li>
 </ul>
 <p>Details, offsets, and the sanitized evidence trail are in <a href="https://github.com/tusharpandey13/ghostlock-somalia/tree/main/docs/">docs/</a>, <a href="https://github.com/tusharpandey13/ghostlock-somalia/tree/main/reference/">reference/</a>, and <a href="https://github.com/tusharpandey13/ghostlock-somalia/tree/main/evidence/">evidence/</a>.</p>
-  <footer>
-    <p>Written by Tushar Pandey. Source and sanitized evidence: <a href="https://github.com/tusharpandey13/ghostlock-somalia">ghostlock-somalia</a> (<a href="https://github.com/tusharpandey13/ghostlock-somalia/releases/tag/v1.0">v1.0</a>). Also: <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/STATUS.md">status</a>, <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/TIMELINE.md">timeline</a>, <a href="https://github.com/tusharpandey13/ghostlock-somalia/tree/main/docs/">docs</a>.</p>
-  </footer>
 </main>
 
   <script>
@@ -475,5 +472,7 @@ Comm: binder:1234_7</code></pre>
       });
     })();
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>if (window.hljs) hljs.highlightAll();</script>
 </body>
 </html>
