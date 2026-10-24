@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GhostLock on a Unisoc T8300 — Tushar Pandey</title>
+  <title>Rooting series: GhostLock on a Unisoc T8300 — Tushar Pandey</title>
   <meta name="description" content="Porting GhostLock (CVE-2026-43499) to a Redmi A7 Pro 5G: deriving the per-boot physical kernel load from the tracefs KASLR slide, QEMU validation, root, and two kernel panics." />
   <meta name="author" content="Tushar Pandey" />
   <link rel="canonical" href="https://tusharpandey.com/blogs/ghostlock-somalia/" />
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../style.css?v=20261024" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="GhostLock on a Unisoc T8300" />
+  <meta property="og:title" content="Rooting series: GhostLock on a Unisoc T8300" />
   <meta property="og:description" content="Per-boot P0 derivation, QEMU parity, and two incident records from a Redmi A7 Pro 5G." />
   <meta property="og:url" content="https://tusharpandey.com/blogs/ghostlock-somalia/" />
   <style>
@@ -25,6 +25,16 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       margin: 0 0 1rem;
+    }
+    .post-title {
+      color: var(--accent2);
+      margin-bottom: 0.35rem;
+    }
+    .post-subtitle {
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0;
+      margin: 0 0 2.2rem;
     }
     main h2 { margin: 2.4em 0 0.7em; }
     main h3 { margin: 1.8em 0 0.5em; }
@@ -189,7 +199,8 @@
 </header>
 <main>
   <p class="meta">Field note · 24 Oct 2026 · ~9 min</p>
-<h1 id="ghostlock-on-a-unisoc-t8300-per-boot-p0-derivation-qemu-parity-and-two-incident-records">GhostLock on a Unisoc T8300: per-boot P0 derivation, QEMU parity, and two incident records</h1>
+<h1 class="post-title" id="rooting-series-ghostlock-on-a-unisoc-t8300">Rooting series: GhostLock on a Unisoc T8300</h1>
+  <h3 class="post-subtitle">Per-boot P0 derivation, QEMU parity, and two incident records</h3>
   <hero>
     <img src="hero.svg" alt="Dark cover illustration: a phone with a lock, the physical-load formula, and uid 2000 to uid 0.">
   </hero>
