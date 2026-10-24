@@ -1,36 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
-  <title id="title">GhostLock attack path</title>
-  <desc id="desc">Seven steps from a uid 2000 shell to a kernel credential patch.</desc>
-  <rect width="1200" height="330" rx="20" fill="#110e09"/>
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17">
-    <g fill="#17130d" stroke="#3a3021">
-      <rect x="24" y="92" width="148" height="88" rx="12"/>
-      <rect x="198" y="92" width="148" height="88" rx="12"/>
-      <rect x="372" y="92" width="148" height="88" rx="12"/>
-      <rect x="546" y="92" width="148" height="88" rx="12"/>
-      <rect x="720" y="92" width="148" height="88" rx="12"/>
-      <rect x="894" y="92" width="148" height="88" rx="12"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">GhostLock exploit route</title>
+  <desc id="desc">Five stops: leak the KASLR slide and P0, free the futex waiter, reclaim its stack with pselect, write the ashmem fops pointer through the rb-tree, then use the pipe primitive to reach uid 0.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#7fc16a"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="620" rx="22" fill="#110e09"/>
+  <text x="60" y="60" fill="#98886f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="3">THE EXPLOIT IN FIVE MOVES</text>
+
+  <!-- route -->
+  <g fill="none" stroke="#7fc16a" stroke-width="2.5">
+    <path d="M164 208C230 264 280 336 326 374" marker-end="url(#arrow)"/>
+    <path d="M394 372C460 314 520 220 566 200" marker-end="url(#arrow)"/>
+    <path d="M634 200C700 220 760 314 806 374" marker-end="url(#arrow)"/>
+    <path d="M874 372C940 314 1000 220 1036 200" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- stops -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" text-anchor="middle">
+    <g>
+      <circle cx="130" cy="190" r="34" fill="#17130d" stroke="#7fc16a" stroke-width="2"/>
+      <text x="130" y="196" fill="#7fc16a" font-size="16">01</text>
+      <text x="130" y="120" fill="#e0c9a5" font-size="24">LEAK</text>
+      <text x="130" y="146" fill="#98886f" font-size="13">tracefs &#8594; _text</text>
+      <text x="130" y="252" fill="#98886f" font-size="12">P0 from the slide</text>
     </g>
-    <g fill="#e0c9a5" text-anchor="middle">
-      <text x="98" y="128">uid 2000</text><text x="98" y="154" fill="#98886f">shell</text>
-      <text x="272" y="128">tracefs</text><text x="272" y="154" fill="#98886f">KASLR leak</text>
-      <text x="446" y="128">derive P0</text><text x="446" y="154" fill="#98886f">per boot</text>
-      <text x="620" y="128">pselect6</text><text x="620" y="154" fill="#98886f">stack UAF</text>
-      <text x="794" y="128">forge fops</text><text x="794" y="154" fill="#98886f">KCFI-safe</text>
-      <text x="968" y="128">pipe R/W</text><text x="968" y="154" fill="#98886f">phys prim</text>
+    <g>
+      <circle cx="360" cy="390" r="34" fill="#17130d" stroke="#d48993" stroke-width="2"/>
+      <text x="360" y="396" fill="#d48993" font-size="16">02</text>
+      <text x="360" y="470" fill="#e0c9a5" font-size="24">FREE</text>
+      <text x="360" y="496" fill="#98886f" font-size="13">futex UAF</text>
     </g>
-    <g stroke="#7fc16a" stroke-width="2" fill="none">
-      <path d="M172 136h20"/><path d="M346 136h20"/><path d="M520 136h20"/><path d="M694 136h20"/><path d="M868 136h20"/>
+    <g>
+      <circle cx="600" cy="190" r="34" fill="#17130d" stroke="#7fc16a" stroke-width="2"/>
+      <text x="600" y="196" fill="#7fc16a" font-size="16">03</text>
+      <text x="600" y="120" fill="#e0c9a5" font-size="24">RECLAIM</text>
+      <text x="600" y="146" fill="#98886f" font-size="13">pselect fd_set</text>
     </g>
-    <g fill="#7fc16a">
-      <path d="M192 136l-9-6v12z"/><path d="M366 136l-9-6v12z"/><path d="M540 136l-9-6v12z"/><path d="M714 136l-9-6v12z"/><path d="M888 136l-9-6v12z"/>
+    <g>
+      <circle cx="840" cy="390" r="34" fill="#17130d" stroke="#d48993" stroke-width="2"/>
+      <text x="840" y="396" fill="#d48993" font-size="16">04</text>
+      <text x="840" y="470" fill="#e0c9a5" font-size="24">WRITE</text>
+      <text x="840" y="496" fill="#98886f" font-size="13">rb-tree &#8594; fops</text>
+    </g>
+    <g>
+      <circle cx="1070" cy="190" r="34" fill="#17130d" stroke="#d8a657" stroke-width="2"/>
+      <text x="1070" y="196" fill="#d8a657" font-size="16">05</text>
+      <text x="1070" y="120" fill="#e0c9a5" font-size="24">ROOT</text>
+      <text x="1070" y="146" fill="#98886f" font-size="13">pipe &#8594; cred</text>
+      <text x="1070" y="252" fill="#d8a657" font-size="15">uid 0</text>
+      <text x="1070" y="274" fill="#98886f" font-size="12">per boot</text>
     </g>
   </g>
-  <g transform="translate(330 232)">
-    <rect x="0" y="0" width="540" height="64" rx="12" fill="#17130d" stroke="#d48993"/>
-    <text x="270" y="27" text-anchor="middle" fill="#d48993" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2">CRED PATCH</text>
-    <text x="270" y="49" text-anchor="middle" fill="#e0c9a5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">uid 2000 → 0 · selinux_state.enforcing = 0</text>
-  </g>
-  <path d="M968 180v26H870v26" fill="none" stroke="#7fc16a" stroke-width="2"/>
-  <path d="M870 228l-6 9h12z" fill="#7fc16a"/>
+
+  <!-- one supporting note, not another diagram -->
+  <text x="60" y="560" fill="#98886f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">P0 = 0x80080000 + (TOS byte &lt;&lt; 15)</text>
+  <text x="60" y="582" fill="#98886f" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">same tracefs leak, same boot</text>
 </svg>
