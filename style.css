@@ -107,6 +107,21 @@ h1, h2, h3 {
   color: var(--title);
 }
 
+main p {
+  margin: 0 0 1.15em;
+}
+
+main figure {
+  margin: 2em 0;
+}
+
+main figcaption {
+  color: var(--muted);
+  font-size: 0.8em;
+  line-height: 1.45;
+  margin-top: 0.5em;
+}
+
 hero {
   display: block;
   max-width: 80vw;
