@@ -26,6 +26,65 @@
       text-transform: uppercase;
       margin: 0 0 1rem;
     }
+
+    .tldr {
+      margin: 0 0 2.4rem;
+      padding: 1.35rem 1.45rem 1.2rem;
+      background: #17130d;
+      border: 1px solid #3a3021;
+      border-radius: 14px;
+    }
+    .tldr-kicker {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 0.55rem;
+    }
+    .tldr h2 {
+      margin: 0.2rem 0 0.9rem;
+      font-size: clamp(1.4rem, 2.8vw, 2.05rem);
+      line-height: 1.18;
+    }
+    .tldr .tldr-lede { font-size: 1.06rem; }
+    .tldr-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 1rem 0 1.1rem;
+    }
+    .tldr-stats span {
+      border: 1px solid #3a3021;
+      border-radius: 999px;
+      padding: 0.3rem 0.6rem;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.74rem;
+    }
+    .tldr-stats strong { color: var(--accent); }
+    .tldr-points { margin: 0 0 1rem; padding-left: 1.2rem; }
+    .tldr-limit {
+      border-top: 1px solid #2b2418;
+      margin: 1rem 0 0;
+      padding-top: 0.9rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .tldr-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.9rem;
+    }
+    .tldr-chips span {
+      border: 1px solid #2b2418;
+      border-radius: 999px;
+      padding: 0.24rem 0.55rem;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.7rem;
+    }
     .post-title {
       color: var(--title);
       margin-bottom: 0.35rem;
@@ -191,22 +250,41 @@
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="../../index.html">Tushar&rsquo;s Casebook</a>
+  <a class="brand" href="https://tusharpandey.com">Tushar&rsquo;s Casebook</a>
   <nav>
     <a href="../../index.html">Blogs</a>
     <a href="https://github.com/tusharpandey13">GitHub</a>
+    <a href="mailto:tusharpandey13@gmail.com">Contact</a>
   </nav>
 </header>
 <main>
   <p class="meta">Field note · 24 Oct 2026 · ~9 min</p>
 <h1 class="post-title" id="rooting-series-ghostlock-on-a-unisoc-t8300">Rooting series: GhostLock on a Unisoc T8300</h1>
   <h3 class="post-subtitle">Per-boot P0 derivation, QEMU parity, and two incident records</h3>
+  <section class="tldr" aria-labelledby="tldr-title">
+    <p class="tldr-kicker">TL;DR · the short version</p>
+    <h2 id="tldr-title">A locked phone. A public kernel bug. A physical address that changes every boot.</h2>
+    <p class="tldr-lede"><strong>In plain English:</strong> I rooted a locked <strong>Redmi A7 Pro 5G</strong> (<strong>Unisoc T8300</strong>) without flashing it. The public kernel bug was GhostLock. The real puzzle was a <strong>physical KASLR</strong> address that moves on every boot.</p>
+    <div class="tldr-stats">
+      <span><strong>3</strong> rooted boots</span>
+      <span><strong>56 s</strong> first root</span>
+      <span><strong>uid 2000 &rarr; 0</strong></span>
+      <span><strong>Android 16</strong> / 6.6.118</span>
+    </div>
+    <ul class="tldr-points">
+      <li><strong>What I did:</strong> ported <strong>GhostLock</strong> (<strong>CVE-2026-43499</strong>) to this locked phone and got a <strong>uid-0 kernel credential patch</strong> on three boots.</li>
+      <li><strong>What was new:</strong> derived the per-boot physical load, <span class="hovercard" tabindex="0">P0<span class="pop"><strong>Per-boot physical load</strong><span class="pop-note">The loader places the kernel at <code>0x80080000 + (byte &lt;&lt; 15)</code>. The byte changes each boot, so P0 has to be derived, not baked in.</span><img src="p0-range.svg" alt="Range of possible P0 values"><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/exploit/p0-derivation.md">Read the derivation notes</a></span></span>, from the tracefs KASLR slide; validated in <strong>QEMU</strong>; wrote up two kernel panics.</li>
+    </ul>
+    <p class="tldr-limit"><strong>The catch:</strong> root is per-boot only. No persistent root or cross-reboot <code>su</code>; the latest fix is under observation.</p>
+    <div class="tldr-chips" aria-label="Topics">
+      <span>GhostLock</span><span>CVE-2026-43499</span><span>Android root</span><span>kernel exploit</span><span>KASLR</span><span>Unisoc T8300</span><span>Redmi A7 Pro 5G</span><span>KCFI</span><span>AVB</span><span>QEMU</span>
+    </div>
+  </section>
+
   <hero>
     <img src="hero.svg" alt="Dark cover illustration: a phone with a lock, the physical-load formula, and uid 2000 to uid 0.">
   </hero>
 <p><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-43499">CVE-2026-43499</a>, the futex priority-inheritance stack use-after-free, is a fifteen-year-old Linux bug with a public, hardware-verified 6.6 exploit. The interesting part of this project is not the bug. It is the one thing that does not port cleanly to a Unisoc T8300: the physical address where the bootloader dropped the kernel image. That address changes on every boot, and the exploit needs it to write the forged <a href="https://elixir.bootlin.com/linux/v6.6/source/include/linux/fs.h"><code>file_operations</code></a> table. This writeup is about deriving that address from a KASLR leak, proving the chain in QEMU first, and the two panics that followed when we tried to turn a per-boot root into something more.</p>
-<h2 id="tldr">TL;DR</h2>
-<p>On a locked, verified-boot Redmi A7 Pro 5G (<code>somalia</code>, Unisoc T8300, Android 16, kernel 6.6.118-android15), the public GhostLock chain took a uid-2000 <code>shell</code> to a uid-0 kernel credential patch on three separate boots. The boot image was never modified. The device-specific piece is the physical load address, <span class="hovercard" tabindex="0">P0<span class="pop"><strong>Per-boot physical load</strong><span class="pop-note">The loader places the kernel at <code>0x80080000 + (byte &lt;&lt; 15)</code>. The byte changes each boot, so P0 has to be derived, not baked in.</span><img src="p0-range.svg" alt="Range of possible P0 values"><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/exploit/p0-derivation.md">Read the derivation notes</a></span></span>: the vendor loader places the kernel at <code>0x80080000 + (TOS byte &lt;&lt; 15)</code>, where the <span class="hovercard" tabindex="0">TOS byte<span class="pop"><strong>TrustZone command 0x50</strong><span class="pop-note">SprdBoot reads byte 0 of the reply, shifts it by 15, and sets PCD31. The same value seeds <code>/chosen/kaslr-seed</code>, which is why the KASLR slide can recover it.</span><img src="tos-flow.svg" alt="TOS reply to PCD31, physical load and KASLR seed"><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/device/boot-chain.md">Read the boot-chain notes</a></span></span> is a per-boot TrustZone reply that also seeds <code>/chosen/kaslr-seed</code>. Because the kernel encodes the low 21 bits of the physical placement into its virtual KASLR slide, the same <a href="https://docs.kernel.org/trace/ftrace.html">tracefs</a> leak the chain already needs for the virtual slide also yields P0. There is no brute force and no serial port. Root is per-boot. Two later builds panicked the kernel; both are written up.</p>
 <h2 id="the-device-and-the-threat-model">The device and the threat model</h2>
 <p>The target is a retail Redmi A7 Pro 5G, codename <code>somalia</code>, Unisoc T8300 (UMS9632), two Cortex-A78 and six Cortex-A55 cores, Mali-G57 MC2, 4 GB of RAM, 128 GB of UFS storage, Android 16 with the 2026-08-01 security patch. It is a user build: <code>ro.debuggable=0</code>, <code>ro.secure=1</code>, and <code>adb root</code> is refused.</p>
 <p>The security posture is the interesting part. The bootloader is locked, verified boot is green, and <a href="https://source.android.com/docs/security/features/verifiedboot/avb">AVB</a> is at version 1.3. Eight <a href="https://erofs.docs.kernel.org/">erofs</a> volumes are mounted read-only through <a href="https://source.android.com/docs/security/features/verifiedboot/dm-verity">dm-verity</a>. The device is A/B, but slot A is unbootable (<code>tries_remaining: 0</code>), so slot B is the only Android boot path, and the <code>misc</code> partition held a pending one-shot bootloader command. Every reboot carried the risk of landing in the bootloader instead of Android. That single constraint shaped the entire engagement: anything that panicked the kernel also risked the last good boot path.</p>
@@ -255,7 +333,7 @@ byte  = (((slide &gt;&gt; 21) &amp; 3) &lt;&lt; 6) | \
         ((((slide &amp; 0x1fffff) - 0x80000) &amp; 0x1fffff) &gt;&gt; 15)
 P0    = 0x80080000 + (byte &lt;&lt; 15)</code></pre>
 <p>The sanity checks are <code>0x80080000 &lt;= P0 &lt;= 0x80878000</code> and <code>(P0 - 0x80080000) % 0x8000 == 0</code>. The script <a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/scripts/ghostlock_p0_from_slide.py"><code>scripts/ghostlock_p0_from_slide.py</code></a> does the arithmetic.</p>
-<p>The firmware side of this is verified by disassembly, not assumption. <code>SprdBoot.efi</code> calls a TOS-random helper on the normal boot path. That helper allocates a page, calls TrustZone with command <code>0x50</code> and a 4-byte reply, reads only byte 0, and writes <code>byte &lt;&lt; 15</code> to PCD token 31. The other three reply bytes are discarded. PCD 31 is then read in three places: the kernel read destination, the entry PC, and the DTB property writer that emits <code>/chosen/kaslr-seed</code> as the byte-swapped value. The kernel's <code>kaslr_early_init</code> consumes and zeroes that property, so it is not recoverable after early boot. This is why a static analysis of the OTA images cannot produce P0, and why the live slide is the only surviving copy.</p>
+<p>The firmware side of this is verified by disassembly, not assumption. <code>SprdBoot.efi</code> calls a <span class="hovercard" tabindex="0">TOS-random helper<span class="pop"><strong>TrustZone command 0x50</strong><span class="pop-note">SprdBoot reads byte 0 of the reply, shifts it by 15, and sets PCD31. The same value seeds <code>/chosen/kaslr-seed</code>, which is why the KASLR slide can recover it.</span><img src="tos-flow.svg" alt="TOS reply to PCD31, physical load and KASLR seed"><a href="https://github.com/tusharpandey13/ghostlock-somalia/blob/main/docs/device/boot-chain.md">Read the boot-chain notes</a></span></span> on the normal boot path. That helper allocates a page, calls TrustZone with command <code>0x50</code> and a 4-byte reply, reads only byte 0, and writes <code>byte &lt;&lt; 15</code> to PCD token 31. The other three reply bytes are discarded. PCD 31 is then read in three places: the kernel read destination, the entry PC, and the DTB property writer that emits <code>/chosen/kaslr-seed</code> as the byte-swapped value. The kernel's <code>kaslr_early_init</code> consumes and zeroes that property, so it is not recoverable after early boot. This is why a static analysis of the OTA images cannot produce P0, and why the live slide is the only surviving copy.</p>
 <p>The worked examples line up with the recorded roots:</p>
 <div class="table-wrap"><table>
 <thead>
