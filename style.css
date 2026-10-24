@@ -10,6 +10,7 @@
   --accent: #7fc16a;
   --muted: #98886f;
   --accent2: #d48993;
+  --title: #d8a657;
   --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -92,7 +93,7 @@ h3 {
 }
 
 h1, h2, h3 {
-  color: var(--accent2);
+  color: var(--title);
 }
 
 hero {
