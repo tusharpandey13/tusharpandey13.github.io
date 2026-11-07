@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1088" width="720" height="1088" role="img" aria-labelledby="t d">
+<title id="t">One in two messages became a fact: 20 of 41</title>
+<desc id="d">One row per active day, 27 Oct to 5 Nov 2026: messages received (light track) and how many produced at least one extracted reading or symptom (filled bar): 27 Oct 0 of 10; 30 Oct 5 of 7; 31 Oct 4 of 5; 1 Nov 3 of 7; 2 Nov 4 of 5; 3 Nov 2 of 2; 4 Nov 2 of 4; 5 Nov 0 of 1. Total 20 of 41. Counts only; no content. Source data/telegram/*.ndjson.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="720" height="1088" fill="#F3F6EF"/>
+<text x="40" y="56" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">One in two messages became a fact:</text>
+<text x="40" y="96.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">20 of 41</text>
+<text x="40" y="141.6" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Per active day: messages received (track) and</text>
+<text x="40" y="176.7" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">those that produced at least one reading or</text>
+<text x="40" y="211.79999999999998" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">symptom (filled).</text>
+<text x="134" y="315.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="end" dominant-baseline="middle">27 Oct</text>
+<path d="M 150 296.9 h 416.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -416.0 z" fill="#E3E9DC"/>
+<rect x="150" y="296.9" width="3" height="36" rx="0" fill="#0082A9" stroke="none"/>
+<text x="582.0" y="315.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">0 of 10</text>
+<text x="134" y="387.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="end" dominant-baseline="middle">30 Oct</text>
+<path d="M 150 368.9 h 290.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -290.0 z" fill="#E3E9DC"/>
+<path d="M 150 368.9 h 206.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -206.0 z" fill="#0082A9"/>
+<text x="456.0" y="387.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">5 of 7</text>
+<text x="134" y="459.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="end" dominant-baseline="middle">31 Oct</text>
+<path d="M 150 440.9 h 206.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -206.0 z" fill="#E3E9DC"/>
+<path d="M 150 440.9 h 164.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -164.0 z" fill="#0082A9"/>
+<text x="372.0" y="459.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">4 of 5</text>
+<text x="134" y="531.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="end" dominant-baseline="middle">1 Nov</text>
+<path d="M 150 512.9 h 290.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -290.0 z" fill="#E3E9DC"/>
+<path d="M 150 512.9 h 122.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -122.0 z" fill="#0082A9"/>
+<text x="456.0" y="531.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">3 of 7</text>
+<text x="134" y="603.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="end" dominant-baseline="middle">2 Nov</text>
+<path d="M 150 584.9 h 206.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -206.0 z" fill="#E3E9DC"/>
+<path d="M 150 584.9 h 164.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -164.0 z" fill="#0082A9"/>
+<text x="372.0" y="603.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">4 of 5</text>
+<text x="134" y="675.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="end" dominant-baseline="middle">3 Nov</text>
+<path d="M 150 656.9 h 80.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -80.0 z" fill="#E3E9DC"/>
+<path d="M 150 656.9 h 80.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -80.0 z" fill="#0082A9"/>
+<text x="246.0" y="675.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">2 of 2</text>
+<text x="134" y="747.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="end" dominant-baseline="middle">4 Nov</text>
+<path d="M 150 728.9 h 164.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -164.0 z" fill="#E3E9DC"/>
+<path d="M 150 728.9 h 80.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -80.0 z" fill="#0082A9"/>
+<text x="330.0" y="747.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">2 of 4</text>
+<text x="134" y="819.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="end" dominant-baseline="middle">5 Nov</text>
+<path d="M 150 800.9 h 38.0 a 4 4 0 0 1 4 4 v 28 a 4 4 0 0 1 -4 4 h -38.0 z" fill="#E3E9DC"/>
+<rect x="150" y="800.9" width="3" height="36" rx="0" fill="#0082A9" stroke="none"/>
+<text x="204.0" y="819.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">0 of 1</text>
+<rect x="40" y="874.6999999999999" width="3" height="135.20000000000002" rx="1.5" fill="#0082A9" stroke="none"/>
+<text x="54" y="892.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">27 Oct was the test day. The rest: greetings,</text>
+<text x="54" y="926.6999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">PDFs and strip photos nothing reads yet,</text>
+<text x="54" y="960.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">unclear audio. Documents entered by hand are</text>
+<text x="54" y="994.3" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">not counted.</text>
+<text x="40" y="1038.3" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: records repo, data/telegram, counts only</text>
+</svg>

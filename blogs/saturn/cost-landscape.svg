@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="1200" height="450" role="img" aria-labelledby="t d">
+<title id="t">One loop run costs as much as 15 months of running everything else</title>
+<desc id="d">Three figures: fixed cost $0, running cost about $0.80 a month, diagnostic loop capped at $12 a run and started by hand. Below, 15 small blue blocks of one month&#x27;s running cost laid against one amber block for a single loop run of the same total length. Source: the owner&#x27;s bills.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="450" fill="#F3F6EF"/>
+<text x="40" y="48" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">One loop run costs as much as 15 months of running everything else</text>
+<text x="40" y="83.2" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Fixed cost, monthly running cost, and the per-run cap on the diagnostic loop, which runs only when asked.</text>
+<rect x="44.0" y="130.15" width="365.3333333333333" height="110" rx="12" fill="#878C82" stroke="none" opacity="0.14"/>
+<rect x="44.0" y="130.15" width="6" height="110" rx="3" fill="#878C82" stroke="none"/>
+<text x="66.0" y="180.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="40" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="700">$0</text>
+<text x="66.0" y="216.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">fixed</text>
+<rect x="417.3333333333333" y="130.15" width="365.3333333333333" height="110" rx="12" fill="#0082A9" stroke="none" opacity="0.14"/>
+<rect x="417.3333333333333" y="130.15" width="6" height="110" rx="3" fill="#0082A9" stroke="none"/>
+<text x="439.3333333333333" y="180.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="40" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="700">≈$0.80</text>
+<text x="439.3333333333333" y="216.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">a month, running</text>
+<rect x="790.6666666666666" y="130.15" width="365.3333333333333" height="110" rx="12" fill="#AB7839" stroke="none" opacity="0.14"/>
+<rect x="790.6666666666666" y="130.15" width="6" height="110" rx="3" fill="#AB7839" stroke="none"/>
+<text x="812.6666666666666" y="180.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="40" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="700">≤$12</text>
+<text x="812.6666666666666" y="216.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">a run, the loop</text>
+<rect x="40.0" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="114.66666666666667" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="189.33333333333334" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="264.0" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="338.6666666666667" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="413.33333333333337" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="488.0" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="562.6666666666667" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="637.3333333333334" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="712.0" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="786.6666666666667" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="861.3333333333334" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="936.0" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="1010.6666666666667" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="1085.3333333333335" y="300.15" width="71.66666666666667" height="24" rx="3" fill="#0082A9" stroke="none"/>
+<rect x="40" y="334.15" width="1120" height="24" rx="4" fill="#AB7839" stroke="none"/>
+<text x="40" y="288.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">15 months of running, $0.80 each</text>
+<text x="52" y="347.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#F3F6EF" text-anchor="start" dominant-baseline="middle" font-weight="600">one loop run, $12 cap</text>
+<rect x="40" y="376.25" width="3" height="22.1" rx="1.5" fill="#AB7839" stroke="none"/>
+<text x="54" y="388.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">Fixed cost is zero because every component sits inside a free tier. The loop cap is a ceiling, not an average.</text>
+<text x="40" y="420.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: the owner&#x27;s cloud and API bills, Oct to Nov 2026</text>
+</svg>

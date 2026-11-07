@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1580" viewBox="0 0 720 1580" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="t d"><title id="t">A running Saturn, part 1 of 2: the parents&#x27; home and the cloud, steps 1 to 3</title><desc id="d">A running Saturn drawn as four places: the parents&#x27; home with two phones; the cloud with a Telegram group, a Worker (verify, store, copy media) holding an inbox and a media store, and GitHub holding three repositories and the Actions jobs (nightly batch, hourly integrity check); the owner&#x27;s home with a home server (site builder, voice review, loop job and queue, dead-man check), a Mac transcription runner, the owner&#x27;s phone and a bell, inside a fenced private network; and the doctor who receives a printed packet. One amber path, numbered 1 to 6 with a verb on each line, runs from the phones to the doctor. Four lock chips state policies. No personal data, hostnames or names.</desc><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8C5B16"/></marker></defs><rect width="720" height="1580" fill="#F3F6EF"/><rect x="20" y="20" width="680" height="280" rx="26" fill="#EAEEE4"/>
+<text x="44" y="66" font-size="34" fill="#1F211E" font-weight="bold" text-anchor="start">Parents&#x27; home</text>
+<rect x="20" y="320" width="680" height="1180" rx="26" fill="#EAEEE4"/>
+<text x="44" y="366" font-size="34" fill="#1F211E" font-weight="bold" text-anchor="start">The cloud</text>
+<rect x="356" y="80" width="88" height="170" rx="12.32" fill="#FFFFFF" stroke="#171816" stroke-width="3.5"/>
+<rect x="364.8" y="93.6" width="70.4" height="132.6" rx="4" fill="#EAEEE4"/>
+<circle cx="400.0" cy="238.1" r="4.4" fill="#171816"/>
+<rect x="462" y="80" width="88" height="170" rx="12.32" fill="#FFFFFF" stroke="#171816" stroke-width="3.5"/>
+<rect x="470.8" y="93.6" width="70.4" height="132.6" rx="4" fill="#EAEEE4"/>
+<circle cx="506.0" cy="238.1" r="4.4" fill="#171816"/>
+<text x="60" y="140" font-size="28" fill="#171816" font-weight="bold" text-anchor="start">Two phones</text>
+<text x="60" y="172" font-size="26" fill="#646861" font-weight="normal" text-anchor="start">photos, voice notes,</text>
+<text x="60" y="204" font-size="26" fill="#646861" font-weight="normal" text-anchor="start">messages</text>
+<path d="M355.2 400 H604.8 A35.2 35.2 0 0 1 640.0 435.2 V480.00000000000006 A35.2 35.2 0 0 1 604.8 515.2 H416.0 L364.8 560 V515.2 A35.2 35.2 0 0 1 320.0 480.00000000000006 V435.2 A35.2 35.2 0 0 1 355.2 400 Z" fill="#FFFFFF" stroke="#171816" stroke-width="3.5" stroke-linejoin="round"/>
+<text x="480" y="461" font-size="28" fill="#171816" font-weight="bold" text-anchor="middle">Telegram group</text>
+<text x="480" y="493" font-size="26" fill="#646861" font-weight="normal" text-anchor="middle">the family chat</text>
+<rect x="60" y="440" width="185" height="42" rx="20.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="75.6" y="457.082" width="19.889999999999997" height="12.817999999999998" rx="2.6519999999999997" fill="#646861"/>
+<path d="M80.02 457.745 V454.43 A5.5249999999999995 5.5249999999999995 0 0 1 91.07 454.43 V457.745" fill="none" stroke="#646861" stroke-width="3.094"/>
+<text x="103" y="470" font-size="26" fill="#1F211E" font-weight="normal" text-anchor="start">bot reads,</text>
+<rect x="60" y="489.6" width="198" height="42" rx="20.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="75.6" y="506.682" width="19.889999999999997" height="12.817999999999998" rx="2.6519999999999997" fill="#646861"/>
+<path d="M80.02 507.345 V504.03000000000003 A5.5249999999999995 5.5249999999999995 0 0 1 91.07 504.03000000000003 V507.345" fill="none" stroke="#646861" stroke-width="3.094"/>
+<text x="103" y="520" font-size="26" fill="#1F211E" font-weight="normal" text-anchor="start">never posts</text>
+<path d="M366.0 950 H601.5999999999999 A68.2 68.2 0 0 0 616.8 813.6 A93.0 93.0 0 0 0 480.0 677.2 A111.6 111.6 0 0 0 350.8 813.6 A68.2 68.2 0 0 0 366.0 950 Z" fill="#FFFFFF" stroke="#171816" stroke-width="3.5" stroke-linejoin="round"/>
+<text x="480" y="764" font-size="28" fill="#171816" font-weight="bold" text-anchor="middle">Worker</text>
+<text x="480" y="796" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" fill="#646861" text-anchor="middle">verify, store,</text>
+<text x="480" y="828" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" fill="#646861" text-anchor="middle">copy media</text>
+<rect x="398.6" y="850.6" width="162.8" height="37.5" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="2.4499999999999997"/>
+<rect x="532.8000000000001" y="866.932" width="19.889999999999997" height="12.817999999999998" rx="2.6519999999999997" fill="#646861"/>
+<path d="M537.22 867.595 V864.28 A5.5249999999999995 5.5249999999999995 0 0 1 548.2700000000001 864.28 V867.595" fill="none" stroke="#646861" stroke-width="3.094"/>
+<text x="405" y="878" font-size="26" fill="#171816" font-weight="bold" text-anchor="start">inbox</text>
+<rect x="398.6" y="894.1" width="162.8" height="37.5" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="2.4499999999999997"/>
+<rect x="532.8000000000001" y="910.432" width="19.889999999999997" height="12.817999999999998" rx="2.6519999999999997" fill="#646861"/>
+<path d="M537.22 911.095 V907.78 A5.5249999999999995 5.5249999999999995 0 0 1 548.2700000000001 907.78 V911.095" fill="none" stroke="#646861" stroke-width="3.094"/>
+<text x="405" y="922" font-size="26" fill="#171816" font-weight="bold" text-anchor="start">media</text>
+<text x="60" y="795" font-size="28" fill="#171816" font-weight="bold" text-anchor="start">Worker</text>
+<text x="60" y="827" font-size="26" fill="#646861" font-weight="normal" text-anchor="start">stores what</text>
+<text x="60" y="859" font-size="26" fill="#646861" font-weight="normal" text-anchor="start">arrives, nothing else</text>
+<rect x="335.0" y="1040" width="290" height="200" rx="10" fill="#EAEEE4" stroke="#171816" stroke-width="3.5"/>
+<rect x="345.0" y="1050.0" width="270.0" height="53.333333333333336" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="2.4499999999999997"/>
+<rect x="568.6" y="1073.6666666666667" width="29.0" height="6" rx="3" fill="#171816"/>
+<text x="355" y="1086" font-size="26" fill="#171816" font-weight="bold" text-anchor="start">product</text>
+<rect x="345.0" y="1113.3333333333333" width="270.0" height="53.333333333333336" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="2.4499999999999997"/>
+<rect x="586.4" y="1137.5819999999999" width="19.889999999999997" height="12.817999999999998" rx="2.6519999999999997" fill="#646861"/>
+<path d="M590.8199999999999 1138.245 V1134.93 A5.5249999999999995 5.5249999999999995 0 0 1 601.87 1134.93 V1138.245" fill="none" stroke="#646861" stroke-width="3.094"/>
+<text x="355" y="1149" font-size="26" fill="#171816" font-weight="bold" text-anchor="start">environment</text>
+<rect x="345.0" y="1176.6666666666667" width="270.0" height="53.333333333333336" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="2.4499999999999997"/>
+<rect x="586.4" y="1200.9153333333334" width="19.889999999999997" height="12.817999999999998" rx="2.6519999999999997" fill="#646861"/>
+<path d="M590.8199999999999 1201.5783333333334 V1198.2633333333335 A5.5249999999999995 5.5249999999999995 0 0 1 601.87 1198.2633333333335 V1201.5783333333334" fill="none" stroke="#646861" stroke-width="3.094"/>
+<text x="355" y="1212" font-size="26" fill="#171816" font-weight="bold" text-anchor="start">records</text>
+<text x="60" y="1070" font-size="28" fill="#171816" font-weight="bold" text-anchor="start">GitHub</text>
+<text x="60" y="1102" font-size="26" fill="#646861" font-weight="normal" text-anchor="start">three repositories,</text>
+<text x="60" y="1134" font-size="26" fill="#646861" font-weight="normal" text-anchor="start">one public,</text>
+<text x="60" y="1166" font-size="26" fill="#646861" font-weight="normal" text-anchor="start">two private</text>
+<rect x="60" y="1190" width="237" height="42" rx="20.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="75.6" y="1207.0819999999999" width="19.889999999999997" height="12.817999999999998" rx="2.6519999999999997" fill="#646861"/>
+<path d="M80.02 1207.745 V1204.43 A5.5249999999999995 5.5249999999999995 0 0 1 91.07 1204.43 V1207.745" fill="none" stroke="#646861" stroke-width="3.094"/>
+<text x="103" y="1220" font-size="26" fill="#1F211E" font-weight="normal" text-anchor="start">signed commits</text>
+<rect x="60" y="1239.6" width="237" height="42" rx="20.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="75.6" y="1256.6819999999998" width="19.889999999999997" height="12.817999999999998" rx="2.6519999999999997" fill="#646861"/>
+<path d="M80.02 1257.3449999999998 V1254.03 A5.5249999999999995 5.5249999999999995 0 0 1 91.07 1254.03 V1257.3449999999998" fill="none" stroke="#646861" stroke-width="3.094"/>
+<text x="103" y="1270" font-size="26" fill="#1F211E" font-weight="normal" text-anchor="start">checked hourly</text>
+<rect x="60" y="1300" width="600" height="176" rx="10" fill="#FFFFFF" stroke="#171816" stroke-width="3.5"/>
+<text x="72" y="1336" font-size="28" fill="#171816" font-weight="bold" text-anchor="start">GitHub Actions</text>
+<text x="72" y="1369" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" fill="#646861" text-anchor="start">nightly batch:</text>
+<text x="72" y="1402" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" fill="#646861" text-anchor="start">transcribe, extract, build, digest</text>
+<text x="72" y="1435" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" fill="#646861" text-anchor="start">hourly integrity check</text>
+<path d="M480 258 Q480 329 480 400" fill="none" stroke="#8C5B16" stroke-width="4.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="505" y="310" width="117" height="38" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="526" cy="329" r="16" fill="#8C5B16"/>
+<text x="526" y="338" font-size="24.18" fill="#F3F6EF" font-weight="bold" text-anchor="middle">1</text>
+<text x="583" y="340" font-size="26" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">sends</text>
+<path d="M480 560 Q480 616 480 671.0" fill="none" stroke="#8C5B16" stroke-width="4.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="501" y="596" width="130" height="38" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="521" cy="616" r="16" fill="#8C5B16"/>
+<text x="521" y="624" font-size="24.18" fill="#F3F6EF" font-weight="bold" text-anchor="middle">2</text>
+<text x="585" y="626" font-size="26" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">stores</text>
+<path d="M480 950 Q480 995 480 1040" fill="none" stroke="#8C5B16" stroke-width="4.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="233" y="962" width="234" height="66" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="253" cy="995" r="16" fill="#8C5B16"/>
+<text x="253" y="1004" font-size="24.18" fill="#F3F6EF" font-weight="bold" text-anchor="middle">3</text>
+<text x="369" y="991" font-size="26" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">files facts</text>
+<text x="369" y="1021" font-size="26" fill="#646861" font-weight="normal" text-anchor="middle">nightly, 21:00</text>
+<circle cx="540" cy="995" r="16" fill="#FFFFFF" stroke="#8C5B16" stroke-width="2.8000000000000003"/>
+<path d="M540 985.4 V995 H547.2" fill="none" stroke="#8C5B16" stroke-width="2.8000000000000003" stroke-linecap="round"/>
+<path d="M480 1476 Q480 1524 480 1572" fill="none" stroke="#8C5B16" stroke-width="4.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="231" y="1510" width="377" height="38" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="252" cy="1529" r="16" fill="#8C5B16"/>
+<text x="252" y="1538" font-size="24.18" fill="#F3F6EF" font-weight="bold" text-anchor="middle">4</text>
+<text x="439" y="1540" font-size="26" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">to the home server, below</text></svg>

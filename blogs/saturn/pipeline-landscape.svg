@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-labelledby="t d">
+<title id="t">Saturn pipeline: from a family phone to a private site</title>
+<desc id="d">Seven numbered steps left to right: family phone, Telegram group, Cloudflare Worker storing rows in D1 and media in R2, the nightly batch, the git knowledge base, generated pages, the private site. Solid arrows are data moving; dashed blue arrows are triggers. Three side jobs sit below: Mac transcription feeding the batch, a voice review page and a Run-the-loop button that both write back to the knowledge base. No personal data.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="640" fill="#F3F6EF"/>
+<text x="40" y="50" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">One loop, once a night</text>
+<path d="M 40 92 L 84 92" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<text x="98" y="93" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">data moves</text>
+<path d="M 227.60000000000002 92 L 271.6 92" fill="none" stroke="#007197" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9 7" marker-end="url(#arr-ctl)"/>
+<text x="285.6" y="93" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">trigger / schedule</text>
+<rect x="40" y="170" width="144" height="144" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<text x="112.0" y="208.95000000000002" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Family</text>
+<text x="112.0" y="234.25000000000003" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">phone</text>
+<text x="112.0" y="257.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">photo, voice,</text>
+<text x="112.0" y="277.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">PDF</text>
+<circle cx="40" cy="170" r="16" fill="#8C5B16"/>
+<text x="40" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">1</text>
+<path d="M 184 242.0 L 206 242.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="206" y="170" width="144" height="144" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<text x="278.0" y="219.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Telegram</text>
+<text x="278.0" y="244.45000000000002" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">group</text>
+<text x="278.0" y="267.3" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">input only</text>
+<circle cx="206" cy="170" r="16" fill="#8C5B16"/>
+<text x="206" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">2</text>
+<path d="M 350 242.0 L 372 242.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="372" y="170" width="144" height="144" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<text x="444.0" y="208.95000000000002" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Worker</text>
+<text x="444.0" y="234.25000000000003" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">stores it</text>
+<text x="444.0" y="257.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">D1 rows, R2</text>
+<text x="444.0" y="277.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">media</text>
+<circle cx="372" cy="170" r="16" fill="#8C5B16"/>
+<text x="372" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">3</text>
+<path d="M 516 242.0 L 538 242.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="538" y="170" width="144" height="144" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<text x="610.0" y="208.95000000000002" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Nightly</text>
+<text x="610.0" y="234.25000000000003" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">batch</text>
+<text x="610.0" y="257.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">pull, extract,</text>
+<text x="610.0" y="277.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">commit</text>
+<circle cx="538" cy="170" r="16" fill="#8C5B16"/>
+<text x="538" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">4</text>
+<path d="M 682 242.0 L 704 242.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="704" y="170" width="144" height="144" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<text x="776.0" y="196.3" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Git</text>
+<text x="776.0" y="221.6" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">knowledge</text>
+<text x="776.0" y="246.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">base</text>
+<text x="776.0" y="269.75" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">source, fact,</text>
+<text x="776.0" y="290.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">ref</text>
+<circle cx="704" cy="170" r="16" fill="#8C5B16"/>
+<text x="704" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">5</text>
+<path d="M 848 242.0 L 870 242.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="870" y="170" width="144" height="144" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<text x="942.0" y="208.95000000000002" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Generated</text>
+<text x="942.0" y="234.25000000000003" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">pages</text>
+<text x="942.0" y="257.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">rebuilt from</text>
+<text x="942.0" y="277.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">KB</text>
+<circle cx="870" cy="170" r="16" fill="#8C5B16"/>
+<text x="870" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">6</text>
+<path d="M 1014 242.0 L 1036 242.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="1036" y="170" width="144" height="144" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<text x="1108.0" y="208.95000000000002" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Private</text>
+<text x="1108.0" y="234.25000000000003" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">site</text>
+<text x="1108.0" y="257.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">tailnet; DM</text>
+<text x="1108.0" y="277.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">digest</text>
+<circle cx="1036" cy="170" r="16" fill="#8C5B16"/>
+<text x="1036" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">7</text>
+<path d="M 610.0 128 L 610.0 170" fill="none" stroke="#007197" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9 7" marker-end="url(#arr-ctl)"/>
+<rect x="620.0" y="137.0" width="161.36" height="24.0" rx="6" fill="#F3F6EF" stroke="none"/>
+<text x="700.6800000000001" y="150.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#007197" text-anchor="middle" dominant-baseline="middle" font-style="italic">timer, 21:00 IST</text>
+<rect x="40" y="440" width="330" height="96" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<rect x="63.519999999999996" y="473.6" width="8.96" height="16.0" rx="4.48" fill="none" stroke="#646861" stroke-width="2"/>
+<path d="M 59.04 485.44 a 8.96 8.96 0 0 0 17.92 0 M 68.0 494.4 V 501.44 M 63.519999999999996 501.44 h 8.96" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="224.0" y="477.79999999999995" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Mac transcription</text>
+<text x="224.0" y="500.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">whisper.cpp on a laptop at home</text>
+<rect x="435" y="440" width="330" height="96" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<circle cx="457.24" cy="481.6" r="4.48" fill="none" stroke="#646861" stroke-width="2"/>
+<path d="M 450.84 500.8 a 6.4 8.0 0 0 1 12.8 0" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="468.76" cy="481.6" r="4.48" fill="none" stroke="#646861" stroke-width="2"/>
+<path d="M 462.36 500.8 a 6.4 8.0 0 0 1 12.8 0" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="619.0" y="467.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Voice review page</text>
+<text x="619.0" y="490.45" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">a person corrects the</text>
+<text x="619.0" y="510.84999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">transcript</text>
+<rect x="830" y="440" width="330" height="96" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<rect x="844.56" y="480.96" width="26.88" height="14.08" rx="7.04" fill="none" stroke="#646861" stroke-width="2"/>
+<circle cx="863.76" cy="488.0" r="3.84" fill="#646861"/>
+<text x="1014.0" y="477.79999999999995" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Run the loop</text>
+<text x="1014.0" y="500.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">one button on the private site</text>
+<text x="40" y="570" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Mac runner reads the audio the Worker stored (3) and writes transcripts the batch (4) picks up.</text>
+<text x="40" y="596" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">The review page (on 7) and the loop button (on 7) are the only two write paths back into the KB (5).</text>
+<path d="M 205.0 440 L 205.0 354 L 610.0 354 L 610.0 314" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<path d="M 600.0 440 L 600.0 380 L 756.0 380 L 756.0 314" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<path d="M 995.0 440 L 995.0 406 L 796.0 406 L 796.0 314" fill="none" stroke="#007197" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9 7" marker-end="url(#arr-ctl)"/>
+<text x="265.0" y="338" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">transcripts</text>
+<text x="640.0" y="364" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">corrections</text>
+<text x="955.0" y="390" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#007197" text-anchor="end" dominant-baseline="middle" font-style="italic">loop note</text>
+</svg>

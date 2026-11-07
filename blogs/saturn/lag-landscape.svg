@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 505" width="1200" height="505" role="img" aria-labelledby="t d">
+<title id="t">Half the messages were read within 2.2 hours; 10 waited more than a day</title>
+<desc id="d">Dot strip on a logarithmic hours axis, one dot per message (41), hours from arrival to extraction: &lt;1 h 4; 1–2 h 13; 2–4 h 5; 4–8 h 2; 8–24 h 7; 1–2 d 5; 2–4 d 1; 4 d+ 4. Median 2.2 h marked in amber, mean 20.8 h in grey; 10 of 41 over a day, max 148.9 h. Source data/telegram received_at and extracted_at.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="505" fill="#F3F6EF"/>
+<text x="40" y="48" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">Half the messages were read within 2.2 hours; 10 waited more than a day</text>
+<text x="40" y="83.2" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">One dot per message (41), hours from arrival to extraction, log scale.</text>
+<path d="M 60 350.15 H 1140" fill="none" stroke="#AFB5AA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 94.41279206050828 350.15 v 8" fill="none" stroke="#AFB5AA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="94.41279206050828" y="372.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">15 min</text>
+<path d="M 308.2045835010707 350.15 v 8" fill="none" stroke="#AFB5AA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="308.2045835010707" y="372.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">1 h</text>
+<path d="M 521.9963749416331 350.15 v 8" fill="none" stroke="#AFB5AA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="521.9963749416331" y="372.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">4 h</text>
+<path d="M 628.8922706619143 350.15 v 8" fill="none" stroke="#AFB5AA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="628.8922706619143" y="372.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">8 h</text>
+<path d="M 798.3182568595591 350.15 v 8" fill="none" stroke="#AFB5AA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="798.3182568595591" y="372.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">1 day</text>
+<path d="M 967.744243057204 350.15 v 8" fill="none" stroke="#AFB5AA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="967.744243057204" y="372.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">3 days</text>
+<circle cx="60.0" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="60.0" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="60.0" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="60.0" cy="323.15" r="7" fill="#0082A9"/>
+<circle cx="151.73839830081982" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="151.73839830081982" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="292.33852959667615" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="292.33852959667615" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="337.8386948568803" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="337.8386948568803" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="339.6055770997038" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="339.6055770997038" cy="323.15" r="7" fill="#0082A9"/>
+<circle cx="339.7009168214516" cy="307.15" r="9" fill="#F3F6EF"/>
+<circle cx="339.7009168214516" cy="307.15" r="7" fill="#0082A9"/>
+<circle cx="343.01119105207977" cy="291.15" r="9" fill="#F3F6EF"/>
+<circle cx="343.01119105207977" cy="291.15" r="7" fill="#0082A9"/>
+<circle cx="343.2844153046631" cy="275.15" r="9" fill="#F3F6EF"/>
+<circle cx="343.2844153046631" cy="275.15" r="7" fill="#0082A9"/>
+<circle cx="365.1072593978406" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="365.1072593978406" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="371.0059164171055" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="371.0059164171055" cy="323.15" r="7" fill="#0082A9"/>
+<circle cx="372.48674052864" cy="307.15" r="9" fill="#F3F6EF"/>
+<circle cx="372.48674052864" cy="307.15" r="7" fill="#0082A9"/>
+<circle cx="381.0345554211953" cy="291.15" r="9" fill="#F3F6EF"/>
+<circle cx="381.0345554211953" cy="291.15" r="7" fill="#0082A9"/>
+<circle cx="383.42025230014787" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="383.42025230014787" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="383.82836709282265" cy="275.15" r="9" fill="#F3F6EF"/>
+<circle cx="383.82836709282265" cy="275.15" r="7" fill="#0082A9"/>
+<circle cx="385.05647372320726" cy="259.15" r="9" fill="#F3F6EF"/>
+<circle cx="385.05647372320726" cy="259.15" r="7" fill="#0082A9"/>
+<circle cx="408.9904623668548" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="408.9904623668548" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="427.85857312042685" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="427.85857312042685" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="427.85857312042685" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="427.85857312042685" cy="323.15" r="7" fill="#0082A9"/>
+<circle cx="429.82470350788964" cy="307.15" r="9" fill="#F3F6EF"/>
+<circle cx="429.82470350788964" cy="307.15" r="7" fill="#0082A9"/>
+<circle cx="430.2718359888863" cy="291.15" r="9" fill="#F3F6EF"/>
+<circle cx="430.2718359888863" cy="291.15" r="7" fill="#0082A9"/>
+<circle cx="502.64942392659566" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="502.64942392659566" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="577.9321897371207" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="577.9321897371207" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="592.9855126892594" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="592.9855126892594" cy="323.15" r="7" fill="#0082A9"/>
+<circle cx="638.4358417413035" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="638.4358417413035" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="638.6973602613668" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="638.6973602613668" cy="323.15" r="7" fill="#0082A9"/>
+<circle cx="668.8964898917734" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="668.8964898917734" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="758.4063387516046" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="758.4063387516046" cy="339.15" r="7" fill="#0082A9"/>
+<circle cx="760.3260352800492" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="760.3260352800492" cy="323.15" r="7" fill="#0082A9"/>
+<circle cx="760.8981456219354" cy="307.15" r="9" fill="#F3F6EF"/>
+<circle cx="760.8981456219354" cy="307.15" r="7" fill="#0082A9"/>
+<circle cx="762.1556857798012" cy="291.15" r="9" fill="#F3F6EF"/>
+<circle cx="762.1556857798012" cy="291.15" r="7" fill="#0082A9"/>
+<circle cx="835.0914764067916" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="835.0914764067916" cy="339.15" r="7" fill="#AB7839"/>
+<circle cx="880.1116506903701" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="880.1116506903701" cy="339.15" r="7" fill="#AB7839"/>
+<circle cx="880.1494542213527" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="880.1494542213527" cy="323.15" r="7" fill="#AB7839"/>
+<circle cx="881.6613248728778" cy="307.15" r="9" fill="#F3F6EF"/>
+<circle cx="881.6613248728778" cy="307.15" r="7" fill="#AB7839"/>
+<circle cx="894.8547278155928" cy="291.15" r="9" fill="#F3F6EF"/>
+<circle cx="894.8547278155928" cy="291.15" r="7" fill="#AB7839"/>
+<circle cx="958.6769547235846" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="958.6769547235846" cy="339.15" r="7" fill="#AB7839"/>
+<circle cx="1013.7497812660026" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="1013.7497812660026" cy="339.15" r="7" fill="#AB7839"/>
+<circle cx="1014.2580082003619" cy="323.15" r="9" fill="#F3F6EF"/>
+<circle cx="1014.2580082003619" cy="323.15" r="7" fill="#AB7839"/>
+<circle cx="1014.3191645623713" cy="307.15" r="9" fill="#F3F6EF"/>
+<circle cx="1014.3191645623713" cy="307.15" r="7" fill="#AB7839"/>
+<circle cx="1079.7702178863785" cy="339.15" r="9" fill="#F3F6EF"/>
+<circle cx="1079.7702178863785" cy="339.15" r="7" fill="#AB7839"/>
+<path d="M 429.79904155729616 202.14999999999998 V 350.15" fill="none" stroke="#AB7839" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="437.79904155729616" y="188.54999999999998" width="134.2" height="27.200000000000003" rx="13.600000000000001" fill="#AB7839" stroke="none" opacity="0.16"/>
+<text x="448.79904155729616" y="203.14999999999998" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">median 2.2 h</text>
+<path d="M 776.2495053904405 158.14999999999998 V 350.15" fill="none" stroke="#878C82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="784.2495053904405" y="144.54999999999998" width="124.85000000000001" height="27.200000000000003" rx="13.600000000000001" fill="#878C82" stroke="none" opacity="0.16"/>
+<text x="795.2495053904405" y="159.14999999999998" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">mean 20.8 h</text>
+<rect x="40" y="408.25" width="3" height="44.2" rx="1.5" fill="#AB7839" stroke="none"/>
+<text x="54" y="420.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">Amber: 10 messages that waited over a day, the slowest 149 h. The nightly batch sat in a CI queue; the mean follows the</text>
+<text x="54" y="442.25" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">tail.</text>
+<text x="40" y="474.25" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: records repo, data/telegram, counts only (received_at to extracted_at)</text>
+</svg>

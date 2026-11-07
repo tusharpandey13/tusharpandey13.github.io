@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 512" width="1200" height="512" role="img" aria-labelledby="t d">
+<title id="t">One day of hand import, then 92 more facts over the next eleven days</title>
+<desc id="d">Two stepped area charts on one date axis, 24 Oct to 6 Nov 2026: cumulative fact rows (0 to 1,054) and cumulative source rows (1 to 103) in the records repo, from the git history of data/. Most of the growth is the first bulk import of scanned records on 26 Oct. Counts only. Source git log.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="512" fill="#F3F6EF"/>
+<text x="40" y="48" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">One day of hand import, then 92 more facts over the next eleven days</text>
+<text x="40" y="83.2" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Cumulative rows in the records repo, 24 Oct to 6 Nov, at the last commit of each day.</text>
+<path d="M 90 420.15 H 560" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="78" y="421.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="end" dominant-baseline="middle">0</text>
+<path d="M 90 285.15 H 560" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="78" y="286.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="end" dominant-baseline="middle">600</text>
+<path d="M 90 150.14999999999998 H 560" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="78" y="151.14999999999998" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="end" dominant-baseline="middle">1,200</text>
+<path d="M 90.0 420.1 L 123.6 420.1 L 123.6 420.1 L 157.1 420.1 L 157.1 242.2 L 190.7 242.2 L 190.7 203.7 L 224.3 203.7 L 224.3 203.7 L 257.9 203.7 L 257.9 203.7 L 291.4 203.7 L 291.4 194.9 L 325.0 194.9 L 325.0 191.5 L 358.6 191.5 L 358.6 187.7 L 392.1 187.7 L 392.1 187.7 L 425.7 187.7 L 425.7 187.7 L 459.3 187.7 L 459.3 187.3 L 492.9 187.3 L 492.9 183.4 L 526.4 183.4 L 526.4 183.0 L 560.0 183.0 L 560 420.15 L 90 420.15 z" fill="#AB7839" opacity="0.12"/>
+<path d="M 90.0 420.1 L 123.6 420.1 L 123.6 420.1 L 157.1 420.1 L 157.1 242.2 L 190.7 242.2 L 190.7 203.7 L 224.3 203.7 L 224.3 203.7 L 257.9 203.7 L 257.9 203.7 L 291.4 203.7 L 291.4 194.9 L 325.0 194.9 L 325.0 191.5 L 358.6 191.5 L 358.6 187.7 L 392.1 187.7 L 392.1 187.7 L 425.7 187.7 L 425.7 187.7 L 459.3 187.7 L 459.3 187.3 L 492.9 187.3 L 492.9 183.4 L 526.4 183.4 L 526.4 183.0 L 560.0 183.0" fill="none" stroke="#AB7839" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<circle cx="560.0" cy="182.99999999999997" r="7" fill="#F3F6EF"/>
+<circle cx="560.0" cy="182.99999999999997" r="5" fill="#AB7839"/>
+<text x="548.0" y="208.99999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#171816" text-anchor="end" dominant-baseline="middle" font-weight="700">1,054 facts</text>
+<text x="106.78571428571428" y="440.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">24 Oct</text>
+<text x="543.2142857142857" y="440.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">6 Nov</text>
+<path d="M 190.71428571428572 142.15 V 420.15" fill="none" stroke="#878C82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 5"/>
+<text x="198.71428571428572" y="144.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">Telegram live, 27 Oct</text>
+<rect x="204.71428571428572" y="293.25" width="3" height="66.3" rx="1.5" fill="#AB7839" stroke="none"/>
+<text x="218.71428571428572" y="305.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">26 Oct: the paper archive,</text>
+<text x="218.71428571428572" y="327.25" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">scanned and entered by</text>
+<text x="218.71428571428572" y="349.34999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">hand</text>
+<path d="M 690 420.15 H 1130" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="678" y="421.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="end" dominant-baseline="middle">0</text>
+<path d="M 690 285.15 H 1130" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="678" y="286.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="end" dominant-baseline="middle">60</text>
+<path d="M 690 150.14999999999998 H 1130" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="678" y="151.14999999999998" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="end" dominant-baseline="middle">120</text>
+<path d="M 690.0 417.9 L 721.4 417.9 L 721.4 415.6 L 752.9 415.6 L 752.9 276.1 L 784.3 276.1 L 784.3 255.9 L 815.7 255.9 L 815.7 255.9 L 847.1 255.9 L 847.1 255.9 L 878.6 255.9 L 878.6 246.9 L 910.0 246.9 L 910.0 240.1 L 941.4 240.1 L 941.4 233.4 L 972.9 233.4 L 972.9 233.4 L 1004.3 233.4 L 1004.3 233.4 L 1035.7 233.4 L 1035.7 228.9 L 1067.1 228.9 L 1067.1 190.6 L 1098.6 190.6 L 1098.6 188.4 L 1130.0 188.4 L 1130 420.15 L 690 420.15 z" fill="#0082A9" opacity="0.12"/>
+<path d="M 690.0 417.9 L 721.4 417.9 L 721.4 415.6 L 752.9 415.6 L 752.9 276.1 L 784.3 276.1 L 784.3 255.9 L 815.7 255.9 L 815.7 255.9 L 847.1 255.9 L 847.1 255.9 L 878.6 255.9 L 878.6 246.9 L 910.0 246.9 L 910.0 240.1 L 941.4 240.1 L 941.4 233.4 L 972.9 233.4 L 972.9 233.4 L 1004.3 233.4 L 1004.3 233.4 L 1035.7 233.4 L 1035.7 228.9 L 1067.1 228.9 L 1067.1 190.6 L 1098.6 190.6 L 1098.6 188.4 L 1130.0 188.4" fill="none" stroke="#0082A9" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<circle cx="1130.0" cy="188.39999999999998" r="7" fill="#F3F6EF"/>
+<circle cx="1130.0" cy="188.39999999999998" r="5" fill="#0082A9"/>
+<text x="1118.0" y="214.39999999999998" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#171816" text-anchor="end" dominant-baseline="middle" font-weight="700">103 sources</text>
+<text x="705.7142857142857" y="440.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">24 Oct</text>
+<text x="1114.2857142857142" y="440.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">6 Nov</text>
+<path d="M 784.2857142857142 142.15 V 420.15" fill="none" stroke="#878C82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 5"/>
+<text x="792.2857142857142" y="144.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">Telegram live, 27 Oct</text>
+<rect x="798.2857142857142" y="303.25" width="3" height="22.1" rx="1.5" fill="#0082A9" stroke="none"/>
+<text x="812.2857142857142" y="315.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">+30 sources since go-live</text>
+<text x="40" y="482.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: git log of records repo data/, counts of fact and source rows</text>
+</svg>

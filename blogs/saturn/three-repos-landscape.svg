@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="t d">
+<title id="t">Three repositories, three contracts</title>
+<desc id="d">Three boxes: Product (public code), Environment (private, pins what runs) and Records (private, the family&#x27;s data). Labelled edges carry the three contract files: env.manifest from product to environment, product.lock from environment back to product, records.yaml from records to environment. No personal data.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="520" fill="#F3F6EF"/>
+<text x="40" y="50" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">Three repos, three contracts</text>
+<text x="40" y="86" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Code is public. Where it runs and what it holds are not.</text>
+<rect x="40" y="200" width="260" height="120" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<rect x="55.84" y="247.84" width="24.32" height="24.32" rx="2.56" fill="none" stroke="#646861" stroke-width="2"/>
+<text x="189.0" y="249.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Product</text>
+<text x="189.0" y="272.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">public code</text>
+<circle cx="40" cy="200" r="16" fill="#8C5B16"/>
+<text x="40" y="201" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">1</text>
+<rect x="470" y="200" width="260" height="120" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<rect x="487.76" y="257.44" width="20.48" height="16.64" rx="2.56" fill="none" stroke="#646861" stroke-width="2"/>
+<path d="M 492.24 257.44 V 252.96 a 5.76 5.76 0 0 1 11.52 0 V 257.44" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="619.0" y="249.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Environment</text>
+<text x="619.0" y="272.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">pins what runs, where</text>
+<circle cx="470" cy="200" r="16" fill="#8C5B16"/>
+<text x="470" y="201" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">2</text>
+<rect x="900" y="200" width="260" height="120" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<circle cx="921.6" cy="250.4" r="3.2" fill="#646861"/>
+<circle cx="921.6" cy="269.6" r="3.2" fill="#646861"/>
+<circle cx="935.04" cy="256.8" r="3.2" fill="#646861"/>
+<path d="M 921.6 250.4 V 269.6 M 935.04 256.8 q 0 8.0 -13.44 9.6" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1049.0" y="249.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Records</text>
+<text x="1049.0" y="272.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">the family&#x27;s data</text>
+<circle cx="900" cy="200" r="16" fill="#8C5B16"/>
+<text x="900" y="201" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">3</text>
+<path d="M 300 234 L 470 234" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<text x="385.0" y="188" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#171816" text-anchor="middle" dominant-baseline="middle">env.manifest</text>
+<text x="385.0" y="210" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#646861" text-anchor="middle" dominant-baseline="middle">what it needs</text>
+<path d="M 470 296 L 300 296" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<text x="385.0" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#171816" text-anchor="middle" dominant-baseline="middle">product.lock</text>
+<text x="385.0" y="340" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#646861" text-anchor="middle" dominant-baseline="middle">pinned version</text>
+<path d="M 900 260.0 L 730 260.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<text x="815.0" y="220.0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#171816" text-anchor="middle" dominant-baseline="middle">records.yaml</text>
+<text x="815.0" y="242.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#646861" text-anchor="middle" dominant-baseline="middle">where data lives</text>
+<rect x="40" y="380" width="1120" height="70" rx="14" fill="#ECE7D8" stroke="none"/>
+<text x="600" y="415" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#1F211E" text-anchor="middle" dominant-baseline="middle">deployment = product (pinned) + environment (secrets, hosts) + records (data)</text>
+</svg>

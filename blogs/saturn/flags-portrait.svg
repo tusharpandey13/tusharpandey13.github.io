@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 874" width="720" height="874" role="img" aria-labelledby="t d">
+<title id="t">154 flags raised, none acted on</title>
+<desc id="d">A field of 154 dots, one per cross-reference flag raised 31 Oct to 6 Nov 2026 over 18 runs: 131 routine, 23 data quality (darker), 0 next-visit. Beside it an empty outline for flags acted on: 0 listed in a digest, 0 closed, 0 feedback rows. 152 of the 154 came from the first run. Source crossref/runs.ndjson.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="720" height="874" fill="#F3F6EF"/>
+<text x="40" y="56" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">154 flags raised, none acted on</text>
+<text x="40" y="100.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Every cross-reference flag from 18 runs, 31 Oct</text>
+<text x="40" y="135.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">to 6 Nov: 131 routine, 23 data quality. The empty</text>
+<text x="40" y="171.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">box is what the feedback file holds.</text>
+<circle cx="47" cy="236.1" r="7" fill="#0082A9"/>
+<text x="62" y="237.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">routine 131</text>
+<circle cx="238.0" cy="236.1" r="7" fill="#009379"/>
+<text x="253.0" y="237.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">data quality 23</text>
+<circle cx="50" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="79" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="108" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="137" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="166" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="195" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="224" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="253" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="282" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="311" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="340" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="369" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="398" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="427" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="456" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="485" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="514" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="543" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="572" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="601" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="630" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="659" cy="286.1" r="10" fill="#0082A9"/>
+<circle cx="50" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="79" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="108" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="137" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="166" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="195" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="224" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="253" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="282" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="311" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="340" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="369" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="398" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="427" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="456" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="485" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="514" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="543" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="572" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="601" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="630" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="659" cy="315.1" r="10" fill="#0082A9"/>
+<circle cx="50" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="79" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="108" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="137" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="166" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="195" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="224" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="253" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="282" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="311" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="340" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="369" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="398" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="427" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="456" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="485" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="514" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="543" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="572" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="601" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="630" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="659" cy="344.1" r="10" fill="#0082A9"/>
+<circle cx="50" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="79" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="108" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="137" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="166" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="195" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="224" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="253" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="282" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="311" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="340" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="369" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="398" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="427" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="456" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="485" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="514" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="543" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="572" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="601" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="630" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="659" cy="373.1" r="10" fill="#0082A9"/>
+<circle cx="50" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="79" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="108" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="137" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="166" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="195" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="224" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="253" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="282" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="311" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="340" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="369" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="398" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="427" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="456" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="485" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="514" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="543" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="572" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="601" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="630" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="659" cy="402.1" r="10" fill="#0082A9"/>
+<circle cx="50" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="79" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="108" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="137" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="166" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="195" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="224" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="253" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="282" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="311" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="340" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="369" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="398" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="427" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="456" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="485" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="514" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="543" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="572" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="601" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="630" cy="431.1" r="10" fill="#0082A9"/>
+<circle cx="659" cy="431.1" r="10" fill="#009379"/>
+<circle cx="50" cy="460.1" r="10" fill="#009379"/>
+<circle cx="79" cy="460.1" r="10" fill="#009379"/>
+<circle cx="108" cy="460.1" r="10" fill="#009379"/>
+<circle cx="137" cy="460.1" r="10" fill="#009379"/>
+<circle cx="166" cy="460.1" r="10" fill="#009379"/>
+<circle cx="195" cy="460.1" r="10" fill="#009379"/>
+<circle cx="224" cy="460.1" r="10" fill="#009379"/>
+<circle cx="253" cy="460.1" r="10" fill="#009379"/>
+<circle cx="282" cy="460.1" r="10" fill="#009379"/>
+<circle cx="311" cy="460.1" r="10" fill="#009379"/>
+<circle cx="340" cy="460.1" r="10" fill="#009379"/>
+<circle cx="369" cy="460.1" r="10" fill="#009379"/>
+<circle cx="398" cy="460.1" r="10" fill="#009379"/>
+<circle cx="427" cy="460.1" r="10" fill="#009379"/>
+<circle cx="456" cy="460.1" r="10" fill="#009379"/>
+<circle cx="485" cy="460.1" r="10" fill="#009379"/>
+<circle cx="514" cy="460.1" r="10" fill="#009379"/>
+<circle cx="543" cy="460.1" r="10" fill="#009379"/>
+<circle cx="572" cy="460.1" r="10" fill="#009379"/>
+<circle cx="601" cy="460.1" r="10" fill="#009379"/>
+<circle cx="630" cy="460.1" r="10" fill="#009379"/>
+<circle cx="659" cy="460.1" r="10" fill="#009379"/>
+<rect x="40" y="519.1" width="640" height="70" rx="10" fill="none" stroke="#AB7839" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="360.0" y="555.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#AB7839" text-anchor="middle" dominant-baseline="middle" font-weight="600">acted on 0 · closed 0 · in a digest 0</text>
+<rect x="40" y="626.9" width="3" height="135.20000000000002" rx="1.5" fill="#AB7839" stroke="none"/>
+<text x="54" y="645.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">Zero is measured, not missing: no feedback row</text>
+<text x="54" y="678.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">and no digest line records a flag being used.</text>
+<text x="54" y="712.7" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">152 of the 154 came from the first run over</text>
+<text x="54" y="746.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">existing data.</text>
+<text x="40" y="790.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: records repo, crossref/runs.ndjson and</text>
+<text x="40" y="824.3" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">crossref/feedback.ndjson</text>
+</svg>
