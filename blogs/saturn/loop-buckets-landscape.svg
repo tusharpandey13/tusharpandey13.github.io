@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 442" width="1200" height="442" role="img" aria-labelledby="t d">
+<title id="t">The loop mostly says &#x27;unlikely&#x27;: 64 of 102 hypotheses sit at 5 to 20%</title>
+<desc id="d">Horizontal bars, one per probability bucket, for the diagnostic loop&#x27;s 131 inference records: &lt;5% 12 current plus 2 superseded; 5-20% 64 current plus 14 superseded; 20-50% 21 current plus 12 superseded; &gt;50% 5 current plus 1 superseded. 102 current records. No hypothesis text. Source inferences/mother/inferences.ndjson.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="442" fill="#F3F6EF"/>
+<text x="40" y="48" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">The loop mostly says &#x27;unlikely&#x27;: 64 of 102 hypotheses sit at 5 to 20%</text>
+<text x="40" y="83.2" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Current hypotheses by probability bucket; the grey tail is the 29 records a later revision replaced.</text>
+<text x="40" y="136.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">under 5%</text>
+<rect x="40" y="150.15" width="136.46153846153845" height="26" rx="0" fill="#878C82" stroke="none"/>
+<path d="M 178.46153846153845 150.15 h 19.076923076923077 a 4 4 0 0 1 4 4 v 18 a 4 4 0 0 1 -4 4 h -19.076923076923077 z" fill="#E3E9DC"/>
+<text x="213.53846153846152" y="164.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">12</text>
+<text x="240.23846153846154" y="164.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">+2 replaced</text>
+<text x="40" y="196.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">5 to 20%</text>
+<rect x="40" y="210.15" width="736.4615384615385" height="26" rx="0" fill="#009379" stroke="none"/>
+<path d="M 778.4615384615385 210.15 h 157.53846153846155 a 4 4 0 0 1 4 4 v 18 a 4 4 0 0 1 -4 4 h -157.53846153846155 z" fill="#E3E9DC"/>
+<text x="952.0" y="224.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">64</text>
+<text x="978.7" y="224.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">+14 replaced</text>
+<text x="40" y="256.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">20 to 50%</text>
+<rect x="40" y="270.15" width="240.30769230769232" height="26" rx="0" fill="#878C82" stroke="none"/>
+<path d="M 282.3076923076923 270.15 h 134.46153846153845 a 4 4 0 0 1 4 4 v 18 a 4 4 0 0 1 -4 4 h -134.46153846153845 z" fill="#E3E9DC"/>
+<text x="432.7692307692308" y="284.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">21</text>
+<text x="459.46923076923076" y="284.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">+12 replaced</text>
+<text x="40" y="316.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">over 50%</text>
+<rect x="40" y="330.15" width="55.69230769230769" height="26" rx="0" fill="#878C82" stroke="none"/>
+<path d="M 97.6923076923077 330.15 h 7.538461538461538 a 4 4 0 0 1 4 4 v 18 a 4 4 0 0 1 -4 4 h -7.538461538461538 z" fill="#E3E9DC"/>
+<text x="121.23076923076923" y="344.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">5</text>
+<text x="138.58076923076922" y="344.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">+1 replaced</text>
+<rect x="40" y="368.25" width="3" height="22.1" rx="1.5" fill="#009379" stroke="none"/>
+<text x="54" y="380.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">Only 5 are above even odds. A list of things to rule out, not a verdict.</text>
+<text x="40" y="412.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: records repo, inferences/mother/inferences.ndjson, counts only</text>
+</svg>

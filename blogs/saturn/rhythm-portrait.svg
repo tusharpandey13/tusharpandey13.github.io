@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1137" width="720" height="1137" role="img" aria-labelledby="t d">
+<title id="t">The family sends at lunchtime; the digest lands after 1 am</title>
+<desc id="d">A 24-hour ring, one radial bar per hour of the day in IST, counting when the family&#x27;s 41 Telegram messages arrived over 27 Oct to 5 Nov 2026: 07:00 1; 08:00 3; 09:00 3; 10:00 3; 11:00 5; 13:00 12; 14:00 6; 16:00 3; 19:00 2; 20:00 2; 21:00 1. An amber arc marks when the nightly digest went out, 01:44 to 03:50 IST over 9 digests, scheduled for 21:07 and delayed by the CI queue. Counts only. Source data/telegram.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="720" height="1137" fill="#F3F6EF"/>
+<text x="40" y="56" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">The family sends at lunchtime; the</text>
+<text x="40" y="96.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">digest lands after 1 am</text>
+<text x="40" y="141.6" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">41 messages by hour of day (IST), 27 Oct to 5</text>
+<text x="40" y="176.7" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Nov; digest send time over 9 nights.</text>
+<path d="M 240.0 334.0 A 240 240 0 0 1 600.0 541.8 L 460.0 541.8 A 100 100 0 0 0 310.0 455.2 z" fill="#EAEEE4"/>
+<circle cx="360" cy="541.8" r="170.0" fill="none" stroke="#D0D7C9" stroke-width="1"/>
+<circle cx="360" cy="541.8" r="240.0" fill="none" stroke="#D0D7C9" stroke-width="1"/>
+<circle cx="360" cy="541.8" r="100" fill="none" stroke="#AFB5AA" stroke-width="1"/>
+<path d="M 467.1 573.5 A 111.66666666666667 111.66666666666667 0 0 1 458.1 595.1 L 447.9 589.5 A 100 100 0 0 0 455.9 570.2 z" fill="#0082A9"/>
+<path d="M 475.1 612.3 A 135.0 135.0 0 0 1 457.9 634.7 L 432.5 610.6 A 100 100 0 0 0 445.3 594.0 z" fill="#0082A9"/>
+<path d="M 452.9 639.7 A 135.0 135.0 0 0 1 430.5 656.9 L 412.2 627.1 A 100 100 0 0 0 428.8 614.3 z" fill="#0082A9"/>
+<path d="M 424.4 660.4 A 135.0 135.0 0 0 1 398.3 671.2 L 388.4 637.7 A 100 100 0 0 0 407.7 629.7 z" fill="#0082A9"/>
+<path d="M 397.0 695.8 A 158.33333333333334 158.33333333333334 0 0 1 364.1 700.1 L 362.6 641.8 A 100 100 0 0 0 383.3 639.0 z" fill="#0082A9"/>
+<path d="M 291.8 771.9 A 240.0 240.0 0 0 1 245.5 752.7 L 312.3 629.7 A 100 100 0 0 0 331.6 637.7 z" fill="#AB7839"/>
+<path d="M 271.2 686.7 A 170.0 170.0 0 0 1 243.0 665.1 L 291.2 614.3 A 100 100 0 0 0 307.8 627.1 z" fill="#0082A9"/>
+<path d="M 241.4 606.2 A 135.0 135.0 0 0 1 230.6 580.1 L 264.1 570.2 A 100 100 0 0 0 272.1 589.5 z" fill="#0082A9"/>
+<path d="M 241.7 506.8 A 123.33333333333333 123.33333333333333 0 0 1 251.6 483.0 L 272.1 494.1 A 100 100 0 0 0 264.1 513.4 z" fill="#0082A9"/>
+<path d="M 254.8 477.4 A 123.33333333333333 123.33333333333333 0 0 1 270.5 456.9 L 287.5 473.0 A 100 100 0 0 0 274.7 489.6 z" fill="#0082A9"/>
+<path d="M 283.1 460.8 A 111.66666666666667 111.66666666666667 0 0 1 301.7 446.6 L 307.8 456.5 A 100 100 0 0 0 291.2 469.3 z" fill="#0082A9"/>
+<path d="M 456.3 300.3 A 260 260 0 0 1 579.3 402.1 L 569.2 408.5 A 248 248 0 0 0 451.9 311.5 z" fill="#AB7839"/>
+<path d="M 191.4 362.6 L 179.1 349.5" fill="none" stroke="#AB7839" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="360.0" y="268.79999999999995" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="middle" dominant-baseline="middle">midnight</text>
+<text x="634.0" y="542.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">6 am</text>
+<text x="360.0" y="816.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="middle" dominant-baseline="middle">noon</text>
+<text x="86.0" y="542.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="end" dominant-baseline="middle">6 pm</text>
+<text x="360" y="535.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="48" fill="#171816" text-anchor="middle" dominant-baseline="middle" font-weight="700">41</text>
+<text x="360" y="567.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="middle" dominant-baseline="middle">messages</text>
+<rect x="40" y="843.5999999999999" width="3" height="67.60000000000001" rx="1.5" fill="#AB7839" stroke="none"/>
+<text x="54" y="861.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">Amber bar: 12 of 41 arrived in the 13:00</text>
+<text x="54" y="895.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">hour. Nothing after 22:00.</text>
+<rect x="40" y="923.5999999999999" width="3" height="101.4" rx="1.5" fill="#AB7839" stroke="none"/>
+<text x="54" y="941.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">Amber arc: the digest, due 21:07 (tick), went</text>
+<text x="54" y="975.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">out 01:44–03:50 every night, held by the CI</text>
+<text x="54" y="1009.4" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">queue.</text>
+<text x="40" y="1053.4" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: records repo, data/telegram, counts only;</text>
+<text x="40" y="1087.2" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">data/telegram/digests.jsonl</text>
+</svg>

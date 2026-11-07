@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1087" width="720" height="1087" role="img" aria-labelledby="t d">
+<title id="t">Merging two engines cut word error to 0.22, but twice it said more than she did</title>
+<desc id="d">Lollipop dot plot, one row per speech-to-text engine over the same three Hindi voice notes, latest scored row: word error rate as the dot position, with key terms found and claims judged wrong beside each: LLM merge of both WER 0.22, terms 24/28, wrong 1; whisper.cpp, Mac WER 0.27, terms 24/28, wrong 3; whisper.cpp, CPU runner WER 0.31, terms 22/28, wrong 5; MMS Hindi, Mac WER 0.55, terms 16/28, wrong 1. Lower error is better. Source eval/stt-results.ndjson. No audio content shown.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="720" height="1087" fill="#F3F6EF"/>
+<text x="40" y="56" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">Merging two engines cut word error</text>
+<text x="40" y="96.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">to 0.22, but twice it said more</text>
+<text x="40" y="137.6" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">than she did</text>
+<text x="40" y="182.39999999999998" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Word error rate per engine, mean over the same 3</text>
+<text x="40" y="217.49999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Hindi voice notes. Lower is better.</text>
+<path d="M 40.0 312.59999999999997 V 790.5999999999999" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40.0" y="298.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="middle" dominant-baseline="middle">0.0</text>
+<path d="M 226.66666666666669 312.59999999999997 V 790.5999999999999" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="226.66666666666669" y="298.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="middle" dominant-baseline="middle">0.2</text>
+<path d="M 413.33333333333337 312.59999999999997 V 790.5999999999999" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="413.33333333333337" y="298.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="middle" dominant-baseline="middle">0.4</text>
+<path d="M 600.0 312.59999999999997 V 790.5999999999999" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="600.0" y="298.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="middle" dominant-baseline="middle">0.6</text>
+<text x="40" y="340.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">LLM merge of both</text>
+<path d="M 40 372.59999999999997 H 244.08888888888887" fill="none" stroke="#AB7839" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="244.08888888888887" cy="372.59999999999997" r="13" fill="#F3F6EF"/>
+<circle cx="244.08888888888887" cy="372.59999999999997" r="11" fill="#AB7839"/>
+<text x="265.08888888888885" y="373.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="700">0.22</text>
+<text x="40" y="406.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">24/28 key terms · 1 wrong</text>
+<text x="40" y="470.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">whisper.cpp, Mac</text>
+<path d="M 40 502.59999999999997 H 294.1777777777778" fill="none" stroke="#878C82" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="294.1777777777778" cy="502.59999999999997" r="13" fill="#F3F6EF"/>
+<circle cx="294.1777777777778" cy="502.59999999999997" r="11" fill="#878C82"/>
+<text x="315.1777777777778" y="503.59999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="700">0.27</text>
+<text x="40" y="536.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">24/28 key terms · 3 wrong</text>
+<text x="40" y="600.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">whisper.cpp, CPU runner</text>
+<path d="M 40 632.5999999999999 H 333.68888888888887" fill="none" stroke="#878C82" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="333.68888888888887" cy="632.5999999999999" r="13" fill="#F3F6EF"/>
+<circle cx="333.68888888888887" cy="632.5999999999999" r="11" fill="#878C82"/>
+<text x="354.68888888888887" y="633.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="700">0.31</text>
+<text x="40" y="666.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">22/28 key terms · 5 wrong</text>
+<text x="40" y="730.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">MMS Hindi, Mac</text>
+<path d="M 40 762.5999999999999 H 553.9555555555556" fill="none" stroke="#878C82" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="553.9555555555556" cy="762.5999999999999" r="13" fill="#F3F6EF"/>
+<circle cx="553.9555555555556" cy="762.5999999999999" r="11" fill="#878C82"/>
+<text x="574.9555555555556" y="763.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="700">0.55</text>
+<text x="40" y="796.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">16/28 key terms · 1 wrong</text>
+<rect x="40" y="874.3999999999999" width="3" height="101.4" rx="1.5" fill="#AB7839" stroke="none"/>
+<text x="54" y="892.5999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">The merge made 2 claims more specific than</text>
+<text x="54" y="926.3999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">what was said, and 1 wrong one. MMS alone</text>
+<text x="54" y="960.1999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">misses half the words.</text>
+<text x="40" y="1004.1999999999999" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: records repo, eval/stt-results.ndjson,</text>
+<text x="40" y="1038.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">latest row per clip and engine</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 482" width="1200" height="482" role="img" aria-labelledby="t d">
+<title id="t">Hand work halved in week two: 36 commits to 17</title>
+<desc id="d">Slope chart, records-repo commits: by hand week 1 (27 Oct to 2 Nov) 36 to week 2 (3 to 7 Nov) 17; by machine 21 to 12. Machine = the nightly batch and voice-review signers. Commit counts are a proxy for where the owner&#x27;s time went, not hours. Source: git log.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="482" fill="#F3F6EF"/>
+<text x="40" y="48" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">Hand work halved in week two: 36 commits to 17</text>
+<text x="40" y="83.2" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Commits to the records repo by the owner (by hand) and by the nightly batch and signers (by machine). A proxy, not a clock.</text>
+<path d="M 440 140.15 V 360.15" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="440" y="382.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">week 1</text>
+<path d="M 760 140.15 V 360.15" fill="none" stroke="#D0D7C9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="760" y="382.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">week 2</text>
+<path d="M 440 171.15 L 760 270.9" fill="none" stroke="#AB7839" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="440" cy="171.15" r="8" fill="#F3F6EF"/>
+<circle cx="440" cy="171.15" r="6" fill="#AB7839"/>
+<circle cx="760" cy="270.9" r="8" fill="#F3F6EF"/>
+<circle cx="760" cy="270.9" r="6" fill="#AB7839"/>
+<text x="422" y="172.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="end" dominant-baseline="middle" font-weight="600">by hand  36</text>
+<text x="778" y="271.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">17</text>
+<text x="804.7" y="271.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">-53%</text>
+<path d="M 440 249.9 L 760 297.15" fill="none" stroke="#878C82" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="440" cy="249.9" r="8" fill="#F3F6EF"/>
+<circle cx="440" cy="249.9" r="6" fill="#878C82"/>
+<circle cx="760" cy="297.15" r="8" fill="#F3F6EF"/>
+<circle cx="760" cy="297.15" r="6" fill="#878C82"/>
+<text x="422" y="250.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="end" dominant-baseline="middle" font-weight="600">by machine  21</text>
+<text x="778" y="298.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">12</text>
+<text x="804.7" y="298.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">-43%</text>
+<rect x="40" y="408.25" width="3" height="22.1" rx="1.5" fill="#AB7839" stroke="none"/>
+<text x="54" y="420.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="start" dominant-baseline="middle">Both fell, and week 2 is five days to week 1&#x27;s seven. The share by machine held at about 40%.</text>
+<text x="40" y="452.15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: git log of the records repo, by author, 27 Oct to 7 Nov</text>
+</svg>

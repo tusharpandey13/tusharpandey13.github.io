@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 660" width="720" height="660" role="img" aria-labelledby="t d">
+<title id="t">Hero: ninety days between two visits</title>
+<desc id="d">A calendar grid of thirteen weeks. Two days are marked as doctor visits, at the start and the end. Every day between carries small marks for things that happened at home: a reading, a voice note, a medicine strip. Synthetic; no dates, no values.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="720" height="660" fill="#F3F6EF"/>
+<text x="40" y="60" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">What happens between two visits</text>
+<text x="40" y="100" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">90 days, 2 consult slips. The rest</text>
+<text x="40" y="134" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">lives in phones and memory.</text>
+<rect x="40" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="62.0" cy="192.0" r="4" fill="#646861"/>
+<rect x="40" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="62.0" cy="241.0" r="4" fill="#646861"/>
+<rect x="40" y="268" width="44" height="44" rx="10" fill="#ECE7D8" stroke="#8C5B16" stroke-width="2.5"/>
+<rect x="53.2" y="275.92" width="17.6" height="22.0" rx="3" fill="#F3F6EF" stroke="#8C5B16" stroke-width="1.5"/>
+<path d="M 56.72 283.84 h 10.559999999999999" fill="none" stroke="#8C5B16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 56.72 289.12 h 10.559999999999999" fill="none" stroke="#8C5B16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 56.72 294.4 h 10.559999999999999" fill="none" stroke="#8C5B16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="62.0" cy="339.0" r="6" fill="#646861"/>
+<rect x="40" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="62.0" cy="388.0" r="8" fill="#646861"/>
+<rect x="40" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="40" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="89" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="111.0" cy="192.0" r="6" fill="#646861"/>
+<rect x="89" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="89" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="111.0" cy="290.0" r="4" fill="#646861"/>
+<rect x="89" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="111.0" cy="339.0" r="6" fill="#646861"/>
+<rect x="89" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="89" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="111.0" cy="437.0" r="6" fill="#646861"/>
+<rect x="89" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="111.0" cy="486.0" r="4" fill="#646861"/>
+<rect x="138" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="138" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="138" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="160.0" cy="290.0" r="6" fill="#646861"/>
+<rect x="138" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="160.0" cy="339.0" r="6" fill="#646861"/>
+<rect x="138" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="138" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="160.0" cy="437.0" r="4" fill="#646861"/>
+<rect x="138" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="187" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="209.0" cy="192.0" r="6" fill="#646861"/>
+<rect x="187" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="209.0" cy="241.0" r="6" fill="#646861"/>
+<rect x="187" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="187" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="209.0" cy="339.0" r="6" fill="#646861"/>
+<rect x="187" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="187" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="209.0" cy="437.0" r="4" fill="#646861"/>
+<rect x="187" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="209.0" cy="486.0" r="8" fill="#646861"/>
+<rect x="236" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="258.0" cy="192.0" r="8" fill="#646861"/>
+<rect x="236" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="258.0" cy="241.0" r="6" fill="#646861"/>
+<rect x="236" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="236" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="258.0" cy="339.0" r="6" fill="#646861"/>
+<rect x="236" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="258.0" cy="388.0" r="6" fill="#646861"/>
+<rect x="236" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="258.0" cy="437.0" r="6" fill="#646861"/>
+<rect x="236" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="285" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="307.0" cy="192.0" r="4" fill="#646861"/>
+<rect x="285" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="285" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="307.0" cy="290.0" r="6" fill="#646861"/>
+<rect x="285" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="307.0" cy="339.0" r="4" fill="#646861"/>
+<rect x="285" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="307.0" cy="388.0" r="4" fill="#646861"/>
+<rect x="285" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="307.0" cy="437.0" r="6" fill="#646861"/>
+<rect x="285" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="307.0" cy="486.0" r="4" fill="#646861"/>
+<rect x="334" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="356.0" cy="192.0" r="6" fill="#646861"/>
+<rect x="334" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="334" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="356.0" cy="290.0" r="6" fill="#646861"/>
+<rect x="334" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="356.0" cy="339.0" r="4" fill="#646861"/>
+<rect x="334" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="356.0" cy="388.0" r="6" fill="#646861"/>
+<rect x="334" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="356.0" cy="437.0" r="8" fill="#646861"/>
+<rect x="334" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="356.0" cy="486.0" r="4" fill="#646861"/>
+<rect x="383" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="383" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="405.0" cy="241.0" r="6" fill="#646861"/>
+<rect x="383" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="405.0" cy="290.0" r="6" fill="#646861"/>
+<rect x="383" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="405.0" cy="339.0" r="8" fill="#646861"/>
+<rect x="383" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="405.0" cy="388.0" r="4" fill="#646861"/>
+<rect x="383" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="405.0" cy="437.0" r="4" fill="#646861"/>
+<rect x="383" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="432" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="454.0" cy="192.0" r="6" fill="#646861"/>
+<rect x="432" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="454.0" cy="241.0" r="8" fill="#646861"/>
+<rect x="432" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="432" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="454.0" cy="339.0" r="6" fill="#646861"/>
+<rect x="432" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="432" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="454.0" cy="437.0" r="6" fill="#646861"/>
+<rect x="432" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="454.0" cy="486.0" r="4" fill="#646861"/>
+<rect x="481" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="503.0" cy="192.0" r="6" fill="#646861"/>
+<rect x="481" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="503.0" cy="241.0" r="8" fill="#646861"/>
+<rect x="481" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="503.0" cy="290.0" r="6" fill="#646861"/>
+<rect x="481" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="503.0" cy="339.0" r="6" fill="#646861"/>
+<rect x="481" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="503.0" cy="388.0" r="4" fill="#646861"/>
+<rect x="481" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="503.0" cy="437.0" r="6" fill="#646861"/>
+<rect x="481" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="503.0" cy="486.0" r="6" fill="#646861"/>
+<rect x="530" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="552.0" cy="192.0" r="6" fill="#646861"/>
+<rect x="530" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="552.0" cy="241.0" r="4" fill="#646861"/>
+<rect x="530" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="552.0" cy="290.0" r="4" fill="#646861"/>
+<rect x="530" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="552.0" cy="339.0" r="4" fill="#646861"/>
+<rect x="530" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="552.0" cy="388.0" r="4" fill="#646861"/>
+<rect x="530" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="552.0" cy="437.0" r="8" fill="#646861"/>
+<rect x="530" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="552.0" cy="486.0" r="4" fill="#646861"/>
+<rect x="579" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="579" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="601.0" cy="241.0" r="6" fill="#646861"/>
+<rect x="579" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="601.0" cy="290.0" r="4" fill="#646861"/>
+<rect x="579" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="601.0" cy="339.0" r="6" fill="#646861"/>
+<rect x="579" y="366" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="601.0" cy="388.0" r="6" fill="#646861"/>
+<rect x="579" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="601.0" cy="437.0" r="4" fill="#646861"/>
+<rect x="579" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="601.0" cy="486.0" r="8" fill="#646861"/>
+<rect x="628" y="170" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="650.0" cy="192.0" r="6" fill="#646861"/>
+<rect x="628" y="219" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="650.0" cy="241.0" r="4" fill="#646861"/>
+<rect x="628" y="268" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="650.0" cy="290.0" r="6" fill="#646861"/>
+<rect x="628" y="317" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="628" y="366" width="44" height="44" rx="10" fill="#ECE7D8" stroke="#8C5B16" stroke-width="2.5"/>
+<rect x="641.2" y="373.92" width="17.6" height="22.0" rx="3" fill="#F3F6EF" stroke="#8C5B16" stroke-width="1.5"/>
+<path d="M 644.72 381.84 h 10.559999999999999" fill="none" stroke="#8C5B16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 644.72 387.12 h 10.559999999999999" fill="none" stroke="#8C5B16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 644.72 392.4 h 10.559999999999999" fill="none" stroke="#8C5B16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="628" y="415" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<rect x="628" y="464" width="44" height="44" rx="10" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="650.0" cy="486.0" r="6" fill="#646861"/>
+<rect x="40" y="525.0" width="44" height="44" rx="8" fill="#ECE7D8" stroke="#8C5B16" stroke-width="2.5"/>
+<text x="96" y="548" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">a doctor visit, with a slip</text>
+<circle cx="62.0" cy="607" r="6" fill="#646861"/>
+<text x="96" y="608" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">a reading, a voice note, a strip photo</text>
+</svg>

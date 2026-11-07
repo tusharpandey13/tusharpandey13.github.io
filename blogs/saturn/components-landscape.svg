@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="t d"><title id="t">A running Saturn: the parents&#x27; home, the cloud, the owner&#x27;s home and the doctor</title><desc id="d">A running Saturn drawn as four places: the parents&#x27; home with two phones; the cloud with a Telegram group, a Worker (verify, store, copy media) holding an inbox and a media store, and GitHub holding three repositories and the Actions jobs (nightly batch, hourly integrity check); the owner&#x27;s home with a home server (site builder, voice review, loop job and queue, dead-man check), a Mac transcription runner, the owner&#x27;s phone and a bell, inside a fenced private network; and the doctor who receives a printed packet. One amber path, numbered 1 to 6 with a verb on each line, runs from the phones to the doctor. Four lock chips state policies. No personal data, hostnames or names.</desc><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8C5B16"/></marker></defs><rect width="1200" height="760" fill="#F3F6EF"/><rect x="16" y="16" width="160" height="728" rx="26" fill="#EAEEE4"/>
+<text x="40" y="50" font-size="22" fill="#1F211E" font-weight="bold" text-anchor="start">Parents&#x27;</text>
+<text x="40" y="78" font-size="22" fill="#1F211E" font-weight="bold" text-anchor="start">home</text>
+<rect x="190" y="16" width="420" height="728" rx="26" fill="#EAEEE4"/>
+<text x="214" y="50" font-size="22" fill="#1F211E" font-weight="bold" text-anchor="start">The cloud</text>
+<rect x="624" y="16" width="400" height="728" rx="26" fill="#EAEEE4"/>
+<text x="648" y="50" font-size="22" fill="#1F211E" font-weight="bold" text-anchor="start">Owner&#x27;s home</text>
+<rect x="1038" y="16" width="146" height="728" rx="26" fill="#EAEEE4"/>
+<text x="1062" y="50" font-size="22" fill="#1F211E" font-weight="bold" text-anchor="start">The doctor</text>
+<rect x="30" y="250" width="60" height="118" rx="8.4" fill="#FFFFFF" stroke="#171816" stroke-width="2.5"/>
+<rect x="36.0" y="259.44" width="48.0" height="92.04" rx="4" fill="#EAEEE4"/>
+<circle cx="60.0" cy="359.74" r="3.0" fill="#171816"/>
+<rect x="102" y="250" width="60" height="118" rx="8.4" fill="#FFFFFF" stroke="#171816" stroke-width="2.5"/>
+<rect x="108.0" y="259.44" width="48.0" height="92.04" rx="4" fill="#EAEEE4"/>
+<circle cx="132.0" cy="359.74" r="3.0" fill="#171816"/>
+<text x="96" y="398" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">Two phones</text>
+<text x="96" y="420" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">photos, voice</text>
+<text x="96" y="442" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">notes, messages</text>
+<path d="M225.12 120 H332.88 A21.12 21.12 0 0 1 354 141.12 V168.0 A21.12 21.12 0 0 1 332.88 189.12 H249.0 L225.0 216 V189.12 A21.12 21.12 0 0 1 204 168.0 V141.12 A21.12 21.12 0 0 1 225.12 120 Z" fill="#FFFFFF" stroke="#171816" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="279" y="157" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">Telegram</text>
+<text x="279" y="179" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">family chat</text>
+<rect x="201" y="228" width="178" height="26" rx="12.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="210.79999999999998" y="238.512" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M213.51999999999998 238.92000000000002 V236.88000000000002 A3.4 3.4 0 0 1 220.32 236.88000000000002 V238.92000000000002" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="228" y="246" font-size="16" fill="#1F211E" font-weight="normal" text-anchor="start">reads, never posts</text>
+<path d="M412.0 256 H560.8 A46.2 46.2 0 0 0 570.4 163.60000000000002 A63.0 63.0 0 0 0 484.0 71.2 A75.6 75.6 0 0 0 402.4 163.60000000000002 A46.2 46.2 0 0 0 412.0 256 Z" fill="#FFFFFF" stroke="#171816" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="484" y="130" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">Worker</text>
+<text x="484" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#646861" text-anchor="middle">verify, store,</text>
+<text x="484" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#646861" text-anchor="middle">copy media</text>
+<rect x="434.8" y="190.6" width="98.4" height="22.5" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="1.75"/>
+<rect x="515.6" y="200.362" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M518.32 200.77 V198.73000000000002 A3.4 3.4 0 0 1 525.12 198.73000000000002 V200.77" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="441" y="207" font-size="16" fill="#171816" font-weight="bold" text-anchor="start">inbox</text>
+<rect x="434.8" y="219.1" width="98.4" height="22.5" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="1.75"/>
+<rect x="515.6" y="228.862" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M518.32 229.27 V227.23000000000002 A3.4 3.4 0 0 1 525.12 227.23000000000002 V229.27" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="441" y="236" font-size="16" fill="#171816" font-weight="bold" text-anchor="start">media</text>
+<text x="288" y="328" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">GitHub</text>
+<rect x="204" y="340" width="168" height="180" rx="10" fill="#EAEEE4" stroke="#171816" stroke-width="2.5"/>
+<rect x="213.0" y="349.0" width="150.0" height="48.0" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="1.75"/>
+<rect x="336.12" y="370.0" width="16.8" height="6" rx="3" fill="#171816"/>
+<text x="222" y="379" font-size="16" fill="#171816" font-weight="bold" text-anchor="start">product</text>
+<rect x="213.0" y="406.0" width="150.0" height="48.0" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="1.75"/>
+<rect x="345.4" y="428.512" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M348.12 428.92 V426.88 A3.4 3.4 0 0 1 354.91999999999996 426.88 V428.92" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="222" y="436" font-size="16" fill="#171816" font-weight="bold" text-anchor="start">environment</text>
+<rect x="213.0" y="463.0" width="150.0" height="48.0" rx="6" fill="#FFFFFF" stroke="#171816" stroke-width="1.75"/>
+<rect x="345.4" y="485.512" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M348.12 485.92 V483.88 A3.4 3.4 0 0 1 354.91999999999996 483.88 V485.92" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="222" y="493" font-size="16" fill="#171816" font-weight="bold" text-anchor="start">records</text>
+<text x="288" y="548" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">three repositories</text>
+<text x="288" y="570" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">one public, two private</text>
+<rect x="215" y="580" width="146" height="26" rx="12.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="224.79999999999998" y="590.512" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M227.51999999999998 590.92 V588.88 A3.4 3.4 0 0 1 234.32 588.88 V590.92" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="242" y="598" font-size="16" fill="#1F211E" font-weight="normal" text-anchor="start">signed commits</text>
+<rect x="199" y="611.6" width="178" height="26" rx="12.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="208.79999999999998" y="622.112" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M211.51999999999998 622.52 V620.48 A3.4 3.4 0 0 1 218.32 620.48 V622.52" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="226" y="630" font-size="16" fill="#1F211E" font-weight="normal" text-anchor="start">checked every hour</text>
+<rect x="378" y="390" width="232" height="150" rx="10" fill="#FFFFFF" stroke="#171816" stroke-width="2.5"/>
+<text x="390" y="416" font-size="18" fill="#171816" font-weight="bold" text-anchor="start">GitHub Actions</text>
+<text x="390" y="439" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#646861" text-anchor="start">nightly batch:</text>
+<text x="390" y="462" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#646861" text-anchor="start">transcribe, extract,</text>
+<text x="390" y="485" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#646861" text-anchor="start">build, digest</text>
+<text x="390" y="508" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#646861" text-anchor="start">hourly integrity check</text>
+<rect x="680" y="70" width="332" height="540" rx="18" fill="#EBF6FA" stroke="#007197" stroke-width="2.5" stroke-dasharray="12 8"/>
+<rect x="698" y="89.376" width="11.520000000000001" height="7.4239999999999995" rx="1.536" fill="#007197"/>
+<path d="M700.56 89.76 V87.84 A3.2 3.2 0 0 1 706.96 87.84 V89.76" fill="none" stroke="#007197" stroke-width="1.7920000000000003"/>
+<text x="716" y="97" font-size="16" fill="#007197" font-weight="bold" text-anchor="start">private network</text>
+<rect x="696" y="110" width="196" height="172" rx="8" fill="#171816"/>
+<rect x="703" y="117.0" width="182" height="34.25" rx="4" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="711.8" cy="134.125" r="2.88" fill="#8C5B16"/>
+<text x="721" y="140" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#1F211E" text-anchor="start">site builder</text>
+<rect x="703" y="158.25" width="182" height="34.25" rx="4" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="711.8" cy="175.375" r="2.88" fill="#8C5B16"/>
+<text x="721" y="181" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#1F211E" text-anchor="start">voice review</text>
+<rect x="703" y="199.5" width="182" height="34.25" rx="4" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="711.8" cy="216.625" r="2.88" fill="#8C5B16"/>
+<text x="721" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#1F211E" text-anchor="start">loop job + queue</text>
+<rect x="703" y="240.75" width="182" height="34.25" rx="4" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="1"/>
+<circle cx="711.8" cy="257.875" r="2.88" fill="#8C5B16"/>
+<text x="721" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#1F211E" text-anchor="start">dead-man check</text>
+<text x="794" y="310" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">Home server</text>
+<text x="794" y="332" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">rebuilds the site</text>
+<text x="794" y="354" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">from the records</text>
+<rect x="709" y="364" width="170" height="26" rx="12.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="718.8000000000001" y="374.512" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M721.5200000000001 374.92 V372.88 A3.4 3.4 0 0 1 728.32 372.88 V374.92" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="736" y="382" font-size="16" fill="#1F211E" font-weight="normal" text-anchor="start">muted until heard</text>
+<rect x="928" y="380" width="60" height="112" rx="8.4" fill="#FFFFFF" stroke="#007197" stroke-width="2.5"/>
+<rect x="934.0" y="388.96" width="48.0" height="87.36" rx="4" fill="#EAEEE4"/>
+<circle cx="958.0" cy="484.16" r="3.0" fill="#007197"/>
+<text x="958" y="402" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">digest</text>
+<text x="958" y="518" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">My phone</text>
+<text x="958" y="540" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">the digest</text>
+<text x="958" y="562" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">by DM</text>
+<rect x="706.72" y="430" width="82.56" height="49.6" rx="8" fill="#FFFFFF" stroke="#171816" stroke-width="2.5"/>
+<rect x="710.56" y="433.1" width="74.88" height="43.4" rx="4" fill="#EAEEE4"/>
+<path d="M700 479.6 H796 L791.2 492 H704.8 Z" fill="#171816"/>
+<text x="748" y="516" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">Mac</text>
+<text x="748" y="538" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#646861" text-anchor="middle">transcription</text>
+<text x="748" y="560" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#646861" text-anchor="middle">runner</text>
+<rect x="694" y="622" width="226" height="26" rx="12.8" fill="#FFFFFF" stroke="#AFB5AA" stroke-width="1.5"/>
+<rect x="703.6" y="632.512" width="12.24" height="7.887999999999999" rx="1.632" fill="#646861"/>
+<path d="M706.32 632.92 V630.88 A3.4 3.4 0 0 1 713.12 630.88 V632.92" fill="none" stroke="#646861" stroke-width="1.9040000000000001"/>
+<text x="720" y="640" font-size="16" fill="#1F211E" font-weight="normal" text-anchor="start">speech never leaves home</text>
+<path d="M850 460.96 Q853.2 458.4 853.84 448.8 A12.16 12.16 0 0 1 878.16 448.8 Q878.8 458.4 882 460.96 Z" fill="#F88CB6"/>
+<circle cx="866.0" cy="464.8" r="3.2" fill="#F88CB6"/>
+<circle cx="866.0" cy="438.56" r="2.24" fill="#F88CB6"/>
+<text x="866" y="490" font-size="18" fill="#AA4670" font-weight="bold" text-anchor="middle">alerts me</text>
+<text x="866" y="512" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">if a night</text>
+<text x="866" y="534" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">is missed</text>
+<circle cx="1096.0" cy="132.08" r="12.8" fill="#FFFFFF" stroke="#171816" stroke-width="2.5"/>
+<path d="M1070.4 182 V167.92000000000002 A25.6 25.6 0 0 1 1121.6 167.92000000000002 V182 Z" fill="#FFFFFF" stroke="#171816" stroke-width="2.5"/>
+<path d="M1115.2 153.2 H1140.4 L1151.2 162.79999999999998 V201.2 H1115.2 Z" fill="#FFFFFF" stroke="#171816" stroke-width="2.0" stroke-linejoin="round"/>
+<path d="M1121.68 173.35999999999999 H1144.72" stroke="#AFB5AA" stroke-width="2.0" stroke-linecap="round"/>
+<path d="M1121.68 182.0 H1144.72" stroke="#AFB5AA" stroke-width="2.0" stroke-linecap="round"/>
+<path d="M1121.68 190.64 H1144.72" stroke="#AFB5AA" stroke-width="2.0" stroke-linecap="round"/>
+<text x="1111" y="242" font-size="18" fill="#171816" font-weight="bold" text-anchor="middle">The doctor</text>
+<text x="1111" y="264" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">gets a printed</text>
+<text x="1111" y="286" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">packet at</text>
+<text x="1111" y="308" font-size="16" fill="#646861" font-weight="normal" text-anchor="middle">the visit</text>
+<path d="M162 297.2 Q159 223 204 163.2" fill="none" stroke="#8C5B16" stroke-width="3.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="123" y="207" width="84" height="27" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="138" cy="220" r="11" fill="#8C5B16"/>
+<text x="138" y="226" font-size="15.809999999999999" fill="#F3F6EF" font-weight="bold" text-anchor="middle">1</text>
+<text x="178" y="227" font-size="17" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">sends</text>
+<path d="M354 158.4 Q379 167 404.8 176.2" fill="none" stroke="#8C5B16" stroke-width="3.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="333" y="108" width="92" height="27" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="348" cy="121" r="11" fill="#8C5B16"/>
+<text x="348" y="127" font-size="15.809999999999999" fill="#F3F6EF" font-weight="bold" text-anchor="middle">2</text>
+<text x="393" y="128" font-size="17" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">stores</text>
+<path d="M484.0 256 Q484 323 484.0 390" fill="none" stroke="#8C5B16" stroke-width="3.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="326" y="299" width="160" height="48" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="341" cy="323" r="11" fill="#8C5B16"/>
+<text x="341" y="329" font-size="15.809999999999999" fill="#F3F6EF" font-weight="bold" text-anchor="middle">3</text>
+<text x="420" y="319" font-size="17" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">files facts</text>
+<text x="420" y="340" font-size="17" fill="#646861" font-weight="normal" text-anchor="middle">nightly, 21:00</text>
+<path d="M610 420 Q653 325 696 230.39999999999998" fill="none" stroke="#8C5B16" stroke-width="3.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="560" y="257" width="118" height="48" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="575" cy="281" r="11" fill="#8C5B16"/>
+<text x="575" y="287" font-size="15.809999999999999" fill="#F3F6EF" font-weight="bold" text-anchor="middle">4</text>
+<text x="633" y="277" font-size="17" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">pulls and</text>
+<text x="633" y="298" font-size="17" fill="#646861" font-weight="normal" text-anchor="middle">rebuilds</text>
+<path d="M892 251.04 Q947 302 952.0 376" fill="none" stroke="#8C5B16" stroke-width="3.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="910" y="294" width="109" height="27" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="924" cy="308" r="11" fill="#8C5B16"/>
+<text x="924" y="313" font-size="15.809999999999999" fill="#F3F6EF" font-weight="bold" text-anchor="middle">5</text>
+<text x="978" y="314" font-size="17" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">shows me</text>
+<path d="M892 130.64 Q980 128 1060 166.0" fill="none" stroke="#8C5B16" stroke-width="3.0" stroke-linecap="round" marker-end="url(#arr)"/>
+<rect x="915" y="74" width="126" height="48" rx="6" fill="#F3F6EF" fill-opacity="0.92"/>
+<circle cx="930" cy="98" r="11" fill="#8C5B16"/>
+<text x="930" y="104" font-size="15.809999999999999" fill="#F3F6EF" font-weight="bold" text-anchor="middle">6</text>
+<text x="992" y="94" font-size="17" fill="#8C5B16" font-weight="normal" text-anchor="middle" font-style="italic">prints for</text>
+<text x="992" y="115" font-size="17" fill="#646861" font-weight="normal" text-anchor="middle">the doctor</text>
+<circle cx="518.0" cy="323" r="11" fill="#FFFFFF" stroke="#8C5B16" stroke-width="2.0"/>
+<path d="M518.0 316.4 V323 H522.95" fill="none" stroke="#8C5B16" stroke-width="2.0" stroke-linecap="round"/></svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-labelledby="t d">
+<title id="t">The diagnostic loop: seven seats, one inference record</title>
+<desc id="d">Left: facts from the knowledge base enter a panel of seven fixed seats (hypothesis, test chooser, challenger, stewardship, checklist, a blinded seat, a citation verifier). Every claim passes the verifier before it is written to an inference record holding a claim, a probability, the ids of the evidence and the label agent-inferred, which the status page shows. The loop never writes to the facts. Panel structure after Microsoft Research&#x27;s MAI-DxO (Nori et al., 2025); Saturn adopts its structure, not its accuracy figures. Synthetic content only.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="600" fill="#F3F6EF"/>
+<text x="40" y="50" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">Seven seats, one record</text>
+<text x="40" y="86" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Structure after Microsoft Research&#x27;s MAI-DxO. The loop reads facts; it never edits them.</text>
+<rect x="40" y="210" width="180" height="130" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<circle cx="61.6" cy="265.4" r="3.2" fill="#646861"/>
+<circle cx="61.6" cy="284.6" r="3.2" fill="#646861"/>
+<circle cx="75.03999999999999" cy="271.8" r="3.2" fill="#646861"/>
+<path d="M 61.6 265.4 V 284.6 M 75.03999999999999 271.8 q 0 8.0 -13.44 9.6" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="149.0" y="264.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">KB facts</text>
+<text x="149.0" y="287.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">read only</text>
+<circle cx="40" cy="210" r="16" fill="#8C5B16"/>
+<text x="40" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">1</text>
+<rect x="290" y="150" width="410" height="260" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<circle cx="290" cy="150" r="16" fill="#8C5B16"/>
+<text x="290" y="151" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">2</text>
+<text x="495" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Panel, fixed seats</text>
+<rect x="310.0" y="206" width="179.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="399.5" y="226.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">Hypothesis</text>
+<rect x="501.0" y="206" width="179.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="590.5" y="226.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">Test chooser</text>
+<rect x="310.0" y="256" width="179.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="399.5" y="276.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">Challenger</text>
+<rect x="501.0" y="256" width="179.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="590.5" y="276.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">Stewardship</text>
+<rect x="310.0" y="306" width="179.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="399.5" y="326.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">Checklist</text>
+<rect x="501.0" y="306" width="179.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="590.5" y="326.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">Blinded seat</text>
+<rect x="310" y="356" width="370" height="38" rx="19" fill="#ECE7D8" stroke="#8C5B16" stroke-width="1.5"/>
+<text x="495" y="376" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#171816" text-anchor="middle" dominant-baseline="middle">Citation verifier: every claim cites a fact</text>
+<path d="M 220 275 L 290 275" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="223.6" y="221.0" width="62.800000000000004" height="24.0" rx="6" fill="#F3F6EF" stroke="none"/>
+<text x="255.0" y="234.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">facts</text>
+<rect x="790" y="150" width="370" height="260" rx="14" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="2" stroke-dasharray="8 6"/>
+<circle cx="790" cy="150" r="16" fill="#8C5B16"/>
+<text x="790" y="151" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">3</text>
+<text x="975" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Inference record</text>
+<text x="810" y="216" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#8C5B16" text-anchor="start" dominant-baseline="middle">claim</text>
+<text x="930" y="216" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">one sentence</text>
+<text x="810" y="252" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#8C5B16" text-anchor="start" dominant-baseline="middle">probability</text>
+<text x="930" y="252" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">0.0 to 1.0, with its reason</text>
+<text x="810" y="288" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#8C5B16" text-anchor="start" dominant-baseline="middle">evidence</text>
+<text x="930" y="288" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">fact ids, verified</text>
+<text x="810" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#8C5B16" text-anchor="start" dominant-baseline="middle">label</text>
+<text x="930" y="324" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">agent-inferred, never advice</text>
+<text x="810" y="360" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#8C5B16" text-anchor="start" dominant-baseline="middle">prediction</text>
+<text x="930" y="360" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="start" dominant-baseline="middle">what would move it, by when</text>
+<path d="M 700 275 L 790 275" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="700.16" y="221.0" width="89.68" height="24.0" rx="6" fill="#F3F6EF" stroke="none"/>
+<text x="745.0" y="234.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">verified</text>
+<rect x="790" y="470" width="370" height="90" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<rect x="807.76" y="512.44" width="20.48" height="16.64" rx="2.56" fill="none" stroke="#646861" stroke-width="2"/>
+<path d="M 812.24 512.44 V 507.96 a 5.76 5.76 0 0 1 11.52 0 V 512.44" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="994.0" y="504.79999999999995" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Status page</text>
+<text x="994.0" y="527.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">owner view; family: calm words</text>
+<circle cx="790" cy="470" r="16" fill="#8C5B16"/>
+<text x="790" y="471" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">4</text>
+<path d="M 975 410 L 975 470" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<text x="40" y="490" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Medicine changes are never suggested, in either view.</text>
+<text x="40" y="520" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Predictions are logged with a date so the loop can be scored later.</text>
+</svg>

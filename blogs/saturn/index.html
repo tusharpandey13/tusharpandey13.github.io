@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saturn: Personal Health System for your family — Tushar Pandey</title>
+  <meta name="description" content="A health record I built for my parents: a Telegram group in, one honest history, five questions for the next doctor. What it does, how it works, what it has caught." />
+  <meta name="author" content="Tushar Pandey" />
+  <link rel="canonical" href="https://tusharpandey.com/blogs/saturn/" />
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="../../style.css?v=20261024f" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Saturn: Personal Health System for your family" />
+  <meta property="og:description" content="Records what the family sends, watches between visits, reviews the history, prepares the next doctor&#39;s questions." />
+  <meta name="color-scheme" content="light" />
+  <meta property="og:image" content="https://tusharpandey.com/blogs/saturn/og-saturn.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Saturn: Personal Health System for your family. A strip of days with two doctor visits marked." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Saturn: Personal Health System for your family" />
+  <meta name="twitter:image" content="https://tusharpandey.com/blogs/saturn/og-saturn.png" />
+  <meta property="og:url" content="https://tusharpandey.com/blogs/saturn/" />
+  <style>
+    /* Base width, padding, font and line-height come from the site's main/body
+       rules. These only style semantic elements the site did not define. */
+    main nav { margin: 0 0 2%; }
+    .meta {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+
+    .repo-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin: 0 0 2rem;
+      padding: 0.9rem 1rem;
+      background: #17130d;
+      border: 1px solid #3a3021;
+      border-radius: 12px;
+      color: var(--fg);
+      text-decoration: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .repo-banner:hover,
+    .repo-banner:focus-visible {
+      border-color: var(--accent);
+      background: #1b160f;
+    }
+    .repo-banner svg {
+      flex: 0 0 auto;
+      color: var(--accent);
+    }
+    .repo-banner-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      min-width: 0;
+    }
+    .repo-banner-copy strong {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .repo-banner-copy span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+    .repo-banner .arrow {
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+    @media (max-width: 600px) {
+      .repo-banner { align-items: flex-start; flex-wrap: wrap; }
+      .repo-banner .arrow { margin-left: 0; }
+    }
+    .post-title {
+      color: var(--title);
+      margin-bottom: 0.35rem;
+    }
+    .post-subtitle {
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0;
+      margin: 0 0 2.2rem;
+    }
+    main h2 { margin: 2.4em 0 0.7em; }
+    main h3 { margin: 1.8em 0 0.5em; }
+    main p { margin: 0 0 1.15em; }
+    main ul, main ol { margin: 0 0 1.2em; padding-left: 1.4em; }
+    main li { margin: 0.35em 0; }
+    main code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: #1b160f;
+      border: 1px solid #2b2418;
+      border-radius: 4px;
+      padding: 0.08em 0.3em;
+    }
+    main pre {
+      background: #17130d;
+      border: 1px solid #2b2418;
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      overflow-x: auto;
+      margin: 1.4em 0 1.8em;
+      line-height: 1.5;
+    }
+    main pre code {
+      background: none;
+      border: 0;
+      padding: 0;
+      font-size: 0.9em;
+    }
+    main .table-wrap {
+      overflow-x: auto;
+      margin: 1.3em 0 1.8em;
+    }
+    main table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+      line-height: 1.45;
+    }
+    main th, main td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.5em 0.6em;
+      border-bottom: 1px solid #2b2418;
+    }
+    main th {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    main figure { margin: 2em 0; }
+    main figure img { width: 100%; height: auto; }
+    main figcaption {
+      color: var(--muted);
+      font-size: 0.8em;
+      line-height: 1.45;
+      margin-top: 0.5em;
+    }
+    main hero {
+      display: block;
+      max-width: 80vw;
+      margin: 0 0 2em;
+    }
+    main hero img { width: 100%; }
+    main blockquote {
+      border-left: 2px solid var(--accent2, var(--accent));
+      padding-left: 1em;
+      color: var(--muted);
+      margin: 1.6em 0;
+    }
+    main footer {
+      margin-top: 3.5em;
+      padding-top: 1.2em;
+      border-top: 1px solid #2b2418;
+      color: var(--muted);
+      font-size: 0.9em;
+    }
+
+    .hovercard {
+      position: relative;
+      display: inline;
+      color: var(--bg);
+      background: var(--fg);
+      cursor: help;
+      padding: 0 0.12em;
+      border-bottom: 1px dotted var(--bg);
+    }
+    .hovercard .pop {
+      display: none;
+      position: fixed;
+      z-index: 50;
+      left: 5vw;
+      top: 12vh;
+      width: min(57rem, calc(100vw - 2rem));
+      max-height: 88vh;
+      overflow: auto;
+      padding: 1.4rem 1.5rem 1.5rem;
+      background: #17130d;
+      border: 1px solid #3a3021;
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      color: var(--fg);
+      font-weight: normal;
+      font-size: 1.02rem;
+      line-height: 1.5;
+      text-align: left;
+      white-space: normal;
+    }
+    .hovercard .pop::after { display: none; }
+    .hovercard:hover .pop,
+    .hovercard:focus .pop,
+    .hovercard:focus-within .pop,
+    .hovercard.pop-open .pop { display: block; }
+    .hovercard .pop strong {
+      display: block;
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .hovercard .pop .pop-note {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
+    }
+    .hovercard .pop img {
+      display: block;
+      width: 100%;
+      margin: 0.8rem 0 0.55rem;
+      border-radius: 10px;
+    }
+    .hovercard .pop a { color: var(--accent); }
+    @media (max-width: 700px) {
+      .hovercard .pop {
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        top: 8vh;
+        bottom: auto;
+        width: auto;
+        max-height: 84vh;
+      }
+      .hovercard .pop::after { display: none; }
+    }
+    @media (max-width: 700px) {
+      main pre { padding: 0.8rem; }
+      main table { font-size: 0.82em; }
+    }
+
+    /* v2: warm light palette for this post, phone first */
+/* Saturn blog v2 palette: the owner's terminal scheme (Xresources, dark: fg #c7cec1, bg #0e0e0d, neutral ramp
+   color0-7 #171816..#dee5d6, accents color8-15) converted to light mode, 07-Nov-2026. Colours only; layout untouched.
+   Shared by the post (assemble.py inlines this file), the SVG diagrams and charts (build/svglib.py mirrors the hex values)
+   and the components figure (build/gen_components.py).
+   Mapping: paper = color7 #dee5d6 lightened toward white (#F3F6EF); ink color0; muted color4 (5.2:1); lines color6, strong
+   rules color5. Text accents are the scheme's hues darkened in OKLab lightness to >= 5:1 on paper: teal (color8) for H2,
+   blue (color14) for links, amber (color13) for highlights and the diagrams' "orange" path, pink (color15) for alerts.
+   Fills keep the original accents where marks carry direct labels. Chart order validated with the dataviz skill's
+   validate_palette.js (light, surface #F3F6EF), order 1..6: all checks pass (worst adjacent CVD dE 12.3, normal-vision
+   18.5); chart-3 (2.5:1) and chart-5 (2.0:1) carry a contrast WARN and are used only with direct labels. */
+:root {
+  --bg:      #F3F6EF;  /* page paper: color7 lightened */
+  --bg-2:    #EAEEE4;  /* box fill, one step off paper toward color7 */
+  --card:    #FFFFFF;  /* raised cards (digest bubble, banners) */
+  --code:    #EAEEE4;  /* code blocks */
+  --line:    #AFB5AA;  /* box strokes, hairlines, table rules (color6) */
+  --line-strong: #878C82; /* stronger rules (color5) */
+  --fg:      #171816;  /* body ink (color0), 16.3:1 on paper */
+  --title:   #1F211E;  /* headings (color1), 14.9:1 */
+  --muted:   #646861;  /* secondary text, edge labels, axes (color4), 5.2:1 on paper */
+  --accent:  #007760;  /* teal (color8 darkened): H2, banner, the one thing to look at; 5.0:1 */
+  --accent2: #007197;  /* blue (color14 darkened): links, control flow, triggers; 5.0:1 */
+  --accent3: #8C5B16;  /* amber (color13 darkened): highlights, diagram main path; 5.3:1 */
+  --accent-soft: #ECE7D8; /* 14% amber wash for highlighted bands */
+  --redact:  #30322E;  /* REDACTED blocks (color2) with paper-coloured label */
+  /* charts: categorical, fixed order, never cycled */
+  --chart-1: #AB7839;  /* amber (color13, one step darker) */
+  --chart-2: #0082A9;  /* blue (color14, darker step) */
+  --chart-3: #7FA838;  /* olive (color12); 2.5:1 on paper, so only with direct labels (relief rule) */
+  --chart-4: #C65F89;  /* pink (color15, darker step); not the alert colour */
+  --chart-5: #37BBEA;  /* sky (color10); 2.0:1 on paper, so only with direct labels (relief rule) */
+  --chart-6: #009379;  /* teal (color8, darker step) */
+  --chart-track: #E3E9DC; /* unfilled track / "total" bar */
+  --chart-grid: #D0D7C9;  /* hairline grid */
+  --status-warn: #8C5B16; /* amber text, with icon + label only */
+  --status-bad:  #AA4670; /* pink (color15) darkened for text; fills use #F88CB6; with icon + label only */
+}
+/* page rules kept from the assembler's draft; they only reference the tokens above */
+body { background: var(--bg); color: var(--fg); }
+.repo-banner { background: var(--card); border-color: var(--line); }
+.repo-banner:hover, .repo-banner:focus-visible { background: #fff; border-color: var(--accent); }
+main code { background: var(--code); border-color: var(--line); }
+main pre { background: var(--code); border-color: var(--line); }
+main th, main td { border-bottom-color: var(--line); }
+main footer { border-top-color: var(--line-strong); }
+.hovercard { color: var(--bg); background: var(--fg); border-bottom-color: var(--bg); }
+.hovercard .pop { background: var(--card); border-color: var(--line); color: var(--fg); box-shadow: 0 12px 40px rgba(23,24,22,0.18); }
+main figcaption { color: var(--muted); }
+main .trio > div { box-shadow: 0 1px 2px rgba(23,24,22,0.08); }
+main .trio h3 { color: var(--title); }
+
+    /* colour: palette only, no layout changes (round 5, revised) */
+    main h2 { color: var(--accent, #007760); }
+    main h3 { color: var(--title, #1F211E); }
+    main a { color: var(--accent2, #007197); }
+    .repo-banner-copy strong, .repo-banner svg, .repo-banner .arrow { color: var(--accent, #007760); }
+    .hovercard { background: var(--fg); color: var(--bg); }
+    main hero { max-width: 100%; }
+    main hero img { width: 100%; height: auto; display: block; border-radius: 12px; }
+    main hero .only-narrow { display: none; }
+    @media (max-width: 700px) { main hero .only-wide { display: none; } main hero .only-narrow { display: block; } }
+    main details.research { margin: 0.6em 0 1.4em; }
+    main details.research summary { cursor: pointer; color: var(--accent2, #007197); font-weight: 600; padding: 0.4em 0; }
+    main details.research ul { font-size: 0.92em; line-height: 1.45; }
+    main details.research li { margin: 0.3em 0; }
+
+    main .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.2em 0 1.6em; }
+    main .trio > div { background: var(--card, #FFFFFF); border: 1px solid var(--line, #AFB5AA); border-radius: 12px; padding: 0.9rem 1rem; }
+    main .trio h3 { margin: 0 0 0.5rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+    main .trio ul { margin: 0; padding-left: 1.1em; }
+    main .trio li { margin: 0.3em 0; }
+    main .placeholder { background: var(--code); border: 1px dashed var(--line); border-radius: 10px; padding: 2.2rem 1rem; color: var(--muted); text-align: center; font-size: 0.9rem; }
+    main figure.phone-shot a.zoom, main figure.phone-shot img { max-width: 360px; margin-left: auto; margin-right: auto; }
+    main figure.phone-shot figcaption { max-width: 360px; margin-left: auto; margin-right: auto; }
+    main a.zoom { display: block; }
+    main a.zoom img { width: 100%; height: auto; border-radius: 10px; }
+    main li { margin: 0.45em 0; }
+    main ul, main ol { padding-left: 1.3em; }
+    /* usability round 07-Nov-2026 (B-ids in usability-fixes.md) */
+    .site-header .brand, .site-header nav a { color: var(--title); }
+    p.post-subtitle { font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.25; }
+    main .trio h3 { line-height: 1.55; }
+    main nav.toc { margin: 0 0 2rem; }
+    main nav.toc .meta { margin: 0 0 0.4rem; }
+    main nav.toc ol { margin: 0; padding-left: 1.6em; }
+    main nav.toc li { margin: 0.15em 0; font-size: 0.95rem; line-height: 1.45; }
+    main .back-top { margin-top: 2.5rem; }
+    main figure .only-narrow { display: none; }
+    main details.research summary { padding: 0.6em 0; min-height: 44px; }
+    @media (min-width: 701px) {
+      main, .site-header { max-width: calc(44rem + 20%); margin-left: auto; margin-right: auto; }
+    }
+    @media (max-width: 600px) {
+      .repo-banner .arrow { display: none; }
+    }
+    @media (max-width: 700px) {
+      main figure .only-wide { display: none; }
+      main figure .only-narrow { display: block; }
+      main a.zoom { pointer-events: none; cursor: default; }
+      main .trio { grid-template-columns: 1fr; }
+      main h2 { margin-top: 2em; }
+      main p, main li { font-size: 1.02rem; line-height: 1.6; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" data-dc-id="site-header">
+  <a class="brand" href="https://tusharpandey.com">Tushar&rsquo;s Casebook</a>
+  <nav>
+    <a href="../../index.html">Blogs</a>
+    <a href="https://github.com/tusharpandey13">GitHub</a>
+    <a href="mailto:tusharpandey13@gmail.com">Contact</a>
+  </nav>
+</header>
+<main id="top">
+<article data-dc-id="article">
+  <p class="meta" data-dc-id="meta">Field note · 07 Nov 2026 · ~10 min</p>
+<h1 data-dc-id="title" class="post-title" id="saturn">Saturn: Personal Health System for your family</h1>
+  <p class="post-subtitle" data-dc-id="subtitle">Records what the family sends, watches between visits, reviews the history, prepares the next doctor's questions.</p>
+
+  <p data-dc-id="p-1">My mother has a serious heart condition. My parents live far from good doctors. Between visits, nobody is watching.</p>
+  <p data-dc-id="p-2">Saturn is what I built so that someone is.</p>
+  <p data-dc-id="p-3">It records everything my parents send to a Telegram group, keeps one honest history, and prepares the five questions for the next visit. It does not diagnose. It does not prescribe. Doctors decide. Saturn makes sure they decide with the whole chart in front of them.</p>
+  <p data-dc-id="p-4">Live since 27 October 2026. Self-hosted, for one family, on free tiers and a small home server. <a href="https://github.com/tusharpandey13/saturn">Code is public</a>. The data is not, and never will be.</p>
+
+  <a data-dc-id="repo-banner" class="repo-banner" href="https://github.com/tusharpandey13/saturn" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+    </svg>
+    <span class="repo-banner-copy">
+      <strong>Code on GitHub</strong>
+      <span>Worker, nightly batch, knowledge base, site, diagnostic loop, design records. No health data, no secrets.</span>
+    </span>
+    <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <nav class="toc" id="contents" data-dc-id="toc" aria-label="Contents">
+  <p class="meta" id="contents-label">Contents</p>
+  <ol>
+    <li><a href="#what-it-has-done">What it has done</a></li>
+    <li><a href="#the-problem">The problem, in one visit</a></li>
+    <li><a href="#what-saturn-is">What Saturn is</a></li>
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#where-the-data-lives">Where the data lives</a></li>
+    <li><a href="#one-rule-for-the-record">One rule for the record</a></li>
+    <li><a href="#who-may-write-what">Who may write what</a></li>
+    <li><a href="#hindi-on-a-phone">Hindi, on a phone, with the TV on</a></li>
+    <li><a href="#the-loop">The loop</a></li>
+    <li><a href="#evolution">Evolution</a></li>
+    <li><a href="#how-it-got-better">How it got better</a></li>
+    <li><a href="#future-scope">Where it is going</a></li>
+    <li><a href="#research">Research this builds on</a></li>
+  </ol>
+  </nav>
+
+  <hero data-dc-id="hero-slip"><img class="only-wide" src="./hero-calendar-landscape.svg" alt="Thirteen weeks of days; two are marked as doctor visits; the days between carry small dots for what happened at home." width="1200" height="520" loading="lazy"><img class="only-narrow" src="./hero-calendar-portrait.svg" alt="Thirteen weeks of days; two are marked as doctor visits; the days between carry small dots for what happened at home." width="720" height="660" loading="lazy"></hero>
+
+<h2 id="what-it-has-done" data-dc-id="h2-results">What it has done</h2>
+
+<ul data-dc-id="achievements">
+  <li>Questions the first loop run raised went to a consult on a slip of paper. Some came back answered. That has never happened before in my family.</li>
+  <li>A disagreement between two sources about my mother's episode was kept, shown and settled, instead of silently overwritten.</li>
+  <li>Ninety-odd photos and voice notes and about a hundred sources became a thousand-odd facts in ten days, without anyone retyping a number.</li>
+  <li>A week of home readings is visible at a glance, on a phone, with a plan line for the week on top.</li>
+  <li>All of it for under a dollar a month, on free tiers and a small home server at home.</li>
+</ul>
+<p data-dc-id="p-24">Ten days in. Under observation, not proven useful. That is the honest line.</p>
+
+<h2 id="the-problem" data-dc-id="h2-the-gap-between-visits">The problem, in one visit</h2>
+
+<p data-dc-id="p-5">Here is how a visit goes.</p>
+<ul data-dc-id="visit-points">
+  <li>Ten minutes. The doctor listens, decides, writes by hand.</li>
+  <li>No explanation. No one to call afterwards. No follow-up channel at all.</li>
+  <li>My parents nod. They do not push back. They would not know what to ask.</li>
+  <li>Next visit in two months, if she is well enough to travel.</li>
+  <li>Between the two: nothing. No numbers, no plan, no one watching.</li>
+</ul>
+<p data-dc-id="p-6">Everything a doctor knows about my mother lives on slips like the one in the folder. The next doctor never sees them.</p>
+<p data-dc-id="p-7">Three constraints, non-negotiable.</p>
+<ul data-dc-id="constraints">
+  <li>My parents will not learn a new app. Input has to be the chat they already use.</li>
+  <li>Every extra trip costs health, not just money. Output has to be one short list per doctor.</li>
+  <li>I have about an hour a night. Whatever this produces has to fit in it.</li>
+</ul>
+
+<h2 id="what-saturn-is" data-dc-id="h2-what-saturn-is-and-is-not">What Saturn is</h2>
+
+<p data-dc-id="p-8">A self-hosted home health log for one family: the household's medical record kept by the household (documents, readings, voice notes and the facts pulled from them) in a private git repository the family controls (<a href="https://github.com/tusharpandey13/saturn/blob/main/README.md">README</a>). One Telegram group in. One private page out. One button for the hard thinking.</p>
+
+<div class="trio" data-dc-id="in-out-never">
+  <div><h3>Input</h3><ul>
+    <li>Photos of the blood-pressure monitor</li>
+    <li>Prescriptions and lab reports</li>
+    <li>Voice notes in Hindi, about the day</li>
+    <li>My replies to the digest</li>
+  </ul></div>
+  <div><h3>Output</h3><ul>
+    <li>One honest history, every fact with its source</li>
+    <li>A private page: this week's plan, readings, medicines</li>
+    <li>Five questions per doctor, in order of stakes</li>
+  </ul></div>
+  <div><h3>Side effects</h3><ul>
+    <li>One digest to me each night</li>
+    <li>Signed commits to the private records repository</li>
+    <li>Nothing to the family group, ever</li>
+  </ul></div>
+</div>
+
+<p data-dc-id="p-9">Three things it never does: diagnose; start, stop or change a medicine; send my parents anything a template did not write. Enforced, not promised: a <a href="https://github.com/tusharpandey13/saturn/blob/main/tools/dx/run#L60">pattern</a> over every line the system writes fails the run on advice wording, and the bot cannot post to the family group at all (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/011-group-input-only-admin-output.md">ADR 011</a>).</p>
+
+<figure data-dc-id="figure-17"><a class="zoom" href="./message-kinds-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./message-kinds-portrait.svg"><img src="./message-kinds-landscape.svg" alt="Stacked bars per day of what the family sent: photos, voice notes, documents and text." loading="lazy" decoding="async"></picture></a><figcaption>What the family actually sends: as many voice notes as photos.</figcaption></figure>
+
+  <figure data-dc-id="figure-18"><a class="zoom" href="./cost-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./cost-portrait.svg"><img src="./cost-landscape.svg" alt="Cost tiles: zero fixed cost, under a dollar a month to run, a twelve-dollar cap per loop run." loading="lazy" decoding="async"></picture></a><figcaption>What it costs to run.</figcaption></figure>
+
+
+  <figure data-dc-id="figure-7" class="phone-shot"><a class="zoom" href="./phone-overview.png" target="_blank" rel="noopener"><img src="./phone-overview.png" alt="The overview page on a phone with the This week block first; covered areas are labelled REDACTED." loading="lazy" decoding="async"></a><figcaption>The overview on a phone. "This week" is first because it is the only thing I need at 23:30.</figcaption></figure>
+
+<h2 id="how-it-works" data-dc-id="h2-the-pipeline">How it works</h2>
+
+<p data-dc-id="p-10">Once a night. In order.</p>
+<ol data-dc-id="pipeline-steps">
+  <li>The family sends to the Telegram group.</li>
+  <li>A Cloudflare Worker stores the raw message in D1 and the media in R2. It does nothing else. <a href="https://github.com/tusharpandey13/saturn/blob/main/app/src/worker.ts#L19">Twelve lines</a>.</li>
+  <li>The nightly batch commits the raw messages first, then transcribes audio with <a href="https://github.com/ggml-org/whisper.cpp">whisper.cpp</a> and extracts facts in one prompt-in, JSON-out turn that holds no credentials (<a href="https://github.com/tusharpandey13/saturn/blob/main/app/src/batch/steps.ts#L273">extract</a>).</li>
+  <li>The knowledge base is rebuilt and validated. One bad row fails the build (<a href="https://github.com/tusharpandey13/saturn/blob/main/tools/kb/build#L492">validate</a>).</li>
+  <li>Pages are regenerated. A numbered digest comes to me. I answer "3: yes" from the phone.</li>
+  <li>The private site on my home network rebuilds within ten minutes.</li>
+</ol>
+<h3 id="the-parts" data-dc-id="h3-the-parts">The parts</h3>
+<p data-dc-id="p-10b">Everything that exists when Saturn is running: who, where, what stores what, what talks to what, and what happens when something fails.</p>
+  <figure data-dc-id="figure-13"><a class="zoom" href="./components-landscape.svg" target="_blank" rel="noopener"><img class="only-wide" src="./components-landscape.svg" alt="A running Saturn as four places: the parents' home with two phones, the cloud with the Telegram group, the Worker and GitHub, the owner's home with the family site, the Mac and the phone inside a private network, and the doctor with a printed packet. Six lines with verbs join them." loading="lazy" decoding="async"><img class="only-narrow" src="./components-portrait.svg" alt="A running Saturn as four places: the parents' home with two phones, the cloud with the Telegram group, the Worker and GitHub, the owner's home with the family site, the Mac and the phone inside a private network, and the doctor with a printed packet. Six lines with verbs join them. Part 1 of 2." loading="lazy" decoding="async"><img class="only-narrow" src="./components-portrait-2.svg" alt="Part 2 of 2." loading="lazy" decoding="async"></a><figcaption>A running Saturn: two phones at the parents' home send photos and voice notes to a Telegram group; a Worker in the cloud stores them; a nightly batch files facts into a GitHub records repository; the home laptop, inside a private network, pulls the records, rebuilds the family site, shows it on the owner's phone and prints a packet for the doctor. The meaning: nothing in the cloud thinks, only stores; every fact is signed and checked hourly; the only machine that hears the family's voice is at home; and a bell rings if a night is missed. <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/platform/hld.md">Design notes.</a></figcaption></figure>
+
+<p data-dc-id="p-11">Three side jobs: a Mac that re-transcribes each voice note with speaker labels when it is awake; a review page where I correct a transcript and mark it heard; and the button that runs the loop.</p>
+
+  <figure data-dc-id="figure-1"><a class="zoom" href="./pipeline-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./pipeline-portrait.svg"><img src="./pipeline-landscape.svg" alt="The pipeline from the family's phone through Telegram, the Worker with D1 and R2, the nightly batch, the git knowledge base and the generated pages to the private site, with three side jobs." loading="lazy" decoding="async"></picture></a><figcaption>Once a night. The Worker only stores. The batch reads, extracts and commits. Pages are rebuilt from the knowledge base. <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/platform/hld.md">Design notes.</a></figcaption></figure>
+
+  <figure data-dc-id="figure-2"><a class="zoom" href="./telegram-digest.png" target="_blank" rel="noopener"><img src="./telegram-digest.png" alt="A synthetic daily digest message in Telegram style; the reading and the question are covered by labelled REDACTED blocks." loading="lazy" decoding="async"></a><figcaption>The digest, with made-up content and the sensitive lines covered. Every line is a template filled from facts. The numbers are what my reply goes back against.</figcaption></figure>
+
+<h2 id="where-the-data-lives" data-dc-id="h2-three-repositories-three-contracts">Where the data lives</h2>
+
+<p data-dc-id="p-12">Three repositories, by content, not by path.</p>
+<ul data-dc-id="three-repos">
+  <li><strong>Product</strong>: code and synthetic test data. Public. Names no person, no account, no resource.</li>
+  <li><strong>Env</strong>: resource ids and encrypted secrets (<a href="https://github.com/getsops/sops">SOPS</a>). Private. One writer.</li>
+  <li><strong>Records</strong>: the family's data. Private. No workflows, no secrets.</li>
+</ul>
+<p data-dc-id="p-13">Three files tie them: the product <a href="https://github.com/tusharpandey13/saturn/blob/main/env.manifest.yaml">declares</a> what it needs, the env pins which product commit runs, the records name the people. Another family needs two new repositories and nothing else (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/008-product-environment-pii.md">ADR 008</a>).</p>
+
+  <figure data-dc-id="figure-3"><a class="zoom" href="./three-repos-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./three-repos-portrait.svg"><img src="./three-repos-landscape.svg" alt="Three repositories, product, env and records, with the three contracts between them." loading="lazy" decoding="async"></picture></a><figcaption>Code public, config private, data private. Three small files join them. <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/008-product-environment-pii.md">Design notes.</a></figcaption></figure>
+
+<h2 id="one-rule-for-the-record" data-dc-id="h2-the-knowledge-base">One rule for the record</h2>
+
+<p data-dc-id="p-14">The knowledge base is newline-delimited JSON in git, rebuilt into SQLite every night. Three tables.</p>
+<ul data-dc-id="kb-tables">
+  <li><strong>Source</strong>: anything received. A report, a photo, a voice note.</li>
+  <li><strong>Fact</strong>: one thing pulled from a source. An observation, a medication, a condition, an event. Each carries who said it and the exact quote.</li>
+  <li><strong>Ref</strong>: a drug, a code, a doctor or a lab.</li>
+</ul>
+<p data-dc-id="p-15">The rule: a fact is never edited. A correction is a new row that supersedes the old one: the new row points at the old one, the old one is marked superseded, nothing is deleted (<a href="https://github.com/tusharpandey13/saturn/blob/main/schema/schema.sql#L14">schema header</a>). A wrong reading can be shown as wrong instead of made to disappear.</p>
+<p data-dc-id="p-16">Why it matters: in week one, two sources disagreed about which hand an episode had affected. Both rows are still there. One is marked superseded. The disagreement itself turned out to be the useful part, and an UPDATE statement would have erased it.</p>
+
+  <figure data-dc-id="figure-4"><a class="zoom" href="./kb-model-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./kb-model-portrait.svg"><img src="./kb-model-landscape.svg" alt="The knowledge-base model: a source produces facts of four kinds, facts refer to refs of three kinds, and a correction is a new fact that supersedes the old one." loading="lazy" decoding="async"></picture></a><figcaption>Never edit. Add a row that supersedes. The example row is synthetic. <a href="https://github.com/tusharpandey13/saturn/blob/main/schema/schema.sql">Design notes.</a></figcaption></figure>
+
+  <figure data-dc-id="figure-15"><a class="zoom" href="./kb-growth-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./kb-growth-portrait.svg"><img src="./kb-growth-landscape.svg" alt="Cumulative sources and facts by day, rising from 1 and 0 to 103 and 1,054 over ten days." loading="lazy" decoding="async"></picture></a><figcaption>How the record grew, day by day.</figcaption></figure>
+
+  <figure data-dc-id="figure-16"><a class="zoom" href="./kb-composition-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./kb-composition-portrait.svg"><img src="./kb-composition-landscape.svg" alt="Treemap of facts by kind, observations the largest, and refs by kind." loading="lazy" decoding="async"></picture></a><figcaption>What the thousand facts are: mostly observations, then events, medicines and conditions.</figcaption></figure>
+
+<h2 id="who-may-write-what" data-dc-id="h2-machine-identities">Who may write what</h2>
+
+<p data-dc-id="p-22">Four writers touch the record: me, the nightly batch, the review page, the loop. Each machine has its own signing key. An hourly check verifies every commit and accepts each machine key only for the paths that job may write (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/backlog.md">note</a>). None may touch a fact. My key on a commit means I approved it, and nothing else can look like that.</p>
+
+<h2 id="hindi-on-a-phone" data-dc-id="h2-hindi-voice-notes">Hindi, on a phone, with the TV on</h2>
+
+<p data-dc-id="p-17">The voice notes carry the clinical content. When she felt low. What she ate. Which tablet she skipped. Thirty seconds to four minutes, in Hindi, at home.</p>
+<ul data-dc-id="stt-points">
+  <li>Transcribed locally by <a href="https://github.com/ggml-org/whisper.cpp">whisper.cpp</a>, pinned by version and model hash (<a href="https://github.com/tusharpandey13/saturn/blob/main/adapters/stt/whisper-cpp.ts#L29">adapter</a>). Audio never leaves the family's machines.</li>
+  <li>Devanagari is primary. No translation pass. The one experiment turned "vomiting" into "fainted".</li>
+  <li>A second pass on the Mac with a second engine (<a href="https://huggingface.co/facebook/mms-1b-all">MMS</a>) and speaker separation (<a href="https://github.com/pyannote/pyannote-audio">pyannote</a>), reconciled under one rule: never more specific than what was said.</li>
+  <li>Nothing from a machine transcript is shown as a fact. It renders muted, numbers withheld, until a person has heard it (<a href="https://github.com/tusharpandey13/saturn/blob/main/tools/site/build#L252">transcript_text</a>).</li>
+</ul>
+
+  <figure data-dc-id="figure-5" class="phone-shot"><a class="zoom" href="./phone-voice-detail.png" target="_blank" rel="noopener"><img src="./phone-voice-detail.png" alt="A single voice-note page on a phone: audio player, editable transcript with speaker labels, two buttons. Covered areas are labelled REDACTED." loading="lazy" decoding="async"></a><figcaption>One voice note on the phone. Play it, correct the transcript, mark it heard. The batch re-reads the corrected text that night.</figcaption></figure>
+
+<h2 id="the-loop" data-dc-id="h2-record-and-flag-then-interpretation">The loop</h2>
+
+<p data-dc-id="p-20">Recording was never the hard part. Meaning is. So, on an opt-in switch that lives in my records and nowhere in the product, Saturn runs a structured diagnostic review. The structure follows Microsoft Research's <a href="https://arxiv.org/abs/2506.22405">MAI-DxO</a> (Nori et al., 2025): a panel of fixed roles that argue, with a blinded seat and a verifier. Saturn borrows the structure, not the accuracy claims.</p>
+<ul data-dc-id="loop-seats">
+  <li><strong>Hypothesis</strong> keeps the differential with explicit probabilities and a residual.</li>
+  <li><strong>Test-chooser</strong> ranks next steps by what would separate the leaders.</li>
+  <li><strong>Challenger</strong> argues against the leader.</li>
+  <li><strong>Stewardship</strong> weighs the family's burden: cost, travel, stress. Cheap informative steps first.</li>
+  <li><strong>Checklist</strong> checks ids, citations, wording.</li>
+  <li>A <strong>blinded seat</strong> writes an independent differential without seeing the debate.</li>
+  <li>A <strong>citation verifier</strong> resolves every DOI and PMID. Unsupported claims are deleted.</li>
+</ul>
+
+  <figure data-dc-id="figure-6"><a class="zoom" href="./diagnostic-loop-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./diagnostic-loop-portrait.svg"><img src="./diagnostic-loop-landscape.svg" alt="The diagnostic-loop panel after MAI-DxO: five seats in debate, a blinded seat apart, a verifier, one inference record." loading="lazy" decoding="async"></picture></a><figcaption>Seven seats, one record, after Microsoft Research's MAI-DxO. Every claim passes the verifier before it reaches the page, labelled agent-inferred. <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/methods/diagnostic-loop.md">Design notes.</a></figcaption></figure>
+
+  <figure data-dc-id="figure-19"><a class="zoom" href="./loop-buckets-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./loop-buckets-portrait.svg"><img src="./loop-buckets-landscape.svg" alt="Counts of inference rows per probability bucket, active and superseded." loading="lazy" decoding="async"></picture></a><figcaption>What the loop has written so far, by how sure it was. Most hypotheses sit in the middle buckets; that is what uncertainty looks like.</figcaption></figure>
+
+<p data-dc-id="p-21">The rails matter more than the panel.</p>
+<ul data-dc-id="loop-rails">
+  <li>Red flags are checked first, outside the loop.</li>
+  <li>Uncertainty is always shown. No false reassurance.</li>
+  <li>Hypotheses reach a doctor only as questions. Five at most, by stakes.</li>
+  <li>Medicine advice fails the run (<a href="https://github.com/tusharpandey13/saturn/blob/main/tools/dx/run#L113">advice_hits</a>).</li>
+  <li>Output goes to a run note and an append-only inference register. Never into the facts. Never to my parents.</li>
+  <li>One button, one run a day, eight a month, three hours, twelve dollars (<a href="https://github.com/tusharpandey13/saturn/blob/main/tools/dx/README.md">tools/dx</a>). My review hour is unchanged. That is the point.</li>
+</ul>
+
+<h2 id="evolution" data-dc-id="h2-what-went-wrong">Evolution</h2>
+
+<p data-dc-id="p-23">Two weeks, seven things caught early. Each one was easy to miss.</p>
+
+  <figure data-dc-id="figure-12"><a class="zoom" href="./evolution-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./evolution-portrait.svg"><img src="./evolution-landscape.svg" alt="A timeline of the system's first two weeks: live, bot out of the group, local transcription, term list, review page, loop button, endpoint lockdown." loading="lazy" decoding="async"></picture></a><figcaption>Two weeks of catching things early. Dates are system events, not medical ones. <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/README.md">Design notes.</a></figcaption></figure>
+
+<ul data-dc-id="evolution-points">
+  <li><strong>The bot was talking to my parents.</strong> Digest, questions and warnings, partly in Hindi, in the family group. Day one. Moved everything to a private message to me.</li>
+  <li><strong>A nag that was not a failure.</strong> "Needs a listener" on every voice note, every night, because it excluded only notes in a file nobody had created. Transcription had never failed. Now it lists only what was untranscribed, below 0.5 confidence, or empty (<a href="https://github.com/tusharpandey13/saturn/blob/main/app/src/batch/steps.ts#L34">thresholds</a>).</li>
+  <li><strong>Silence at 2 a.m.</strong> The scheduled run drifted four to seven hours. On the night it failed, nothing said so. Now the home laptop dispatches it before bed and a dead-man check alerts by 03:30 if nothing ran.</li>
+  <li><strong>A transcript shown as a fact.</strong> Machine text on the front page, next to real readings. Now muted and number-free until heard.</li>
+  <li><strong>739 commits behind.</strong> A package audit on the home laptop. One update, one reboot, a weekly check since (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/security.md">security notes</a>).</li>
+  <li><strong>A header anyone on the network could set.</strong> Two endpoints trusted a login header any device on the private network could forge. Tested from my own laptop; it worked. Now loopback only, behind the proxy that owns the header, one allowed login.</li>
+  <li><strong>Unsigned saves.</strong> The review page committed without a signature and the integrity check caught it the first time I pressed Save. Now it signs with its own key.</li>
+</ul>
+
+<h2 id="how-it-got-better" data-dc-id="h2-how-it-got-better">How it got better</h2>
+
+<p data-dc-id="p-18">Measured, not felt. Every number below comes from the records' own evaluation files; the things I cannot measure yet are named as such.</p>
+
+  <figure data-dc-id="figure-9"><a class="zoom" href="./stt-error-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./stt-error-portrait.svg"><img src="./stt-error-landscape.svg" alt="Word error rate per engine, mean of three of the family's own clips, lower is better, with character error and key-term hits beside each bar." loading="lazy" decoding="async"></picture></a><figcaption>Transcription error by engine on three of my mother's clips. The reconciled reading scores best, and it is also the one that once said more than she did. Small sample; it grows by one clip per correction.</figcaption></figure>
+
+  <figure data-dc-id="figure-20"><a class="zoom" href="./rhythm-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./rhythm-portrait.svg"><img src="./rhythm-landscape.svg" alt="A 24-hour ring of when the family sends messages, with the late-night window when the digest used to arrive." loading="lazy" decoding="async"></picture></a><figcaption>When the family sends, and when the digest used to arrive. The gap is why the run moved to before bed.</figcaption></figure>
+
+  <figure data-dc-id="figure-21"><a class="zoom" href="./lag-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./lag-portrait.svg"><img src="./lag-landscape.svg" alt="Dot strip of hours from message to extraction on a log scale, median 2.2 hours, mean 20.8." loading="lazy" decoding="async"></picture></a><figcaption>From message to fact. Most land within hours; the long tail is what the dead-man check and the earlier run now target.</figcaption></figure>
+
+  <figure data-dc-id="figure-10"><a class="zoom" href="./facts-per-day-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./facts-per-day-portrait.svg"><img src="./facts-per-day-landscape.svg" alt="Per active day, messages received and how many produced a fact: 41 messages, 20 with a fact." loading="lazy" decoding="async"></picture></a><figcaption>Messages that became facts, per day: 20 of 41. Day one is zero because the bot was still learning who was who. Hand-entered documents are not counted.</figcaption></figure>
+
+  <figure data-dc-id="figure-11"><a class="zoom" href="./hand-vs-machine-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./hand-vs-machine-portrait.svg"><img src="./hand-vs-machine-landscape.svg" alt="Commits to the records by hand versus by machine, week one against week two." loading="lazy" decoding="async"></picture></a><figcaption>A proxy for where the time went: commits by hand fell from 36 to 17, by machine from 21 to 12. Commits are not hours.</figcaption></figure>
+
+  <figure data-dc-id="figure-14"><a class="zoom" href="./flags-landscape.svg" target="_blank" rel="noopener"><picture><source media="(max-width: 700px)" srcset="./flags-portrait.svg"><img src="./flags-landscape.svg" alt="Cross-reference flags raised, 154, against flags acted on, zero." loading="lazy" decoding="async"></picture></a><figcaption>Flags raised against flags acted on. The second number is measured, and it is zero. They are out of the digest until one earns its place.</figcaption></figure>
+
+<p data-dc-id="p-19">What moved the needle.</p>
+<ul data-dc-id="improvements">
+  <li>A term list. The family's medicine names as they say them, the places, the Hindi words for symptoms. Passed to whisper as its prompt, capped at 700 characters (<a href="https://github.com/tusharpandey13/saturn/blob/main/adapters/stt/whisper-cpp.ts#L41">PROMPT_CHARS</a>). Expected to help with brand names; not measured yet, because the clips before and after are different recordings.</li>
+  <li>A second opinion, bounded. The reconciler once turned "ill" into "fever": a more specific claim than the speaker made. It is now held twice, by the prompt and by a support check against raw engine output (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/014-mac-audio-pipeline.md">ADR 014</a>).</li>
+  <li>Ground truth. Each correction I make is saved beside the audio and grows the evaluation set, so engines are chosen by measured error on my mother's voice, not on a benchmark.</li>
+  <li>Lag. Median 2.2 hours from message to extraction, but a mean of 20.8, because the nightly run drifted and some documents waited days. The home laptop now dispatches the run before bed; too few runs since to report.</li>
+  <li>Not yet measured: the loop's accuracy. Fifteen predictions logged, one resolved, one withdrawn. The cross-checks raised 154 flags and zero were acted on; they are out of the digest until one earns its place.</li>
+</ul>
+
+<h2 id="future-scope" data-dc-id="h2-what-i-would-do-differently">Where it is going</h2>
+
+<p data-dc-id="p-34">Where it stands today, and what comes next. Ten days in; nothing here is finished.</p>
+<ul data-dc-id="limitations">
+  <li>Documents still need a person. Photos of readings and voice notes land on their own; a handwritten slip waits in a list for me. The document reader is next.</li>
+  <li>My parents send and hear nothing back. A calm one-line receipt to my father is designed and not built.</li>
+  <li>The loop's accuracy is unmeasured until predictions resolve. They are logged; they will.</li>
+  <li>One family, one deployment, one admin. Nobody else has installed it yet.</li>
+  <li>Not a medical device. Not advice. The pages say so on every screen, and the interpretation mode stays off unless a records owner turns it on.</li>
+</ul>
+<p data-dc-id="p-35">Next, in order.</p>
+<ol data-dc-id="do-differently">
+  <li><strong>Close the input loop.</strong> A document reader behind the same kind of button, so a photographed prescription becomes facts without me.</li>
+  <li><strong>Score the loop.</strong> Weekly runs, predictions scored against what doctors find. Keep it only if the calibration earns it.</li>
+  <li><strong>Give the family something back.</strong> One template line a day: received, and what to measure tomorrow.</li>
+  <li><strong>Protect the review hour.</strong> Agents produce faster than one person reads. Every new surface has to close a loop, or it does not ship.</li>
+  <li><strong>A second family.</strong> The three-repo split exists for this. It has not been tested by anyone but me.</li>
+</ol>
+
+<h2 id="research" data-dc-id="h2-research">Research this builds on</h2>
+
+<p data-dc-id="p-25">Saturn's methods lean on published work. The design record for the loop cites these; the ones that shaped it most are first.</p>
+<details class="research" data-dc-id="research-details"><summary>The works that shaped it most (12)</summary>
+<ul data-dc-id="research-list">
+  <li>Nori H et al. <a href="https://arxiv.org/abs/2506.22405">Sequential diagnosis with language models</a> (MAI-DxO). Microsoft Research, 2025, preprint. The panel structure.</li>
+  <li>McDuff D et al. <a href="https://doi.org/10.1038/s41586-025-08869-4">Towards accurate differential diagnosis with large language models</a>. Nature 2025.</li>
+  <li>Kanjee Z, Crowe B, Rodman A. <a href="https://doi.org/10.1001/jama.2023.8288">Accuracy of a generative AI model in a complex diagnostic challenge</a>. JAMA 2023.</li>
+  <li>Tu T et al. <a href="https://doi.org/10.1038/s41586-025-08866-7">Towards conversational diagnostic artificial intelligence</a>. Nature 2025.</li>
+  <li>Goh E et al. <a href="https://doi.org/10.1001/jamanetworkopen.2024.40969">Large language model influence on diagnostic reasoning: a randomized clinical trial</a>. JAMA Network Open 2024. Why a human reviews every run.</li>
+  <li>Hager P et al. <a href="https://doi.org/10.1038/s41591-024-03097-1">Evaluation and mitigation of the limitations of large language models in clinical decision-making</a>. Nature Medicine 2024. Why the rails exist.</li>
+  <li>Chen S et al. <a href="https://doi.org/10.1038/s41746-025-02008-z">When helpfulness backfires: LLMs and the risk of false medical information due to sycophantic behavior</a>. npj Digital Medicine 2025. Why there is a Challenger and a blinded seat.</li>
+  <li>Wu K et al. <a href="https://doi.org/10.1038/s41467-025-58551-6">An automated framework for assessing how well LLMs cite relevant medical references</a> (SourceCheckup). Nature Communications 2025. Why there is a citation verifier.</li>
+  <li>Goddard K, Roudsari A, Wyatt JC. <a href="https://doi.org/10.1136/amiajnl-2011-000089">Automation bias: a systematic review</a>. JAMIA 2012. Why output is framed as questions.</li>
+  <li>Ely JW, Graber ML, Croskerry P. <a href="https://doi.org/10.1097/ACM.0b013e31820824cd">Checklists to reduce diagnostic errors</a>. Academic Medicine 2011. The Checklist seat.</li>
+  <li>National Academies. <a href="https://pubmed.ncbi.nlm.nih.gov/26803862/">Improving Diagnosis in Health Care</a>. 2015.</li>
+  <li>Radford A et al. <a href="https://arxiv.org/abs/2212.04356">Robust speech recognition via large-scale weak supervision</a> (Whisper). 2022. Pratap V et al. <a href="https://arxiv.org/abs/2305.13516">Scaling speech technology to 1,000+ languages</a> (MMS). 2023. Bredin H. <a href="https://github.com/pyannote/pyannote-audio">pyannote.audio</a>.</li>
+</ul>
+</details>
+
+<h3 id="full-list" data-dc-id="h3-research-full">The full list</h3>
+<details class="research" data-dc-id="research-details-full"><summary>Everything the loop's design record cites (28 more)</summary>
+<p data-dc-id="p-27">Grouped as the design record groups them. Accessed 31 October 2026.</p>
+<p data-dc-id="p-28"><strong>Diagnosis with language models.</strong></p>
+<ul data-dc-id="research-d">
+  <li>Brodeur PG et al. <a href="https://arxiv.org/abs/2412.10849">Superhuman performance of a large language model on the reasoning tasks of a physician</a>. arXiv 2024; reported in Science 2026.</li>
+  <li>DeepRare: <a href="https://doi.org/10.1038/s41586-025-10097-9">An agentic system for rare disease diagnosis with traceable reasoning</a>. Nature 2026.</li>
+  <li>Goh E et al. <a href="https://doi.org/10.1038/s41591-024-03456-y">GPT-4 assistance for improvement of physician performance on patient care tasks: a randomized controlled trial</a>. Nature Medicine 2025.</li>
+</ul>
+<p data-dc-id="p-29"><strong>Failure modes.</strong></p>
+<ul data-dc-id="research-f">
+  <li>Schmidgall S et al. <a href="https://arxiv.org/abs/2402.08113">Addressing cognitive bias in medical language models</a> (BiasMedQA). arXiv 2024.</li>
+  <li>Walters WH, Wilder EI. <a href="https://doi.org/10.1038/s41598-023-41032-5">Fabrication and errors in the bibliographic citations generated by ChatGPT</a>. Scientific Reports 2023.</li>
+  <li>Calibration of LLM confidence on USMLE-style questions. Journal of Medical Internet Research 2025, e64348.</li>
+</ul>
+<p data-dc-id="p-30"><strong>Techniques.</strong></p>
+<ul data-dc-id="research-t">
+  <li>Nori H et al. <a href="https://arxiv.org/abs/2311.16452">Can generalist foundation models outcompete special-purpose tuning?</a> (Medprompt). arXiv 2023.</li>
+  <li>Kim Y et al. <a href="https://arxiv.org/abs/2404.15155">MDAgents: an adaptive collaboration of LLMs for medical decision-making</a>. NeurIPS 2024.</li>
+  <li><a href="https://doi.org/10.1038/s41746-025-01550-0">Multi-agent conversation for rare-disease diagnosis</a>. npj Digital Medicine 2025.</li>
+  <li>Xiong G et al. <a href="https://aclanthology.org/2024.findings-acl.372/">Benchmarking retrieval-augmented generation for medicine</a> (MedRAG). Findings of ACL 2024.</li>
+  <li>Zakka C et al. <a href="https://doi.org/10.1056/AIoa2300068">Almanac: retrieval-augmented language models for clinical medicine</a>. NEJM AI 2024.</li>
+  <li>Savage T et al. <a href="https://doi.org/10.1038/s41746-024-01010-1">Diagnostic reasoning prompts reveal the potential for large language model interpretability in medicine</a>. npj Digital Medicine 2024.</li>
+</ul>
+<p data-dc-id="p-31"><strong>Diagnostic error and the human side.</strong></p>
+<ul data-dc-id="research-m">
+  <li>Singh H, Meyer AND, Thomas EJ. <a href="https://doi.org/10.1136/bmjqs-2013-002627">The frequency of diagnostic errors in outpatient care</a>. BMJ Quality &amp; Safety 2014.</li>
+  <li>Newman-Toker DE et al. <a href="https://doi.org/10.1136/bmjqs-2021-014130">Burden of serious harms from diagnostic error in the USA</a>. BMJ Quality &amp; Safety 2024.</li>
+  <li>Graber ML, Franklin N, Gordon R. <a href="https://doi.org/10.1001/archinte.165.13.1493">Diagnostic error in internal medicine</a>. Archives of Internal Medicine 2005.</li>
+  <li>Croskerry P. <a href="https://doi.org/10.1067/mem.2003.22">Cognitive forcing strategies in clinical decisionmaking</a>. Annals of Emergency Medicine 2003.</li>
+  <li>Sherbino J et al. <a href="https://doi.org/10.2310/8000.2013.130860">Ineffectiveness of cognitive forcing strategies to reduce biases in diagnostic reasoning: a controlled trial</a>. CJEM 2014.</li>
+  <li>Splinter K et al. <a href="https://doi.org/10.1056/NEJMoa1714458">Effect of genetic diagnosis on patients with previously undiagnosed disease</a>. NEJM 2018.</li>
+  <li>Faye F et al. <a href="https://doi.org/10.1038/s41431-024-01604-z">Time to diagnosis and determinants of diagnostic delays of people living with a rare disease</a>. European Journal of Human Genetics 2024.</li>
+  <li>Meyer AND, Longhurst CA, Singh H. <a href="https://doi.org/10.2196/jmir.4887">Crowdsourcing diagnosis for patients with undiagnosed illnesses</a>. Journal of Medical Internet Research 2016.</li>
+  <li>Small studies of patient-activated rhythm recorders and symptom-rhythm correlation; wearable-patch data on low correlation when symptoms are not daily.</li>
+</ul>
+<p data-dc-id="p-32"><strong>Automation bias, symptom checkers, uncertainty, the relationship.</strong></p>
+<ul data-dc-id="research-s">
+  <li>Dratsch T et al. <a href="https://doi.org/10.1148/radiol.222176">Automation bias in mammography</a>. Radiology 2023.</li>
+  <li>Jabbour S et al. <a href="https://doi.org/10.1001/jama.2023.22295">Measuring the impact of AI in the diagnosis of hospitalized patients</a>. JAMA 2023.</li>
+  <li>Semigran HL et al. <a href="https://doi.org/10.1136/bmj.h3480">Evaluation of symptom checkers for self diagnosis and triage</a>. BMJ 2015.</li>
+  <li>Wallace W et al. <a href="https://doi.org/10.1038/s41746-022-00667-w">The diagnostic and triage accuracy of digital and online symptom checker tools</a>. npj Digital Medicine 2022.</li>
+  <li>van der Bles AM et al. <a href="https://doi.org/10.1098/rsos.181870">Communicating uncertainty about facts, numbers and science</a>. Royal Society Open Science 2019.</li>
+  <li>Tan SS-L, Goonawardene N. <a href="https://doi.org/10.2196/jmir.5729">Internet health information seeking and the patient-physician relationship</a>. Journal of Medical Internet Research 2017.</li>
+</ul>
+<p data-dc-id="p-33"><strong>Regulation.</strong></p>
+<ul data-dc-id="research-r">
+  <li>US FDA. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software">Clinical Decision Support Software: guidance for industry and FDA staff</a>. 2022, revised 2026. Why interpretation mode is off by default.</li>
+</ul>
+
+</details>
+
+<p data-dc-id="p-26">The code and the design records are in the <a href="https://github.com/tusharpandey13/saturn">product repository</a>. The records are not, and will not be.</p>
+<p class="meta back-top" data-dc-id="back-to-top"><a href="#top">Back to top</a> · <a href="../../index.html">All posts</a></p>
+</article>
+</main>
+
+
+  <script>
+    if (innerWidth > 700) document.querySelectorAll("details.research").forEach(d => d.open = true);
+    document.querySelectorAll('nav.toc a[href="#research"]').forEach(a => a.addEventListener("click", () => document.querySelectorAll("details.research").forEach(d => d.open = true)));
+  </script>
+</body>
+</html>

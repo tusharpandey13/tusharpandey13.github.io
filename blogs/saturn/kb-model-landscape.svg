@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="t d">
+<title id="t">The knowledge base: source, fact, ref, supersede</title>
+<desc id="d">Three columns left to right: a source (one document, photo or voice note) yields facts of four kinds (observation, medication, condition, event); facts point at refs of three kinds (drug, code, party). Below, a correction is shown as a new fact row that supersedes the old one, which is kept and marked superseded. Synthetic ids only.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="1200" height="560" fill="#F3F6EF"/>
+<text x="40" y="50" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">Rows, never edits</text>
+<text x="40" y="86" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">Three row types. A correction is a new row that points back at the old one.</text>
+<rect x="40" y="150" width="320" height="190" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<path d="M 58.4 229.0 h 12.8 l 6.4 6.4 v 25.6 h -19.2 z" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 62.24 242.44 h 11.52" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 62.24 247.56 h 11.52" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 62.24 252.68 h 11.52" fill="none" stroke="#646861" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="219.0" y="234.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Source</text>
+<text x="219.0" y="257.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">document, photo or voice note</text>
+<circle cx="40" cy="150" r="16" fill="#8C5B16"/>
+<text x="40" y="151" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">1</text>
+<rect x="440" y="150" width="320" height="190" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<circle cx="440" cy="150" r="16" fill="#8C5B16"/>
+<text x="440" y="151" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">2</text>
+<text x="600.0" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Fact</text>
+<text x="600.0" y="208" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">quoted verbatim, cites the source</text>
+<rect x="460.0" y="234" width="134.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="527.0" y="254.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">observation</text>
+<rect x="606.0" y="234" width="134.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="673.0" y="254.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">medication</text>
+<rect x="460.0" y="284" width="134.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="527.0" y="304.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">condition</text>
+<rect x="606.0" y="284" width="134.0" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="673.0" y="304.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">event</text>
+<rect x="840" y="150" width="320" height="190" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<circle cx="840" cy="150" r="16" fill="#8C5B16"/>
+<text x="840" y="151" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20.0" fill="#F3F6EF" text-anchor="middle" dominant-baseline="middle" font-weight="700">3</text>
+<text x="1000.0" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">Ref</text>
+<text x="1000.0" y="208" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">shared vocabulary, no patient data</text>
+<rect x="860.0" y="234" width="85.33333333333333" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="902.6666666666666" y="254.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">drug</text>
+<rect x="957.3333333333334" y="234" width="85.33333333333333" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="1000.0" y="254.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">code</text>
+<rect x="1054.6666666666667" y="234" width="85.33333333333333" height="38" rx="19.0" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="1.5"/>
+<text x="1097.3333333333335" y="254.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#171816" text-anchor="middle" dominant-baseline="middle">party</text>
+<path d="M 360 245.0 L 440 245.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="364.12" y="213.0" width="71.76" height="24.0" rx="6" fill="#F3F6EF" stroke="none"/>
+<text x="400.0" y="226.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">yields</text>
+<path d="M 760 245.0 L 840 245.0" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="768.6" y="213.0" width="62.800000000000004" height="24.0" rx="6" fill="#F3F6EF" stroke="none"/>
+<text x="800.0" y="226.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">names</text>
+<rect x="40" y="400" width="480" height="70" rx="14" fill="#F3F6EF" stroke="#AFB5AA" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="280.0" y="424.79999999999995" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">fact ... .potassium  (v1)</text>
+<text x="280.0" y="447.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">status: superseded</text>
+<rect x="680" y="400" width="480" height="70" rx="14" fill="#EAEEE4" stroke="#AFB5AA" stroke-width="2"/>
+<text x="920.0" y="424.79999999999995" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#1F211E" text-anchor="middle" dominant-baseline="middle" font-weight="600">fact ... .potassium-2  (v2)</text>
+<text x="920.0" y="447.65" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="middle" dominant-baseline="middle">supersedes: v1; status: current</text>
+<path d="M 680 435 L 520 435" fill="none" stroke="#171816" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-data)"/>
+<rect x="546.2" y="403.0" width="107.60000000000001" height="24.0" rx="6" fill="#F3F6EF" stroke="none"/>
+<text x="600.0" y="416.0" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#646861" text-anchor="middle" dominant-baseline="middle">supersedes</text>
+<text x="40" y="510" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="17" fill="#646861" text-anchor="start" dominant-baseline="middle">The old row stays in the file. Views show the current one and link the history. Ids above are illustrative.</text>
+</svg>

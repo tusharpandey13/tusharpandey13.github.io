@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1030" width="720" height="1030" role="img" aria-labelledby="t d">
+<title id="t">Two in three facts are observations: 788 of 1,163</title>
+<desc id="d">Treemap of the knowledge base: 1,163 facts, area by kind: observation 788, event 171, medication 146, condition 58; and 343 reference rows: code 243, drug 61, party 39. From 144 sources. Counts only. Source data/kb.sqlite.</desc>
+<defs><marker id="arr-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#171816"/></marker><marker id="arr-ctl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#007197"/></marker></defs>
+<rect width="720" height="1030" fill="#F3F6EF"/>
+<text x="40" y="56" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">Two in three facts are</text>
+<text x="40" y="96.8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="700">observations: 788 of 1,163</text>
+<text x="40" y="141.6" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Rows in the knowledge base by kind; area is row</text>
+<text x="40" y="176.7" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">count. 343 reference rows (codes, drugs, parties)</text>
+<text x="40" y="211.79999999999998" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">sit beside them.</text>
+<text x="40" y="292.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">Facts  1,163</text>
+<text x="40" y="792.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#1F211E" text-anchor="start" dominant-baseline="middle" font-weight="600">References  343</text>
+<rect x="40" y="306.9" width="431.6371453138435" height="440" rx="4" fill="#0082A9" stroke="none"/>
+<text x="52" y="333.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">observation</text>
+<text x="52" y="365.09999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">788</text>
+<rect x="473.6371453138435" y="306.9" width="206.36285468615648" height="198.64" rx="4" fill="#7FA838" stroke="none"/>
+<text x="485.6371453138435" y="333.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">event</text>
+<text x="485.6371453138435" y="365.09999999999997" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">171</text>
+<rect x="473.6371453138435" y="507.53999999999996" width="206.36285468615648" height="169.30666666666667" rx="4" fill="#AB7839" stroke="none"/>
+<text x="485.6371453138435" y="534.54" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">medication</text>
+<text x="485.6371453138435" y="565.74" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">146</text>
+<rect x="473.6371453138435" y="678.8466666666666" width="206.36285468615648" height="66.05333333333333" rx="4" fill="#C65F89" stroke="none"/>
+<text x="481.6371453138435" y="712.8733333333332" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">condition 58</text>
+<rect x="40" y="806.9" width="451.4110787172012" height="129.76784178847808" rx="4" fill="#878C82" stroke="none"/>
+<text x="52" y="833.9" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle" font-weight="600">code</text>
+<text x="52" y="865.1" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">243</text>
+<rect x="493.4110787172012" y="806.9" width="186.58892128279882" height="77.15838349097163" rx="4" fill="#AFB5AA" stroke="none"/>
+<text x="501.4110787172012" y="846.4791917454858" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">drug 61</text>
+<rect x="493.4110787172012" y="886.0583834909717" width="186.58892128279882" height="48.60945829750645" rx="4" fill="#C2C8BC" stroke="none"/>
+<text x="501.4110787172012" y="911.3631126397249" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#171816" text-anchor="start" dominant-baseline="middle">party 39</text>
+<text x="40" y="980.6678417884781" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" fill="#646861" text-anchor="start" dominant-baseline="middle">Source: records repo, data/kb.sqlite, counts only</text>
+</svg>
