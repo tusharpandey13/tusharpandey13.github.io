@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="title desc">
+  <title id="title">Input loop, before and after</title>
+  <desc id="desc">Before: every reading, voice note and document was re-entered by hand. After: readings and voice notes arrive automatically; documents are still entered by hand.</desc>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7fc16a"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7fc16a"/></marker>
+    <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e0c9a5" fill-opacity="0.6"/></marker>
+  </defs>
+  <rect width="1200" height="460" rx="20" fill="#110e09"/>
+  <g font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="15">
+    <text x="300" y="46" text-anchor="middle" fill="#e0c9a5" font-size="22" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-weight="600">before</text>
+    <text x="900" y="46" text-anchor="middle" fill="#e0c9a5" font-size="22" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-weight="600">after</text>
+    <line x1="600" y1="70" x2="600" y2="420" stroke="#e0c9a5" stroke-opacity="0.35" stroke-dasharray="4 6"/>
+    <rect x="40" y="100" width="200" height="56" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="140.0" y="133" text-anchor="middle" fill="#e0c9a5" font-size="14">BP / sugar reading</text>
+    <path d="M240,128 L300,128 L300,214 L336,214" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#ahm)"/>
+    <rect x="640" y="100" width="200" height="56" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="740.0" y="133" text-anchor="middle" fill="#e0c9a5" font-size="14">BP / sugar reading</text>
+    <rect x="40" y="190" width="200" height="56" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="140.0" y="223" text-anchor="middle" fill="#e0c9a5" font-size="14">voice note</text>
+    <path d="M240,218 L300,218 L300,214 L336,214" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#ahm)"/>
+    <rect x="640" y="190" width="200" height="56" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="740.0" y="223" text-anchor="middle" fill="#e0c9a5" font-size="14">voice note</text>
+    <rect x="40" y="280" width="200" height="56" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="140.0" y="313" text-anchor="middle" fill="#e0c9a5" font-size="14">document (scan)</text>
+    <path d="M240,308 L300,308 L300,214 L336,214" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="1.5" marker-end="url(#ahm)"/>
+    <rect x="640" y="280" width="200" height="56" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="740.0" y="313" text-anchor="middle" fill="#e0c9a5" font-size="14">document (scan)</text>
+    <rect x="340" y="170" width="220" height="88" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="450.0" y="199" text-anchor="middle" fill="#e0c9a5" font-size="13">re-entered by hand</text>
+    <text x="450.0" y="219" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="13">owner types everything</text>
+    <text x="450.0" y="239" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="13">days late, often skipped</text>
+    <path d="M840,128 L1000,128 L1000,168" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <text x="920" y="118" text-anchor="middle" fill="#7fc16a" font-size="12">photo → auto</text>
+    <path d="M840,218 L920,218" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <text x="880" y="208" text-anchor="middle" fill="#7fc16a" font-size="12">whisper</text>
+    <text x="880" y="298" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="12">by hand</text>
+    <rect x="920" y="170" width="240" height="88" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#7fc16a"/>
+    <text x="1040.0" y="199" text-anchor="middle" fill="#e0c9a5" font-size="13">knowledge base</text>
+    <text x="1040.0" y="219" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="13">readings: automatic</text>
+    <text x="1040.0" y="239" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="13">voice: automatic, reviewed</text>
+    <path d="M840,308 L1000,308 L1000,262" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahm)"/>
+    <text x="640" y="400" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="13">documents still need a scan, an OCR pass and a human read;</text>
+    <text x="640" y="420" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="13">that is the part of the loop not yet closed.</text>
+    <text x="40" y="400" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="13">one person as the only input device:</text>
+    <text x="40" y="420" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="13">the log is only as fresh as their evening.</text>
+  </g>
+</svg>

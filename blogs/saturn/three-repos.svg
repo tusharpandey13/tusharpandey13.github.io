@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="title desc">
+  <title id="title">Three-repo split</title>
+  <desc id="desc">Product repo (public, code), env repo (private, config and secrets) and records repo (private, health data), with the contracts env.manifest, product.lock and records.yaml between them.</desc>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7fc16a"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7fc16a"/></marker>
+    <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e0c9a5" fill-opacity="0.6"/></marker>
+  </defs>
+  <rect width="1200" height="520" rx="20" fill="#110e09"/>
+  <g font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="15">
+    <text x="600" y="46" text-anchor="middle" fill="#e0c9a5" font-size="22" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-weight="600">Three repos, three contracts</text>
+    <rect x="40" y="120" width="290" height="190" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="64" y="158" text-anchor="start" fill="#e0c9a5" font-size="20" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-weight="600">product</text>
+    <rect x="220" y="138" width="86" height="26" rx="13" fill="#110e09" stroke="#7fc16a"/>
+    <text x="263" y="156" text-anchor="middle" fill="#7fc16a" font-size="12">public</text>
+    <text x="64" y="196" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">code: worker, batch, site builder</text>
+    <text x="64" y="222" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">no config values, no data</text>
+    <text x="64" y="248" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">releases are tags</text>
+    <rect x="455" y="120" width="290" height="190" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="479" y="158" text-anchor="start" fill="#e0c9a5" font-size="20" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-weight="600">env</text>
+    <rect x="635" y="138" width="86" height="26" rx="13" fill="#110e09" stroke="#7fc16a"/>
+    <text x="678" y="156" text-anchor="middle" fill="#7fc16a" font-size="12">private</text>
+    <text x="479" y="196" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">config + secrets (SOPS)</text>
+    <text x="479" y="222" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">pins one product version</text>
+    <text x="479" y="248" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">one per deployment</text>
+    <rect x="870" y="120" width="290" height="190" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="894" y="158" text-anchor="start" fill="#e0c9a5" font-size="20" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-weight="600">records</text>
+    <rect x="1050" y="138" width="86" height="26" rx="13" fill="#110e09" stroke="#7fc16a"/>
+    <text x="1093" y="156" text-anchor="middle" fill="#7fc16a" font-size="12">private</text>
+    <text x="894" y="196" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">sources/ data/ docs/</text>
+    <text x="894" y="222" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">the family's health KB</text>
+    <text x="894" y="248" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="14">never leaves the home server</text>
+    <path d="M332,190 L452,190" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <text x="392" y="178" text-anchor="middle" fill="#7fc16a" font-size="13">env.manifest</text>
+    <text x="392" y="212" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="11">“I need these keys”</text>
+    <path d="M453,250 L334,250" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah2)"/>
+    <text x="392" y="272" text-anchor="middle" fill="#7fc16a" font-size="13">product.lock</text>
+    <text x="392" y="290" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="11">“run this version”</text>
+    <path d="M868,220 L749,220" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah2)"/>
+    <text x="807" y="208" text-anchor="middle" fill="#7fc16a" font-size="13">records.yaml</text>
+    <text x="807" y="242" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="11">“people, paths, shape”</text>
+    <rect x="300" y="370" width="600" height="70" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35" stroke-dasharray="6 4"/>
+    <text x="600.0" y="399" text-anchor="middle" fill="#e0c9a5" font-size="14">deployment = product@lock + env + records</text>
+    <text x="600.0" y="420" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">the product never reads records without an env that names them</text>
+    <path d="M185,310 L185,346 L430,346 L430,368" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahm)"/>
+    <path d="M600,310 L600,368" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahm)"/>
+    <path d="M1015,310 L1015,346 L770,346 L770,368" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahm)"/>
+    <text x="600" y="480" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">Public code can be read by anyone; private config and data are only ever cloned onto the owner's machines.</text>
+  </g>
+</svg>

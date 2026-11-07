@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saturn: a health log for a family far from its doctors — Tushar Pandey</title>
+  <meta name="description" content="A self-hosted health log for one household: a Telegram group in, a git knowledge base in the middle, a diagnostic loop behind one button. Architecture, trade-offs, what went wrong, and what it is not." />
+  <meta name="author" content="Tushar Pandey" />
+  <link rel="canonical" href="https://tusharpandey.com/blogs/saturn/" />
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="../../style.css?v=20261024f" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Saturn: a health log for a family far from its doctors" />
+  <meta property="og:description" content="A Telegram group in, a git knowledge base in the middle, and a diagnostic loop behind one button." />
+  <meta property="og:url" content="https://tusharpandey.com/blogs/saturn/" />
+  <style>
+    /* Base width, padding, font and line-height come from the site's main/body
+       rules. These only style semantic elements the site did not define. */
+    main nav { margin: 0 0 2%; }
+    .meta {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+
+    .repo-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin: 0 0 2rem;
+      padding: 0.9rem 1rem;
+      background: #17130d;
+      border: 1px solid #3a3021;
+      border-radius: 12px;
+      color: var(--fg);
+      text-decoration: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .repo-banner:hover,
+    .repo-banner:focus-visible {
+      border-color: var(--accent);
+      background: #1b160f;
+    }
+    .repo-banner svg {
+      flex: 0 0 auto;
+      color: var(--accent);
+    }
+    .repo-banner-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      min-width: 0;
+    }
+    .repo-banner-copy strong {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .repo-banner-copy span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+    .repo-banner .arrow {
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+    @media (max-width: 600px) {
+      .repo-banner { align-items: flex-start; flex-wrap: wrap; }
+      .repo-banner .arrow { margin-left: 0; }
+    }
+    .post-title {
+      color: var(--title);
+      margin-bottom: 0.35rem;
+    }
+    .post-subtitle {
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0;
+      margin: 0 0 2.2rem;
+    }
+    main h2 { margin: 2.4em 0 0.7em; }
+    main h3 { margin: 1.8em 0 0.5em; }
+    main p { margin: 0 0 1.15em; }
+    main ul, main ol { margin: 0 0 1.2em; padding-left: 1.4em; }
+    main li { margin: 0.35em 0; }
+    main code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: #1b160f;
+      border: 1px solid #2b2418;
+      border-radius: 4px;
+      padding: 0.08em 0.3em;
+    }
+    main pre {
+      background: #17130d;
+      border: 1px solid #2b2418;
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      overflow-x: auto;
+      margin: 1.4em 0 1.8em;
+      line-height: 1.5;
+    }
+    main pre code {
+      background: none;
+      border: 0;
+      padding: 0;
+      font-size: 0.9em;
+    }
+    main .table-wrap {
+      overflow-x: auto;
+      margin: 1.3em 0 1.8em;
+    }
+    main table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+      line-height: 1.45;
+    }
+    main th, main td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.5em 0.6em;
+      border-bottom: 1px solid #2b2418;
+    }
+    main th {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    main figure { margin: 2em 0; }
+    main figure img { width: 100%; height: auto; }
+    main figcaption {
+      color: var(--muted);
+      font-size: 0.8em;
+      line-height: 1.45;
+      margin-top: 0.5em;
+    }
+    main hero {
+      display: block;
+      max-width: 80vw;
+      margin: 0 0 2em;
+    }
+    main hero img { width: 100%; }
+    main blockquote {
+      border-left: 2px solid var(--accent2, var(--accent));
+      padding-left: 1em;
+      color: var(--muted);
+      margin: 1.6em 0;
+    }
+    main footer {
+      margin-top: 3.5em;
+      padding-top: 1.2em;
+      border-top: 1px solid #2b2418;
+      color: var(--muted);
+      font-size: 0.9em;
+    }
+
+    .hovercard {
+      position: relative;
+      display: inline;
+      color: var(--bg);
+      background: var(--fg);
+      cursor: help;
+      padding: 0 0.12em;
+      border-bottom: 1px dotted var(--bg);
+    }
+    .hovercard .pop {
+      display: none;
+      position: fixed;
+      z-index: 50;
+      left: 5vw;
+      top: 12vh;
+      width: min(57rem, calc(100vw - 2rem));
+      max-height: 88vh;
+      overflow: auto;
+      padding: 1.4rem 1.5rem 1.5rem;
+      background: #17130d;
+      border: 1px solid #3a3021;
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      color: var(--fg);
+      font-weight: normal;
+      font-size: 1.02rem;
+      line-height: 1.5;
+      text-align: left;
+      white-space: normal;
+    }
+    .hovercard .pop::after { display: none; }
+    .hovercard:hover .pop,
+    .hovercard:focus .pop,
+    .hovercard:focus-within .pop,
+    .hovercard.pop-open .pop { display: block; }
+    .hovercard .pop strong {
+      display: block;
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .hovercard .pop .pop-note {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
+    }
+    .hovercard .pop img {
+      display: block;
+      width: 100%;
+      margin: 0.8rem 0 0.55rem;
+      border-radius: 10px;
+    }
+    .hovercard .pop a { color: var(--accent); }
+    @media (max-width: 700px) {
+      .hovercard .pop {
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        top: 8vh;
+        bottom: auto;
+        width: auto;
+        max-height: 84vh;
+      }
+      .hovercard .pop::after { display: none; }
+    }
+    @media (max-width: 700px) {
+      main pre { padding: 0.8rem; }
+      main table { font-size: 0.82em; }
+    }
+  </style>
+</head>
+<main>
+  <p class="meta">Field note · 07 Nov 2026 · ~11 min</p>
+<h1 class="post-title" id="saturn-a-health-log-for-a-family-far-from-its-doctors">Saturn: a health log for a family far from its doctors</h1>
+  <h3 class="post-subtitle">A Telegram group in, a git knowledge base in the middle, and a diagnostic loop behind one button</h3>
+
+  <h2 id="tldr">TL;DR</h2>
+
+  <p>
+    A handwritten prescription, a ten-minute consult, and a two-month wait for the next one. In plain English, I built a small system that keeps my parents' medical history in one place, reads what they send it every day, and prepares the questions for the next doctor. This is not a medical device and not a replacement for a doctor: it records what was said, flags what a fixed rule says to flag, and, in an opt-in mode, writes labelled hypotheses for me to carry into a consult. It went live on 27 October 2026. In its first ten days it took in a thousand-odd facts from about a hundred sources, ninety-odd photos and voice notes, mostly in Hindi. Nothing it produces is advice; the pages say so on every screen. Much of the code and most of the design notes were written with Claude Code; the decisions, the constraints and the review hour every night are mine.
+  </p>
+  <a class="repo-banner" href="https://github.com/tusharpandey13/saturn" target="_blank" rel="noopener">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+    </svg>
+    <span class="repo-banner-copy">
+      <strong>Product repository</strong>
+      <span>Worker, batch, knowledge-base tools, site, diagnostic loop, design records. No health data, no secrets.</span>
+    </span>
+    <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <hero>
+    <img src="./prescription-slip.svg" alt="A stylised prescription pad: a header, the Rx mark, seven lines of squiggles standing in for handwriting, a stamp and a signature." width="1200" height="760">
+  </hero>
+
+<h2 id="the-gap-between-visits">The gap between visits</h2>
+
+<p>My parents live on their own in a small coal town in Jharkhand. My mother has a serious heart condition and recently had a small stroke. My father has a motorbike; an auto takes about thirty minutes to arrive; the nearest good hospital is more than ten kilometres away in a small city where specialists sit on fixed days and the labs close on Sundays. The tertiary centre is a long trip, possible about once in two months, and only when she is well enough to travel. I live in Bengaluru and work full time.</p>
+
+<p>The consults themselves are the problem the system was built for. A doctor hears the complaint, makes the call, writes medicines by hand, says very little, and is very hard to reach afterwards. No questions, no reasoning, no follow-up channel. My parents describe the problem and trust the doctor as a black box; they do not speak in clinical terms and will not push back. Technical detail is lost in both directions. Between visits there is no supervision: no monitoring, no plan, no one watching the numbers. Visits happen when something goes wrong. Most of what any doctor knows about my mother's history is on slips like the one above, in a plastic folder, in the order they were filed.</p>
+
+<p>Three constraints shaped every decision after that. The family will not learn a new app, so input had to be the chat app they already use. Every extra visit has a cost in health, not only money, so the output had to be one bundled list of asks per doctor, at most five, each answerable with a yes, a no or a test order. And I have about an hour a night, so whatever the system produced had to fit in that hour or it would not get read. The system's own notes carry these as a <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/records-guide.md">standing rule</a>: tier every action as emergency, same-week or next-visit, and never write "rush" or "immediately" outside a genuine emergency.</p>
+
+<h2 id="what-saturn-is-and-is-not">What Saturn is, and is not</h2>
+
+<p>Saturn is a self-hosted <span class="hovercard" tabindex="0">home health log<span class="pop"><strong>Home health log</strong><span class="pop-note">A household's medical record kept by the household: documents, readings, voice notes and the structured facts extracted from them, in a private git repository the family controls.</span><a href="https://github.com/tusharpandey13/saturn/blob/main/README.md">Read the README</a></span></span> for one household. Family members send blood-pressure photos, lab reports, prescriptions and voice notes, in Hindi, Hinglish or English, to a private Telegram group. A small Cloudflare Worker stores each message. A nightly batch transcribes and extracts structured facts into a git-based knowledge base, regenerates the pages that read from it, and sends me one digest. A private site on the home network shows the current state on a phone. A button on that site runs a bounded diagnostic review and sends the result back as a message.</p>
+
+<p>The non-goals matter more than the goals. Saturn does not diagnose. It never suggests starting, stopping or changing a medicine; the product's <a href="https://github.com/tusharpandey13/saturn/blob/main/AGENTS.md">rules file</a> says so in its second line and the diagnostic loop enforces it with a <a href="https://github.com/tusharpandey13/saturn/blob/main/tools/dx/run#L60">regular expression</a> over everything it writes. It does not talk to the family: the group is input-only and the bot never posts there (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/011-group-input-only-admin-output.md">ADR 011</a>). It does not run in real time; there are no alerts between the nightly runs, by design, because a real-time alert to two frightened people a thousand kilometres from me is worse than none (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/005-ingest-and-batch.md">ADR 005</a>). And it is not a product for other families yet. The code is shaped so it could be, but the only deployment is mine.</p>
+
+<h2 id="the-trade-offs">The trade-offs</h2>
+
+<p>Telegram instead of an app. An app would have been cleaner and would never have been opened. The group already existed; a bot was added to it. The cost is that every input is a photo or a voice note, so every input needs reading by a machine first.</p>
+
+<p>A nightly batch instead of a live service. The only always-on part is a Worker on Cloudflare's free tier that verifies the webhook secret, writes the raw update to a D1 table and copies media to R2: no model calls, no queues, no cron (<a href="https://github.com/tusharpandey13/saturn/blob/main/app/src/worker.ts#L19">twelve lines</a>). Everything that thinks runs once a day on a GitHub Actions runner. The fixed cost is zero and the running cost is under a dollar a month (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/platform/hld.md">high-level design</a>). The cost is latency, and that latency turned out to be the first thing the family noticed; more on that below.</p>
+
+<p>Git instead of a database. The knowledge base is newline-delimited JSON in a private repository, rebuilt into SQLite on every run. Every clone is a backup, every change is a signed commit, and a correction is a new row rather than an edit. The cost is that concurrent writers collide, which they did, twice, in the first week.</p>
+
+<p>Three repositories instead of one. The code, the deployment configuration and the health data live in separate repositories with different owners of risk. The cost, stated in the decision record itself, is five to seven repositories instead of two and slower changes (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/008-product-environment-pii.md">ADR 008</a>).</p>
+
+<p>Local speech-to-text instead of a cloud API. Hindi voice notes are transcribed by <a href="https://github.com/ggml-org/whisper.cpp">whisper.cpp</a>, pinned by version and model hash, on the runner or on my Mac. Audio never leaves the family's machines. The cost is speed: the GitHub runner transcribes at about five times slower than real time; the Mac on Metal at about 0.06 times real time (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/014-mac-audio-pipeline.md">ADR 014</a>).</p>
+
+<p>A private site instead of a dashboard. The health pages are static HTML with no JavaScript, served only on a <span class="hovercard" tabindex="0">tailnet<span class="pop"><strong>Tailnet</strong><span class="pop-note">The household's private Tailscale network. The site, the voice-review endpoint and the loop button exist only there; nothing is published to the internet and there is no tunnel.</span><a href="https://github.com/tusharpandey13/saturn/blob/main/docs/platform/hld.md">Read the design</a></span></span> from a laptop at home. The cost is that only people on that network can see anything, which today means only me. That is a real limitation and it is in the list at the end.</p>
+
+<h2 id="the-pipeline">The pipeline</h2>
+
+<p>One run, once a night, in order. The <strong>Telegram group</strong> receives whatever the family sends. The <strong>Cloudflare Worker</strong> stores the raw update in <strong>D1</strong> and the media in <strong>R2</strong>, and does nothing else. The <strong>nightly batch</strong> pulls the new rows and media and commits them to the records repository first, raw, before anything reads them (<a href="https://github.com/tusharpandey13/saturn/blob/main/app/src/batch/steps.ts#L65">pull</a>). It then transcribes audio with <strong>whisper</strong> and extracts facts with a model in a single prompt-in, JSON-out turn that holds no credentials at all: no tools, an empty working directory, an allowlisted environment (<a href="https://github.com/tusharpandey13/saturn/blob/main/app/src/batch/steps.ts#L273">extract</a>, <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/security.md">security notes</a>). The <strong>knowledge base</strong> is rebuilt and validated; any bad row fails the build (<a href="https://github.com/tusharpandey13/saturn/blob/main/tools/kb/build#L492">validate</a>). The <strong>generated pages</strong> are regenerated from it. A <strong>digest</strong> goes to me by private message, with every item numbered so I can answer by replying "3: yes" from the phone. The <strong>private site</strong> rebuilds itself within ten minutes of the commit.</p>
+
+<p>Three side jobs sit beside the loop. The <strong>Mac transcription runner</strong> re-transcribes each voice note with a second engine and speaker separation whenever the laptop is awake, and pushes a signed commit. The <strong>voice-note review</strong> page lets me play a note, correct the transcript and mark it heard; the batch re-reads the note from my text instead of the machine's. The <strong>run-the-loop</strong> button queues one bounded diagnostic run on the home laptop.</p>
+
+  <figure>
+    <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/platform/hld.md"><img src="./pipeline.svg" alt="The pipeline from the family phone through the Telegram group, the Cloudflare Worker with D1 and R2, the nightly batch with whisper and extraction, the git knowledge base, generated pages and the private site, with three side jobs: voice review, the run-the-loop button and the Mac runner." width="1200" height="560"></a>
+    <figcaption>One loop, once a night: the Worker only stores; the batch reads, extracts and commits; the pages are rebuilt from the knowledge base. The side jobs write to the same repository under their own keys.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="./telegram-digest.png" alt="A synthetic daily digest message in the Telegram dark theme: a blood-pressure photo logged, a voice note with seven items recorded from a machine transcript, two unread documents, and one numbered question to answer by replying." width="1200" height="626" loading="lazy" decoding="async">
+    <figcaption>The digest, with made-up content. Every line is a fixed template filled from facts; no model writes free text to the family or to me. The numbers are what the reply goes back against.</figcaption>
+  </figure>
+
+<h2 id="three-repositories-three-contracts">Three repositories, three contracts</h2>
+
+<p>The first version was one repository, and that was the mistake that forced the split. Its history contained <span class="hovercard" tabindex="0">PHI<span class="pop"><strong>Protected health information</strong><span class="pop-note">Any health detail that identifies a person. In Saturn it lives only in the records repository, never in code, docs, tests, commit messages or logs.</span><a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/008-product-environment-pii.md">Read ADR 008</a></span></span> and once-pasted secrets, so the code could not be shared or reviewed, and any workflow in it could read every secret and every record. Write access to code was write access to my mother's file.</p>
+
+<p>The split classifies by content, not by path. The <strong>product</strong> repository holds code, schemas, templates and synthetic fixtures, and nothing that names a person, a resource or an account. The <strong>env</strong> repository holds resource ids, encrypted secrets and the thin workflows; it is private, I am the only writer, and its workflows run only on a schedule or by hand, never on push. The <strong>records</strong> repository holds the data and has no workflows and no secrets at all. Three files join them: <a href="https://github.com/tusharpandey13/saturn/blob/main/env.manifest.yaml">env.manifest.yaml</a> in the product declares the resources and secret names an environment must supply; <strong>product.lock</strong> in the env pins the exact product commit that runs; <strong>records.yaml</strong> in the records names the people and the namespaces, so nothing in the product ever names a person.</p>
+
+  <figure>
+    <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/008-product-environment-pii.md"><img src="./three-repos.svg" alt="Three repositories: product (public, code), env (private, config and secrets) and records (private, health data), with env.manifest, product.lock and records.yaml as the contracts between them, and the deployment as their sum." width="1200" height="520"></a>
+    <figcaption>Three repos, three contracts: the product declares what it needs, the env pins what runs, the records say where the data is. Another family would need only a new env and a new records repository.</figcaption>
+  </figure>
+
+<h2 id="the-knowledge-base">The knowledge base</h2>
+
+<p>Three tables, and a rule. A <strong>source</strong> is anything received: a lab report, a prescription photo, a voice note, a chat line. A <strong>fact</strong> is one thing extracted from a source: an <strong>observation</strong> (a reading, a lab value), a <strong>medication</strong>, a <strong>condition</strong> or an <strong>event</strong>. A <strong>ref</strong> is a <strong>drug</strong>, a <strong>code</strong> or a <strong>party</strong> (a doctor, a lab). Every row carries who said it, how it was verified, and the exact quote it came from. The rule is in the <a href="https://github.com/tusharpandey13/saturn/blob/main/schema/schema.sql#L14">schema header</a>: a fact is never edited in place; a correction is a new row that <span class="hovercard" tabindex="0">supersedes<span class="pop"><strong>Supersede</strong><span class="pop-note">Correct by adding, not editing: the new row points at the old one, the old one is marked superseded, nothing is deleted. The timeline keeps both, so a wrong reading can be shown as wrong rather than made to disappear.</span><a href="https://github.com/tusharpandey13/saturn/blob/main/schema/schema.sql#L67">Read the schema</a></span></span> the old one.</p>
+
+<p>The rule earned its keep in the first week. A family account relayed through me said one hand; the doctor's note, read from handwriting, said the other; a later confirmation settled it. All three rows are still there, two of them superseded, and the status page shows which is current and why. A database with an UPDATE statement would have lost the disagreement, and the disagreement was the clinically interesting part.</p>
+
+<p>The build is Python with the standard library and SQLite only. It validates every row against a JSON schema, refuses the build on any bad one, and materialises views: the latest value per code, the open conflicts, the rows that need a human, the current medicine list (<a href="https://github.com/tusharpandey13/saturn/blob/main/schema/schema.sql#L104">views</a>). The curated pages are views of this, not the other way round; every clinical statement on a page cites a row id (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/007-simplified-clinical-data-model.md">ADR 007</a>).</p>
+
+  <figure>
+    <a href="https://github.com/tusharpandey13/saturn/blob/main/schema/schema.sql"><img src="./kb-model.svg" alt="The knowledge-base model: a source produces facts of four kinds, observation, medication, condition and event; facts refer to refs of three kinds, drug, code and party; a correction is a new fact row that supersedes the old one; one synthetic example row is shown." width="1200" height="600"></a>
+    <figcaption>A fact is never edited: a correction is a new row that supersedes the old one. The example row is synthetic.</figcaption>
+  </figure>
+
+<h2 id="hindi-voice-notes">Hindi voice notes</h2>
+
+<p>The voice notes are the richest input and the hardest. My mother records thirty seconds to four minutes of Hindi, at home, with the television on, about how the day went. The clinical content is in there: when she felt low, what she ate, which tablet she skipped. The batch transcribes with whisper.cpp at a pinned version and a pinned, hash-checked model (<a href="https://github.com/tusharpandey13/saturn/blob/main/adapters/stt/whisper-cpp.ts#L29">adapter</a>). The Devanagari transcript is primary; there is no translation pass, ever, because the one experiment with translation turned a word for vomiting into a word for fainting.</p>
+
+<p>Two things improved accuracy more than any model change. The first is a term list: the family's medicine brand names as they say them, the places and doctors, and the Hindi words she uses for symptoms, kept in the records repository and passed to whisper as its initial prompt, capped at 700 characters (<a href="https://github.com/tusharpandey13/saturn/blob/main/adapters/stt/whisper-cpp.ts#L41">PROMPT_CHARS</a>). Whisper is far better at a brand name it has been told to expect. The second is a second opinion: the Mac runner transcribes the same audio with whisper and with a second engine, separates speakers, and asks a model to reconcile the two into a "suggested reading" under one strict rule, never more specific than what was said. That rule exists because the first version of the reconciler once turned "ill" into "fever", which is a more specific clinical claim than the speaker made (ADR 014). It is now bounded twice, by the prompt and by a support check against the raw engine output.</p>
+
+<p>Nothing from a machine transcript is shown as a fact. On the site, an unchecked transcript renders as a muted "machine transcript, unchecked" line with its numbers withheld (<a href="https://github.com/tusharpandey13/saturn/blob/main/tools/site/build#L252">transcript_text</a>). The review page is where a transcript becomes trusted: play the note, correct the text in Devanagari or Roman script, mark it heard. The correction is saved as <span class="hovercard" tabindex="0">ground truth<span class="pop"><strong>Ground truth</strong><span class="pop-note">A human-corrected transcript stored beside the audio. It feeds the speech-to-text evaluation, so engines are chosen by measured error on the family's own voices, and the batch re-extracts the note from it.</span><a href="https://github.com/tusharpandey13/saturn/blob/main/tools/stt/README.md">Read the STT notes</a></span></span> beside the audio, the batch re-extracts the note from it, and the evaluation set grows by one clip.</p>
+
+  <figure>
+    <img src="./phone-voice-detail.png" alt="A single voice-note page on a phone: an audio player, an editable transcript box with speaker labels, and two buttons, Heard with no changes and Save corrections. Dates, duration and the transcript text are covered by solid bars." width="780" height="1688" loading="lazy" decoding="async">
+    <figcaption>One voice note on the phone, content covered. Play it, correct the machine transcript, mark it heard. The batch re-reads the corrected text that night.</figcaption>
+  </figure>
+
+<h2 id="record-and-flag-then-interpretation">Record and flag, then interpretation</h2>
+
+<p>The default mode is <span class="hovercard" tabindex="0">record and flag<span class="pop"><strong>Record and flag</strong><span class="pop-note">Store what was said; raise fixed-template flags from deterministic checks over the facts; never diagnose, never suggest a medicine change. Every flag names the row ids it rests on.</span><a href="https://github.com/tusharpandey13/saturn/blob/main/tools/crossref/README.md">Read the crossref notes</a></span></span>. Deterministic checks run over the knowledge base with no model and no network: a value outside its printed range, a change from the prior value, a medicine listed twice under two brands. Each produces a fixed sentence filled from facts, capped at three per person per day. This part worked the way it was written and produced almost nothing I acted on. The facts were already right; the question was what they meant.</p>
+
+<p>So on the fourth day I switched my own records repository into an opt-in <span class="hovercard" tabindex="0">interpretation mode<span class="pop"><strong>Interpretation mode</strong><span class="pop-note">An opt-in per records repository. An agent may write probability-labelled hypotheses, kept apart from facts and marked agent-inferred. Medicine advice stays off. Default is off, because a product that interprets by default has a different regulatory reading.</span><a href="https://github.com/tusharpandey13/saturn/blob/main/docs/decisions/013-diagnostic-loop.md">Read ADR 013</a></span></span>. The product default stays off; the switch is one line in the records repository's own rules file. In that mode a run works through an open-problem ledger: a representation of each unexplained problem, a differential with explicit probabilities and a residual, evidence for and against as row ids and verified literature, the discriminating next steps, and a belief diff against the previous run. Predictions are logged before the answer is known, and scored when a doctor's finding or a test result arrives. The structure follows MAI-DxO (<a href="https://arxiv.org/abs/2506.22405">Nori et al.</a>, a preprint evaluated on published cases; Saturn adopts the structure, not the accuracy figures). Seven seats: <strong>Hypothesis</strong> keeps the differential; <strong>Test-chooser</strong> ranks next steps by what would discriminate between the leaders; <strong>Challenger</strong> argues against the leader; <strong>Stewardship</strong> weighs the family's burden, cost, travel and stress, and prefers cheap informative steps; <strong>Checklist</strong> checks ids, citations and wording; a <strong>blinded seat</strong> writes an independent differential without seeing the debate; a <strong>citation verifier</strong> resolves every DOI and PMID and checks that the cited text supports the claim. Anything with no row id, source path or verified citation is deleted.</p>
+
+  <figure>
+    <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/methods/diagnostic-loop.md"><img src="./diagnostic-loop.svg" alt="The diagnostic-loop panel: Hypothesis, Test-chooser, Challenger, Stewardship and Checklist in debate, a blinded seat apart from them, and a citation verifier, all feeding one inference record with a probability bucket and evidence for and against." width="1200" height="620"></a>
+    <figcaption>Seven seats, one record: every claim passes the citation verifier before it reaches the status page, labelled agent-inferred. The probability shown is illustrative.</figcaption>
+  </figure>
+
+<p>The rails are the point, not the panel. Red flags are checked first and outside the loop. Uncertainty buckets and a residual are always shown; there is no false reassurance. Doctor packets frame hypotheses as questions, at most five, ordered by stakes. Medicine advice is forbidden by the prompt and caught after the fact by a pattern over every added line: "you should", "safe to", "rules out", "confirms", "nothing to worry about" (<a href="https://github.com/tusharpandey13/saturn/blob/main/tools/dx/run#L113">advice_hits</a>). A hit fails the run. The output goes to a run note and an append-only inference register, never into the facts, and the family sees none of it; they see one calm plan line in plain words.</p>
+
+<p>Since 5 November this runs from a button. The site queues one job; a timer on the home laptop picks it up, builds the evidence pack, runs the loop headless with a wall-clock limit of three hours and a spend cap of twelve dollars, validates, commits under the job's own key, pushes and sends me ten lines (<a href="https://github.com/tusharpandey13/saturn/blob/main/tools/dx/README.md">tools/dx</a>). The caps are one run a day and eight a month. Before the button, a run meant a two-hour chat session and an hour of my review; the review hour is unchanged, which is as it should be.</p>
+
+<h2 id="machine-identities">Machine identities and the integrity check</h2>
+
+<p>Four things commit to the records repository: me, the nightly batch, the voice-review service and the loop job. Each machine signer has its own SSH key, registered as a deploy key, and an hourly integrity check in the env repository verifies every new commit on the records' main branch against an allowed-signers list in which each machine key is accepted only for the paths that job may write (<a href="https://github.com/tusharpandey13/saturn/blob/main/docs/backlog.md">backlog note</a>). The voice key may touch a ground-truth file and the listened list; the loop key may touch analysis notes, inferences and the generated status page; neither may touch a fact. A commit outside those paths under those keys is a violation, and so is any unsigned commit. The consequence is the one I wanted: my key on a commit means I approved it, and nothing else can look like that.</p>
+
+<h2 id="what-went-wrong">What went wrong</h2>
+
+<p>The bot talked to the family. The first batch posted the digest, its clarification questions and its operational lines in the family group, partly in Hindi. My parents did not understand the questions and could not tell a warning about a delayed extraction from a warning about her. The group is now input-only and everything the system has to say goes to me by private message (ADR 011). This was the first decision record written after go-live and the easiest.</p>
+
+<p>Everything that mattered was manual. In the first week every prescription photo, strip photo and voice note that the batch did not fully read had to be re-entered by hand in a chat session, and seventeen of the first forty family messages produced no facts at all; they were kept "for a closer read" that nothing ever did. The nightly extraction was also missing documents outright: a handwritten consult arrived as a PDF and yielded nothing, with no flag that a new prescription existed. The fix came in two parts: a standing "unread documents" list in the digest, so a missed document is visible until I act, and the loop button, so the one analysis that mattered no longer needs a session. Documents still need a human read; that is the next job to automate.</p>
+
+<p>The nag. The digest listed every voice note, every day, under "needs a listener", because it excluded only notes present in a bookkeeping file that nobody had ever created. It read as a daily transcription failure. Transcription had never failed; the list was a standing list of everything unlistened. It now names only notes that were not transcribed, scored below 0.5 confidence, or produced nothing from more than ten seconds of audio (<a href="https://github.com/tusharpandey13/saturn/blob/main/app/src/batch/steps.ts#L34">thresholds</a>).</p>
+
+<p>Silence at two in the morning. The batch was scheduled for 21:07 and ran when GitHub got to it, between 01:27 and 03:04. A morning reading reached me eighteen hours later. On the night the run failed, nothing said so. The home laptop now dispatches the run before bed, with a morning catch-up, and keeps an in-house dead-man check that alerts by 03:30 if no run succeeded; the digest also says when the last reading was, so a boring week is distinguishable from a broken one.</p>
+
+<p>739 commits behind. A package audit on the home laptop found its package set that far behind the release branch: the upgrade path applied only signed releases of my own configuration and nothing ever bumped the inputs. One bump, one build test, one reboot, and a weekly check since. The scanner over-reports build-time inputs that never run and misses fixes the vulnerability database has not caught up with; the "after" count in the <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/security.md">security notes</a> is the honest one.</p>
+
+<p>A header that any device could set. The voice-review and loop endpoints trusted the login header that the tailnet's own proxy injects, and listened on the laptop's tailnet address. Any device on that network could have reached the port directly and set the header itself. I tested it from my own laptop and it worked. The endpoints now listen on localhost only, behind the proxy that owns the header, and accept exactly one login. Found and fixed on 5 November.</p>
+
+<h2 id="results">Results</h2>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Claim</th><th>Evidence</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Family inputs are read without a chat session</td><td>Readings and voice notes: automatic since 31 Oct. Documents: still a human read.</td><td>partial</td></tr>
+<tr><td>Nothing a machine wrote is shown as a fact</td><td><code>transcript_text</code>, <code>withhold_numbers</code> in the site builder; integrity check on fact paths</td><td>demonstrated</td></tr>
+<tr><td>One hour a night is enough</td><td>Numbered digest with reply-to-answer; "This week" block first on the overview; five tiered asks per visit</td><td>under observation</td></tr>
+<tr><td>Diagnostic runs are bounded and reviewable</td><td>Button, caps of 1/day and 8/month, $12 and 3 h, own signing key, advice gate, ten-line DM</td><td>demonstrated once in dry run; first real press pending</td></tr>
+<tr><td>Running cost under a dollar a month</td><td>Free-tier Worker, D1, R2 and Actions; local speech-to-text; loop on the subscription</td><td>demonstrated for ten days</td></tr>
+<tr><td>Another family could deploy it</td><td>Three-repo split with manifest, lock and records contracts; synthetic fixtures; one deployment exists</td><td>not done</td></tr>
+</tbody>
+</table></div>
+
+<p>The first ten days produced a thousand-odd facts from about a hundred sources, forty document files and ninety-odd photos and voice notes. The number that matters is different: questions the first run raised went to a consult on a slip of paper, and some came back answered. That is the whole result so far, and it is under observation, not proven useful.</p>
+
+  <figure>
+    <img src="./phone-overview.png" alt="The person overview page on a phone: a This week block with tiered to-dos at the top, then What changed, then the tab bar. Dates and every line of content are covered by solid bars." width="780" height="1688" loading="lazy" decoding="async">
+    <figcaption>The overview on a phone, content covered. "This week" is the first thing on the screen because it is the only thing I need at 23:30.</figcaption>
+  </figure>
+
+  <figure>
+    <a href="https://github.com/tusharpandey13/saturn/blob/main/docs/platform/hld.md"><img src="./input-loop-before-after.svg" alt="Before: readings, voice notes and documents all re-entered by hand. After: readings and voice notes arrive automatically; documents still need a scan and a human read." width="1200" height="460"></a>
+    <figcaption>What changed in the input loop: readings and voice notes arrive on their own; paper still needs a scan and a human read.</figcaption>
+  </figure>
+
+<h2 id="limitations">Limitations</h2>
+<ul>
+  <li>Not a medical device, not advice. The pages say "facts as written; not advice; doctors decide" and mean it. The interpretation mode is opt-in, labelled, and addressed to a doctor.</li>
+  <li>Only I see it. The family sends and receives nothing back; a calm one-line receipt to my father is designed and not built.</li>
+  <li>Documents are still read by a person. The nightly extraction handles photos of readings and voice notes; a handwritten slip gets a list entry and waits.</li>
+  <li>The diagnostic loop's accuracy is unmeasured. Predictions are logged for calibration; none has resolved yet. Its structure comes from a preprint.</li>
+  <li>One deployment, one family, one admin. The product has never been installed by anyone else.</li>
+  <li>Ten days of operation. Nothing here is proven stable.</li>
+</ul>
+
+<h2 id="what-i-would-do-differently">What I would do differently, and next</h2>
+
+<ol>
+  <li>Close one loop before opening another. In the first week the project shipped first slices of five analysis layers while every document still needed a hand ingest. The slices were fine; the order was wrong.</li>
+  <li>Treat my review hour as the budget. Agents produce faster than one person can read. The backlog reached forty-four open questions and forty-four open actions before anything closed. The fix was to make the digest answerable by reply and to re-tier the backlog once, hard.</li>
+  <li>Stop design documents from outrunning code. Several designs defined multi-week observation windows and the next layer was built anyway. A design now ships with its first slice or not at all.</li>
+  <li>Next: a document reader behind the same kind of button, so a photographed prescription becomes facts without me; a weekly scored run of the loop; a receipt line for the family; and the first real installation by someone who is not me.</li>
+</ol>
+
+<p>The code, the decision records and the methods are in the <a href="https://github.com/tusharpandey13/saturn/tree/main/docs/">docs/</a> and <a href="https://github.com/tusharpandey13/saturn/tree/main/tools/">tools/</a> directories of the product repository. The records are not, and will not be.</p>
+</main>
+
+
+  <script>
+    (() => {
+      const cards = [...document.querySelectorAll('.hovercard')];
+      const place = (card) => {
+        const pop = card.querySelector('.pop');
+        if (!pop) return;
+        for (const other of cards) {
+          if (other !== card) other.classList.remove('pop-open');
+        }
+        card.classList.add('pop-open');
+        const r = card.getBoundingClientRect();
+        const w = pop.offsetWidth;
+        const h = pop.offsetHeight;
+        const margin = 16;
+        let left = r.left + r.width / 2 - w / 2;
+        left = Math.min(Math.max(margin, left), innerWidth - w - margin);
+        let top = r.bottom;
+        if (top + h > innerHeight - margin) {
+          top = Math.max(margin, r.top - h);
+        }
+        pop.style.left = left + 'px';
+        pop.style.top = top + 'px';
+      };
+      for (const card of cards) {
+        card.addEventListener('mouseenter', () => place(card));
+        card.addEventListener('focusin', () => place(card));
+        card.addEventListener('mouseleave', () => card.classList.remove('pop-open'));
+        card.addEventListener('focusout', () => {
+          if (!card.contains(document.activeElement)) card.classList.remove('pop-open');
+        });
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') card.classList.remove('pop-open');
+        });
+      }
+      addEventListener('resize', () => {
+        const open = document.querySelector('.hovercard.pop-open');
+        if (open) place(open);
+      });
+    })();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>if (window.hljs) hljs.highlightAll();</script>
+</body>
+</html>

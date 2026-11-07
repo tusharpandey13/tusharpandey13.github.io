@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">Saturn pipeline</title>
+  <desc id="desc">Family phone to Telegram group to Cloudflare Worker with D1 and R2, to a nightly batch (whisper, model extraction), to a git knowledge base of source, fact and ref rows, to generated pages on a private site at home. Side jobs: voice-note review, run-the-loop button, Mac transcription runner.</desc>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7fc16a"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7fc16a"/></marker>
+    <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e0c9a5" fill-opacity="0.6"/></marker>
+  </defs>
+  <rect width="1200" height="560" rx="20" fill="#110e09"/>
+  <g font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="15">
+    <text x="600" y="46" text-anchor="middle" fill="#e0c9a5" font-size="22" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-weight="600">The loop: phone to private page, once a night</text>
+    <rect x="28" y="130" width="136" height="92" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="96.0" y="170" text-anchor="middle" fill="#e0c9a5" font-size="14">family phone</text>
+    <text x="96.0" y="191" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">photo, voice note</text>
+    <rect x="196" y="130" width="136" height="92" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="264.0" y="170" text-anchor="middle" fill="#e0c9a5" font-size="14">Telegram group</text>
+    <text x="264.0" y="191" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">one chat per family</text>
+    <rect x="364" y="130" width="136" height="92" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="432.0" y="170" text-anchor="middle" fill="#e0c9a5" font-size="14">Cloudflare Worker</text>
+    <text x="432.0" y="191" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">D1 rows, R2 files</text>
+    <rect x="532" y="130" width="136" height="92" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="600.0" y="170" text-anchor="middle" fill="#e0c9a5" font-size="14">nightly batch</text>
+    <text x="600.0" y="191" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">whisper + extraction</text>
+    <rect x="700" y="130" width="136" height="92" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="768.0" y="170" text-anchor="middle" fill="#e0c9a5" font-size="14">git knowledge base</text>
+    <text x="768.0" y="191" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">source / fact / ref</text>
+    <rect x="868" y="130" width="136" height="92" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="936.0" y="170" text-anchor="middle" fill="#e0c9a5" font-size="14">generated pages</text>
+    <text x="936.0" y="191" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">views of the KB</text>
+    <rect x="1036" y="130" width="136" height="92" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35"/>
+    <text x="1104.0" y="170" text-anchor="middle" fill="#e0c9a5" font-size="14">private site</text>
+    <text x="1104.0" y="191" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">home server, tailnet</text>
+    <path d="M166,176.0 L193,176.0" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <path d="M334,176.0 L361,176.0" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <path d="M502,176.0 L529,176.0" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <path d="M670,176.0 L697,176.0" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <path d="M838,176.0 L865,176.0" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <path d="M1006,176.0 L1033,176.0" fill="none" stroke="#7fc16a" stroke-width="2" marker-end="url(#ah)"/>
+    <text x="96" y="118" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="12">input</text>
+    <text x="600" y="118" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="12">once a night</text>
+    <text x="1104" y="118" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="12">output</text>
+    <text x="28" y="300" text-anchor="start" fill="#e0c9a5" font-size="16" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-weight="600">side jobs</text>
+    <rect x="28" y="320" width="300" height="88" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35" stroke-dasharray="6 4"/>
+    <text x="178.0" y="358" text-anchor="middle" fill="#e0c9a5" font-size="14">“run the loop” button</text>
+    <text x="178.0" y="379" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">on the site: triggers the batch now</text>
+    <path d="M178,320 L178,296 Q178,280 194,280 L580,280 L580,224" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahm)"/>
+    <rect x="364" y="320" width="300" height="88" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35" stroke-dasharray="6 4"/>
+    <text x="514.0" y="358" text-anchor="middle" fill="#e0c9a5" font-size="14">Mac transcription runner</text>
+    <text x="514.0" y="379" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">pulls audio, runs whisper, pushes text back</text>
+    <path d="M514,320 L514,296 Q514,280 530,280 L600,280 L600,224" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahm)"/>
+    <rect x="700" y="320" width="300" height="88" rx="10" fill="#e0c9a5" fill-opacity="0.05" stroke="#e0c9a5" stroke-opacity="0.35" stroke-dasharray="6 4"/>
+    <text x="850.0" y="358" text-anchor="middle" fill="#e0c9a5" font-size="14">voice-note review</text>
+    <text x="850.0" y="379" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">family marks heard, corrects transcript</text>
+    <path d="M1000,364 L1060,364 L1060,224" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahm)"/>
+    <path d="M850,320 L850,296 Q850,280 834,280 L768,280 L768,224" fill="none" stroke="#e0c9a5" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ahm)"/>
+    <text x="1012" y="390" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="12">page → review</text>
+    <text x="776" y="300" text-anchor="start" fill="#e0c9a5" fill-opacity="0.62" font-size="12">corrections → KB</text>
+    <text x="600" y="470" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">Store first, interpret later: the Worker only stores; the batch reads, extracts and commits; pages are rebuilt from the KB.</text>
+    <text x="600" y="498" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="14">Readings and voice notes flow without typing; paper documents are still scanned and entered by hand.</text>
+    <text x="600" y="536" text-anchor="middle" fill="#e0c9a5" fill-opacity="0.62" font-size="12">Facts as written; not advice; doctors decide.</text>
+  </g>
+</svg>
