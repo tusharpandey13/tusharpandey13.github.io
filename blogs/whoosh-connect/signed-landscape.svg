@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 264" role="img" aria-labelledby="t d" preserveAspectRatio="xMidYMid meet">
+<title id="t">Only the long-nonce challenges were signed</title>
+<desc id="d">Bar chart of the distinct challenges posted to D-Lock, by nonce length. Eight or more 40-byte nonces returned 204 with no body; all three of the 52 and 58-byte nonces returned 200 with a 23-byte answer.</desc>
+<!-- whoosh-connect post figure, drawn by build/gen_figures.py.
+     Palette: the owner's dark terminal scheme (bg #0e1212, ink #b5cbcb,
+     headings #cfe7e8, muted #808f8f, amber #c7b982, teal #9acaca,
+     green #7ec98b, red #e27270). All text >= 5:1 on the background. -->
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#c7b982"/>
+  </marker>
+  <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#7ec98b"/>
+  </marker>
+  <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#e27270"/>
+  </marker>
+</defs>
+<rect width="1000" height="264" fill="#0e1212"/>
+
+<text x="24" y="63" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="20" fill="#b5cbcb" text-anchor="start" font-weight="600">40 B nonce</text>
+<rect x="210" y="40" width="440" height="34" rx="6" fill="#101616" stroke="#303737"/>
+<rect x="210" y="40" width="440" height="34" rx="6" fill="#454e4e"/>
+<text x="670" y="63" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17" fill="#b5cbcb" text-anchor="start" font-weight="400">8+ posted · 0 signed</text>
+<text x="24" y="125" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="20" fill="#b5cbcb" text-anchor="start" font-weight="600">52 B nonce</text>
+<rect x="210" y="102" width="440" height="34" rx="6" fill="#101616" stroke="#303737"/>
+<rect x="210" y="102" width="55" height="34" rx="6" fill="#454e4e"/>
+<rect x="210" y="102" width="55" height="34" rx="6" fill="#7ec98b"/>
+<text x="670" y="125" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17" fill="#b5cbcb" text-anchor="start" font-weight="400">1 posted · 1 signed</text>
+<text x="24" y="187" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="20" fill="#b5cbcb" text-anchor="start" font-weight="600">58 B nonce</text>
+<rect x="210" y="164" width="440" height="34" rx="6" fill="#101616" stroke="#303737"/>
+<rect x="210" y="164" width="110" height="34" rx="6" fill="#454e4e"/>
+<rect x="210" y="164" width="110" height="34" rx="6" fill="#7ec98b"/>
+<text x="670" y="187" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17" fill="#b5cbcb" text-anchor="start" font-weight="400">2 posted · 2 signed</text>
+<rect x="24" y="232" width="16" height="12" rx="3" fill="#454e4e"/>
+<text x="48" y="243" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" fill="#808f8f" text-anchor="start" font-weight="400">posted</text>
+<rect x="120" y="232" width="16" height="12" rx="3" fill="#7ec98b"/>
+<text x="144" y="243" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" fill="#808f8f" text-anchor="start" font-weight="400">signed: 200 and a 23-byte answer</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 540" role="img" aria-labelledby="t d" preserveAspectRatio="xMidYMid meet">
+<title id="t">One press buys about fifty seconds</title>
+<desc id="d">A vertical timeline. At zero a press wakes the unit and every press is reported until about fifty seconds, when it sends stopped; after that it is silent until the next press.</desc>
+<!-- whoosh-connect post figure, drawn by build/gen_figures.py.
+     Palette: the owner's dark terminal scheme (bg #0e1212, ink #b5cbcb,
+     headings #cfe7e8, muted #808f8f, amber #c7b982, teal #9acaca,
+     green #7ec98b, red #e27270). All text >= 5:1 on the background. -->
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#c7b982"/>
+  </marker>
+  <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#7ec98b"/>
+  </marker>
+  <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#e27270"/>
+  </marker>
+</defs>
+<rect width="620" height="540" fill="#0e1212"/>
+
+<rect x="96" y="46" width="80" height="354" rx="8" fill="#101616" stroke="#303737"/>
+<rect x="96" y="46" width="80" height="295" rx="8" fill="#161d1d" stroke="#c7b982" stroke-width="1.6"/>
+<circle cx="96" cy="46" r="6" fill="#7ec98b"/>
+<text x="198" y="53" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="27" fill="#7ec98b" text-anchor="start" font-weight="600">press</text>
+<text x="198" y="176" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="27" fill="#cfe7e8" text-anchor="start" font-weight="600">every press</text>
+<text x="198" y="202" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="27" fill="#cfe7e8" text-anchor="start" font-weight="600">is reported</text>
+<line x1="74" y1="341" x2="96" y2="341" stroke="#e27270" stroke-width="2"/>
+<circle cx="96" cy="341" r="6" fill="#e27270"/>
+<text x="198" y="333.0" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="21" fill="#e27270" text-anchor="start" font-weight="400">ff 05 00 ea 05</text>
+<text x="198" y="357.0" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="23" fill="#e27270" text-anchor="start" font-weight="400">stopped, ~50 s</text>
+<text x="198" y="396" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="23" fill="#808f8f" text-anchor="start" font-weight="400">silent until the</text>
+<text x="198" y="420" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="23" fill="#808f8f" text-anchor="start" font-weight="400">next press</text>
+<line x1="86" y1="46" x2="96" y2="46" stroke="#454e4e" stroke-width="1.4"/>
+<text x="78" y="51.0" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#808f8f" text-anchor="end" font-weight="400">0s</text>
+<line x1="86" y1="164" x2="96" y2="164" stroke="#454e4e" stroke-width="1.4"/>
+<text x="78" y="169.0" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#808f8f" text-anchor="end" font-weight="400">20s</text>
+<line x1="86" y1="282" x2="96" y2="282" stroke="#454e4e" stroke-width="1.4"/>
+<text x="78" y="287.0" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#808f8f" text-anchor="end" font-weight="400">40s</text>
+<line x1="86" y1="400" x2="96" y2="400" stroke="#454e4e" stroke-width="1.4"/>
+<text x="78" y="405.0" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" fill="#808f8f" text-anchor="end" font-weight="400">60s</text>
+<rect x="24" y="448" width="572" height="72" rx="8" fill="#101616" stroke="#c7b982" stroke-width="1.2"/>
+<text x="310.0" y="475.4" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="34" fill="#c7b982" text-anchor="middle" font-weight="600">The window opens on a press,</text>
+<text x="310.0" y="509.4" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="34" fill="#c7b982" text-anchor="middle" font-weight="600">not on an unlock.</text>
+</svg>
