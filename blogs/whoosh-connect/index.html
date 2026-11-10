@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>whoosh-connect: Zwift Click shifters, without Zwift — Tushar Pandey</title>
+<meta name="description" content="Bridging Zwift Click v2 shifters to MyWhoosh over OpenBikeControl on macOS: the frame protocol, the fifty-second press window, and the unlock that turned out to be optional." />
+<meta name="author" content="Tushar Pandey" />
+<link rel="canonical" href="https://tusharpandey.com/blogs/whoosh-connect/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="whoosh-connect: Zwift Click shifters, without Zwift" />
+<meta property="og:description" content="A local bridge from two BLE pucks to MyWhoosh&#39;s OpenBikeControl — no game running, no account, no daily unlock." />
+<meta property="og:image" content="https://tusharpandey.com/blogs/whoosh-connect/og-whoosh-connect.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="whoosh-connect: Zwift Click shifters, without Zwift. Two BLE pucks, one offline process, and MyWhoosh over OpenBikeControl." />
+<meta property="og:url" content="https://tusharpandey.com/blogs/whoosh-connect/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="whoosh-connect: Zwift Click shifters, without Zwift" />
+<meta name="twitter:image" content="https://tusharpandey.com/blogs/whoosh-connect/og-whoosh-connect.png" />
+<style>
+/* ------------------------------------------------------------------ tokens
+   Palette: the owner's dark terminal scheme, colours only.
+   bg #0e1212, ink #b5cbcb (11.1:1), headings #cfe7e8 (14.6:1),
+   muted #808f8f (5.6:1), teal #9acaca (10.5:1), blue #8396c0 (6.4:1),
+   amber #c7b982 (9.6:1), green #7ec98b (9.5:1), red #e27270 (6.2:1),
+   pink #e6a8df (9.9:1). Every text colour clears 5:1 on the page. */
+:root {
+  --bg: #0e1212;
+  --bg-2: #111717;
+  --card: #141a1a;
+  --code: #101616;
+  --line: #303737;
+  --line-2: #454e4e;
+  --ink: #b5cbcb;
+  --title: #cfe7e8;
+  --muted: #808f8f;
+  --teal: #9acaca;
+  --blue: #8396c0;
+  --amber: #c7b982;
+  --green: #7ec98b;
+  --red: #e27270;
+  --pink: #e6a8df;
+
+  --col: 44rem;
+  --pad: 1.5rem;
+  --r: 12px;
+  --r-sm: 8px;
+  --sans: ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+a:hover, a:focus-visible { color: var(--title); }
+
+/* ------------------------------------------------------------------ header */
+.site-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem 2rem; flex-wrap: wrap;
+  max-width: var(--col); margin: 0 auto;
+  padding: 1.6rem var(--pad) 0;
+}
+.brand { color: var(--title); font-weight: 600; font-size: 1.05rem; text-decoration: none; }
+.site-header nav { display: flex; gap: 1.15rem; }
+.site-header nav a { color: var(--muted); font-size: 0.92rem; text-decoration: none; }
+.site-header nav a:hover { color: var(--title); }
+
+/* ------------------------------------------------------------------ article */
+main { max-width: var(--col); margin: 0 auto; padding: 0 var(--pad) 5rem; }
+article { padding-top: 2.2rem; }
+
+.meta {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.post-title {
+  margin: 0 0 0.5rem;
+  color: var(--title);
+  font-size: clamp(1.95rem, 4.4vw, 2.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+}
+.post-subtitle {
+  margin: 0 0 1.9rem;
+  color: var(--teal);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.42;
+  font-weight: 400;
+}
+.lede { margin: 0 0 1.8rem; font-size: 1.1rem; line-height: 1.6; }
+.lede .ln { display: block; }
+
+/* ------------------------------------------------------------------- banner */
+.repo-banner {
+  display: flex; align-items: center; gap: 0.9rem;
+  margin: 0 0 2rem; padding: 0.9rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  text-decoration: none;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.repo-banner:hover, .repo-banner:focus-visible { border-color: var(--teal); background: #172020; }
+.repo-banner .mark { flex: 0 0 auto; color: var(--teal); }
+.repo-banner .copy { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.repo-banner .copy b {
+  color: var(--teal); font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.09em; text-transform: uppercase; font-weight: 600;
+}
+.repo-banner .copy span { color: var(--muted); font-size: 0.88rem; line-height: 1.4; }
+.repo-banner .arrow { margin-left: auto; color: var(--teal); font-size: 1.1rem; }
+
+/* ----------------------------------------------------------------- contents */
+nav.toc {
+  margin: 0 0 2.6rem; padding: 1rem 1.1rem;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+nav.toc .meta { margin: 0 0 0.5rem; }
+nav.toc ol {
+  margin: 0; padding-left: 1.4rem;
+  columns: 2; column-gap: 2rem;
+  font-size: 0.94rem; line-height: 1.5;
+}
+nav.toc li { margin: 0.18rem 0; break-inside: avoid; }
+nav.toc a { color: var(--ink); text-decoration: none; }
+nav.toc a:hover { color: var(--teal); text-decoration: underline; }
+
+/* ---------------------------------------------------------------- sections */
+section { margin-top: 3.1rem; scroll-margin-top: 1.5rem; }
+h2 {
+  margin: 0 0 0.85rem;
+  color: var(--teal);
+  font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+  line-height: 1.24;
+  font-weight: 620;
+  letter-spacing: -0.01em;
+}
+h3 { margin: 1.9rem 0 0.5rem; color: var(--title); font-size: 1.06rem; font-weight: 620; }
+p { margin: 0 0 1.05rem; }
+ul, ol { margin: 0 0 1.1rem; padding-left: 1.25rem; }
+li { margin: 0.42rem 0; }
+li::marker { color: var(--line-2); }
+strong { color: var(--title); font-weight: 620; }
+em { color: var(--ink); font-style: italic; }
+small { font-size: 0.85em; }
+
+code {
+  font-family: var(--mono); font-size: 0.86em;
+  background: var(--code); border: 1px solid var(--line);
+  border-radius: 4px; padding: 0.06em 0.32em;
+  color: var(--ink); white-space: nowrap;
+}
+pre {
+  margin: 1.2rem 0 1.6rem; padding: 0.95rem 1.05rem;
+  background: var(--code); border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  overflow-x: auto;
+  font-family: var(--mono); font-size: 0.8rem; line-height: 1.7;
+}
+pre code { background: none; border: 0; padding: 0; white-space: pre; font-size: 1em; }
+pre .c { color: var(--muted); }
+pre .g { color: var(--green); }
+pre .a { color: var(--amber); }
+
+/* aligned frame listing: direction | bytes | note, as a grid so nothing drifts */
+pre.frames { display: grid; grid-template-columns: 1.4em auto 1fr; column-gap: 1.3em; row-gap: 0.15em; }
+pre.frames .row { display: contents; }
+pre.frames .d { color: var(--muted); }
+pre.frames .h { color: var(--amber); }
+pre.frames .g { color: var(--green); }
+pre.frames .n { color: var(--muted); }
+pre.frames .gap { grid-column: 1 / -1; height: 0.6em; }
+.note { margin: -0.9rem 0 1.6rem; color: var(--muted); font-size: 0.9rem; }
+
+/* ------------------------------------------------------------------- table */
+.table-wrap { overflow-x: auto; margin: 1.2rem 0 1.7rem; }
+table { width: 100%; border-collapse: collapse; font-size: 0.93rem; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 0.52rem 0.6rem; border-bottom: 1px solid var(--line); }
+th {
+  color: var(--muted); font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.07em; text-transform: uppercase; font-weight: 600;
+}
+td code { white-space: nowrap; }
+
+/* ------------------------------------------------------------------ figures */
+figure { margin: 1.9rem 0 1.9rem; }
+figure img, figure video { display: block; width: 100%; height: auto; border-radius: 10px; }
+figure.video video { border: 1px solid var(--line); background: #000; }
+figcaption { margin-top: 0.6rem; color: var(--muted); font-size: 0.83rem; line-height: 1.5; }
+figcaption b { color: var(--ink); font-weight: 600; }
+.source {
+  display: block; margin: 0.45rem 0 0; color: var(--muted);
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.01em; line-height: 1.5;
+}
+figure .only-narrow { display: none; }
+@media (max-width: 700px) {
+  figure .only-wide { display: none; }
+  figure .only-narrow { display: block; }
+}
+
+/* ---------------------------------------------------------------------- trio */
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; margin: 1.3rem 0 1.2rem; }
+.trio > div {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r); padding: 0.9rem 1rem;
+}
+.trio h3 {
+  margin: 0 0 0.55rem; color: var(--muted);
+  font-family: var(--mono); font-size: 0.71rem;
+  letter-spacing: 0.09em; text-transform: uppercase; font-weight: 600;
+}
+.trio ul { margin: 0; padding-left: 1.05rem; font-size: 0.92rem; }
+.trio li { margin: 0.3rem 0; }
+
+/* ------------------------------------------------------------------- details */
+details.research { margin: 0.8rem 0 1.4rem; border-top: 1px solid var(--line); padding-top: 0.8rem; }
+details.research summary {
+  cursor: pointer; color: var(--blue); font-weight: 600;
+  padding: 0.55rem 0; min-height: 44px; display: flex; align-items: center;
+}
+details.research summary:hover { color: var(--title); }
+details.research ul { font-size: 0.92rem; line-height: 1.5; padding-left: 1.1rem; }
+details.research li { margin: 0.4rem 0; }
+
+.back-top { margin-top: 3rem; }
+.back-top a { color: var(--muted); text-decoration: none; }
+.back-top a:hover { color: var(--teal); }
+
+/* ------------------------------------------------------- wide blocks
+   Figures and the trio are allowed to be wider than the reading column,
+   so diagram text stays legible at 1440 and the three cards get room. */
+@media (min-width: 760px) {
+  .wide {
+    width: min(60rem, calc(100vw - 3rem));
+    margin-left: calc((100% - min(60rem, calc(100vw - 3rem))) / 2);
+    margin-right: 0;
+  }
+  figure.wide figcaption { max-width: 38rem; }
+}
+
+/* ------------------------------------------------------------------- phone */
+@media (max-width: 700px) {
+  :root { --pad: 1.15rem; }
+  body { font-size: 16.5px; }
+  article { padding-top: 1.6rem; }
+  nav.toc ol { columns: 1; }
+  .trio { grid-template-columns: 1fr; }
+  pre { font-size: 0.72rem; padding: 0.8rem; }
+  /* the frame listing stacks: direction + bytes, then the note underneath */
+  pre.frames { display: block; }
+  pre.frames .row { display: block; margin-bottom: 0.75em; }
+  pre.frames .d { margin-right: 0.7em; }
+  pre.frames .n { display: block; margin-left: 2.4em; }
+  .repo-banner .arrow { display: none; }
+  h2 { margin-top: 2.2rem; }
+  section { margin-top: 2.4rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top" data-dc-id="site-header">
+  <a class="brand" href="https://tusharpandey.com">Tushar&rsquo;s Casebook</a>
+  <nav>
+    <a href="https://tusharpandey.com">Blogs</a>
+    <a href="https://github.com/tusharpandey13">GitHub</a>
+    <a href="mailto:tusharpandey13@gmail.com">Contact</a>
+  </nav>
+</header>
+
+<main>
+<article>
+
+  <p class="meta" data-dc-id="meta">Build note · 11 Nov 2026 · ~9 min</p>
+
+  <h1 class="post-title" data-dc-id="title">whoosh-connect: Zwift Click shifters, without Zwift</h1>
+
+  <p class="post-subtitle" data-dc-id="subtitle">A local bridge from two BLE pucks to MyWhoosh&rsquo;s OpenBikeControl &mdash; no game running, no account, no daily unlock.</p>
+
+  <p class="lede" data-dc-id="lede">
+    <span class="ln">Zwift&rsquo;s Click shifters only talk to Zwift.</span>
+    <span class="ln">MyWhoosh has no idea what they are.</span>
+    <span class="ln">So I wrote the part in between.</span>
+    <span class="ln">It rides now: real shifts, no Zwift, no account.</span>
+  </p>
+
+  <a class="repo-banner" href="https://github.com/tusharpandey13/whoosh-connect" data-dc-id="repo-banner">
+    <svg class="mark" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+    </svg>
+    <span class="copy">
+      <b>Code is public</b>
+      <span>tusharpandey13/whoosh-connect &middot; Python, MIT. One process, no cloud.</span>
+    </span>
+    <span class="arrow" aria-hidden="true">&rarr;</span>
+  </a>
+
+  <nav class="toc" data-dc-id="contents">
+    <p class="meta">Contents</p>
+    <ol>
+      <li><a href="#done">What it has done</a></li>
+      <li><a href="#problem">The problem, in one ride</a></li>
+      <li><a href="#what">What it is</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#frames">What the pucks actually say</a></li>
+      <li><a href="#unlock">The unlock that wasn&rsquo;t the problem</a></li>
+      <li><a href="#rides">It rides</a></li>
+      <li><a href="#evolution">Evolution</a></li>
+      <li><a href="#where">Where it is going</a></li>
+      <li><a href="#research">Research this builds on</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============================================================ done -->
+  <section id="done" data-dc-id="s-done">
+    <h2 data-dc-id="h2-done">What it has done</h2>
+    <ul>
+      <li><strong>A full ride, on a real bike.</strong> 17 gear-up and 18 gear-down presses landed in MyWhoosh as shifts, with the gear counter moving.</li>
+      <li><strong>132 action frames in eight minutes</strong> of pressing, 64 heartbeat replies from the game, nothing dropped.</li>
+      <li><strong>One puck is enough.</strong> The left puck relays both units&rsquo; buttons, so the right one can stay asleep.</li>
+      <li><strong>80 tests, all offline.</strong> No Bluetooth, no network, no game, no Zwift.</li>
+      <li><strong>Two protocol bugs found by the ride</strong>, not by reading. Both fixed, both written down.</li>
+    </ul>
+    <p>The bridge is one Python process. It scans for the pucks, keeps one link open, advertises
+      an OpenBikeControl device, and answers the game. No cloud, no key, no login.</p>
+  </section>
+
+  <!-- ========================================================= problem -->
+  <section id="problem" data-dc-id="s-problem">
+    <h2 data-dc-id="h2-problem">The problem, in one ride</h2>
+    <p>Three things stand between a Click and a shift.</p>
+    <ol>
+      <li><strong>The pucks don&rsquo;t speak HID.</strong> No pairing, no standard controller
+        profile. One notification per button change: a 16-bit mask, with the bits
+        <em>inverted</em> &mdash; a zero means pressed.</li>
+      <li><strong>The game doesn&rsquo;t want a keyboard.</strong> MyWhoosh accepts a device over
+        <a href="https://github.com/OpenBikeControl/openbikecontrol-protocol">OpenBikeControl</a>:
+        mDNS discovery, then TCP, then one small binary message per action.</li>
+      <li><strong>The pucks go quiet on their own.</strong> About fifty seconds after a press they
+        announce <code>stopped</code> and stop reporting. Nothing you install changes that. Only
+        another press does.</li>
+    </ol>
+    <p>Then there was the fourth problem, which cost the most time: the documentation.
+      The projects that had been here before &mdash; <a href="https://github.com/jonasbark/swiftcontrol">BikeControl</a>
+      most usefully &mdash; publish their protocol code and stub their unlock code
+      (<em>&ldquo;This is a stub &mdash; contact me&rdquo;</em>). So the button protocol was readable in an
+      afternoon. What keeps the pucks reporting was not.</p>
+  </section>
+
+  <!-- ============================================================ what -->
+  <section id="what" data-dc-id="s-what">
+    <h2 data-dc-id="h2-what">What it is</h2>
+
+    <div class="trio wide" data-dc-id="trio">
+      <div>
+        <h3>Input</h3>
+        <ul>
+          <li>One or two Click v2 pucks over BLE</li>
+          <li>Button notifications on characteristic <code>0002</code></li>
+          <li>Battery updates, every five seconds or so</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Output</h3>
+        <ul>
+          <li>One OpenBikeControl device</li>
+          <li>mDNS <code>_openbikecontrol._tcp</code>, TCP 36867</li>
+          <li>Frames like <code>01 01 01</code>: gear up</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Side effects</h3>
+        <ul>
+          <li>Two writes to the puck: <code>RideOn</code>, then <code>ff 04 00</code></li>
+          <li>A line of log per frame you can read later</li>
+          <li>Nothing else: no socket, no account</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>It never asks for an account, never pairs through Zwift, and never sends a keystroke
+      unless you ask it to.</p>
+  </section>
+
+  <!-- ============================================================= how -->
+  <section id="how" data-dc-id="s-how">
+    <h2 data-dc-id="h2-how">How it works</h2>
+    <ol>
+      <li><strong>Listen.</strong> Scan for manufacturer id <code>0x094A</code>, connect, write
+        <code>RideOn</code>, subscribe to <code>0002</code>.</li>
+      <li><strong>Diff.</strong> Each frame carries the whole button mask. Diff it against the
+        previous frame, so a held button is one press, not sixty.</li>
+      <li><strong>Serve.</strong> Advertise the OpenBikeControl service, accept the game, answer its
+        heartbeat, stream one message per action.</li>
+    </ol>
+
+    <figure class="wide" data-dc-id="fig-path">
+      <img class="only-wide" src="path-landscape.svg" alt="Three zones: two pucks on the bike, whoosh-connect on the Mac, MyWhoosh in the game. Arrows read Bluetooth LE then mDNS and TCP." />
+      <img class="only-narrow" src="path-portrait.svg" alt="Three stacked zones: two pucks on the bike, whoosh-connect on the Mac, MyWhoosh in the game, joined by Bluetooth LE and then mDNS and TCP." />
+      <figcaption><b>The whole path.</b> The bridge is the only thing that knows both protocols.</figcaption>
+    </figure>
+
+    <p>In bytes, one press of the right puck&rsquo;s <code>+</code> looks like this:</p>
+
+<pre class="frames" data-dc-id="code-frames"><span class="row"><span class="d">&lt;-</span><span class="h g">23 08 ff ff ff ff 0f</span><span class="n">nothing held: every bit high</span></span><span class="row"><span class="d">&lt;-</span><span class="h g">23 08 ff df ff ff 0f</span><span class="n">bit 12 low: SHIFT_R, the &ldquo;+&rdquo; key</span></span><span class="row"><span class="d">-&gt;</span><span class="h a">01 01 01</span><span class="n">gear up, pressed</span></span><span class="row"><span class="d">-&gt;</span><span class="h a">01 01 00</span><span class="n">released</span></span></pre>
+    <p class="note" data-dc-id="note-mask">The mask is a LEB128 varint of one active-low 16-bit field: a zero bit means pressed, so <code>ff df</code> is a single key.</p>
+  </section>
+
+  <!-- =========================================================== frames -->
+  <section id="frames" data-dc-id="s-frames">
+    <h2 data-dc-id="h2-frames">What the pucks actually say</h2>
+    <p>Everything a Click v2 sends arrives on one characteristic. Six kinds of message, and a
+      status line that ends the session.</p>
+
+    <div class="table-wrap" data-dc-id="table-frames">
+      <table>
+        <thead><tr><th>Bytes</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><code>23 08 &hellip;</code></td><td>Button change, active low, full mask</td></tr>
+          <tr><td><code>19 10 &hellip;</code></td><td>Battery, percent</td></tr>
+          <tr><td><code>2a 08 &hellip;</code></td><td>The puck&rsquo;s own log line</td></tr>
+          <tr><td><code>ff 03 00 &hellip;</code></td><td>Unlock challenge, 82&ndash;100 bytes</td></tr>
+          <tr><td><code>ff 05 00 ea 05</code></td><td>Stopped: no more buttons until a press</td></tr>
+          <tr><td><code>RideOn</code></td><td>Echo of our handshake. No key exchange</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="wide" data-dc-id="fig-window">
+      <img class="only-wide" src="window-landscape.svg" alt="Timeline in seconds: a press at zero, every press reported until about fifty seconds, then a stopped frame and silence until the next press." />
+      <img class="only-narrow" src="window-portrait.svg" alt="Vertical timeline: a press at zero, every press reported until about fifty seconds, then a stopped frame and silence until the next press." />
+      <figcaption><b>One press buys about fifty seconds.</b> Measured across a ride, not
+        assumed: the window closes with <code>ff 05 00 ea 05</code> right after the fiftieth
+        second, and no command reopens it.</figcaption>
+    </figure>
+
+    <p>That rule is the whole ergonomics of the project. You press once at the start of a
+      session and again when the gears stop answering &mdash; about a minute apart. Every other
+      design instinct is wrong here: reconnect, reset, re-pair, all of it is slower than a
+      single press.</p>
+  </section>
+
+  <!-- =========================================================== unlock -->
+  <section id="unlock" data-dc-id="s-unlock">
+    <h2 data-dc-id="h2-unlock">The unlock that wasn&rsquo;t the problem</h2>
+
+    <p>Sooner or later on every connection, the puck sends <code>ff 03</code> with a challenge.
+      Answer within 2.4 seconds or it stops reporting. Everything I had read said this was the
+      gate: keep the pucks unlocked or you get nothing.</p>
+
+    <figure class="wide" data-dc-id="fig-unlock">
+      <img class="only-wide" src="unlock-landscape.svg" alt="The puck posts a challenge to Zwift's D-Lock service, which returns a 23-byte answer; writing it back left the puck silent in every framing." />
+      <img class="only-narrow" src="unlock-portrait.svg" alt="Stacked: the puck posts a challenge to Zwift's D-Lock service, which returns a 23-byte answer; writing it back left the puck silent in every framing." />
+      <figcaption><b>The unlock path.</b> The answer is real, signed, and useless to us: the puck
+        stayed silent whatever we did with it.</figcaption>
+    </figure>
+
+    <p>Zwift&rsquo;s own binary named the signer: <code>ZPAuth::ProcessAuthChallenge</code> hands the
+      payload to <code>DLockRestInvoker::challengeDevice</code>, which posts it to
+      <code>/api/d-lock-service/device/authenticate</code> with a bearer token and gets protobuf
+      back. We could call that endpoint ourselves, and did. It is deterministic: the same
+      payload returned the same 23 bytes two hours later.</p>
+
+    <p>It just doesn&rsquo;t sign everything. Three sizes of challenge arrived, and only the two
+      long ones came back with a body:</p>
+
+    <figure class="wide" data-dc-id="fig-chart">
+      <img class="only-wide" src="signed-landscape.svg" alt="Bar chart: eight or more 40-byte nonces were posted and none were signed; one 52-byte and two 58-byte nonces were all signed." />
+      <img class="only-narrow" src="signed-portrait.svg" alt="Bar chart: eight or more 40-byte nonces were posted and none were signed; the 52-byte and 58-byte nonces were all signed." />
+      <figcaption><b>Only the long-nonce challenges were signed.</b> Eight 40-byte nonces earned
+        <code>204</code> and an empty body; every 52- and 58-byte one earned <code>200</code> and a
+        23-byte answer.
+        <span class="source">Source: 11 distinct challenges posted to <code>/device/authenticate</code>,
+          10&ndash;11 Nov 2026. The 40&nbsp;B count is a floor: &ldquo;eight or more&rdquo;. Small
+          numbers; treat the pattern as a lead, not a law.</span></figcaption>
+    </figure>
+
+    <p>We wrote that answer back in every framing we could think of, on every characteristic
+      that accepts a write. Silence.</p>
+
+    <p>At that point the honest move is not more framings. It is to test the premise. So we
+      left every challenge unanswered, pressed a button, and rode. It worked. The <code>ff 03</code>
+      pause is 2.4 seconds of silence, not a lock; what actually gates the buttons is the
+      fifty-second window from the press.</p>
+
+    <p>The unlock, when it happens, only makes the windows longer. <code>whoosh-connect unlock</code>
+      still does it &mdash; one pairing through Zwift, then quit Zwift &mdash; because a longer window
+      between presses is nicer. It is optional, and it always was.</p>
+  </section>
+
+  <!-- ============================================================ rides -->
+  <section id="rides" data-dc-id="s-rides">
+    <h2 data-dc-id="h2-rides">It rides</h2>
+    <p>Fourteen seconds, filmed on the bike. The gear counter walks 13 &rarr; 11 &rarr; 10 while I
+      press the Click. Zwift is quit. Nothing is unlocked. The bridge is a terminal window on
+      the laptop in the middle of the frame.</p>
+
+    <figure class="video wide" data-dc-id="fig-clip">
+      <video controls playsinline preload="none" width="936" height="960"
+             poster="ride-mywhoosh-poster.jpg">
+        <source src="ride-mywhoosh.mp4" type="video/mp4" />
+        Your browser cannot play this clip. <a href="ride-mywhoosh.mp4">Download it instead</a>.
+      </video>
+      <figcaption><b>The bridge working, no Zwift in the loop.</b> The same session as text, with
+        all 64 heartbeat replies, is in
+        <a href="https://github.com/tusharpandey13/whoosh-connect/tree/main/raw/ble/2026-11-11">raw/ble/2026-11-11</a>.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================================================== evolution -->
+  <section id="evolution" data-dc-id="s-evolution">
+    <h2 data-dc-id="h2-evolution">Evolution</h2>
+    <p>Every wrong turn in this project was the same wrong turn: believing a result that had no
+      press behind it. A puck that is never pressed sends nothing, so silence proves nothing.</p>
+
+    <div class="table-wrap" data-dc-id="table-evolution">
+      <table>
+        <thead><tr><th>We believed</th><th>What was true</th></tr></thead>
+        <tbody>
+          <tr><td>The unlock gates the buttons</td><td>A press does; the unlock only lengthens the window</td></tr>
+          <tr><td><code>ff 04 00</code> mutes a locked puck</td><td>That capture had no press in it</td></tr>
+          <tr><td>Our write framing was wrong</td><td>Untested: the only signed push ran unpressed</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Two real bugs came out of the ride, and neither was the puck&rsquo;s fault:</p>
+    <ol>
+      <li><strong>MyWhoosh&rsquo;s heartbeat is a bare <code>0x00</code>.</strong> The decoder treated it
+        as unknown and returned, dropping the whole buffer &mdash; the ping and anything queued
+        behind it. Answering a ping with device status fixed it.</li>
+      <li><strong>Device status went out once</strong>, before the app-info handshake. Send it after,
+        and the game believed the device.</li>
+    </ol>
+    <p>Both were invisible in the protocol notes and obvious in the log, once I stopped assuming
+      the puck was at fault.</p>
+  </section>
+
+  <!-- ============================================================ where -->
+  <section id="where" data-dc-id="s-where">
+    <h2 data-dc-id="h2-where">Where it is going</h2>
+    <p><strong>Status:</strong> it rides, every session. No terminal is needed any more:
+      <code>make ride-bg</code> runs it detached, and a launchd agent starts it at login and
+      restarts it if it dies.</p>
+    <p>Two questions are open, and both are tracked in
+      <a href="https://github.com/tusharpandey13/whoosh-connect/blob/main/TODO.md">TODO.md</a>
+      rather than in my head:</p>
+    <ul>
+      <li><strong>Why the signable challenge only appears sometimes.</strong> It would mean
+        windows that never close. Not needed, still interesting.</li>
+      <li><strong>Why the right puck never reports a button.</strong> Harmless today &mdash; the left
+        one relays both &mdash; but it is a single point of failure.</li>
+    </ul>
+    <p>One thing I am not building: a fake puck that Zwift could see. macOS will not deliver a
+      locally generated advertisement to a local scan, so a peripheral-side proxy needs a second
+      radio. That is a hardware project, and this one is finished enough to ride.</p>
+  </section>
+
+  <!-- ========================================================= research -->
+  <section id="research" data-dc-id="s-research">
+    <h2 data-dc-id="h2-research">Research this builds on</h2>
+    <p>None of the protocol knowledge here is mine. It came from people who published their
+      reverse engineering, which is the only reason an afternoon was enough.</p>
+
+    <details class="research" open data-dc-id="research-list">
+      <summary>The full list, and where the evidence lives</summary>
+      <ul>
+        <li><a href="https://github.com/jonasbark/swiftcontrol">BikeControl</a> &mdash; the Click v2
+          GATT layout, the opcodes, the active-low mask, and the shape of the unlock. Its unlock
+          code is stubbed in the public repo; its protocol code is not.</li>
+        <li><a href="https://github.com/jasasonc/clickbridge">clickbridge</a> &mdash; the reset loop,
+          and the first hint that a press is what matters.</li>
+        <li><a href="https://github.com/amith2368/zwoosh">zwoosh</a> &mdash; MyWhoosh and
+          OpenBikeControl from the other direction.</li>
+        <li><a href="https://github.com/OpenBikeControl/openbikecontrol-protocol">OpenBikeControl</a>
+          &mdash; the message format, button ids, mDNS record.</li>
+        <li><a href="https://github.com/tusharpandey13/whoosh-connect/blob/main/docs/hardware.md">docs/hardware.md</a>
+          &mdash; every frame measured on this unit.</li>
+        <li><a href="https://github.com/tusharpandey13/whoosh-connect/blob/main/notes/unlock-analysis.md">notes/unlock-analysis.md</a>
+          &mdash; the unlock investigation, including the corrections that made it useful.</li>
+      </ul>
+    </details>
+
+    <p>Not affiliated with Zwift or MyWhoosh. <a href="https://github.com/tusharpandey13/whoosh-connect/blob/main/LICENSE">MIT</a>.</p>
+  </section>
+
+  <p class="meta back-top" data-dc-id="back-top">
+    <a href="#top">&uarr; Back to top</a> &middot; <a href="https://tusharpandey.com">All posts</a>
+  </p>
+
+</article>
+</main>
+</body>
+</html>

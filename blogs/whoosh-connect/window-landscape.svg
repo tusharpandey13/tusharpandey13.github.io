@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 268" role="img" aria-labelledby="t d" preserveAspectRatio="xMidYMid meet">
+<title id="t">One press buys about fifty seconds</title>
+<desc id="d">A timeline in seconds. At zero a press wakes the unit and every press is reported until about fifty seconds, when it sends stopped; after that it is silent until the next press.</desc>
+<!-- whoosh-connect post figure, drawn by build/gen_figures.py.
+     Palette: the owner's dark terminal scheme (bg #0e1212, ink #b5cbcb,
+     headings #cfe7e8, muted #808f8f, amber #c7b982, teal #9acaca,
+     green #7ec98b, red #e27270). All text >= 5:1 on the background. -->
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#c7b982"/>
+  </marker>
+  <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#7ec98b"/>
+  </marker>
+  <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#e27270"/>
+  </marker>
+</defs>
+<rect width="1000" height="268" fill="#0e1212"/>
+
+<rect x="90" y="82" width="840" height="62" rx="8" fill="#101616" stroke="#303737"/>
+<rect x="90" y="82" width="700" height="62" rx="8" fill="#161d1d" stroke="#c7b982" stroke-width="1.6"/>
+<text x="440.0" y="121" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="22" fill="#cfe7e8" text-anchor="middle" font-weight="600">every press is reported</text>
+<text x="860.0" y="121" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="20" fill="#808f8f" text-anchor="middle" font-weight="400">silent</text>
+<line x1="90" y1="56" x2="90" y2="82" stroke="#7ec98b" stroke-width="2"/>
+<circle cx="90" cy="82" r="6" fill="#7ec98b"/>
+<text x="90" y="44" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="21" fill="#7ec98b" text-anchor="middle" font-weight="600">press</text>
+<line x1="790" y1="56" x2="790" y2="82" stroke="#e27270" stroke-width="2"/>
+<circle cx="790" cy="82" r="6" fill="#e27270"/>
+<text x="780.0" y="44" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17" fill="#e27270" text-anchor="end" font-weight="400">ff 05 00 ea 05 — stopped</text>
+<line x1="90" y1="144" x2="90" y2="151" stroke="#454e4e" stroke-width="1.4"/>
+<line x1="230" y1="144" x2="230" y2="151" stroke="#454e4e" stroke-width="1.4"/>
+<line x1="370" y1="144" x2="370" y2="151" stroke="#454e4e" stroke-width="1.4"/>
+<line x1="510" y1="144" x2="510" y2="151" stroke="#454e4e" stroke-width="1.4"/>
+<line x1="650" y1="144" x2="650" y2="151" stroke="#454e4e" stroke-width="1.4"/>
+<line x1="790" y1="144" x2="790" y2="151" stroke="#454e4e" stroke-width="1.4"/>
+<line x1="930" y1="144" x2="930" y2="151" stroke="#454e4e" stroke-width="1.4"/>
+<text x="90.0" y="172" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#808f8f" text-anchor="middle" font-weight="400">0 s</text>
+<text x="790.0" y="172" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#808f8f" text-anchor="middle" font-weight="400">50 s</text>
+<text x="930.0" y="172" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#808f8f" text-anchor="middle" font-weight="400">60 s</text>
+<path d="M90 196 V208 H790 V196" fill="none" stroke="#454e4e" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="440.0" y="234" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="20" fill="#b5cbcb" text-anchor="middle" font-weight="400">one press, one window</text>
+<text x="930" y="234" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="19" fill="#808f8f" text-anchor="end" font-weight="400">press again → next window</text>
+</svg>

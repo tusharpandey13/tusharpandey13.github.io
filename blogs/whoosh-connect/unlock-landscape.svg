@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 392" role="img" aria-labelledby="t d" preserveAspectRatio="xMidYMid meet">
+<title id="t">The unlock path, and where it dead-ended</title>
+<desc id="d">The puck sends a challenge on characteristic 0002. Zwift's D-Lock service signs some shapes and returns a 23-byte protobuf in about 0.32 seconds. Writing it back left the puck silent in every framing tried. The ride worked anyway, with every challenge unanswered.</desc>
+<!-- whoosh-connect post figure, drawn by build/gen_figures.py.
+     Palette: the owner's dark terminal scheme (bg #0e1212, ink #b5cbcb,
+     headings #cfe7e8, muted #808f8f, amber #c7b982, teal #9acaca,
+     green #7ec98b, red #e27270). All text >= 5:1 on the background. -->
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#c7b982"/>
+  </marker>
+  <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#7ec98b"/>
+  </marker>
+  <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#e27270"/>
+  </marker>
+</defs>
+<rect width="1000" height="392" fill="#0e1212"/>
+
+<rect x="24" y="90" width="236" height="90" rx="12" fill="#141a1a" stroke="#303737" stroke-width="1.4"/>
+<text x="44" y="124" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="22" fill="#cfe7e8" text-anchor="start" font-weight="600">the puck</text>
+<text x="44" y="152" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#808f8f" text-anchor="start" font-weight="400">ff 03 00 + 82–100 B</text>
+<rect x="330" y="76" width="300" height="118" rx="12" fill="#141a1a" stroke="#454e4e" stroke-width="1.4"/>
+<text x="480" y="110" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="23" fill="#cfe7e8" text-anchor="middle" font-weight="600">D-Lock service</text>
+<text x="480" y="136" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17" fill="#808f8f" text-anchor="middle" font-weight="400">device/authenticate</text>
+<text x="480" y="160" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="16" fill="#808f8f" text-anchor="middle" font-weight="400">protobuf in, bearer token</text>
+<text x="480" y="182" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#c7b982" text-anchor="middle" font-weight="400">0.32 s round trip</text>
+<rect x="716" y="90" width="260" height="90" rx="12" fill="#141a1a" stroke="#303737" stroke-width="1.4"/>
+<text x="736" y="124" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="22" fill="#cfe7e8" text-anchor="start" font-weight="600">23-byte answer</text>
+<text x="736" y="152" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#808f8f" text-anchor="start" font-weight="400">protobuf, 0a 15 + 21 B</text>
+<path d="M260 135 H330" fill="none" stroke="#c7b982" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<text x="295" y="120" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" fill="#c7b982" text-anchor="middle" font-weight="400">POST</text>
+<path d="M630 135 H716" fill="none" stroke="#c7b982" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ar)"/>
+<text x="673" y="120" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="16" fill="#c7b982" text-anchor="middle" font-weight="400">sign</text>
+<path d="M846 180 V262 H140 V180" fill="none" stroke="#e27270" stroke-width="1.8" stroke-linejoin="round" stroke-dasharray="7 5" marker-end="url(#ax)"/>
+<circle cx="200" cy="262" r="16" fill="#0e1212" stroke="#e27270" stroke-width="1.6"/>
+<text x="200" y="268" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="21" fill="#e27270" text-anchor="middle" font-weight="700">×</text>
+<text x="244" y="296" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="19" fill="#e27270" text-anchor="start" font-weight="400">written back on 0003 in every framing we could think of</text>
+<text x="244" y="320" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="19" fill="#e27270" text-anchor="start" font-weight="400">→ zero button frames, every time</text>
+<rect x="24" y="336" width="952" height="44" rx="8" fill="#101616" stroke="#c7b982" stroke-width="1.2"/>
+<text x="500.0" y="364.65" font-family="ui-sans-serif,-apple-system,'Segoe UI',system-ui,sans-serif" font-size="22" fill="#c7b982" text-anchor="middle" font-weight="600">The ride worked with every challenge left unanswered. The unlock was optional.</text>
+</svg>
